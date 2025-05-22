@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "JetForCharter" ADD COLUMN     "endData" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN     "sponsored" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "sponsoredType" TEXT NOT NULL DEFAULT 'None';

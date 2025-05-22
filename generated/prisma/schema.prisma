@@ -1,0 +1,266 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id        String  @id @default(uuid())
+  publicKey String  @unique
+  admin     Boolean @default(false)
+  status    String
+  vendor    Boolean @default(false)
+}
+
+model Vendor {
+  id            String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  email         String   @unique
+  name          String
+  companyName   String
+  country       String?
+  phone         String
+  serviceType   String // "Jet Sales", "Jet Charter", etc.
+  status        String   @default("PENDING") // "APPROVED", "REJECTED"\
+  website       String?
+  description   String?
+  document      String?
+  password      String?
+  brandImage    String   @default("https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0=")
+  walletAddress String?  @default("wallet_address")
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  password  String
+  name      String
+}
+
+model Jet {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  // Required fields from form
+  manufacturer       String
+  otherManufacturer  String? // Only used when manufacturer is "Other"
+  model              String
+  year               Int
+  serialNumber       String
+  totalTimeSinceNew  Int      @map("total_time_since_new")
+  totalLandings      Int      @map("total_landings")
+  engineMakeModel    String   @map("engine_make_model")
+  engineHours        Int      @map("engine_hours")
+  avionicsSuite      String   @map("avionics_suite")
+  interiorConfig     String   @map("interior_config")
+  interiorImageUrls  String[] @map("interior_image_urls")
+  exteriorImageUrls  String[] @map("exterior_image_urls")
+  price              String
+  currentLocation    String   @map("current_location")
+  registrationNumber String   @unique @map("registration_number")
+  contactDetails     String   @map("contact_details")
+
+  // Aircraft Specifications
+  aircraftType    String @map("aircraft_type")
+  seatingCapacity Int    @map("seating_capacity")
+  cabinHeight     Float  @map("cabin_height")
+  cabinWidth      Float  @map("cabin_width")
+  cabinLength     Float  @map("cabin_length")
+  baggageCapacity Float  @map("baggage_capacity")
+  numberOfEngines Int    @map("number_of_engines")
+  engineType      String @map("engine_type")
+  engineThrust    Float  @map("engine_thrust")
+
+  // Certification & Compliance
+  certification   String @default("FAA")
+  noiseCompliance String @map("noise_compliance")
+
+  // Operational Status
+  lastInspectionDate DateTime @map("last_inspection_date")
+  nextInspectionDue  DateTime @map("next_inspection_due")
+  maintenanceStatus  String   @map("maintenance_status")
+
+  // Optional fields from form
+  previousOwners        Int?    @map("previous_owners")
+  maintenanceProgram    String? @map("maintenance_program")
+  airframeEngineStatus  String? @map("airframe_engine_status")
+  refurbishmentDate     String? @map("refurbishment_date")
+  wifiConnectivity      String? @map("wifi_connectivity")
+  lavatoryGalleyDetails String? @map("lavatory_galley_details")
+  cabinAmenities        String? @map("cabin_amenities")
+  range                 Float?
+  cruiseSpeed           Float?  @map("cruise_speed")
+  maxAltitude           Float?  @map("max_altitude")
+  runwayLength          Float?  @map("runway_length")
+  emptyWeight           Float?  @map("empty_weight")
+  maxTakeoffWeight      Float?  @map("max_takeoff_weight")
+  deliveryAvailability  String? @map("delivery_availability")
+
+  // Payment and vendor fields
+  paymentTxSignature String  @map("payment_tx_signature")
+  transactionLink    String? @map("transaction_link")
+  vendorId           String  @map("vendor_id")
+  views              Int     @default(0)
+
+  // Status field
+  status        String   @default("PENDING")
+  sponsored     Boolean  @default(false)
+  sponsoredType String   @default("NotSponsored")
+  end_date      DateTime @default(now())
+}
+
+model JetForBids {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  // Required fields from form
+  manufacturer       String
+  otherManufacturer  String? // Only used when manufacturer is "Other"
+  model              String
+  year               Int
+  serialNumber       String
+  totalTimeSinceNew  Int      @map("total_time_since_new")
+  totalLandings      Int      @map("total_landings")
+  engineMakeModel    String   @map("engine_make_model")
+  engineHours        Int      @map("engine_hours")
+  avionicsSuite      String   @map("avionics_suite")
+  interiorConfig     String   @map("interior_config")
+  interiorImageUrls  String[] @map("interior_image_urls")
+  exteriorImageUrls  String[] @map("exterior_image_urls")
+  price              String
+  currentLocation    String   @map("current_location")
+  registrationNumber String   @unique @map("registration_number")
+  contactDetails     String   @map("contact_details")
+
+  // Optional fields from form
+  previousOwners       Int?    @map("previous_owners")
+  maintenanceProgram   String? @map("maintenance_program")
+  airframeEngineStatus String? @map("airframe_engine_status")
+
+  refurbishmentDate     String? @map("refurbishment_date")
+  wifiConnectivity      String? @map("wifi_connectivity")
+  lavatoryGalleyDetails String? @map("lavatory_galley_details")
+  cabinAmenities        String? @map("cabin_amenities")
+  range                 Float?
+  cruiseSpeed           Float?  @map("cruise_speed")
+  maxAltitude           Float?  @map("max_altitude")
+  runwayLength          Float?  @map("runway_length")
+  emptyWeight           Float?  @map("empty_weight")
+  maxTakeoffWeight      Float?  @map("max_takeoff_weight")
+  deliveryAvailability  String? @map("delivery_availability")
+
+  vendorId String @map("vendor_id")
+  views    Int    @default(0)
+
+  // Status field
+  status        String   @default("PENDING")
+  sponsored     Boolean  @default(false)
+  sponsoredType String   @default("NotSponsored")
+  end_date      DateTime @default(now())
+
+  // New bidding fields
+  biddingEndDate      DateTime @map("bidding_end_date")
+  minimumBidIncrement Float    @map("minimum_bid_increment")
+  biddingStatus       String   @default("OPEN") @map("bidding_status")
+  currentBid          Float?   @map("current_bid")
+  bidCount            Int      @default(0) @map("bid_count")
+}
+
+model JetForCharter {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Jet Details
+  jetName            String
+  aircraftType       String
+  manufacturer       String
+  yearOfManufacture  String
+  registrationNumber String
+
+  // Performance & Capacity
+  seatingCapacity    String
+  cabinConfiguration String
+  maximumRange       String
+  cruisingSpeed      String
+  baggageCapacity    String
+
+  // Availability
+  homeBase        String
+  availableRoutes String
+  operatingDays   String
+  noticeRequired  String
+
+  // Pricing
+  pricePerHour      String
+  minimumFlightTime String
+  tripOption        TripOption
+  additionalFees    Json
+  discounts         String?
+
+  // Amenities
+  cabinFeatures   String[]
+  inFlightMeals   Boolean  @default(false)
+  flightAttendant Boolean  @default(false)
+  petsAllowed     Boolean  @default(false)
+  smokingAllowed  Boolean  @default(false)
+
+  // Media
+  exteriorImages String[]
+  interiorImages String[]
+  videoLink      String?
+
+  // Extra Services
+  luxuryCarService Boolean @default(false)
+
+  // auth 
+  vendorId String
+
+  // sponsorship
+  sponsored     Boolean  @default(false)
+  sponsoredType String   @default("None")
+  endData       DateTime @default(now())
+
+  // tnx
+  transactionSignature String @default("")
+  transactionLink      String @default("")
+
+  //stats
+  status String @default("PENDING")
+  views  Int    @default(0)
+}
+
+enum TripOption {
+  ROUND_TRIP
+  ONE_WAY
+  BOTH
+}
+
+model JetForSaleMessages {
+  id              String   @id @default(uuid())
+  customerName    String
+  customerEmail   String
+  customerCountry String
+  listingId       String
+  vendorId        String
+  message         String
+  createdAt       DateTime @default(now())
+  read            Boolean  @default(false)
+}
+
+model Wallet {
+  id     String @id @default(uuid())
+  wallet String
+}

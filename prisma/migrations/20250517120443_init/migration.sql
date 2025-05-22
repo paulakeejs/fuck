@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Jet" ADD COLUMN     "end_date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN     "sponsoredType" TEXT NOT NULL DEFAULT 'NotSponsored';

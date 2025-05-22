@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Jet" ADD COLUMN     "views" INTEGER NOT NULL DEFAULT 0;

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "JetForBids" ALTER COLUMN "status" SET DEFAULT 'PENDING';

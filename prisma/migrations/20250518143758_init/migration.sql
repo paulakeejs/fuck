@@ -1,0 +1,47 @@
+-- CreateTable
+CREATE TABLE "JetForBids" (
+    "id" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "manufacturer" TEXT NOT NULL,
+    "otherManufacturer" TEXT,
+    "model" TEXT NOT NULL,
+    "year" INTEGER NOT NULL,
+    "serialNumber" TEXT NOT NULL,
+    "total_time_since_new" INTEGER NOT NULL,
+    "total_landings" INTEGER NOT NULL,
+    "engine_make_model" TEXT NOT NULL,
+    "engine_hours" INTEGER NOT NULL,
+    "avionics_suite" TEXT NOT NULL,
+    "interior_config" TEXT NOT NULL,
+    "interior_image_urls" TEXT[],
+    "exterior_image_urls" TEXT[],
+    "price" TEXT NOT NULL,
+    "current_location" TEXT NOT NULL,
+    "registration_number" TEXT NOT NULL,
+    "contact_details" TEXT NOT NULL,
+    "previous_owners" INTEGER,
+    "maintenance_program" TEXT,
+    "airframe_engine_status" TEXT,
+    "refurbishment_date" TEXT,
+    "wifi_connectivity" TEXT,
+    "lavatory_galley_details" TEXT,
+    "cabin_amenities" TEXT,
+    "range" DOUBLE PRECISION,
+    "cruise_speed" DOUBLE PRECISION,
+    "max_altitude" DOUBLE PRECISION,
+    "runway_length" DOUBLE PRECISION,
+    "empty_weight" DOUBLE PRECISION,
+    "max_takeoff_weight" DOUBLE PRECISION,
+    "delivery_availability" TEXT,
+    "vendor_id" TEXT NOT NULL,
+    "views" INTEGER NOT NULL DEFAULT 0,
+    "status" TEXT NOT NULL DEFAULT 'PENDING',
+    "sponsored" BOOLEAN NOT NULL DEFAULT false,
+    "sponsoredType" TEXT NOT NULL DEFAULT 'NotSponsored',
+    "end_date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "JetForBids_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "JetForBids_registration_number_key" ON "JetForBids"("registration_number");

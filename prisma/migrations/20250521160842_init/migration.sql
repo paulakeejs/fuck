@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "JetForCharter" ADD COLUMN     "status" TEXT NOT NULL DEFAULT 'PENDING',
+ADD COLUMN     "views" INTEGER NOT NULL DEFAULT 0;
