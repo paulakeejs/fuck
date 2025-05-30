@@ -231,7 +231,7 @@ model JetForCharter {
   // sponsorship
   sponsored     Boolean  @default(false)
   sponsoredType String   @default("None")
-  endData       DateTime @default(now())
+  end_date      DateTime @default(now())
 
   // tnx
   transactionSignature String @default("")
@@ -258,6 +258,26 @@ model JetForSaleMessages {
   message         String
   createdAt       DateTime @default(now())
   read            Boolean  @default(false)
+}
+
+model JetForCharterMessages {
+  id                String    @id @default(uuid()) @db.Uuid
+  customerName      String    @db.VarChar(100)
+  customerEmail     String    @db.VarChar(255)
+  customerCountry   String?   @db.VarChar(100)
+  departureLocation String    @db.VarChar(100)
+  arrivalLocation   String    @db.VarChar(100)
+  departureDate     DateTime
+  returnDate        DateTime?
+  passengerCount    Int
+  specialRequests   String?   @db.Text
+  listingId         String    @db.Uuid
+  vendorId          String    @db.Uuid
+  createdAt         DateTime  @default(now())
+  read              Boolean   @default(false)
+
+  @@index([listingId])
+  @@index([vendorId])
 }
 
 model Wallet {

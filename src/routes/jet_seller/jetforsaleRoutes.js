@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const checkAuth = require('../../middlewares/authmiddleware');
 const prisma = require('../../prisma');
 function checkUUID(id) {
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
     return uuidRegex.test(id);
 }
-router.get('/index', checkAuth, async (req, res) => {
+router.get('/index', async (req, res) => {
     try {
         const jets = await prisma.jet.findMany(); // Fetches all jet records from the database
 
@@ -25,7 +24,7 @@ router.get('/index', checkAuth, async (req, res) => {
     }
 });
 
-router.post('/messages/new', checkAuth, async (req, res) => {
+router.post('/messages/new',async (req, res) => {
     try {
       // Extract data from request body
       const { customerName, customerEmail, customerCountry, listingId, vendorId, message } = req.body;
@@ -120,9 +119,9 @@ router.get('/user/:id', async (req, res) => {
         });
     }
 });
-router.get('/:id', checkAuth, async(req,res) => {
+router.get('/:id', async(req,res) => {
     try {
-        if (!checkUUID(req.user.id)) {
+        if (!checkUUID(req.params.id)) {
             return res.status(400).json({
                 success: false,
                 message: "Invalid user ID format"
@@ -140,15 +139,6 @@ router.get('/:id', checkAuth, async(req,res) => {
                 message:"Listing Not Found"
             })
         }
-        const vendor = await prisma.user.findUnique({
-            where:{id: req.user.id}
-        })
-        if (!vendor){
-           return res.status(401).send({
-                success:false,
-                message:"Please Login Before U Can Preview This Page"
-            })
-        }
         res.status(200).send({
             success:true,
             data:jet
@@ -160,7 +150,7 @@ router.get('/:id', checkAuth, async(req,res) => {
         })
     }
 })
-router.put('/views/:id', checkAuth, async (req, res) => {
+router.put('/views/:id', async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -187,7 +177,7 @@ router.put('/views/:id', checkAuth, async (req, res) => {
         });
     }
 });
-router.get("/seller/:id", checkAuth, async (req, res) => {
+router.get("/seller/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const jets = await prisma.jet.findMany({

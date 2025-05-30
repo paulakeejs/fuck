@@ -294,7 +294,7 @@ exports.Prisma.JetForCharterScalarFieldEnum = {
   vendorId: 'vendorId',
   sponsored: 'sponsored',
   sponsoredType: 'sponsoredType',
-  endData: 'endData',
+  end_date: 'end_date',
   transactionSignature: 'transactionSignature',
   transactionLink: 'transactionLink',
   status: 'status',
@@ -309,6 +309,23 @@ exports.Prisma.JetForSaleMessagesScalarFieldEnum = {
   listingId: 'listingId',
   vendorId: 'vendorId',
   message: 'message',
+  createdAt: 'createdAt',
+  read: 'read'
+};
+
+exports.Prisma.JetForCharterMessagesScalarFieldEnum = {
+  id: 'id',
+  customerName: 'customerName',
+  customerEmail: 'customerEmail',
+  customerCountry: 'customerCountry',
+  departureLocation: 'departureLocation',
+  arrivalLocation: 'arrivalLocation',
+  departureDate: 'departureDate',
+  returnDate: 'returnDate',
+  passengerCount: 'passengerCount',
+  specialRequests: 'specialRequests',
+  listingId: 'listingId',
+  vendorId: 'vendorId',
   createdAt: 'createdAt',
   read: 'read'
 };
@@ -356,6 +373,7 @@ exports.Prisma.ModelName = {
   JetForBids: 'JetForBids',
   JetForCharter: 'JetForCharter',
   JetForSaleMessages: 'JetForSaleMessages',
+  JetForCharterMessages: 'JetForCharterMessages',
   Wallet: 'Wallet'
 };
 

@@ -49,6 +49,11 @@ export type JetForCharter = $Result.DefaultSelection<Prisma.$JetForCharterPayloa
  */
 export type JetForSaleMessages = $Result.DefaultSelection<Prisma.$JetForSaleMessagesPayload>
 /**
+ * Model JetForCharterMessages
+ * 
+ */
+export type JetForCharterMessages = $Result.DefaultSelection<Prisma.$JetForCharterMessagesPayload>
+/**
  * Model Wallet
  * 
  */
@@ -266,6 +271,16 @@ export class PrismaClient<
     * ```
     */
   get jetForSaleMessages(): Prisma.JetForSaleMessagesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.jetForCharterMessages`: Exposes CRUD operations for the **JetForCharterMessages** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more JetForCharterMessages
+    * const jetForCharterMessages = await prisma.jetForCharterMessages.findMany()
+    * ```
+    */
+  get jetForCharterMessages(): Prisma.JetForCharterMessagesDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.wallet`: Exposes CRUD operations for the **Wallet** model.
@@ -723,6 +738,7 @@ export namespace Prisma {
     JetForBids: 'JetForBids',
     JetForCharter: 'JetForCharter',
     JetForSaleMessages: 'JetForSaleMessages',
+    JetForCharterMessages: 'JetForCharterMessages',
     Wallet: 'Wallet'
   };
 
@@ -742,7 +758,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "wallet"
+      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1264,6 +1280,80 @@ export namespace Prisma {
           }
         }
       }
+      JetForCharterMessages: {
+        payload: Prisma.$JetForCharterMessagesPayload<ExtArgs>
+        fields: Prisma.JetForCharterMessagesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.JetForCharterMessagesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.JetForCharterMessagesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          findFirst: {
+            args: Prisma.JetForCharterMessagesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.JetForCharterMessagesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          findMany: {
+            args: Prisma.JetForCharterMessagesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>[]
+          }
+          create: {
+            args: Prisma.JetForCharterMessagesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          createMany: {
+            args: Prisma.JetForCharterMessagesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.JetForCharterMessagesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>[]
+          }
+          delete: {
+            args: Prisma.JetForCharterMessagesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          update: {
+            args: Prisma.JetForCharterMessagesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          deleteMany: {
+            args: Prisma.JetForCharterMessagesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.JetForCharterMessagesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.JetForCharterMessagesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>[]
+          }
+          upsert: {
+            args: Prisma.JetForCharterMessagesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$JetForCharterMessagesPayload>
+          }
+          aggregate: {
+            args: Prisma.JetForCharterMessagesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateJetForCharterMessages>
+          }
+          groupBy: {
+            args: Prisma.JetForCharterMessagesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<JetForCharterMessagesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.JetForCharterMessagesCountArgs<ExtArgs>
+            result: $Utils.Optional<JetForCharterMessagesCountAggregateOutputType> | number
+          }
+        }
+      }
       Wallet: {
         payload: Prisma.$WalletPayload<ExtArgs>
         fields: Prisma.WalletFieldRefs
@@ -1429,6 +1519,7 @@ export namespace Prisma {
     jetForBids?: JetForBidsOmit
     jetForCharter?: JetForCharterOmit
     jetForSaleMessages?: JetForSaleMessagesOmit
+    jetForCharterMessages?: JetForCharterMessagesOmit
     wallet?: WalletOmit
   }
 
@@ -8017,7 +8108,7 @@ export namespace Prisma {
     vendorId: string | null
     sponsored: boolean | null
     sponsoredType: string | null
-    endData: Date | null
+    end_date: Date | null
     transactionSignature: string | null
     transactionLink: string | null
     status: string | null
@@ -8055,7 +8146,7 @@ export namespace Prisma {
     vendorId: string | null
     sponsored: boolean | null
     sponsoredType: string | null
-    endData: Date | null
+    end_date: Date | null
     transactionSignature: string | null
     transactionLink: string | null
     status: string | null
@@ -8097,7 +8188,7 @@ export namespace Prisma {
     vendorId: number
     sponsored: number
     sponsoredType: number
-    endData: number
+    end_date: number
     transactionSignature: number
     transactionLink: number
     status: number
@@ -8145,7 +8236,7 @@ export namespace Prisma {
     vendorId?: true
     sponsored?: true
     sponsoredType?: true
-    endData?: true
+    end_date?: true
     transactionSignature?: true
     transactionLink?: true
     status?: true
@@ -8183,7 +8274,7 @@ export namespace Prisma {
     vendorId?: true
     sponsored?: true
     sponsoredType?: true
-    endData?: true
+    end_date?: true
     transactionSignature?: true
     transactionLink?: true
     status?: true
@@ -8225,7 +8316,7 @@ export namespace Prisma {
     vendorId?: true
     sponsored?: true
     sponsoredType?: true
-    endData?: true
+    end_date?: true
     transactionSignature?: true
     transactionLink?: true
     status?: true
@@ -8354,7 +8445,7 @@ export namespace Prisma {
     vendorId: string
     sponsored: boolean
     sponsoredType: string
-    endData: Date
+    end_date: Date
     transactionSignature: string
     transactionLink: string
     status: string
@@ -8415,7 +8506,7 @@ export namespace Prisma {
     vendorId?: boolean
     sponsored?: boolean
     sponsoredType?: boolean
-    endData?: boolean
+    end_date?: boolean
     transactionSignature?: boolean
     transactionLink?: boolean
     status?: boolean
@@ -8457,7 +8548,7 @@ export namespace Prisma {
     vendorId?: boolean
     sponsored?: boolean
     sponsoredType?: boolean
-    endData?: boolean
+    end_date?: boolean
     transactionSignature?: boolean
     transactionLink?: boolean
     status?: boolean
@@ -8499,7 +8590,7 @@ export namespace Prisma {
     vendorId?: boolean
     sponsored?: boolean
     sponsoredType?: boolean
-    endData?: boolean
+    end_date?: boolean
     transactionSignature?: boolean
     transactionLink?: boolean
     status?: boolean
@@ -8541,14 +8632,14 @@ export namespace Prisma {
     vendorId?: boolean
     sponsored?: boolean
     sponsoredType?: boolean
-    endData?: boolean
+    end_date?: boolean
     transactionSignature?: boolean
     transactionLink?: boolean
     status?: boolean
     views?: boolean
   }
 
-  export type JetForCharterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "jetName" | "aircraftType" | "manufacturer" | "yearOfManufacture" | "registrationNumber" | "seatingCapacity" | "cabinConfiguration" | "maximumRange" | "cruisingSpeed" | "baggageCapacity" | "homeBase" | "availableRoutes" | "operatingDays" | "noticeRequired" | "pricePerHour" | "minimumFlightTime" | "tripOption" | "additionalFees" | "discounts" | "cabinFeatures" | "inFlightMeals" | "flightAttendant" | "petsAllowed" | "smokingAllowed" | "exteriorImages" | "interiorImages" | "videoLink" | "luxuryCarService" | "vendorId" | "sponsored" | "sponsoredType" | "endData" | "transactionSignature" | "transactionLink" | "status" | "views", ExtArgs["result"]["jetForCharter"]>
+  export type JetForCharterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "jetName" | "aircraftType" | "manufacturer" | "yearOfManufacture" | "registrationNumber" | "seatingCapacity" | "cabinConfiguration" | "maximumRange" | "cruisingSpeed" | "baggageCapacity" | "homeBase" | "availableRoutes" | "operatingDays" | "noticeRequired" | "pricePerHour" | "minimumFlightTime" | "tripOption" | "additionalFees" | "discounts" | "cabinFeatures" | "inFlightMeals" | "flightAttendant" | "petsAllowed" | "smokingAllowed" | "exteriorImages" | "interiorImages" | "videoLink" | "luxuryCarService" | "vendorId" | "sponsored" | "sponsoredType" | "end_date" | "transactionSignature" | "transactionLink" | "status" | "views", ExtArgs["result"]["jetForCharter"]>
 
   export type $JetForCharterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "JetForCharter"
@@ -8588,7 +8679,7 @@ export namespace Prisma {
       vendorId: string
       sponsored: boolean
       sponsoredType: string
-      endData: Date
+      end_date: Date
       transactionSignature: string
       transactionLink: string
       status: string
@@ -9050,7 +9141,7 @@ export namespace Prisma {
     readonly vendorId: FieldRef<"JetForCharter", 'String'>
     readonly sponsored: FieldRef<"JetForCharter", 'Boolean'>
     readonly sponsoredType: FieldRef<"JetForCharter", 'String'>
-    readonly endData: FieldRef<"JetForCharter", 'DateTime'>
+    readonly end_date: FieldRef<"JetForCharter", 'DateTime'>
     readonly transactionSignature: FieldRef<"JetForCharter", 'String'>
     readonly transactionLink: FieldRef<"JetForCharter", 'String'>
     readonly status: FieldRef<"JetForCharter", 'String'>
@@ -10469,6 +10560,1152 @@ export namespace Prisma {
 
 
   /**
+   * Model JetForCharterMessages
+   */
+
+  export type AggregateJetForCharterMessages = {
+    _count: JetForCharterMessagesCountAggregateOutputType | null
+    _avg: JetForCharterMessagesAvgAggregateOutputType | null
+    _sum: JetForCharterMessagesSumAggregateOutputType | null
+    _min: JetForCharterMessagesMinAggregateOutputType | null
+    _max: JetForCharterMessagesMaxAggregateOutputType | null
+  }
+
+  export type JetForCharterMessagesAvgAggregateOutputType = {
+    passengerCount: number | null
+  }
+
+  export type JetForCharterMessagesSumAggregateOutputType = {
+    passengerCount: number | null
+  }
+
+  export type JetForCharterMessagesMinAggregateOutputType = {
+    id: string | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    departureLocation: string | null
+    arrivalLocation: string | null
+    departureDate: Date | null
+    returnDate: Date | null
+    passengerCount: number | null
+    specialRequests: string | null
+    listingId: string | null
+    vendorId: string | null
+    createdAt: Date | null
+    read: boolean | null
+  }
+
+  export type JetForCharterMessagesMaxAggregateOutputType = {
+    id: string | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    departureLocation: string | null
+    arrivalLocation: string | null
+    departureDate: Date | null
+    returnDate: Date | null
+    passengerCount: number | null
+    specialRequests: string | null
+    listingId: string | null
+    vendorId: string | null
+    createdAt: Date | null
+    read: boolean | null
+  }
+
+  export type JetForCharterMessagesCountAggregateOutputType = {
+    id: number
+    customerName: number
+    customerEmail: number
+    customerCountry: number
+    departureLocation: number
+    arrivalLocation: number
+    departureDate: number
+    returnDate: number
+    passengerCount: number
+    specialRequests: number
+    listingId: number
+    vendorId: number
+    createdAt: number
+    read: number
+    _all: number
+  }
+
+
+  export type JetForCharterMessagesAvgAggregateInputType = {
+    passengerCount?: true
+  }
+
+  export type JetForCharterMessagesSumAggregateInputType = {
+    passengerCount?: true
+  }
+
+  export type JetForCharterMessagesMinAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+  }
+
+  export type JetForCharterMessagesMaxAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+  }
+
+  export type JetForCharterMessagesCountAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+    _all?: true
+  }
+
+  export type JetForCharterMessagesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which JetForCharterMessages to aggregate.
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of JetForCharterMessages to fetch.
+     */
+    orderBy?: JetForCharterMessagesOrderByWithRelationInput | JetForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: JetForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` JetForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` JetForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned JetForCharterMessages
+    **/
+    _count?: true | JetForCharterMessagesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: JetForCharterMessagesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: JetForCharterMessagesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: JetForCharterMessagesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: JetForCharterMessagesMaxAggregateInputType
+  }
+
+  export type GetJetForCharterMessagesAggregateType<T extends JetForCharterMessagesAggregateArgs> = {
+        [P in keyof T & keyof AggregateJetForCharterMessages]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateJetForCharterMessages[P]>
+      : GetScalarType<T[P], AggregateJetForCharterMessages[P]>
+  }
+
+
+
+
+  export type JetForCharterMessagesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: JetForCharterMessagesWhereInput
+    orderBy?: JetForCharterMessagesOrderByWithAggregationInput | JetForCharterMessagesOrderByWithAggregationInput[]
+    by: JetForCharterMessagesScalarFieldEnum[] | JetForCharterMessagesScalarFieldEnum
+    having?: JetForCharterMessagesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: JetForCharterMessagesCountAggregateInputType | true
+    _avg?: JetForCharterMessagesAvgAggregateInputType
+    _sum?: JetForCharterMessagesSumAggregateInputType
+    _min?: JetForCharterMessagesMinAggregateInputType
+    _max?: JetForCharterMessagesMaxAggregateInputType
+  }
+
+  export type JetForCharterMessagesGroupByOutputType = {
+    id: string
+    customerName: string
+    customerEmail: string
+    customerCountry: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date
+    returnDate: Date | null
+    passengerCount: number
+    specialRequests: string | null
+    listingId: string
+    vendorId: string
+    createdAt: Date
+    read: boolean
+    _count: JetForCharterMessagesCountAggregateOutputType | null
+    _avg: JetForCharterMessagesAvgAggregateOutputType | null
+    _sum: JetForCharterMessagesSumAggregateOutputType | null
+    _min: JetForCharterMessagesMinAggregateOutputType | null
+    _max: JetForCharterMessagesMaxAggregateOutputType | null
+  }
+
+  type GetJetForCharterMessagesGroupByPayload<T extends JetForCharterMessagesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<JetForCharterMessagesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof JetForCharterMessagesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], JetForCharterMessagesGroupByOutputType[P]>
+            : GetScalarType<T[P], JetForCharterMessagesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type JetForCharterMessagesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["jetForCharterMessages"]>
+
+  export type JetForCharterMessagesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["jetForCharterMessages"]>
+
+  export type JetForCharterMessagesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["jetForCharterMessages"]>
+
+  export type JetForCharterMessagesSelectScalar = {
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }
+
+  export type JetForCharterMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "customerEmail" | "customerCountry" | "departureLocation" | "arrivalLocation" | "departureDate" | "returnDate" | "passengerCount" | "specialRequests" | "listingId" | "vendorId" | "createdAt" | "read", ExtArgs["result"]["jetForCharterMessages"]>
+
+  export type $JetForCharterMessagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "JetForCharterMessages"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      customerName: string
+      customerEmail: string
+      customerCountry: string | null
+      departureLocation: string
+      arrivalLocation: string
+      departureDate: Date
+      returnDate: Date | null
+      passengerCount: number
+      specialRequests: string | null
+      listingId: string
+      vendorId: string
+      createdAt: Date
+      read: boolean
+    }, ExtArgs["result"]["jetForCharterMessages"]>
+    composites: {}
+  }
+
+  type JetForCharterMessagesGetPayload<S extends boolean | null | undefined | JetForCharterMessagesDefaultArgs> = $Result.GetResult<Prisma.$JetForCharterMessagesPayload, S>
+
+  type JetForCharterMessagesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<JetForCharterMessagesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: JetForCharterMessagesCountAggregateInputType | true
+    }
+
+  export interface JetForCharterMessagesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['JetForCharterMessages'], meta: { name: 'JetForCharterMessages' } }
+    /**
+     * Find zero or one JetForCharterMessages that matches the filter.
+     * @param {JetForCharterMessagesFindUniqueArgs} args - Arguments to find a JetForCharterMessages
+     * @example
+     * // Get one JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends JetForCharterMessagesFindUniqueArgs>(args: SelectSubset<T, JetForCharterMessagesFindUniqueArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one JetForCharterMessages that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {JetForCharterMessagesFindUniqueOrThrowArgs} args - Arguments to find a JetForCharterMessages
+     * @example
+     * // Get one JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends JetForCharterMessagesFindUniqueOrThrowArgs>(args: SelectSubset<T, JetForCharterMessagesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first JetForCharterMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesFindFirstArgs} args - Arguments to find a JetForCharterMessages
+     * @example
+     * // Get one JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends JetForCharterMessagesFindFirstArgs>(args?: SelectSubset<T, JetForCharterMessagesFindFirstArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first JetForCharterMessages that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesFindFirstOrThrowArgs} args - Arguments to find a JetForCharterMessages
+     * @example
+     * // Get one JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends JetForCharterMessagesFindFirstOrThrowArgs>(args?: SelectSubset<T, JetForCharterMessagesFindFirstOrThrowArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more JetForCharterMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findMany()
+     * 
+     * // Get first 10 JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const jetForCharterMessagesWithIdOnly = await prisma.jetForCharterMessages.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends JetForCharterMessagesFindManyArgs>(args?: SelectSubset<T, JetForCharterMessagesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a JetForCharterMessages.
+     * @param {JetForCharterMessagesCreateArgs} args - Arguments to create a JetForCharterMessages.
+     * @example
+     * // Create one JetForCharterMessages
+     * const JetForCharterMessages = await prisma.jetForCharterMessages.create({
+     *   data: {
+     *     // ... data to create a JetForCharterMessages
+     *   }
+     * })
+     * 
+     */
+    create<T extends JetForCharterMessagesCreateArgs>(args: SelectSubset<T, JetForCharterMessagesCreateArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many JetForCharterMessages.
+     * @param {JetForCharterMessagesCreateManyArgs} args - Arguments to create many JetForCharterMessages.
+     * @example
+     * // Create many JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends JetForCharterMessagesCreateManyArgs>(args?: SelectSubset<T, JetForCharterMessagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many JetForCharterMessages and returns the data saved in the database.
+     * @param {JetForCharterMessagesCreateManyAndReturnArgs} args - Arguments to create many JetForCharterMessages.
+     * @example
+     * // Create many JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many JetForCharterMessages and only return the `id`
+     * const jetForCharterMessagesWithIdOnly = await prisma.jetForCharterMessages.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends JetForCharterMessagesCreateManyAndReturnArgs>(args?: SelectSubset<T, JetForCharterMessagesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a JetForCharterMessages.
+     * @param {JetForCharterMessagesDeleteArgs} args - Arguments to delete one JetForCharterMessages.
+     * @example
+     * // Delete one JetForCharterMessages
+     * const JetForCharterMessages = await prisma.jetForCharterMessages.delete({
+     *   where: {
+     *     // ... filter to delete one JetForCharterMessages
+     *   }
+     * })
+     * 
+     */
+    delete<T extends JetForCharterMessagesDeleteArgs>(args: SelectSubset<T, JetForCharterMessagesDeleteArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one JetForCharterMessages.
+     * @param {JetForCharterMessagesUpdateArgs} args - Arguments to update one JetForCharterMessages.
+     * @example
+     * // Update one JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends JetForCharterMessagesUpdateArgs>(args: SelectSubset<T, JetForCharterMessagesUpdateArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more JetForCharterMessages.
+     * @param {JetForCharterMessagesDeleteManyArgs} args - Arguments to filter JetForCharterMessages to delete.
+     * @example
+     * // Delete a few JetForCharterMessages
+     * const { count } = await prisma.jetForCharterMessages.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends JetForCharterMessagesDeleteManyArgs>(args?: SelectSubset<T, JetForCharterMessagesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more JetForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends JetForCharterMessagesUpdateManyArgs>(args: SelectSubset<T, JetForCharterMessagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more JetForCharterMessages and returns the data updated in the database.
+     * @param {JetForCharterMessagesUpdateManyAndReturnArgs} args - Arguments to update many JetForCharterMessages.
+     * @example
+     * // Update many JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more JetForCharterMessages and only return the `id`
+     * const jetForCharterMessagesWithIdOnly = await prisma.jetForCharterMessages.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends JetForCharterMessagesUpdateManyAndReturnArgs>(args: SelectSubset<T, JetForCharterMessagesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one JetForCharterMessages.
+     * @param {JetForCharterMessagesUpsertArgs} args - Arguments to update or create a JetForCharterMessages.
+     * @example
+     * // Update or create a JetForCharterMessages
+     * const jetForCharterMessages = await prisma.jetForCharterMessages.upsert({
+     *   create: {
+     *     // ... data to create a JetForCharterMessages
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the JetForCharterMessages we want to update
+     *   }
+     * })
+     */
+    upsert<T extends JetForCharterMessagesUpsertArgs>(args: SelectSubset<T, JetForCharterMessagesUpsertArgs<ExtArgs>>): Prisma__JetForCharterMessagesClient<$Result.GetResult<Prisma.$JetForCharterMessagesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of JetForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesCountArgs} args - Arguments to filter JetForCharterMessages to count.
+     * @example
+     * // Count the number of JetForCharterMessages
+     * const count = await prisma.jetForCharterMessages.count({
+     *   where: {
+     *     // ... the filter for the JetForCharterMessages we want to count
+     *   }
+     * })
+    **/
+    count<T extends JetForCharterMessagesCountArgs>(
+      args?: Subset<T, JetForCharterMessagesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], JetForCharterMessagesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a JetForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends JetForCharterMessagesAggregateArgs>(args: Subset<T, JetForCharterMessagesAggregateArgs>): Prisma.PrismaPromise<GetJetForCharterMessagesAggregateType<T>>
+
+    /**
+     * Group by JetForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JetForCharterMessagesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends JetForCharterMessagesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: JetForCharterMessagesGroupByArgs['orderBy'] }
+        : { orderBy?: JetForCharterMessagesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, JetForCharterMessagesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetJetForCharterMessagesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the JetForCharterMessages model
+   */
+  readonly fields: JetForCharterMessagesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for JetForCharterMessages.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__JetForCharterMessagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the JetForCharterMessages model
+   */
+  interface JetForCharterMessagesFieldRefs {
+    readonly id: FieldRef<"JetForCharterMessages", 'String'>
+    readonly customerName: FieldRef<"JetForCharterMessages", 'String'>
+    readonly customerEmail: FieldRef<"JetForCharterMessages", 'String'>
+    readonly customerCountry: FieldRef<"JetForCharterMessages", 'String'>
+    readonly departureLocation: FieldRef<"JetForCharterMessages", 'String'>
+    readonly arrivalLocation: FieldRef<"JetForCharterMessages", 'String'>
+    readonly departureDate: FieldRef<"JetForCharterMessages", 'DateTime'>
+    readonly returnDate: FieldRef<"JetForCharterMessages", 'DateTime'>
+    readonly passengerCount: FieldRef<"JetForCharterMessages", 'Int'>
+    readonly specialRequests: FieldRef<"JetForCharterMessages", 'String'>
+    readonly listingId: FieldRef<"JetForCharterMessages", 'String'>
+    readonly vendorId: FieldRef<"JetForCharterMessages", 'String'>
+    readonly createdAt: FieldRef<"JetForCharterMessages", 'DateTime'>
+    readonly read: FieldRef<"JetForCharterMessages", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * JetForCharterMessages findUnique
+   */
+  export type JetForCharterMessagesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which JetForCharterMessages to fetch.
+     */
+    where: JetForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * JetForCharterMessages findUniqueOrThrow
+   */
+  export type JetForCharterMessagesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which JetForCharterMessages to fetch.
+     */
+    where: JetForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * JetForCharterMessages findFirst
+   */
+  export type JetForCharterMessagesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which JetForCharterMessages to fetch.
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of JetForCharterMessages to fetch.
+     */
+    orderBy?: JetForCharterMessagesOrderByWithRelationInput | JetForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for JetForCharterMessages.
+     */
+    cursor?: JetForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` JetForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` JetForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of JetForCharterMessages.
+     */
+    distinct?: JetForCharterMessagesScalarFieldEnum | JetForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * JetForCharterMessages findFirstOrThrow
+   */
+  export type JetForCharterMessagesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which JetForCharterMessages to fetch.
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of JetForCharterMessages to fetch.
+     */
+    orderBy?: JetForCharterMessagesOrderByWithRelationInput | JetForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for JetForCharterMessages.
+     */
+    cursor?: JetForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` JetForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` JetForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of JetForCharterMessages.
+     */
+    distinct?: JetForCharterMessagesScalarFieldEnum | JetForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * JetForCharterMessages findMany
+   */
+  export type JetForCharterMessagesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which JetForCharterMessages to fetch.
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of JetForCharterMessages to fetch.
+     */
+    orderBy?: JetForCharterMessagesOrderByWithRelationInput | JetForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing JetForCharterMessages.
+     */
+    cursor?: JetForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` JetForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` JetForCharterMessages.
+     */
+    skip?: number
+    distinct?: JetForCharterMessagesScalarFieldEnum | JetForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * JetForCharterMessages create
+   */
+  export type JetForCharterMessagesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data needed to create a JetForCharterMessages.
+     */
+    data: XOR<JetForCharterMessagesCreateInput, JetForCharterMessagesUncheckedCreateInput>
+  }
+
+  /**
+   * JetForCharterMessages createMany
+   */
+  export type JetForCharterMessagesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many JetForCharterMessages.
+     */
+    data: JetForCharterMessagesCreateManyInput | JetForCharterMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * JetForCharterMessages createManyAndReturn
+   */
+  export type JetForCharterMessagesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to create many JetForCharterMessages.
+     */
+    data: JetForCharterMessagesCreateManyInput | JetForCharterMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * JetForCharterMessages update
+   */
+  export type JetForCharterMessagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data needed to update a JetForCharterMessages.
+     */
+    data: XOR<JetForCharterMessagesUpdateInput, JetForCharterMessagesUncheckedUpdateInput>
+    /**
+     * Choose, which JetForCharterMessages to update.
+     */
+    where: JetForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * JetForCharterMessages updateMany
+   */
+  export type JetForCharterMessagesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update JetForCharterMessages.
+     */
+    data: XOR<JetForCharterMessagesUpdateManyMutationInput, JetForCharterMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which JetForCharterMessages to update
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * Limit how many JetForCharterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * JetForCharterMessages updateManyAndReturn
+   */
+  export type JetForCharterMessagesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to update JetForCharterMessages.
+     */
+    data: XOR<JetForCharterMessagesUpdateManyMutationInput, JetForCharterMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which JetForCharterMessages to update
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * Limit how many JetForCharterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * JetForCharterMessages upsert
+   */
+  export type JetForCharterMessagesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The filter to search for the JetForCharterMessages to update in case it exists.
+     */
+    where: JetForCharterMessagesWhereUniqueInput
+    /**
+     * In case the JetForCharterMessages found by the `where` argument doesn't exist, create a new JetForCharterMessages with this data.
+     */
+    create: XOR<JetForCharterMessagesCreateInput, JetForCharterMessagesUncheckedCreateInput>
+    /**
+     * In case the JetForCharterMessages was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<JetForCharterMessagesUpdateInput, JetForCharterMessagesUncheckedUpdateInput>
+  }
+
+  /**
+   * JetForCharterMessages delete
+   */
+  export type JetForCharterMessagesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter which JetForCharterMessages to delete.
+     */
+    where: JetForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * JetForCharterMessages deleteMany
+   */
+  export type JetForCharterMessagesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which JetForCharterMessages to delete
+     */
+    where?: JetForCharterMessagesWhereInput
+    /**
+     * Limit how many JetForCharterMessages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * JetForCharterMessages without action
+   */
+  export type JetForCharterMessagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JetForCharterMessages
+     */
+    select?: JetForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the JetForCharterMessages
+     */
+    omit?: JetForCharterMessagesOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Model Wallet
    */
 
@@ -11627,7 +12864,7 @@ export namespace Prisma {
     vendorId: 'vendorId',
     sponsored: 'sponsored',
     sponsoredType: 'sponsoredType',
-    endData: 'endData',
+    end_date: 'end_date',
     transactionSignature: 'transactionSignature',
     transactionLink: 'transactionLink',
     status: 'status',
@@ -11650,6 +12887,26 @@ export namespace Prisma {
   };
 
   export type JetForSaleMessagesScalarFieldEnum = (typeof JetForSaleMessagesScalarFieldEnum)[keyof typeof JetForSaleMessagesScalarFieldEnum]
+
+
+  export const JetForCharterMessagesScalarFieldEnum: {
+    id: 'id',
+    customerName: 'customerName',
+    customerEmail: 'customerEmail',
+    customerCountry: 'customerCountry',
+    departureLocation: 'departureLocation',
+    arrivalLocation: 'arrivalLocation',
+    departureDate: 'departureDate',
+    returnDate: 'returnDate',
+    passengerCount: 'passengerCount',
+    specialRequests: 'specialRequests',
+    listingId: 'listingId',
+    vendorId: 'vendorId',
+    createdAt: 'createdAt',
+    read: 'read'
+  };
+
+  export type JetForCharterMessagesScalarFieldEnum = (typeof JetForCharterMessagesScalarFieldEnum)[keyof typeof JetForCharterMessagesScalarFieldEnum]
 
 
   export const WalletScalarFieldEnum: {
@@ -12596,7 +13853,7 @@ export namespace Prisma {
     vendorId?: StringFilter<"JetForCharter"> | string
     sponsored?: BoolFilter<"JetForCharter"> | boolean
     sponsoredType?: StringFilter<"JetForCharter"> | string
-    endData?: DateTimeFilter<"JetForCharter"> | Date | string
+    end_date?: DateTimeFilter<"JetForCharter"> | Date | string
     transactionSignature?: StringFilter<"JetForCharter"> | string
     transactionLink?: StringFilter<"JetForCharter"> | string
     status?: StringFilter<"JetForCharter"> | string
@@ -12638,7 +13895,7 @@ export namespace Prisma {
     vendorId?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    endData?: SortOrder
+    end_date?: SortOrder
     transactionSignature?: SortOrder
     transactionLink?: SortOrder
     status?: SortOrder
@@ -12683,7 +13940,7 @@ export namespace Prisma {
     vendorId?: StringFilter<"JetForCharter"> | string
     sponsored?: BoolFilter<"JetForCharter"> | boolean
     sponsoredType?: StringFilter<"JetForCharter"> | string
-    endData?: DateTimeFilter<"JetForCharter"> | Date | string
+    end_date?: DateTimeFilter<"JetForCharter"> | Date | string
     transactionSignature?: StringFilter<"JetForCharter"> | string
     transactionLink?: StringFilter<"JetForCharter"> | string
     status?: StringFilter<"JetForCharter"> | string
@@ -12725,7 +13982,7 @@ export namespace Prisma {
     vendorId?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    endData?: SortOrder
+    end_date?: SortOrder
     transactionSignature?: SortOrder
     transactionLink?: SortOrder
     status?: SortOrder
@@ -12775,7 +14032,7 @@ export namespace Prisma {
     vendorId?: StringWithAggregatesFilter<"JetForCharter"> | string
     sponsored?: BoolWithAggregatesFilter<"JetForCharter"> | boolean
     sponsoredType?: StringWithAggregatesFilter<"JetForCharter"> | string
-    endData?: DateTimeWithAggregatesFilter<"JetForCharter"> | Date | string
+    end_date?: DateTimeWithAggregatesFilter<"JetForCharter"> | Date | string
     transactionSignature?: StringWithAggregatesFilter<"JetForCharter"> | string
     transactionLink?: StringWithAggregatesFilter<"JetForCharter"> | string
     status?: StringWithAggregatesFilter<"JetForCharter"> | string
@@ -12852,6 +14109,105 @@ export namespace Prisma {
     message?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     createdAt?: DateTimeWithAggregatesFilter<"JetForSaleMessages"> | Date | string
     read?: BoolWithAggregatesFilter<"JetForSaleMessages"> | boolean
+  }
+
+  export type JetForCharterMessagesWhereInput = {
+    AND?: JetForCharterMessagesWhereInput | JetForCharterMessagesWhereInput[]
+    OR?: JetForCharterMessagesWhereInput[]
+    NOT?: JetForCharterMessagesWhereInput | JetForCharterMessagesWhereInput[]
+    id?: UuidFilter<"JetForCharterMessages"> | string
+    customerName?: StringFilter<"JetForCharterMessages"> | string
+    customerEmail?: StringFilter<"JetForCharterMessages"> | string
+    customerCountry?: StringNullableFilter<"JetForCharterMessages"> | string | null
+    departureLocation?: StringFilter<"JetForCharterMessages"> | string
+    arrivalLocation?: StringFilter<"JetForCharterMessages"> | string
+    departureDate?: DateTimeFilter<"JetForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableFilter<"JetForCharterMessages"> | Date | string | null
+    passengerCount?: IntFilter<"JetForCharterMessages"> | number
+    specialRequests?: StringNullableFilter<"JetForCharterMessages"> | string | null
+    listingId?: UuidFilter<"JetForCharterMessages"> | string
+    vendorId?: UuidFilter<"JetForCharterMessages"> | string
+    createdAt?: DateTimeFilter<"JetForCharterMessages"> | Date | string
+    read?: BoolFilter<"JetForCharterMessages"> | boolean
+  }
+
+  export type JetForCharterMessagesOrderByWithRelationInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrderInput | SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type JetForCharterMessagesWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: JetForCharterMessagesWhereInput | JetForCharterMessagesWhereInput[]
+    OR?: JetForCharterMessagesWhereInput[]
+    NOT?: JetForCharterMessagesWhereInput | JetForCharterMessagesWhereInput[]
+    customerName?: StringFilter<"JetForCharterMessages"> | string
+    customerEmail?: StringFilter<"JetForCharterMessages"> | string
+    customerCountry?: StringNullableFilter<"JetForCharterMessages"> | string | null
+    departureLocation?: StringFilter<"JetForCharterMessages"> | string
+    arrivalLocation?: StringFilter<"JetForCharterMessages"> | string
+    departureDate?: DateTimeFilter<"JetForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableFilter<"JetForCharterMessages"> | Date | string | null
+    passengerCount?: IntFilter<"JetForCharterMessages"> | number
+    specialRequests?: StringNullableFilter<"JetForCharterMessages"> | string | null
+    listingId?: UuidFilter<"JetForCharterMessages"> | string
+    vendorId?: UuidFilter<"JetForCharterMessages"> | string
+    createdAt?: DateTimeFilter<"JetForCharterMessages"> | Date | string
+    read?: BoolFilter<"JetForCharterMessages"> | boolean
+  }, "id">
+
+  export type JetForCharterMessagesOrderByWithAggregationInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrderInput | SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+    _count?: JetForCharterMessagesCountOrderByAggregateInput
+    _avg?: JetForCharterMessagesAvgOrderByAggregateInput
+    _max?: JetForCharterMessagesMaxOrderByAggregateInput
+    _min?: JetForCharterMessagesMinOrderByAggregateInput
+    _sum?: JetForCharterMessagesSumOrderByAggregateInput
+  }
+
+  export type JetForCharterMessagesScalarWhereWithAggregatesInput = {
+    AND?: JetForCharterMessagesScalarWhereWithAggregatesInput | JetForCharterMessagesScalarWhereWithAggregatesInput[]
+    OR?: JetForCharterMessagesScalarWhereWithAggregatesInput[]
+    NOT?: JetForCharterMessagesScalarWhereWithAggregatesInput | JetForCharterMessagesScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"JetForCharterMessages"> | string
+    customerName?: StringWithAggregatesFilter<"JetForCharterMessages"> | string
+    customerEmail?: StringWithAggregatesFilter<"JetForCharterMessages"> | string
+    customerCountry?: StringNullableWithAggregatesFilter<"JetForCharterMessages"> | string | null
+    departureLocation?: StringWithAggregatesFilter<"JetForCharterMessages"> | string
+    arrivalLocation?: StringWithAggregatesFilter<"JetForCharterMessages"> | string
+    departureDate?: DateTimeWithAggregatesFilter<"JetForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableWithAggregatesFilter<"JetForCharterMessages"> | Date | string | null
+    passengerCount?: IntWithAggregatesFilter<"JetForCharterMessages"> | number
+    specialRequests?: StringNullableWithAggregatesFilter<"JetForCharterMessages"> | string | null
+    listingId?: UuidWithAggregatesFilter<"JetForCharterMessages"> | string
+    vendorId?: UuidWithAggregatesFilter<"JetForCharterMessages"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"JetForCharterMessages"> | Date | string
+    read?: BoolWithAggregatesFilter<"JetForCharterMessages"> | boolean
   }
 
   export type WalletWhereInput = {
@@ -13899,7 +15255,7 @@ export namespace Prisma {
     vendorId: string
     sponsored?: boolean
     sponsoredType?: string
-    endData?: Date | string
+    end_date?: Date | string
     transactionSignature?: string
     transactionLink?: string
     status?: string
@@ -13941,7 +15297,7 @@ export namespace Prisma {
     vendorId: string
     sponsored?: boolean
     sponsoredType?: string
-    endData?: Date | string
+    end_date?: Date | string
     transactionSignature?: string
     transactionLink?: string
     status?: string
@@ -13983,7 +15339,7 @@ export namespace Prisma {
     vendorId?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    endData?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     transactionSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
@@ -14025,7 +15381,7 @@ export namespace Prisma {
     vendorId?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    endData?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     transactionSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
@@ -14067,7 +15423,7 @@ export namespace Prisma {
     vendorId: string
     sponsored?: boolean
     sponsoredType?: string
-    endData?: Date | string
+    end_date?: Date | string
     transactionSignature?: string
     transactionLink?: string
     status?: string
@@ -14109,7 +15465,7 @@ export namespace Prisma {
     vendorId?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    endData?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     transactionSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
@@ -14151,7 +15507,7 @@ export namespace Prisma {
     vendorId?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    endData?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     transactionSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
@@ -14238,6 +15594,125 @@ export namespace Prisma {
     listingId?: StringFieldUpdateOperationsInput | string
     vendorId?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type JetForCharterMessagesCreateInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type JetForCharterMessagesUncheckedCreateInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type JetForCharterMessagesUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type JetForCharterMessagesUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type JetForCharterMessagesCreateManyInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type JetForCharterMessagesUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type JetForCharterMessagesUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     read?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -15056,7 +16531,7 @@ export namespace Prisma {
     vendorId?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    endData?: SortOrder
+    end_date?: SortOrder
     transactionSignature?: SortOrder
     transactionLink?: SortOrder
     status?: SortOrder
@@ -15098,7 +16573,7 @@ export namespace Prisma {
     vendorId?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    endData?: SortOrder
+    end_date?: SortOrder
     transactionSignature?: SortOrder
     transactionLink?: SortOrder
     status?: SortOrder
@@ -15136,7 +16611,7 @@ export namespace Prisma {
     vendorId?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    endData?: SortOrder
+    end_date?: SortOrder
     transactionSignature?: SortOrder
     transactionLink?: SortOrder
     status?: SortOrder
@@ -15217,6 +16692,117 @@ export namespace Prisma {
     message?: SortOrder
     createdAt?: SortOrder
     read?: SortOrder
+  }
+
+  export type UuidFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidFilter<$PrismaModel> | string
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type JetForCharterMessagesCountOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type JetForCharterMessagesAvgOrderByAggregateInput = {
+    passengerCount?: SortOrder
+  }
+
+  export type JetForCharterMessagesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type JetForCharterMessagesMinOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type JetForCharterMessagesSumOrderByAggregateInput = {
+    passengerCount?: SortOrder
+  }
+
+  export type UuidWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type WalletCountOrderByAggregateInput = {
@@ -15347,6 +16933,10 @@ export namespace Prisma {
   export type JetForCharterUpdateinteriorImagesInput = {
     set?: string[]
     push?: string | string[]
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -15595,6 +17185,56 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedUuidFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidFilter<$PrismaModel> | string
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
 

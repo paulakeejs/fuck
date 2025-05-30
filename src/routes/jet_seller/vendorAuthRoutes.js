@@ -4,7 +4,7 @@ const checkAuth = require('../../middlewares/authmiddleware');
 const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken")
 
-router.post('/new', checkAuth, async (req, res) => {
+router.post('/new', async (req, res) => {
     try {
         // Input validation
         const requiredFields = ['email', 'companyName', 'name', 'phone', 'serviceType'];
@@ -87,7 +87,7 @@ router.post('/new', checkAuth, async (req, res) => {
     }
 });
 
-router.get('/user/:id', checkAuth, async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try {
         const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
         if (!uuidRegex.test(req.params.id)) {
@@ -142,7 +142,7 @@ router.get('/user/:id', checkAuth, async (req, res) => {
         });
     }
 });
-router.post('/set/password/:id', checkAuth, async (req, res) => {
+router.post('/set/password/:id', async (req, res) => {
   try {
       // Validate UUID format first
       const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -232,7 +232,7 @@ router.post('/set/password/:id', checkAuth, async (req, res) => {
       });
   }
 });
-router.post('/user/login', checkAuth, async (req, res) => {
+router.post('/user/login',  async (req, res) => {
     const { email, password } = req.body;
     
     try {
