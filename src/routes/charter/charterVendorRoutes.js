@@ -329,7 +329,7 @@ router.get('/bookings', verifyToken, async(req,res) => {
             }
         })
         if (messages.length == 0){
-            res.status(400).send({
+          return  res.status(400).send({
                 success:false,
                 messages:"No New Booking At The Moment"
             })

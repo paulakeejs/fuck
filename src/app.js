@@ -15,13 +15,13 @@ const jetForCharterRoutes = require('./routes/charter/jetforcharterroutes');
 const prisma = new PrismaClient();
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 };
 
-const limiter = rateLimit({
+const limiter = rateLimit({   
     windowMs: 30 * 60 * 1000, // 30 minutes
     max: 500,
     standardHeaders: true,
@@ -93,3 +93,4 @@ const PORT = 3000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
+
