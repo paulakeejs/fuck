@@ -886,6 +886,7 @@ router.put('/boost/:id', verifyToken, async (req, res) => {
       'Pro Boost': 14,
       'Elite Boost': 30,
     };
+    
     if (planDurations[plan] !== parseInt(duration)) {
       return res.status(400).send({
         success: false,

@@ -329,7 +329,7 @@ router.get('/bookings', verifyToken, async(req,res) => {
             }
         })
         if (messages.length == 0){
-          return  res.status(400).send({
+          return  res.status(200).send({
                 success:false,
                 messages:"No New Booking At The Moment"
             })
@@ -648,54 +648,61 @@ router.put('/:id', verifyToken, async (req, res) => {
         details: process.env.NODE_ENV === 'development' ? error.message : undefined,
       });
     }
-});router.delete('/:id', verifyToken, async (req, res) => {
-    try {
-      const { id } = req.params;
+});
+router.delete('/:id', verifyToken, async (req, res) => {
+  try {
+    const { id } = req.params;
 
-      // Check if jet exists and belongs to the vendor
-      const existingJet = await prisma.jetForCharter.findUnique({
-        where: { id },
+    // Check if jet exists and belongs to the vendor
+    const existingJet = await prisma.jetForCharter.findUnique({
+      where: { id },
+    });
+
+    if (!existingJet) {
+      return res.status(404).json({
+        error: 'Jet not found',
       });
+    }
 
-      if (!existingJet) {
+    if (existingJet.vendorId !== req.user.id) {
+      return res.status(403).json({
+        error: 'Unauthorized to delete this jet listing',
+      });
+    }
+
+    // Delete all related messages from jetForCharterMessages
+    await prisma.jetForCharterMessages.deleteMany({
+      where: { listingId:id },
+    });
+
+    // Delete the jet from the database
+    await prisma.jetForCharter.delete({
+      where: { id },
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Jet and related messages deleted successfully',
+    });
+  } catch (error) {
+    console.error('Error deleting jet:', error);
+
+    // Handle Prisma specific errors
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      if (error.code === 'P2025') {
         return res.status(404).json({
           error: 'Jet not found',
         });
       }
-
-      if (existingJet.vendorId !== req.user.id) {
-        return res.status(403).json({
-          error: 'Unauthorized to delete this jet listing',
-        });
-      }
-
-      // Delete the jet from the database
-      await prisma.jetForCharter.delete({
-        where: { id },
-      });
-
-      res.status(200).json({
-        success: true,
-        message: 'Jet deleted successfully',
-      });
-    } catch (error) {
-      console.error('Error deleting jet:', error);
-
-      // Handle Prisma specific errors
-      if (error instanceof PrismaClient.PrismaClientKnownRequestError) {
-        if (error.code === 'P2025') {
-          return res.status(404).json({
-            error: 'Jet not found',
-          });
-        }
-      }
-
-      res.status(500).json({
-        error: 'Failed to delete jet',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined,
-      });
     }
-});router.put('/boost/:id', verifyToken, async (req, res) => {
+
+    res.status(500).json({
+      error: 'Failed to delete jet',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+});
+;router.put('/boost/:id', verifyToken, async (req, res) => {
     try {
       const { id } = req.params;
       const { plan, duration } = req.body;
