@@ -1220,6 +1220,75 @@ router.get('/bids/preview/:id', verifyToken, async(req,res) => {
       })
   }
 })
+router.put('/status/:id', verifyToken, async (req, res) => {
+  try {
+    const jetId = req.params.id;
+    const { status } = req.body;
+
+    // Check if jet exists
+    const existingJet = await prisma.jet.findUnique({
+      where: { id: jetId },
+    });
+
+    if (!existingJet) {
+      return res.status(404).json({
+        success: false,
+        message: 'Jet listing not found'
+      });
+    }
+
+    // Define valid statuses
+    const validStatuses = ['PENDING', 'ACTIVE', 'SOLD'];
+    
+    // Validate required field: status
+    if (!status || status.trim() === '') {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required field: status'
+      });
+    }
+
+    // Validate status value
+    if (!validStatuses.includes(status.toUpperCase())) {
+      return res.status(400).json({
+        success: false,
+        error: `Invalid status value. Must be one of: ${validStatuses.join(', ')}`
+      });
+    }
+
+    // Update the jet listing status
+    const updatedListing = await prisma.jet.update({
+      where: { id: jetId },
+      data: {
+        status: status.toUpperCase()
+      }
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Jet listing status updated successfully',
+      jet: updatedListing
+    });
+
+  } catch (error) {
+    console.error('Error updating jet listing status:', error.message, error.stack);
+
+    switch (error.code) {
+      case 'P2025': // Prisma code for record not found during update
+        return res.status(404).json({
+          success: false,
+          message: 'Jet listing not found during update'
+        });
+
+      default:
+        return res.status(500).json({
+          success: false,
+          error: 'Internal server error',
+          details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+  }
+});
 
 module.exports = router;
 

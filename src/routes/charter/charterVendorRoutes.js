@@ -804,6 +804,132 @@ router.delete('/:id', verifyToken, async (req, res) => {
         error: error.message,
       });
     }
-  });
+});
+router.put('/book/:id', verifyToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userId = req.user?.id; // Assuming verifyToken adds user to req
+
+    // Validate authentication
+    if (!userId) {
+      return res.status(401).send({
+        success: false,
+        message: 'Unauthorized: User not authenticated',
+      });
+    }
+
+    // Find the aircraft listing
+    const aircraft = await prisma.jetForCharter.findUnique({
+      where: { id },
+    });
+
+    if (!aircraft) {
+      return res.status(404).send({
+        success: false,
+        message: 'Aircraft listing not found',
+      });
+    }
+
+    // Verify ownership
+    if (aircraft.vendorId !== userId) {
+      return res.status(403).send({
+        success: false,
+        message: 'Forbidden: You do not own this listing',
+      });
+    }
+
+    // Update aircraft status to booked
+    const updatedAircraft = await prisma.jetForCharter.update({
+      where: { id },
+      data: {
+        status: req.body.status,
+        // You might want to add additional fields like:
+        // bookedAt: new Date(),
+        // bookedBy: userId (if different from owner)
+      },
+    });
+
+    res.status(200).send({
+      success: true,
+      message: 'Aircraft marked as booked successfully',
+      data: {
+        id: updatedAircraft.id,
+        status: updatedAircraft.status,
+        // Include any additional fields you added
+      },
+    });
+  } catch (error) {
+    console.error('Error marking aircraft as booked:', error);
+    res.status(500).send({
+      success: false,
+      message: 'Internal Server Error',
+      error: error.message,
+    });
+  }
+});
+router.put('/activate/:id', verifyToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userId = req.user?.id;
+
+    if (!userId) {
+      return res.status(401).send({
+        success: false,
+        message: 'Unauthorized: User not authenticated',
+      });
+    }
+
+    const aircraft = await prisma.jetForCharter.findUnique({
+      where: { id },
+    });
+
+    if (!aircraft) {
+      return res.status(404).send({
+        success: false,
+        message: 'Aircraft listing not found',
+      });
+    }
+
+    if (aircraft.vendorId !== userId) {
+      return res.status(403).send({
+        success: false,
+        message: 'Forbidden: You do not own this listing',
+      });
+    }
+
+    if (aircraft.status === 'ACTIVE') {
+      return res.status(400).send({
+        success: false,
+        message: 'Aircraft is already active',
+      });
+    }
+
+    const updatedAircraft = await prisma.jetForCharter.update({
+      where: { id },
+      data: {
+        status: 'ACTIVE',
+        // Clear any booking-related fields if needed:
+        // bookedAt: null,
+        // bookedBy: null
+      },
+    });
+
+    res.status(200).send({
+      success: true,
+      message: 'Aircraft marked as active successfully',
+      data: {
+        id: updatedAircraft.id,
+        status: updatedAircraft.status,
+      },
+    });
+  } catch (error) {
+    console.error('Error activating aircraft:', error);
+    res.status(500).send({
+      success: false,
+      message: 'Internal Server Error',
+      error: error.message,
+    });
+  }
+});
 module.exports = router
 
