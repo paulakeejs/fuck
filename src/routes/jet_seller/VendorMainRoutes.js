@@ -756,7 +756,6 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
         maxTakeoffWeight: parsedMaxTakeoffWeight,
         deliveryAvailability: deliveryAvailability || null,
         vendorId,
-        status: 'PENDING'
       }
     });
 

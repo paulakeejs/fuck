@@ -58,6 +58,31 @@ export type JetForCharterMessages = $Result.DefaultSelection<Prisma.$JetForChart
  * 
  */
 export type Wallet = $Result.DefaultSelection<Prisma.$WalletPayload>
+/**
+ * Model HelicopterForSaleListing
+ * 
+ */
+export type HelicopterForSaleListing = $Result.DefaultSelection<Prisma.$HelicopterForSaleListingPayload>
+/**
+ * Model CabinFeature
+ * 
+ */
+export type CabinFeature = $Result.DefaultSelection<Prisma.$CabinFeaturePayload>
+/**
+ * Model HelicopterMessage
+ * 
+ */
+export type HelicopterMessage = $Result.DefaultSelection<Prisma.$HelicopterMessagePayload>
+/**
+ * Model HelicopterForCharter
+ * 
+ */
+export type HelicopterForCharter = $Result.DefaultSelection<Prisma.$HelicopterForCharterPayload>
+/**
+ * Model HelicopterForCharterMessages
+ * 
+ */
+export type HelicopterForCharterMessages = $Result.DefaultSelection<Prisma.$HelicopterForCharterMessagesPayload>
 
 /**
  * Enums
@@ -291,6 +316,56 @@ export class PrismaClient<
     * ```
     */
   get wallet(): Prisma.WalletDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.helicopterForSaleListing`: Exposes CRUD operations for the **HelicopterForSaleListing** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HelicopterForSaleListings
+    * const helicopterForSaleListings = await prisma.helicopterForSaleListing.findMany()
+    * ```
+    */
+  get helicopterForSaleListing(): Prisma.HelicopterForSaleListingDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.cabinFeature`: Exposes CRUD operations for the **CabinFeature** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CabinFeatures
+    * const cabinFeatures = await prisma.cabinFeature.findMany()
+    * ```
+    */
+  get cabinFeature(): Prisma.CabinFeatureDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.helicopterMessage`: Exposes CRUD operations for the **HelicopterMessage** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HelicopterMessages
+    * const helicopterMessages = await prisma.helicopterMessage.findMany()
+    * ```
+    */
+  get helicopterMessage(): Prisma.HelicopterMessageDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.helicopterForCharter`: Exposes CRUD operations for the **HelicopterForCharter** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HelicopterForCharters
+    * const helicopterForCharters = await prisma.helicopterForCharter.findMany()
+    * ```
+    */
+  get helicopterForCharter(): Prisma.HelicopterForCharterDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.helicopterForCharterMessages`: Exposes CRUD operations for the **HelicopterForCharterMessages** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HelicopterForCharterMessages
+    * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findMany()
+    * ```
+    */
+  get helicopterForCharterMessages(): Prisma.HelicopterForCharterMessagesDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -739,7 +814,12 @@ export namespace Prisma {
     JetForCharter: 'JetForCharter',
     JetForSaleMessages: 'JetForSaleMessages',
     JetForCharterMessages: 'JetForCharterMessages',
-    Wallet: 'Wallet'
+    Wallet: 'Wallet',
+    HelicopterForSaleListing: 'HelicopterForSaleListing',
+    CabinFeature: 'CabinFeature',
+    HelicopterMessage: 'HelicopterMessage',
+    HelicopterForCharter: 'HelicopterForCharter',
+    HelicopterForCharterMessages: 'HelicopterForCharterMessages'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -758,7 +838,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet"
+      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet" | "helicopterForSaleListing" | "cabinFeature" | "helicopterMessage" | "helicopterForCharter" | "helicopterForCharterMessages"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1428,6 +1508,376 @@ export namespace Prisma {
           }
         }
       }
+      HelicopterForSaleListing: {
+        payload: Prisma.$HelicopterForSaleListingPayload<ExtArgs>
+        fields: Prisma.HelicopterForSaleListingFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HelicopterForSaleListingFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HelicopterForSaleListingFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          findFirst: {
+            args: Prisma.HelicopterForSaleListingFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HelicopterForSaleListingFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          findMany: {
+            args: Prisma.HelicopterForSaleListingFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>[]
+          }
+          create: {
+            args: Prisma.HelicopterForSaleListingCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          createMany: {
+            args: Prisma.HelicopterForSaleListingCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HelicopterForSaleListingCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>[]
+          }
+          delete: {
+            args: Prisma.HelicopterForSaleListingDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          update: {
+            args: Prisma.HelicopterForSaleListingUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          deleteMany: {
+            args: Prisma.HelicopterForSaleListingDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HelicopterForSaleListingUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HelicopterForSaleListingUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>[]
+          }
+          upsert: {
+            args: Prisma.HelicopterForSaleListingUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForSaleListingPayload>
+          }
+          aggregate: {
+            args: Prisma.HelicopterForSaleListingAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHelicopterForSaleListing>
+          }
+          groupBy: {
+            args: Prisma.HelicopterForSaleListingGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForSaleListingGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HelicopterForSaleListingCountArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForSaleListingCountAggregateOutputType> | number
+          }
+        }
+      }
+      CabinFeature: {
+        payload: Prisma.$CabinFeaturePayload<ExtArgs>
+        fields: Prisma.CabinFeatureFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CabinFeatureFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CabinFeatureFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          findFirst: {
+            args: Prisma.CabinFeatureFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CabinFeatureFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          findMany: {
+            args: Prisma.CabinFeatureFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>[]
+          }
+          create: {
+            args: Prisma.CabinFeatureCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          createMany: {
+            args: Prisma.CabinFeatureCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CabinFeatureCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>[]
+          }
+          delete: {
+            args: Prisma.CabinFeatureDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          update: {
+            args: Prisma.CabinFeatureUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          deleteMany: {
+            args: Prisma.CabinFeatureDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CabinFeatureUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CabinFeatureUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>[]
+          }
+          upsert: {
+            args: Prisma.CabinFeatureUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CabinFeaturePayload>
+          }
+          aggregate: {
+            args: Prisma.CabinFeatureAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCabinFeature>
+          }
+          groupBy: {
+            args: Prisma.CabinFeatureGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CabinFeatureGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CabinFeatureCountArgs<ExtArgs>
+            result: $Utils.Optional<CabinFeatureCountAggregateOutputType> | number
+          }
+        }
+      }
+      HelicopterMessage: {
+        payload: Prisma.$HelicopterMessagePayload<ExtArgs>
+        fields: Prisma.HelicopterMessageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HelicopterMessageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HelicopterMessageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          findFirst: {
+            args: Prisma.HelicopterMessageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HelicopterMessageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          findMany: {
+            args: Prisma.HelicopterMessageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>[]
+          }
+          create: {
+            args: Prisma.HelicopterMessageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          createMany: {
+            args: Prisma.HelicopterMessageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HelicopterMessageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>[]
+          }
+          delete: {
+            args: Prisma.HelicopterMessageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          update: {
+            args: Prisma.HelicopterMessageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          deleteMany: {
+            args: Prisma.HelicopterMessageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HelicopterMessageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HelicopterMessageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>[]
+          }
+          upsert: {
+            args: Prisma.HelicopterMessageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterMessagePayload>
+          }
+          aggregate: {
+            args: Prisma.HelicopterMessageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHelicopterMessage>
+          }
+          groupBy: {
+            args: Prisma.HelicopterMessageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterMessageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HelicopterMessageCountArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterMessageCountAggregateOutputType> | number
+          }
+        }
+      }
+      HelicopterForCharter: {
+        payload: Prisma.$HelicopterForCharterPayload<ExtArgs>
+        fields: Prisma.HelicopterForCharterFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HelicopterForCharterFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HelicopterForCharterFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          findFirst: {
+            args: Prisma.HelicopterForCharterFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HelicopterForCharterFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          findMany: {
+            args: Prisma.HelicopterForCharterFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>[]
+          }
+          create: {
+            args: Prisma.HelicopterForCharterCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          createMany: {
+            args: Prisma.HelicopterForCharterCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HelicopterForCharterCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>[]
+          }
+          delete: {
+            args: Prisma.HelicopterForCharterDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          update: {
+            args: Prisma.HelicopterForCharterUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          deleteMany: {
+            args: Prisma.HelicopterForCharterDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HelicopterForCharterUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HelicopterForCharterUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>[]
+          }
+          upsert: {
+            args: Prisma.HelicopterForCharterUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterPayload>
+          }
+          aggregate: {
+            args: Prisma.HelicopterForCharterAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHelicopterForCharter>
+          }
+          groupBy: {
+            args: Prisma.HelicopterForCharterGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForCharterGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HelicopterForCharterCountArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForCharterCountAggregateOutputType> | number
+          }
+        }
+      }
+      HelicopterForCharterMessages: {
+        payload: Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>
+        fields: Prisma.HelicopterForCharterMessagesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HelicopterForCharterMessagesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HelicopterForCharterMessagesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          findFirst: {
+            args: Prisma.HelicopterForCharterMessagesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HelicopterForCharterMessagesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          findMany: {
+            args: Prisma.HelicopterForCharterMessagesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>[]
+          }
+          create: {
+            args: Prisma.HelicopterForCharterMessagesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          createMany: {
+            args: Prisma.HelicopterForCharterMessagesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HelicopterForCharterMessagesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>[]
+          }
+          delete: {
+            args: Prisma.HelicopterForCharterMessagesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          update: {
+            args: Prisma.HelicopterForCharterMessagesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          deleteMany: {
+            args: Prisma.HelicopterForCharterMessagesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HelicopterForCharterMessagesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HelicopterForCharterMessagesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>[]
+          }
+          upsert: {
+            args: Prisma.HelicopterForCharterMessagesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HelicopterForCharterMessagesPayload>
+          }
+          aggregate: {
+            args: Prisma.HelicopterForCharterMessagesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHelicopterForCharterMessages>
+          }
+          groupBy: {
+            args: Prisma.HelicopterForCharterMessagesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForCharterMessagesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HelicopterForCharterMessagesCountArgs<ExtArgs>
+            result: $Utils.Optional<HelicopterForCharterMessagesCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1521,6 +1971,11 @@ export namespace Prisma {
     jetForSaleMessages?: JetForSaleMessagesOmit
     jetForCharterMessages?: JetForCharterMessagesOmit
     wallet?: WalletOmit
+    helicopterForSaleListing?: HelicopterForSaleListingOmit
+    cabinFeature?: CabinFeatureOmit
+    helicopterMessage?: HelicopterMessageOmit
+    helicopterForCharter?: HelicopterForCharterOmit
+    helicopterForCharterMessages?: HelicopterForCharterMessagesOmit
   }
 
   /* Types for Logging */
@@ -1609,6 +2064,67 @@ export namespace Prisma {
    * Count Types
    */
 
+
+  /**
+   * Count Type HelicopterForSaleListingCountOutputType
+   */
+
+  export type HelicopterForSaleListingCountOutputType = {
+    cabinFeatures: number
+  }
+
+  export type HelicopterForSaleListingCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    cabinFeatures?: boolean | HelicopterForSaleListingCountOutputTypeCountCabinFeaturesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HelicopterForSaleListingCountOutputType without action
+   */
+  export type HelicopterForSaleListingCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListingCountOutputType
+     */
+    select?: HelicopterForSaleListingCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HelicopterForSaleListingCountOutputType without action
+   */
+  export type HelicopterForSaleListingCountOutputTypeCountCabinFeaturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CabinFeatureWhereInput
+  }
+
+
+  /**
+   * Count Type CabinFeatureCountOutputType
+   */
+
+  export type CabinFeatureCountOutputType = {
+    helicopters: number
+  }
+
+  export type CabinFeatureCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    helicopters?: boolean | CabinFeatureCountOutputTypeCountHelicoptersArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CabinFeatureCountOutputType without action
+   */
+  export type CabinFeatureCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeatureCountOutputType
+     */
+    select?: CabinFeatureCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CabinFeatureCountOutputType without action
+   */
+  export type CabinFeatureCountOutputTypeCountHelicoptersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HelicopterForSaleListingWhereInput
+  }
 
 
   /**
@@ -12489,7 +13005,7 @@ export namespace Prisma {
     /**
      * The data needed to create a Wallet.
      */
-    data: XOR<WalletCreateInput, WalletUncheckedCreateInput>
+    data?: XOR<WalletCreateInput, WalletUncheckedCreateInput>
   }
 
   /**
@@ -12658,6 +13174,6316 @@ export namespace Prisma {
      * Omit specific fields from the Wallet
      */
     omit?: WalletOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HelicopterForSaleListing
+   */
+
+  export type AggregateHelicopterForSaleListing = {
+    _count: HelicopterForSaleListingCountAggregateOutputType | null
+    _avg: HelicopterForSaleListingAvgAggregateOutputType | null
+    _sum: HelicopterForSaleListingSumAggregateOutputType | null
+    _min: HelicopterForSaleListingMinAggregateOutputType | null
+    _max: HelicopterForSaleListingMaxAggregateOutputType | null
+  }
+
+  export type HelicopterForSaleListingAvgAggregateOutputType = {
+    yearOfManufacture: number | null
+    seatingCapacity: number | null
+    maximumRange: number | null
+    cruisingSpeed: number | null
+    totalFlightHours: number | null
+    salePrice: number | null
+    views: number | null
+  }
+
+  export type HelicopterForSaleListingSumAggregateOutputType = {
+    yearOfManufacture: number | null
+    seatingCapacity: number | null
+    maximumRange: number | null
+    cruisingSpeed: number | null
+    totalFlightHours: number | null
+    salePrice: number | null
+    views: number | null
+  }
+
+  export type HelicopterForSaleListingMinAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    helicopterName: string | null
+    helicopterType: string | null
+    manufacturer: string | null
+    yearOfManufacture: number | null
+    registrationNumber: string | null
+    serialNumber: string | null
+    seatingCapacity: number | null
+    maximumRange: number | null
+    cruisingSpeed: number | null
+    baggageCapacity: string | null
+    condition: string | null
+    totalFlightHours: number | null
+    maintenanceHistory: string | null
+    lastInspection: Date | null
+    salePrice: number | null
+    discounts: string | null
+    avionics: string | null
+    emergencyEquipment: boolean | null
+    cargoHook: boolean | null
+    videoLink: string | null
+    additionalEquipment: string | null
+    transactionSignature: string | null
+    transactionLink: string | null
+    vendorId: string | null
+    views: number | null
+    status: string | null
+    sponsored: boolean | null
+    sponsoredType: string | null
+    endDate: Date | null
+  }
+
+  export type HelicopterForSaleListingMaxAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    helicopterName: string | null
+    helicopterType: string | null
+    manufacturer: string | null
+    yearOfManufacture: number | null
+    registrationNumber: string | null
+    serialNumber: string | null
+    seatingCapacity: number | null
+    maximumRange: number | null
+    cruisingSpeed: number | null
+    baggageCapacity: string | null
+    condition: string | null
+    totalFlightHours: number | null
+    maintenanceHistory: string | null
+    lastInspection: Date | null
+    salePrice: number | null
+    discounts: string | null
+    avionics: string | null
+    emergencyEquipment: boolean | null
+    cargoHook: boolean | null
+    videoLink: string | null
+    additionalEquipment: string | null
+    transactionSignature: string | null
+    transactionLink: string | null
+    vendorId: string | null
+    views: number | null
+    status: string | null
+    sponsored: boolean | null
+    sponsoredType: string | null
+    endDate: Date | null
+  }
+
+  export type HelicopterForSaleListingCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    helicopterName: number
+    helicopterType: number
+    manufacturer: number
+    yearOfManufacture: number
+    registrationNumber: number
+    serialNumber: number
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: number
+    condition: number
+    totalFlightHours: number
+    maintenanceHistory: number
+    lastInspection: number
+    salePrice: number
+    discounts: number
+    avionics: number
+    emergencyEquipment: number
+    cargoHook: number
+    videoLink: number
+    exteriorImageUrls: number
+    interiorImageUrls: number
+    additionalEquipment: number
+    transactionSignature: number
+    transactionLink: number
+    vendorId: number
+    views: number
+    status: number
+    sponsored: number
+    sponsoredType: number
+    endDate: number
+    _all: number
+  }
+
+
+  export type HelicopterForSaleListingAvgAggregateInputType = {
+    yearOfManufacture?: true
+    seatingCapacity?: true
+    maximumRange?: true
+    cruisingSpeed?: true
+    totalFlightHours?: true
+    salePrice?: true
+    views?: true
+  }
+
+  export type HelicopterForSaleListingSumAggregateInputType = {
+    yearOfManufacture?: true
+    seatingCapacity?: true
+    maximumRange?: true
+    cruisingSpeed?: true
+    totalFlightHours?: true
+    salePrice?: true
+    views?: true
+  }
+
+  export type HelicopterForSaleListingMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    helicopterName?: true
+    helicopterType?: true
+    manufacturer?: true
+    yearOfManufacture?: true
+    registrationNumber?: true
+    serialNumber?: true
+    seatingCapacity?: true
+    maximumRange?: true
+    cruisingSpeed?: true
+    baggageCapacity?: true
+    condition?: true
+    totalFlightHours?: true
+    maintenanceHistory?: true
+    lastInspection?: true
+    salePrice?: true
+    discounts?: true
+    avionics?: true
+    emergencyEquipment?: true
+    cargoHook?: true
+    videoLink?: true
+    additionalEquipment?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    views?: true
+    status?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+  }
+
+  export type HelicopterForSaleListingMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    helicopterName?: true
+    helicopterType?: true
+    manufacturer?: true
+    yearOfManufacture?: true
+    registrationNumber?: true
+    serialNumber?: true
+    seatingCapacity?: true
+    maximumRange?: true
+    cruisingSpeed?: true
+    baggageCapacity?: true
+    condition?: true
+    totalFlightHours?: true
+    maintenanceHistory?: true
+    lastInspection?: true
+    salePrice?: true
+    discounts?: true
+    avionics?: true
+    emergencyEquipment?: true
+    cargoHook?: true
+    videoLink?: true
+    additionalEquipment?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    views?: true
+    status?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+  }
+
+  export type HelicopterForSaleListingCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    helicopterName?: true
+    helicopterType?: true
+    manufacturer?: true
+    yearOfManufacture?: true
+    registrationNumber?: true
+    serialNumber?: true
+    seatingCapacity?: true
+    maximumRange?: true
+    cruisingSpeed?: true
+    baggageCapacity?: true
+    condition?: true
+    totalFlightHours?: true
+    maintenanceHistory?: true
+    lastInspection?: true
+    salePrice?: true
+    discounts?: true
+    avionics?: true
+    emergencyEquipment?: true
+    cargoHook?: true
+    videoLink?: true
+    exteriorImageUrls?: true
+    interiorImageUrls?: true
+    additionalEquipment?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    views?: true
+    status?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+    _all?: true
+  }
+
+  export type HelicopterForSaleListingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForSaleListing to aggregate.
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForSaleListings to fetch.
+     */
+    orderBy?: HelicopterForSaleListingOrderByWithRelationInput | HelicopterForSaleListingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HelicopterForSaleListingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForSaleListings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForSaleListings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HelicopterForSaleListings
+    **/
+    _count?: true | HelicopterForSaleListingCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HelicopterForSaleListingAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HelicopterForSaleListingSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HelicopterForSaleListingMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HelicopterForSaleListingMaxAggregateInputType
+  }
+
+  export type GetHelicopterForSaleListingAggregateType<T extends HelicopterForSaleListingAggregateArgs> = {
+        [P in keyof T & keyof AggregateHelicopterForSaleListing]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHelicopterForSaleListing[P]>
+      : GetScalarType<T[P], AggregateHelicopterForSaleListing[P]>
+  }
+
+
+
+
+  export type HelicopterForSaleListingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HelicopterForSaleListingWhereInput
+    orderBy?: HelicopterForSaleListingOrderByWithAggregationInput | HelicopterForSaleListingOrderByWithAggregationInput[]
+    by: HelicopterForSaleListingScalarFieldEnum[] | HelicopterForSaleListingScalarFieldEnum
+    having?: HelicopterForSaleListingScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HelicopterForSaleListingCountAggregateInputType | true
+    _avg?: HelicopterForSaleListingAvgAggregateInputType
+    _sum?: HelicopterForSaleListingSumAggregateInputType
+    _min?: HelicopterForSaleListingMinAggregateInputType
+    _max?: HelicopterForSaleListingMaxAggregateInputType
+  }
+
+  export type HelicopterForSaleListingGroupByOutputType = {
+    id: string
+    createdAt: Date
+    updatedAt: Date
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date
+    salePrice: number
+    discounts: string | null
+    avionics: string | null
+    emergencyEquipment: boolean
+    cargoHook: boolean
+    videoLink: string | null
+    exteriorImageUrls: string[]
+    interiorImageUrls: string[]
+    additionalEquipment: string | null
+    transactionSignature: string
+    transactionLink: string | null
+    vendorId: string
+    views: number
+    status: string
+    sponsored: boolean
+    sponsoredType: string
+    endDate: Date
+    _count: HelicopterForSaleListingCountAggregateOutputType | null
+    _avg: HelicopterForSaleListingAvgAggregateOutputType | null
+    _sum: HelicopterForSaleListingSumAggregateOutputType | null
+    _min: HelicopterForSaleListingMinAggregateOutputType | null
+    _max: HelicopterForSaleListingMaxAggregateOutputType | null
+  }
+
+  type GetHelicopterForSaleListingGroupByPayload<T extends HelicopterForSaleListingGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HelicopterForSaleListingGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HelicopterForSaleListingGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HelicopterForSaleListingGroupByOutputType[P]>
+            : GetScalarType<T[P], HelicopterForSaleListingGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HelicopterForSaleListingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    helicopterName?: boolean
+    helicopterType?: boolean
+    manufacturer?: boolean
+    yearOfManufacture?: boolean
+    registrationNumber?: boolean
+    serialNumber?: boolean
+    seatingCapacity?: boolean
+    maximumRange?: boolean
+    cruisingSpeed?: boolean
+    baggageCapacity?: boolean
+    condition?: boolean
+    totalFlightHours?: boolean
+    maintenanceHistory?: boolean
+    lastInspection?: boolean
+    salePrice?: boolean
+    discounts?: boolean
+    avionics?: boolean
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: boolean
+    exteriorImageUrls?: boolean
+    interiorImageUrls?: boolean
+    additionalEquipment?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    views?: boolean
+    status?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+    cabinFeatures?: boolean | HelicopterForSaleListing$cabinFeaturesArgs<ExtArgs>
+    _count?: boolean | HelicopterForSaleListingCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["helicopterForSaleListing"]>
+
+  export type HelicopterForSaleListingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    helicopterName?: boolean
+    helicopterType?: boolean
+    manufacturer?: boolean
+    yearOfManufacture?: boolean
+    registrationNumber?: boolean
+    serialNumber?: boolean
+    seatingCapacity?: boolean
+    maximumRange?: boolean
+    cruisingSpeed?: boolean
+    baggageCapacity?: boolean
+    condition?: boolean
+    totalFlightHours?: boolean
+    maintenanceHistory?: boolean
+    lastInspection?: boolean
+    salePrice?: boolean
+    discounts?: boolean
+    avionics?: boolean
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: boolean
+    exteriorImageUrls?: boolean
+    interiorImageUrls?: boolean
+    additionalEquipment?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    views?: boolean
+    status?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }, ExtArgs["result"]["helicopterForSaleListing"]>
+
+  export type HelicopterForSaleListingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    helicopterName?: boolean
+    helicopterType?: boolean
+    manufacturer?: boolean
+    yearOfManufacture?: boolean
+    registrationNumber?: boolean
+    serialNumber?: boolean
+    seatingCapacity?: boolean
+    maximumRange?: boolean
+    cruisingSpeed?: boolean
+    baggageCapacity?: boolean
+    condition?: boolean
+    totalFlightHours?: boolean
+    maintenanceHistory?: boolean
+    lastInspection?: boolean
+    salePrice?: boolean
+    discounts?: boolean
+    avionics?: boolean
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: boolean
+    exteriorImageUrls?: boolean
+    interiorImageUrls?: boolean
+    additionalEquipment?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    views?: boolean
+    status?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }, ExtArgs["result"]["helicopterForSaleListing"]>
+
+  export type HelicopterForSaleListingSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    helicopterName?: boolean
+    helicopterType?: boolean
+    manufacturer?: boolean
+    yearOfManufacture?: boolean
+    registrationNumber?: boolean
+    serialNumber?: boolean
+    seatingCapacity?: boolean
+    maximumRange?: boolean
+    cruisingSpeed?: boolean
+    baggageCapacity?: boolean
+    condition?: boolean
+    totalFlightHours?: boolean
+    maintenanceHistory?: boolean
+    lastInspection?: boolean
+    salePrice?: boolean
+    discounts?: boolean
+    avionics?: boolean
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: boolean
+    exteriorImageUrls?: boolean
+    interiorImageUrls?: boolean
+    additionalEquipment?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    views?: boolean
+    status?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }
+
+  export type HelicopterForSaleListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "helicopterName" | "helicopterType" | "manufacturer" | "yearOfManufacture" | "registrationNumber" | "serialNumber" | "seatingCapacity" | "maximumRange" | "cruisingSpeed" | "baggageCapacity" | "condition" | "totalFlightHours" | "maintenanceHistory" | "lastInspection" | "salePrice" | "discounts" | "avionics" | "emergencyEquipment" | "cargoHook" | "videoLink" | "exteriorImageUrls" | "interiorImageUrls" | "additionalEquipment" | "transactionSignature" | "transactionLink" | "vendorId" | "views" | "status" | "sponsored" | "sponsoredType" | "endDate", ExtArgs["result"]["helicopterForSaleListing"]>
+  export type HelicopterForSaleListingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    cabinFeatures?: boolean | HelicopterForSaleListing$cabinFeaturesArgs<ExtArgs>
+    _count?: boolean | HelicopterForSaleListingCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type HelicopterForSaleListingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type HelicopterForSaleListingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $HelicopterForSaleListingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HelicopterForSaleListing"
+    objects: {
+      cabinFeatures: Prisma.$CabinFeaturePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      createdAt: Date
+      updatedAt: Date
+      helicopterName: string
+      helicopterType: string
+      manufacturer: string
+      yearOfManufacture: number
+      registrationNumber: string
+      serialNumber: string
+      seatingCapacity: number
+      maximumRange: number
+      cruisingSpeed: number
+      baggageCapacity: string
+      condition: string
+      totalFlightHours: number
+      maintenanceHistory: string
+      lastInspection: Date
+      salePrice: number
+      discounts: string | null
+      avionics: string | null
+      emergencyEquipment: boolean
+      cargoHook: boolean
+      videoLink: string | null
+      exteriorImageUrls: string[]
+      interiorImageUrls: string[]
+      additionalEquipment: string | null
+      transactionSignature: string
+      transactionLink: string | null
+      vendorId: string
+      views: number
+      status: string
+      sponsored: boolean
+      sponsoredType: string
+      endDate: Date
+    }, ExtArgs["result"]["helicopterForSaleListing"]>
+    composites: {}
+  }
+
+  type HelicopterForSaleListingGetPayload<S extends boolean | null | undefined | HelicopterForSaleListingDefaultArgs> = $Result.GetResult<Prisma.$HelicopterForSaleListingPayload, S>
+
+  type HelicopterForSaleListingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HelicopterForSaleListingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HelicopterForSaleListingCountAggregateInputType | true
+    }
+
+  export interface HelicopterForSaleListingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HelicopterForSaleListing'], meta: { name: 'HelicopterForSaleListing' } }
+    /**
+     * Find zero or one HelicopterForSaleListing that matches the filter.
+     * @param {HelicopterForSaleListingFindUniqueArgs} args - Arguments to find a HelicopterForSaleListing
+     * @example
+     * // Get one HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HelicopterForSaleListingFindUniqueArgs>(args: SelectSubset<T, HelicopterForSaleListingFindUniqueArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HelicopterForSaleListing that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HelicopterForSaleListingFindUniqueOrThrowArgs} args - Arguments to find a HelicopterForSaleListing
+     * @example
+     * // Get one HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HelicopterForSaleListingFindUniqueOrThrowArgs>(args: SelectSubset<T, HelicopterForSaleListingFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForSaleListing that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingFindFirstArgs} args - Arguments to find a HelicopterForSaleListing
+     * @example
+     * // Get one HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HelicopterForSaleListingFindFirstArgs>(args?: SelectSubset<T, HelicopterForSaleListingFindFirstArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForSaleListing that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingFindFirstOrThrowArgs} args - Arguments to find a HelicopterForSaleListing
+     * @example
+     * // Get one HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HelicopterForSaleListingFindFirstOrThrowArgs>(args?: SelectSubset<T, HelicopterForSaleListingFindFirstOrThrowArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HelicopterForSaleListings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HelicopterForSaleListings
+     * const helicopterForSaleListings = await prisma.helicopterForSaleListing.findMany()
+     * 
+     * // Get first 10 HelicopterForSaleListings
+     * const helicopterForSaleListings = await prisma.helicopterForSaleListing.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const helicopterForSaleListingWithIdOnly = await prisma.helicopterForSaleListing.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HelicopterForSaleListingFindManyArgs>(args?: SelectSubset<T, HelicopterForSaleListingFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HelicopterForSaleListing.
+     * @param {HelicopterForSaleListingCreateArgs} args - Arguments to create a HelicopterForSaleListing.
+     * @example
+     * // Create one HelicopterForSaleListing
+     * const HelicopterForSaleListing = await prisma.helicopterForSaleListing.create({
+     *   data: {
+     *     // ... data to create a HelicopterForSaleListing
+     *   }
+     * })
+     * 
+     */
+    create<T extends HelicopterForSaleListingCreateArgs>(args: SelectSubset<T, HelicopterForSaleListingCreateArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HelicopterForSaleListings.
+     * @param {HelicopterForSaleListingCreateManyArgs} args - Arguments to create many HelicopterForSaleListings.
+     * @example
+     * // Create many HelicopterForSaleListings
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HelicopterForSaleListingCreateManyArgs>(args?: SelectSubset<T, HelicopterForSaleListingCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HelicopterForSaleListings and returns the data saved in the database.
+     * @param {HelicopterForSaleListingCreateManyAndReturnArgs} args - Arguments to create many HelicopterForSaleListings.
+     * @example
+     * // Create many HelicopterForSaleListings
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HelicopterForSaleListings and only return the `id`
+     * const helicopterForSaleListingWithIdOnly = await prisma.helicopterForSaleListing.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HelicopterForSaleListingCreateManyAndReturnArgs>(args?: SelectSubset<T, HelicopterForSaleListingCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HelicopterForSaleListing.
+     * @param {HelicopterForSaleListingDeleteArgs} args - Arguments to delete one HelicopterForSaleListing.
+     * @example
+     * // Delete one HelicopterForSaleListing
+     * const HelicopterForSaleListing = await prisma.helicopterForSaleListing.delete({
+     *   where: {
+     *     // ... filter to delete one HelicopterForSaleListing
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HelicopterForSaleListingDeleteArgs>(args: SelectSubset<T, HelicopterForSaleListingDeleteArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HelicopterForSaleListing.
+     * @param {HelicopterForSaleListingUpdateArgs} args - Arguments to update one HelicopterForSaleListing.
+     * @example
+     * // Update one HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HelicopterForSaleListingUpdateArgs>(args: SelectSubset<T, HelicopterForSaleListingUpdateArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HelicopterForSaleListings.
+     * @param {HelicopterForSaleListingDeleteManyArgs} args - Arguments to filter HelicopterForSaleListings to delete.
+     * @example
+     * // Delete a few HelicopterForSaleListings
+     * const { count } = await prisma.helicopterForSaleListing.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HelicopterForSaleListingDeleteManyArgs>(args?: SelectSubset<T, HelicopterForSaleListingDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForSaleListings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HelicopterForSaleListings
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HelicopterForSaleListingUpdateManyArgs>(args: SelectSubset<T, HelicopterForSaleListingUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForSaleListings and returns the data updated in the database.
+     * @param {HelicopterForSaleListingUpdateManyAndReturnArgs} args - Arguments to update many HelicopterForSaleListings.
+     * @example
+     * // Update many HelicopterForSaleListings
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HelicopterForSaleListings and only return the `id`
+     * const helicopterForSaleListingWithIdOnly = await prisma.helicopterForSaleListing.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HelicopterForSaleListingUpdateManyAndReturnArgs>(args: SelectSubset<T, HelicopterForSaleListingUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HelicopterForSaleListing.
+     * @param {HelicopterForSaleListingUpsertArgs} args - Arguments to update or create a HelicopterForSaleListing.
+     * @example
+     * // Update or create a HelicopterForSaleListing
+     * const helicopterForSaleListing = await prisma.helicopterForSaleListing.upsert({
+     *   create: {
+     *     // ... data to create a HelicopterForSaleListing
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HelicopterForSaleListing we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HelicopterForSaleListingUpsertArgs>(args: SelectSubset<T, HelicopterForSaleListingUpsertArgs<ExtArgs>>): Prisma__HelicopterForSaleListingClient<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HelicopterForSaleListings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingCountArgs} args - Arguments to filter HelicopterForSaleListings to count.
+     * @example
+     * // Count the number of HelicopterForSaleListings
+     * const count = await prisma.helicopterForSaleListing.count({
+     *   where: {
+     *     // ... the filter for the HelicopterForSaleListings we want to count
+     *   }
+     * })
+    **/
+    count<T extends HelicopterForSaleListingCountArgs>(
+      args?: Subset<T, HelicopterForSaleListingCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HelicopterForSaleListingCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HelicopterForSaleListing.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HelicopterForSaleListingAggregateArgs>(args: Subset<T, HelicopterForSaleListingAggregateArgs>): Prisma.PrismaPromise<GetHelicopterForSaleListingAggregateType<T>>
+
+    /**
+     * Group by HelicopterForSaleListing.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForSaleListingGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HelicopterForSaleListingGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HelicopterForSaleListingGroupByArgs['orderBy'] }
+        : { orderBy?: HelicopterForSaleListingGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HelicopterForSaleListingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHelicopterForSaleListingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HelicopterForSaleListing model
+   */
+  readonly fields: HelicopterForSaleListingFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HelicopterForSaleListing.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HelicopterForSaleListingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    cabinFeatures<T extends HelicopterForSaleListing$cabinFeaturesArgs<ExtArgs> = {}>(args?: Subset<T, HelicopterForSaleListing$cabinFeaturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HelicopterForSaleListing model
+   */
+  interface HelicopterForSaleListingFieldRefs {
+    readonly id: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly createdAt: FieldRef<"HelicopterForSaleListing", 'DateTime'>
+    readonly updatedAt: FieldRef<"HelicopterForSaleListing", 'DateTime'>
+    readonly helicopterName: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly helicopterType: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly manufacturer: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly yearOfManufacture: FieldRef<"HelicopterForSaleListing", 'Int'>
+    readonly registrationNumber: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly serialNumber: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly seatingCapacity: FieldRef<"HelicopterForSaleListing", 'Int'>
+    readonly maximumRange: FieldRef<"HelicopterForSaleListing", 'Float'>
+    readonly cruisingSpeed: FieldRef<"HelicopterForSaleListing", 'Float'>
+    readonly baggageCapacity: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly condition: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly totalFlightHours: FieldRef<"HelicopterForSaleListing", 'Float'>
+    readonly maintenanceHistory: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly lastInspection: FieldRef<"HelicopterForSaleListing", 'DateTime'>
+    readonly salePrice: FieldRef<"HelicopterForSaleListing", 'Float'>
+    readonly discounts: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly avionics: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly emergencyEquipment: FieldRef<"HelicopterForSaleListing", 'Boolean'>
+    readonly cargoHook: FieldRef<"HelicopterForSaleListing", 'Boolean'>
+    readonly videoLink: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly exteriorImageUrls: FieldRef<"HelicopterForSaleListing", 'String[]'>
+    readonly interiorImageUrls: FieldRef<"HelicopterForSaleListing", 'String[]'>
+    readonly additionalEquipment: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly transactionSignature: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly transactionLink: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly vendorId: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly views: FieldRef<"HelicopterForSaleListing", 'Int'>
+    readonly status: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly sponsored: FieldRef<"HelicopterForSaleListing", 'Boolean'>
+    readonly sponsoredType: FieldRef<"HelicopterForSaleListing", 'String'>
+    readonly endDate: FieldRef<"HelicopterForSaleListing", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HelicopterForSaleListing findUnique
+   */
+  export type HelicopterForSaleListingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForSaleListing to fetch.
+     */
+    where: HelicopterForSaleListingWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForSaleListing findUniqueOrThrow
+   */
+  export type HelicopterForSaleListingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForSaleListing to fetch.
+     */
+    where: HelicopterForSaleListingWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForSaleListing findFirst
+   */
+  export type HelicopterForSaleListingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForSaleListing to fetch.
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForSaleListings to fetch.
+     */
+    orderBy?: HelicopterForSaleListingOrderByWithRelationInput | HelicopterForSaleListingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForSaleListings.
+     */
+    cursor?: HelicopterForSaleListingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForSaleListings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForSaleListings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForSaleListings.
+     */
+    distinct?: HelicopterForSaleListingScalarFieldEnum | HelicopterForSaleListingScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForSaleListing findFirstOrThrow
+   */
+  export type HelicopterForSaleListingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForSaleListing to fetch.
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForSaleListings to fetch.
+     */
+    orderBy?: HelicopterForSaleListingOrderByWithRelationInput | HelicopterForSaleListingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForSaleListings.
+     */
+    cursor?: HelicopterForSaleListingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForSaleListings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForSaleListings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForSaleListings.
+     */
+    distinct?: HelicopterForSaleListingScalarFieldEnum | HelicopterForSaleListingScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForSaleListing findMany
+   */
+  export type HelicopterForSaleListingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForSaleListings to fetch.
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForSaleListings to fetch.
+     */
+    orderBy?: HelicopterForSaleListingOrderByWithRelationInput | HelicopterForSaleListingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HelicopterForSaleListings.
+     */
+    cursor?: HelicopterForSaleListingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForSaleListings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForSaleListings.
+     */
+    skip?: number
+    distinct?: HelicopterForSaleListingScalarFieldEnum | HelicopterForSaleListingScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForSaleListing create
+   */
+  export type HelicopterForSaleListingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * The data needed to create a HelicopterForSaleListing.
+     */
+    data: XOR<HelicopterForSaleListingCreateInput, HelicopterForSaleListingUncheckedCreateInput>
+  }
+
+  /**
+   * HelicopterForSaleListing createMany
+   */
+  export type HelicopterForSaleListingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HelicopterForSaleListings.
+     */
+    data: HelicopterForSaleListingCreateManyInput | HelicopterForSaleListingCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForSaleListing createManyAndReturn
+   */
+  export type HelicopterForSaleListingCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * The data used to create many HelicopterForSaleListings.
+     */
+    data: HelicopterForSaleListingCreateManyInput | HelicopterForSaleListingCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForSaleListing update
+   */
+  export type HelicopterForSaleListingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * The data needed to update a HelicopterForSaleListing.
+     */
+    data: XOR<HelicopterForSaleListingUpdateInput, HelicopterForSaleListingUncheckedUpdateInput>
+    /**
+     * Choose, which HelicopterForSaleListing to update.
+     */
+    where: HelicopterForSaleListingWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForSaleListing updateMany
+   */
+  export type HelicopterForSaleListingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HelicopterForSaleListings.
+     */
+    data: XOR<HelicopterForSaleListingUpdateManyMutationInput, HelicopterForSaleListingUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForSaleListings to update
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * Limit how many HelicopterForSaleListings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForSaleListing updateManyAndReturn
+   */
+  export type HelicopterForSaleListingUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * The data used to update HelicopterForSaleListings.
+     */
+    data: XOR<HelicopterForSaleListingUpdateManyMutationInput, HelicopterForSaleListingUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForSaleListings to update
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * Limit how many HelicopterForSaleListings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForSaleListing upsert
+   */
+  export type HelicopterForSaleListingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * The filter to search for the HelicopterForSaleListing to update in case it exists.
+     */
+    where: HelicopterForSaleListingWhereUniqueInput
+    /**
+     * In case the HelicopterForSaleListing found by the `where` argument doesn't exist, create a new HelicopterForSaleListing with this data.
+     */
+    create: XOR<HelicopterForSaleListingCreateInput, HelicopterForSaleListingUncheckedCreateInput>
+    /**
+     * In case the HelicopterForSaleListing was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HelicopterForSaleListingUpdateInput, HelicopterForSaleListingUncheckedUpdateInput>
+  }
+
+  /**
+   * HelicopterForSaleListing delete
+   */
+  export type HelicopterForSaleListingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    /**
+     * Filter which HelicopterForSaleListing to delete.
+     */
+    where: HelicopterForSaleListingWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForSaleListing deleteMany
+   */
+  export type HelicopterForSaleListingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForSaleListings to delete
+     */
+    where?: HelicopterForSaleListingWhereInput
+    /**
+     * Limit how many HelicopterForSaleListings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForSaleListing.cabinFeatures
+   */
+  export type HelicopterForSaleListing$cabinFeaturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    where?: CabinFeatureWhereInput
+    orderBy?: CabinFeatureOrderByWithRelationInput | CabinFeatureOrderByWithRelationInput[]
+    cursor?: CabinFeatureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CabinFeatureScalarFieldEnum | CabinFeatureScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForSaleListing without action
+   */
+  export type HelicopterForSaleListingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model CabinFeature
+   */
+
+  export type AggregateCabinFeature = {
+    _count: CabinFeatureCountAggregateOutputType | null
+    _min: CabinFeatureMinAggregateOutputType | null
+    _max: CabinFeatureMaxAggregateOutputType | null
+  }
+
+  export type CabinFeatureMinAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    name: string | null
+  }
+
+  export type CabinFeatureMaxAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    name: string | null
+  }
+
+  export type CabinFeatureCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    name: number
+    _all: number
+  }
+
+
+  export type CabinFeatureMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
+  }
+
+  export type CabinFeatureMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
+  }
+
+  export type CabinFeatureCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
+    _all?: true
+  }
+
+  export type CabinFeatureAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CabinFeature to aggregate.
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CabinFeatures to fetch.
+     */
+    orderBy?: CabinFeatureOrderByWithRelationInput | CabinFeatureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CabinFeatureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CabinFeatures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CabinFeatures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CabinFeatures
+    **/
+    _count?: true | CabinFeatureCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CabinFeatureMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CabinFeatureMaxAggregateInputType
+  }
+
+  export type GetCabinFeatureAggregateType<T extends CabinFeatureAggregateArgs> = {
+        [P in keyof T & keyof AggregateCabinFeature]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCabinFeature[P]>
+      : GetScalarType<T[P], AggregateCabinFeature[P]>
+  }
+
+
+
+
+  export type CabinFeatureGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CabinFeatureWhereInput
+    orderBy?: CabinFeatureOrderByWithAggregationInput | CabinFeatureOrderByWithAggregationInput[]
+    by: CabinFeatureScalarFieldEnum[] | CabinFeatureScalarFieldEnum
+    having?: CabinFeatureScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CabinFeatureCountAggregateInputType | true
+    _min?: CabinFeatureMinAggregateInputType
+    _max?: CabinFeatureMaxAggregateInputType
+  }
+
+  export type CabinFeatureGroupByOutputType = {
+    id: string
+    createdAt: Date
+    updatedAt: Date
+    name: string
+    _count: CabinFeatureCountAggregateOutputType | null
+    _min: CabinFeatureMinAggregateOutputType | null
+    _max: CabinFeatureMaxAggregateOutputType | null
+  }
+
+  type GetCabinFeatureGroupByPayload<T extends CabinFeatureGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CabinFeatureGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CabinFeatureGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CabinFeatureGroupByOutputType[P]>
+            : GetScalarType<T[P], CabinFeatureGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CabinFeatureSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
+    helicopters?: boolean | CabinFeature$helicoptersArgs<ExtArgs>
+    _count?: boolean | CabinFeatureCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["cabinFeature"]>
+
+  export type CabinFeatureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["cabinFeature"]>
+
+  export type CabinFeatureSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["cabinFeature"]>
+
+  export type CabinFeatureSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
+  }
+
+  export type CabinFeatureOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "name", ExtArgs["result"]["cabinFeature"]>
+  export type CabinFeatureInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    helicopters?: boolean | CabinFeature$helicoptersArgs<ExtArgs>
+    _count?: boolean | CabinFeatureCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CabinFeatureIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CabinFeatureIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $CabinFeaturePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CabinFeature"
+    objects: {
+      helicopters: Prisma.$HelicopterForSaleListingPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      createdAt: Date
+      updatedAt: Date
+      name: string
+    }, ExtArgs["result"]["cabinFeature"]>
+    composites: {}
+  }
+
+  type CabinFeatureGetPayload<S extends boolean | null | undefined | CabinFeatureDefaultArgs> = $Result.GetResult<Prisma.$CabinFeaturePayload, S>
+
+  type CabinFeatureCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CabinFeatureFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CabinFeatureCountAggregateInputType | true
+    }
+
+  export interface CabinFeatureDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CabinFeature'], meta: { name: 'CabinFeature' } }
+    /**
+     * Find zero or one CabinFeature that matches the filter.
+     * @param {CabinFeatureFindUniqueArgs} args - Arguments to find a CabinFeature
+     * @example
+     * // Get one CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CabinFeatureFindUniqueArgs>(args: SelectSubset<T, CabinFeatureFindUniqueArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CabinFeature that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CabinFeatureFindUniqueOrThrowArgs} args - Arguments to find a CabinFeature
+     * @example
+     * // Get one CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CabinFeatureFindUniqueOrThrowArgs>(args: SelectSubset<T, CabinFeatureFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CabinFeature that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureFindFirstArgs} args - Arguments to find a CabinFeature
+     * @example
+     * // Get one CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CabinFeatureFindFirstArgs>(args?: SelectSubset<T, CabinFeatureFindFirstArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CabinFeature that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureFindFirstOrThrowArgs} args - Arguments to find a CabinFeature
+     * @example
+     * // Get one CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CabinFeatureFindFirstOrThrowArgs>(args?: SelectSubset<T, CabinFeatureFindFirstOrThrowArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CabinFeatures that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CabinFeatures
+     * const cabinFeatures = await prisma.cabinFeature.findMany()
+     * 
+     * // Get first 10 CabinFeatures
+     * const cabinFeatures = await prisma.cabinFeature.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const cabinFeatureWithIdOnly = await prisma.cabinFeature.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CabinFeatureFindManyArgs>(args?: SelectSubset<T, CabinFeatureFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CabinFeature.
+     * @param {CabinFeatureCreateArgs} args - Arguments to create a CabinFeature.
+     * @example
+     * // Create one CabinFeature
+     * const CabinFeature = await prisma.cabinFeature.create({
+     *   data: {
+     *     // ... data to create a CabinFeature
+     *   }
+     * })
+     * 
+     */
+    create<T extends CabinFeatureCreateArgs>(args: SelectSubset<T, CabinFeatureCreateArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CabinFeatures.
+     * @param {CabinFeatureCreateManyArgs} args - Arguments to create many CabinFeatures.
+     * @example
+     * // Create many CabinFeatures
+     * const cabinFeature = await prisma.cabinFeature.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CabinFeatureCreateManyArgs>(args?: SelectSubset<T, CabinFeatureCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CabinFeatures and returns the data saved in the database.
+     * @param {CabinFeatureCreateManyAndReturnArgs} args - Arguments to create many CabinFeatures.
+     * @example
+     * // Create many CabinFeatures
+     * const cabinFeature = await prisma.cabinFeature.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CabinFeatures and only return the `id`
+     * const cabinFeatureWithIdOnly = await prisma.cabinFeature.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CabinFeatureCreateManyAndReturnArgs>(args?: SelectSubset<T, CabinFeatureCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CabinFeature.
+     * @param {CabinFeatureDeleteArgs} args - Arguments to delete one CabinFeature.
+     * @example
+     * // Delete one CabinFeature
+     * const CabinFeature = await prisma.cabinFeature.delete({
+     *   where: {
+     *     // ... filter to delete one CabinFeature
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CabinFeatureDeleteArgs>(args: SelectSubset<T, CabinFeatureDeleteArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CabinFeature.
+     * @param {CabinFeatureUpdateArgs} args - Arguments to update one CabinFeature.
+     * @example
+     * // Update one CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CabinFeatureUpdateArgs>(args: SelectSubset<T, CabinFeatureUpdateArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CabinFeatures.
+     * @param {CabinFeatureDeleteManyArgs} args - Arguments to filter CabinFeatures to delete.
+     * @example
+     * // Delete a few CabinFeatures
+     * const { count } = await prisma.cabinFeature.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CabinFeatureDeleteManyArgs>(args?: SelectSubset<T, CabinFeatureDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CabinFeatures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CabinFeatures
+     * const cabinFeature = await prisma.cabinFeature.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CabinFeatureUpdateManyArgs>(args: SelectSubset<T, CabinFeatureUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CabinFeatures and returns the data updated in the database.
+     * @param {CabinFeatureUpdateManyAndReturnArgs} args - Arguments to update many CabinFeatures.
+     * @example
+     * // Update many CabinFeatures
+     * const cabinFeature = await prisma.cabinFeature.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CabinFeatures and only return the `id`
+     * const cabinFeatureWithIdOnly = await prisma.cabinFeature.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CabinFeatureUpdateManyAndReturnArgs>(args: SelectSubset<T, CabinFeatureUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CabinFeature.
+     * @param {CabinFeatureUpsertArgs} args - Arguments to update or create a CabinFeature.
+     * @example
+     * // Update or create a CabinFeature
+     * const cabinFeature = await prisma.cabinFeature.upsert({
+     *   create: {
+     *     // ... data to create a CabinFeature
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CabinFeature we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CabinFeatureUpsertArgs>(args: SelectSubset<T, CabinFeatureUpsertArgs<ExtArgs>>): Prisma__CabinFeatureClient<$Result.GetResult<Prisma.$CabinFeaturePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CabinFeatures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureCountArgs} args - Arguments to filter CabinFeatures to count.
+     * @example
+     * // Count the number of CabinFeatures
+     * const count = await prisma.cabinFeature.count({
+     *   where: {
+     *     // ... the filter for the CabinFeatures we want to count
+     *   }
+     * })
+    **/
+    count<T extends CabinFeatureCountArgs>(
+      args?: Subset<T, CabinFeatureCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CabinFeatureCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CabinFeature.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CabinFeatureAggregateArgs>(args: Subset<T, CabinFeatureAggregateArgs>): Prisma.PrismaPromise<GetCabinFeatureAggregateType<T>>
+
+    /**
+     * Group by CabinFeature.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CabinFeatureGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CabinFeatureGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CabinFeatureGroupByArgs['orderBy'] }
+        : { orderBy?: CabinFeatureGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CabinFeatureGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCabinFeatureGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CabinFeature model
+   */
+  readonly fields: CabinFeatureFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CabinFeature.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CabinFeatureClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    helicopters<T extends CabinFeature$helicoptersArgs<ExtArgs> = {}>(args?: Subset<T, CabinFeature$helicoptersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForSaleListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CabinFeature model
+   */
+  interface CabinFeatureFieldRefs {
+    readonly id: FieldRef<"CabinFeature", 'String'>
+    readonly createdAt: FieldRef<"CabinFeature", 'DateTime'>
+    readonly updatedAt: FieldRef<"CabinFeature", 'DateTime'>
+    readonly name: FieldRef<"CabinFeature", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CabinFeature findUnique
+   */
+  export type CabinFeatureFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter, which CabinFeature to fetch.
+     */
+    where: CabinFeatureWhereUniqueInput
+  }
+
+  /**
+   * CabinFeature findUniqueOrThrow
+   */
+  export type CabinFeatureFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter, which CabinFeature to fetch.
+     */
+    where: CabinFeatureWhereUniqueInput
+  }
+
+  /**
+   * CabinFeature findFirst
+   */
+  export type CabinFeatureFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter, which CabinFeature to fetch.
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CabinFeatures to fetch.
+     */
+    orderBy?: CabinFeatureOrderByWithRelationInput | CabinFeatureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CabinFeatures.
+     */
+    cursor?: CabinFeatureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CabinFeatures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CabinFeatures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CabinFeatures.
+     */
+    distinct?: CabinFeatureScalarFieldEnum | CabinFeatureScalarFieldEnum[]
+  }
+
+  /**
+   * CabinFeature findFirstOrThrow
+   */
+  export type CabinFeatureFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter, which CabinFeature to fetch.
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CabinFeatures to fetch.
+     */
+    orderBy?: CabinFeatureOrderByWithRelationInput | CabinFeatureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CabinFeatures.
+     */
+    cursor?: CabinFeatureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CabinFeatures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CabinFeatures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CabinFeatures.
+     */
+    distinct?: CabinFeatureScalarFieldEnum | CabinFeatureScalarFieldEnum[]
+  }
+
+  /**
+   * CabinFeature findMany
+   */
+  export type CabinFeatureFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter, which CabinFeatures to fetch.
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CabinFeatures to fetch.
+     */
+    orderBy?: CabinFeatureOrderByWithRelationInput | CabinFeatureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CabinFeatures.
+     */
+    cursor?: CabinFeatureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CabinFeatures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CabinFeatures.
+     */
+    skip?: number
+    distinct?: CabinFeatureScalarFieldEnum | CabinFeatureScalarFieldEnum[]
+  }
+
+  /**
+   * CabinFeature create
+   */
+  export type CabinFeatureCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * The data needed to create a CabinFeature.
+     */
+    data: XOR<CabinFeatureCreateInput, CabinFeatureUncheckedCreateInput>
+  }
+
+  /**
+   * CabinFeature createMany
+   */
+  export type CabinFeatureCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CabinFeatures.
+     */
+    data: CabinFeatureCreateManyInput | CabinFeatureCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CabinFeature createManyAndReturn
+   */
+  export type CabinFeatureCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * The data used to create many CabinFeatures.
+     */
+    data: CabinFeatureCreateManyInput | CabinFeatureCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CabinFeature update
+   */
+  export type CabinFeatureUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * The data needed to update a CabinFeature.
+     */
+    data: XOR<CabinFeatureUpdateInput, CabinFeatureUncheckedUpdateInput>
+    /**
+     * Choose, which CabinFeature to update.
+     */
+    where: CabinFeatureWhereUniqueInput
+  }
+
+  /**
+   * CabinFeature updateMany
+   */
+  export type CabinFeatureUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CabinFeatures.
+     */
+    data: XOR<CabinFeatureUpdateManyMutationInput, CabinFeatureUncheckedUpdateManyInput>
+    /**
+     * Filter which CabinFeatures to update
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * Limit how many CabinFeatures to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CabinFeature updateManyAndReturn
+   */
+  export type CabinFeatureUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * The data used to update CabinFeatures.
+     */
+    data: XOR<CabinFeatureUpdateManyMutationInput, CabinFeatureUncheckedUpdateManyInput>
+    /**
+     * Filter which CabinFeatures to update
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * Limit how many CabinFeatures to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CabinFeature upsert
+   */
+  export type CabinFeatureUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * The filter to search for the CabinFeature to update in case it exists.
+     */
+    where: CabinFeatureWhereUniqueInput
+    /**
+     * In case the CabinFeature found by the `where` argument doesn't exist, create a new CabinFeature with this data.
+     */
+    create: XOR<CabinFeatureCreateInput, CabinFeatureUncheckedCreateInput>
+    /**
+     * In case the CabinFeature was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CabinFeatureUpdateInput, CabinFeatureUncheckedUpdateInput>
+  }
+
+  /**
+   * CabinFeature delete
+   */
+  export type CabinFeatureDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+    /**
+     * Filter which CabinFeature to delete.
+     */
+    where: CabinFeatureWhereUniqueInput
+  }
+
+  /**
+   * CabinFeature deleteMany
+   */
+  export type CabinFeatureDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CabinFeatures to delete
+     */
+    where?: CabinFeatureWhereInput
+    /**
+     * Limit how many CabinFeatures to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CabinFeature.helicopters
+   */
+  export type CabinFeature$helicoptersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForSaleListing
+     */
+    select?: HelicopterForSaleListingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForSaleListing
+     */
+    omit?: HelicopterForSaleListingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HelicopterForSaleListingInclude<ExtArgs> | null
+    where?: HelicopterForSaleListingWhereInput
+    orderBy?: HelicopterForSaleListingOrderByWithRelationInput | HelicopterForSaleListingOrderByWithRelationInput[]
+    cursor?: HelicopterForSaleListingWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HelicopterForSaleListingScalarFieldEnum | HelicopterForSaleListingScalarFieldEnum[]
+  }
+
+  /**
+   * CabinFeature without action
+   */
+  export type CabinFeatureDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CabinFeature
+     */
+    select?: CabinFeatureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CabinFeature
+     */
+    omit?: CabinFeatureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CabinFeatureInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HelicopterMessage
+   */
+
+  export type AggregateHelicopterMessage = {
+    _count: HelicopterMessageCountAggregateOutputType | null
+    _min: HelicopterMessageMinAggregateOutputType | null
+    _max: HelicopterMessageMaxAggregateOutputType | null
+  }
+
+  export type HelicopterMessageMinAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    listingId: string | null
+    vendorId: string | null
+    message: string | null
+    read: boolean | null
+  }
+
+  export type HelicopterMessageMaxAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    listingId: string | null
+    vendorId: string | null
+    message: string | null
+    read: boolean | null
+  }
+
+  export type HelicopterMessageCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    customerName: number
+    customerEmail: number
+    customerCountry: number
+    listingId: number
+    vendorId: number
+    message: number
+    read: number
+    _all: number
+  }
+
+
+  export type HelicopterMessageMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    listingId?: true
+    vendorId?: true
+    message?: true
+    read?: true
+  }
+
+  export type HelicopterMessageMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    listingId?: true
+    vendorId?: true
+    message?: true
+    read?: true
+  }
+
+  export type HelicopterMessageCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    listingId?: true
+    vendorId?: true
+    message?: true
+    read?: true
+    _all?: true
+  }
+
+  export type HelicopterMessageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterMessage to aggregate.
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterMessages to fetch.
+     */
+    orderBy?: HelicopterMessageOrderByWithRelationInput | HelicopterMessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HelicopterMessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HelicopterMessages
+    **/
+    _count?: true | HelicopterMessageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HelicopterMessageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HelicopterMessageMaxAggregateInputType
+  }
+
+  export type GetHelicopterMessageAggregateType<T extends HelicopterMessageAggregateArgs> = {
+        [P in keyof T & keyof AggregateHelicopterMessage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHelicopterMessage[P]>
+      : GetScalarType<T[P], AggregateHelicopterMessage[P]>
+  }
+
+
+
+
+  export type HelicopterMessageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HelicopterMessageWhereInput
+    orderBy?: HelicopterMessageOrderByWithAggregationInput | HelicopterMessageOrderByWithAggregationInput[]
+    by: HelicopterMessageScalarFieldEnum[] | HelicopterMessageScalarFieldEnum
+    having?: HelicopterMessageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HelicopterMessageCountAggregateInputType | true
+    _min?: HelicopterMessageMinAggregateInputType
+    _max?: HelicopterMessageMaxAggregateInputType
+  }
+
+  export type HelicopterMessageGroupByOutputType = {
+    id: string
+    createdAt: Date
+    customerName: string
+    customerEmail: string
+    customerCountry: string | null
+    listingId: string
+    vendorId: string
+    message: string
+    read: boolean
+    _count: HelicopterMessageCountAggregateOutputType | null
+    _min: HelicopterMessageMinAggregateOutputType | null
+    _max: HelicopterMessageMaxAggregateOutputType | null
+  }
+
+  type GetHelicopterMessageGroupByPayload<T extends HelicopterMessageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HelicopterMessageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HelicopterMessageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HelicopterMessageGroupByOutputType[P]>
+            : GetScalarType<T[P], HelicopterMessageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HelicopterMessageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    message?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterMessage"]>
+
+  export type HelicopterMessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    message?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterMessage"]>
+
+  export type HelicopterMessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    message?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterMessage"]>
+
+  export type HelicopterMessageSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    message?: boolean
+    read?: boolean
+  }
+
+  export type HelicopterMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "customerName" | "customerEmail" | "customerCountry" | "listingId" | "vendorId" | "message" | "read", ExtArgs["result"]["helicopterMessage"]>
+
+  export type $HelicopterMessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HelicopterMessage"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      createdAt: Date
+      customerName: string
+      customerEmail: string
+      customerCountry: string | null
+      listingId: string
+      vendorId: string
+      message: string
+      read: boolean
+    }, ExtArgs["result"]["helicopterMessage"]>
+    composites: {}
+  }
+
+  type HelicopterMessageGetPayload<S extends boolean | null | undefined | HelicopterMessageDefaultArgs> = $Result.GetResult<Prisma.$HelicopterMessagePayload, S>
+
+  type HelicopterMessageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HelicopterMessageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HelicopterMessageCountAggregateInputType | true
+    }
+
+  export interface HelicopterMessageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HelicopterMessage'], meta: { name: 'HelicopterMessage' } }
+    /**
+     * Find zero or one HelicopterMessage that matches the filter.
+     * @param {HelicopterMessageFindUniqueArgs} args - Arguments to find a HelicopterMessage
+     * @example
+     * // Get one HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HelicopterMessageFindUniqueArgs>(args: SelectSubset<T, HelicopterMessageFindUniqueArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HelicopterMessage that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HelicopterMessageFindUniqueOrThrowArgs} args - Arguments to find a HelicopterMessage
+     * @example
+     * // Get one HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HelicopterMessageFindUniqueOrThrowArgs>(args: SelectSubset<T, HelicopterMessageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterMessage that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageFindFirstArgs} args - Arguments to find a HelicopterMessage
+     * @example
+     * // Get one HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HelicopterMessageFindFirstArgs>(args?: SelectSubset<T, HelicopterMessageFindFirstArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterMessage that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageFindFirstOrThrowArgs} args - Arguments to find a HelicopterMessage
+     * @example
+     * // Get one HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HelicopterMessageFindFirstOrThrowArgs>(args?: SelectSubset<T, HelicopterMessageFindFirstOrThrowArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HelicopterMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HelicopterMessages
+     * const helicopterMessages = await prisma.helicopterMessage.findMany()
+     * 
+     * // Get first 10 HelicopterMessages
+     * const helicopterMessages = await prisma.helicopterMessage.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const helicopterMessageWithIdOnly = await prisma.helicopterMessage.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HelicopterMessageFindManyArgs>(args?: SelectSubset<T, HelicopterMessageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HelicopterMessage.
+     * @param {HelicopterMessageCreateArgs} args - Arguments to create a HelicopterMessage.
+     * @example
+     * // Create one HelicopterMessage
+     * const HelicopterMessage = await prisma.helicopterMessage.create({
+     *   data: {
+     *     // ... data to create a HelicopterMessage
+     *   }
+     * })
+     * 
+     */
+    create<T extends HelicopterMessageCreateArgs>(args: SelectSubset<T, HelicopterMessageCreateArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HelicopterMessages.
+     * @param {HelicopterMessageCreateManyArgs} args - Arguments to create many HelicopterMessages.
+     * @example
+     * // Create many HelicopterMessages
+     * const helicopterMessage = await prisma.helicopterMessage.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HelicopterMessageCreateManyArgs>(args?: SelectSubset<T, HelicopterMessageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HelicopterMessages and returns the data saved in the database.
+     * @param {HelicopterMessageCreateManyAndReturnArgs} args - Arguments to create many HelicopterMessages.
+     * @example
+     * // Create many HelicopterMessages
+     * const helicopterMessage = await prisma.helicopterMessage.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HelicopterMessages and only return the `id`
+     * const helicopterMessageWithIdOnly = await prisma.helicopterMessage.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HelicopterMessageCreateManyAndReturnArgs>(args?: SelectSubset<T, HelicopterMessageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HelicopterMessage.
+     * @param {HelicopterMessageDeleteArgs} args - Arguments to delete one HelicopterMessage.
+     * @example
+     * // Delete one HelicopterMessage
+     * const HelicopterMessage = await prisma.helicopterMessage.delete({
+     *   where: {
+     *     // ... filter to delete one HelicopterMessage
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HelicopterMessageDeleteArgs>(args: SelectSubset<T, HelicopterMessageDeleteArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HelicopterMessage.
+     * @param {HelicopterMessageUpdateArgs} args - Arguments to update one HelicopterMessage.
+     * @example
+     * // Update one HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HelicopterMessageUpdateArgs>(args: SelectSubset<T, HelicopterMessageUpdateArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HelicopterMessages.
+     * @param {HelicopterMessageDeleteManyArgs} args - Arguments to filter HelicopterMessages to delete.
+     * @example
+     * // Delete a few HelicopterMessages
+     * const { count } = await prisma.helicopterMessage.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HelicopterMessageDeleteManyArgs>(args?: SelectSubset<T, HelicopterMessageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HelicopterMessages
+     * const helicopterMessage = await prisma.helicopterMessage.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HelicopterMessageUpdateManyArgs>(args: SelectSubset<T, HelicopterMessageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterMessages and returns the data updated in the database.
+     * @param {HelicopterMessageUpdateManyAndReturnArgs} args - Arguments to update many HelicopterMessages.
+     * @example
+     * // Update many HelicopterMessages
+     * const helicopterMessage = await prisma.helicopterMessage.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HelicopterMessages and only return the `id`
+     * const helicopterMessageWithIdOnly = await prisma.helicopterMessage.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HelicopterMessageUpdateManyAndReturnArgs>(args: SelectSubset<T, HelicopterMessageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HelicopterMessage.
+     * @param {HelicopterMessageUpsertArgs} args - Arguments to update or create a HelicopterMessage.
+     * @example
+     * // Update or create a HelicopterMessage
+     * const helicopterMessage = await prisma.helicopterMessage.upsert({
+     *   create: {
+     *     // ... data to create a HelicopterMessage
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HelicopterMessage we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HelicopterMessageUpsertArgs>(args: SelectSubset<T, HelicopterMessageUpsertArgs<ExtArgs>>): Prisma__HelicopterMessageClient<$Result.GetResult<Prisma.$HelicopterMessagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HelicopterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageCountArgs} args - Arguments to filter HelicopterMessages to count.
+     * @example
+     * // Count the number of HelicopterMessages
+     * const count = await prisma.helicopterMessage.count({
+     *   where: {
+     *     // ... the filter for the HelicopterMessages we want to count
+     *   }
+     * })
+    **/
+    count<T extends HelicopterMessageCountArgs>(
+      args?: Subset<T, HelicopterMessageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HelicopterMessageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HelicopterMessage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HelicopterMessageAggregateArgs>(args: Subset<T, HelicopterMessageAggregateArgs>): Prisma.PrismaPromise<GetHelicopterMessageAggregateType<T>>
+
+    /**
+     * Group by HelicopterMessage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterMessageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HelicopterMessageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HelicopterMessageGroupByArgs['orderBy'] }
+        : { orderBy?: HelicopterMessageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HelicopterMessageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHelicopterMessageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HelicopterMessage model
+   */
+  readonly fields: HelicopterMessageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HelicopterMessage.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HelicopterMessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HelicopterMessage model
+   */
+  interface HelicopterMessageFieldRefs {
+    readonly id: FieldRef<"HelicopterMessage", 'String'>
+    readonly createdAt: FieldRef<"HelicopterMessage", 'DateTime'>
+    readonly customerName: FieldRef<"HelicopterMessage", 'String'>
+    readonly customerEmail: FieldRef<"HelicopterMessage", 'String'>
+    readonly customerCountry: FieldRef<"HelicopterMessage", 'String'>
+    readonly listingId: FieldRef<"HelicopterMessage", 'String'>
+    readonly vendorId: FieldRef<"HelicopterMessage", 'String'>
+    readonly message: FieldRef<"HelicopterMessage", 'String'>
+    readonly read: FieldRef<"HelicopterMessage", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HelicopterMessage findUnique
+   */
+  export type HelicopterMessageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterMessage to fetch.
+     */
+    where: HelicopterMessageWhereUniqueInput
+  }
+
+  /**
+   * HelicopterMessage findUniqueOrThrow
+   */
+  export type HelicopterMessageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterMessage to fetch.
+     */
+    where: HelicopterMessageWhereUniqueInput
+  }
+
+  /**
+   * HelicopterMessage findFirst
+   */
+  export type HelicopterMessageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterMessage to fetch.
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterMessages to fetch.
+     */
+    orderBy?: HelicopterMessageOrderByWithRelationInput | HelicopterMessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterMessages.
+     */
+    cursor?: HelicopterMessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterMessages.
+     */
+    distinct?: HelicopterMessageScalarFieldEnum | HelicopterMessageScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterMessage findFirstOrThrow
+   */
+  export type HelicopterMessageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterMessage to fetch.
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterMessages to fetch.
+     */
+    orderBy?: HelicopterMessageOrderByWithRelationInput | HelicopterMessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterMessages.
+     */
+    cursor?: HelicopterMessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterMessages.
+     */
+    distinct?: HelicopterMessageScalarFieldEnum | HelicopterMessageScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterMessage findMany
+   */
+  export type HelicopterMessageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterMessages to fetch.
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterMessages to fetch.
+     */
+    orderBy?: HelicopterMessageOrderByWithRelationInput | HelicopterMessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HelicopterMessages.
+     */
+    cursor?: HelicopterMessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterMessages.
+     */
+    skip?: number
+    distinct?: HelicopterMessageScalarFieldEnum | HelicopterMessageScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterMessage create
+   */
+  export type HelicopterMessageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HelicopterMessage.
+     */
+    data: XOR<HelicopterMessageCreateInput, HelicopterMessageUncheckedCreateInput>
+  }
+
+  /**
+   * HelicopterMessage createMany
+   */
+  export type HelicopterMessageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HelicopterMessages.
+     */
+    data: HelicopterMessageCreateManyInput | HelicopterMessageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterMessage createManyAndReturn
+   */
+  export type HelicopterMessageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * The data used to create many HelicopterMessages.
+     */
+    data: HelicopterMessageCreateManyInput | HelicopterMessageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterMessage update
+   */
+  export type HelicopterMessageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HelicopterMessage.
+     */
+    data: XOR<HelicopterMessageUpdateInput, HelicopterMessageUncheckedUpdateInput>
+    /**
+     * Choose, which HelicopterMessage to update.
+     */
+    where: HelicopterMessageWhereUniqueInput
+  }
+
+  /**
+   * HelicopterMessage updateMany
+   */
+  export type HelicopterMessageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HelicopterMessages.
+     */
+    data: XOR<HelicopterMessageUpdateManyMutationInput, HelicopterMessageUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterMessages to update
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * Limit how many HelicopterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterMessage updateManyAndReturn
+   */
+  export type HelicopterMessageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * The data used to update HelicopterMessages.
+     */
+    data: XOR<HelicopterMessageUpdateManyMutationInput, HelicopterMessageUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterMessages to update
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * Limit how many HelicopterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterMessage upsert
+   */
+  export type HelicopterMessageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HelicopterMessage to update in case it exists.
+     */
+    where: HelicopterMessageWhereUniqueInput
+    /**
+     * In case the HelicopterMessage found by the `where` argument doesn't exist, create a new HelicopterMessage with this data.
+     */
+    create: XOR<HelicopterMessageCreateInput, HelicopterMessageUncheckedCreateInput>
+    /**
+     * In case the HelicopterMessage was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HelicopterMessageUpdateInput, HelicopterMessageUncheckedUpdateInput>
+  }
+
+  /**
+   * HelicopterMessage delete
+   */
+  export type HelicopterMessageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+    /**
+     * Filter which HelicopterMessage to delete.
+     */
+    where: HelicopterMessageWhereUniqueInput
+  }
+
+  /**
+   * HelicopterMessage deleteMany
+   */
+  export type HelicopterMessageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterMessages to delete
+     */
+    where?: HelicopterMessageWhereInput
+    /**
+     * Limit how many HelicopterMessages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterMessage without action
+   */
+  export type HelicopterMessageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterMessage
+     */
+    select?: HelicopterMessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterMessage
+     */
+    omit?: HelicopterMessageOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HelicopterForCharter
+   */
+
+  export type AggregateHelicopterForCharter = {
+    _count: HelicopterForCharterCountAggregateOutputType | null
+    _avg: HelicopterForCharterAvgAggregateOutputType | null
+    _sum: HelicopterForCharterSumAggregateOutputType | null
+    _min: HelicopterForCharterMinAggregateOutputType | null
+    _max: HelicopterForCharterMaxAggregateOutputType | null
+  }
+
+  export type HelicopterForCharterAvgAggregateOutputType = {
+    year: number | null
+    capacity: number | null
+    range: number | null
+    pricePerHour: number | null
+    engineCount: number | null
+    maxSpeed: number | null
+    cruisingSpeed: number | null
+    fuelCapacity: number | null
+    maxAltitude: number | null
+    flightHours: number | null
+    depositAmount: number | null
+    minimumHours: number | null
+    views: number | null
+  }
+
+  export type HelicopterForCharterSumAggregateOutputType = {
+    year: number | null
+    capacity: number | null
+    range: number | null
+    pricePerHour: number | null
+    engineCount: number | null
+    maxSpeed: number | null
+    cruisingSpeed: number | null
+    fuelCapacity: number | null
+    maxAltitude: number | null
+    flightHours: number | null
+    depositAmount: number | null
+    minimumHours: number | null
+    views: number | null
+  }
+
+  export type HelicopterForCharterMinAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    model: string | null
+    year: number | null
+    capacity: number | null
+    range: number | null
+    pricePerHour: number | null
+    location: string | null
+    availableFrom: Date | null
+    availableTo: Date | null
+    description: string | null
+    registrationNumber: string | null
+    engineType: string | null
+    engineCount: number | null
+    maxSpeed: number | null
+    cruisingSpeed: number | null
+    fuelCapacity: number | null
+    maxAltitude: number | null
+    flightHours: number | null
+    lastOverhaul: Date | null
+    airworthinessCertificate: string | null
+    lastMaintenanceDate: Date | null
+    insuranceStatus: string | null
+    pilotQualifications: string | null
+    hasWifi: boolean | null
+    hasRefreshments: boolean | null
+    hasEntertainmentSystem: boolean | null
+    hasClimatControl: boolean | null
+    depositAmount: number | null
+    minimumHours: number | null
+    cancellationPolicy: string | null
+    packageDeals: string | null
+    transactionSignature: string | null
+    transactionLink: string | null
+    vendorId: string | null
+    status: string | null
+    views: number | null
+    sponsored: boolean | null
+    sponsoredType: string | null
+    endDate: Date | null
+  }
+
+  export type HelicopterForCharterMaxAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    model: string | null
+    year: number | null
+    capacity: number | null
+    range: number | null
+    pricePerHour: number | null
+    location: string | null
+    availableFrom: Date | null
+    availableTo: Date | null
+    description: string | null
+    registrationNumber: string | null
+    engineType: string | null
+    engineCount: number | null
+    maxSpeed: number | null
+    cruisingSpeed: number | null
+    fuelCapacity: number | null
+    maxAltitude: number | null
+    flightHours: number | null
+    lastOverhaul: Date | null
+    airworthinessCertificate: string | null
+    lastMaintenanceDate: Date | null
+    insuranceStatus: string | null
+    pilotQualifications: string | null
+    hasWifi: boolean | null
+    hasRefreshments: boolean | null
+    hasEntertainmentSystem: boolean | null
+    hasClimatControl: boolean | null
+    depositAmount: number | null
+    minimumHours: number | null
+    cancellationPolicy: string | null
+    packageDeals: string | null
+    transactionSignature: string | null
+    transactionLink: string | null
+    vendorId: string | null
+    status: string | null
+    views: number | null
+    sponsored: boolean | null
+    sponsoredType: string | null
+    endDate: Date | null
+  }
+
+  export type HelicopterForCharterCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    model: number
+    year: number
+    capacity: number
+    range: number
+    pricePerHour: number
+    location: number
+    availableFrom: number
+    availableTo: number
+    description: number
+    registrationNumber: number
+    engineType: number
+    engineCount: number
+    maxSpeed: number
+    cruisingSpeed: number
+    fuelCapacity: number
+    maxAltitude: number
+    flightHours: number
+    lastOverhaul: number
+    airworthinessCertificate: number
+    lastMaintenanceDate: number
+    insuranceStatus: number
+    pilotQualifications: number
+    safetyFeatures: number
+    hasWifi: number
+    hasRefreshments: number
+    hasEntertainmentSystem: number
+    hasClimatControl: number
+    depositAmount: number
+    minimumHours: number
+    cancellationPolicy: number
+    packageDeals: number
+    imageUrls: number
+    transactionSignature: number
+    transactionLink: number
+    vendorId: number
+    status: number
+    views: number
+    sponsored: number
+    sponsoredType: number
+    endDate: number
+    _all: number
+  }
+
+
+  export type HelicopterForCharterAvgAggregateInputType = {
+    year?: true
+    capacity?: true
+    range?: true
+    pricePerHour?: true
+    engineCount?: true
+    maxSpeed?: true
+    cruisingSpeed?: true
+    fuelCapacity?: true
+    maxAltitude?: true
+    flightHours?: true
+    depositAmount?: true
+    minimumHours?: true
+    views?: true
+  }
+
+  export type HelicopterForCharterSumAggregateInputType = {
+    year?: true
+    capacity?: true
+    range?: true
+    pricePerHour?: true
+    engineCount?: true
+    maxSpeed?: true
+    cruisingSpeed?: true
+    fuelCapacity?: true
+    maxAltitude?: true
+    flightHours?: true
+    depositAmount?: true
+    minimumHours?: true
+    views?: true
+  }
+
+  export type HelicopterForCharterMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    model?: true
+    year?: true
+    capacity?: true
+    range?: true
+    pricePerHour?: true
+    location?: true
+    availableFrom?: true
+    availableTo?: true
+    description?: true
+    registrationNumber?: true
+    engineType?: true
+    engineCount?: true
+    maxSpeed?: true
+    cruisingSpeed?: true
+    fuelCapacity?: true
+    maxAltitude?: true
+    flightHours?: true
+    lastOverhaul?: true
+    airworthinessCertificate?: true
+    lastMaintenanceDate?: true
+    insuranceStatus?: true
+    pilotQualifications?: true
+    hasWifi?: true
+    hasRefreshments?: true
+    hasEntertainmentSystem?: true
+    hasClimatControl?: true
+    depositAmount?: true
+    minimumHours?: true
+    cancellationPolicy?: true
+    packageDeals?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    status?: true
+    views?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+  }
+
+  export type HelicopterForCharterMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    model?: true
+    year?: true
+    capacity?: true
+    range?: true
+    pricePerHour?: true
+    location?: true
+    availableFrom?: true
+    availableTo?: true
+    description?: true
+    registrationNumber?: true
+    engineType?: true
+    engineCount?: true
+    maxSpeed?: true
+    cruisingSpeed?: true
+    fuelCapacity?: true
+    maxAltitude?: true
+    flightHours?: true
+    lastOverhaul?: true
+    airworthinessCertificate?: true
+    lastMaintenanceDate?: true
+    insuranceStatus?: true
+    pilotQualifications?: true
+    hasWifi?: true
+    hasRefreshments?: true
+    hasEntertainmentSystem?: true
+    hasClimatControl?: true
+    depositAmount?: true
+    minimumHours?: true
+    cancellationPolicy?: true
+    packageDeals?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    status?: true
+    views?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+  }
+
+  export type HelicopterForCharterCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    model?: true
+    year?: true
+    capacity?: true
+    range?: true
+    pricePerHour?: true
+    location?: true
+    availableFrom?: true
+    availableTo?: true
+    description?: true
+    registrationNumber?: true
+    engineType?: true
+    engineCount?: true
+    maxSpeed?: true
+    cruisingSpeed?: true
+    fuelCapacity?: true
+    maxAltitude?: true
+    flightHours?: true
+    lastOverhaul?: true
+    airworthinessCertificate?: true
+    lastMaintenanceDate?: true
+    insuranceStatus?: true
+    pilotQualifications?: true
+    safetyFeatures?: true
+    hasWifi?: true
+    hasRefreshments?: true
+    hasEntertainmentSystem?: true
+    hasClimatControl?: true
+    depositAmount?: true
+    minimumHours?: true
+    cancellationPolicy?: true
+    packageDeals?: true
+    imageUrls?: true
+    transactionSignature?: true
+    transactionLink?: true
+    vendorId?: true
+    status?: true
+    views?: true
+    sponsored?: true
+    sponsoredType?: true
+    endDate?: true
+    _all?: true
+  }
+
+  export type HelicopterForCharterAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForCharter to aggregate.
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharters to fetch.
+     */
+    orderBy?: HelicopterForCharterOrderByWithRelationInput | HelicopterForCharterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HelicopterForCharterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HelicopterForCharters
+    **/
+    _count?: true | HelicopterForCharterCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HelicopterForCharterAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HelicopterForCharterSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HelicopterForCharterMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HelicopterForCharterMaxAggregateInputType
+  }
+
+  export type GetHelicopterForCharterAggregateType<T extends HelicopterForCharterAggregateArgs> = {
+        [P in keyof T & keyof AggregateHelicopterForCharter]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHelicopterForCharter[P]>
+      : GetScalarType<T[P], AggregateHelicopterForCharter[P]>
+  }
+
+
+
+
+  export type HelicopterForCharterGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HelicopterForCharterWhereInput
+    orderBy?: HelicopterForCharterOrderByWithAggregationInput | HelicopterForCharterOrderByWithAggregationInput[]
+    by: HelicopterForCharterScalarFieldEnum[] | HelicopterForCharterScalarFieldEnum
+    having?: HelicopterForCharterScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HelicopterForCharterCountAggregateInputType | true
+    _avg?: HelicopterForCharterAvgAggregateInputType
+    _sum?: HelicopterForCharterSumAggregateInputType
+    _min?: HelicopterForCharterMinAggregateInputType
+    _max?: HelicopterForCharterMaxAggregateInputType
+  }
+
+  export type HelicopterForCharterGroupByOutputType = {
+    id: string
+    createdAt: Date
+    updatedAt: Date
+    model: string
+    year: number
+    capacity: number
+    range: number
+    pricePerHour: number
+    location: string
+    availableFrom: Date
+    availableTo: Date
+    description: string | null
+    registrationNumber: string
+    engineType: string
+    engineCount: number
+    maxSpeed: number
+    cruisingSpeed: number
+    fuelCapacity: number
+    maxAltitude: number
+    flightHours: number | null
+    lastOverhaul: Date | null
+    airworthinessCertificate: string
+    lastMaintenanceDate: Date
+    insuranceStatus: string
+    pilotQualifications: string
+    safetyFeatures: string[]
+    hasWifi: boolean
+    hasRefreshments: boolean
+    hasEntertainmentSystem: boolean
+    hasClimatControl: boolean
+    depositAmount: number
+    minimumHours: number
+    cancellationPolicy: string
+    packageDeals: string | null
+    imageUrls: string[]
+    transactionSignature: string
+    transactionLink: string | null
+    vendorId: string
+    status: string
+    views: number
+    sponsored: boolean
+    sponsoredType: string
+    endDate: Date
+    _count: HelicopterForCharterCountAggregateOutputType | null
+    _avg: HelicopterForCharterAvgAggregateOutputType | null
+    _sum: HelicopterForCharterSumAggregateOutputType | null
+    _min: HelicopterForCharterMinAggregateOutputType | null
+    _max: HelicopterForCharterMaxAggregateOutputType | null
+  }
+
+  type GetHelicopterForCharterGroupByPayload<T extends HelicopterForCharterGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HelicopterForCharterGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HelicopterForCharterGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HelicopterForCharterGroupByOutputType[P]>
+            : GetScalarType<T[P], HelicopterForCharterGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HelicopterForCharterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    model?: boolean
+    year?: boolean
+    capacity?: boolean
+    range?: boolean
+    pricePerHour?: boolean
+    location?: boolean
+    availableFrom?: boolean
+    availableTo?: boolean
+    description?: boolean
+    registrationNumber?: boolean
+    engineType?: boolean
+    engineCount?: boolean
+    maxSpeed?: boolean
+    cruisingSpeed?: boolean
+    fuelCapacity?: boolean
+    maxAltitude?: boolean
+    flightHours?: boolean
+    lastOverhaul?: boolean
+    airworthinessCertificate?: boolean
+    lastMaintenanceDate?: boolean
+    insuranceStatus?: boolean
+    pilotQualifications?: boolean
+    safetyFeatures?: boolean
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount?: boolean
+    minimumHours?: boolean
+    cancellationPolicy?: boolean
+    packageDeals?: boolean
+    imageUrls?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    status?: boolean
+    views?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }, ExtArgs["result"]["helicopterForCharter"]>
+
+  export type HelicopterForCharterSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    model?: boolean
+    year?: boolean
+    capacity?: boolean
+    range?: boolean
+    pricePerHour?: boolean
+    location?: boolean
+    availableFrom?: boolean
+    availableTo?: boolean
+    description?: boolean
+    registrationNumber?: boolean
+    engineType?: boolean
+    engineCount?: boolean
+    maxSpeed?: boolean
+    cruisingSpeed?: boolean
+    fuelCapacity?: boolean
+    maxAltitude?: boolean
+    flightHours?: boolean
+    lastOverhaul?: boolean
+    airworthinessCertificate?: boolean
+    lastMaintenanceDate?: boolean
+    insuranceStatus?: boolean
+    pilotQualifications?: boolean
+    safetyFeatures?: boolean
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount?: boolean
+    minimumHours?: boolean
+    cancellationPolicy?: boolean
+    packageDeals?: boolean
+    imageUrls?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    status?: boolean
+    views?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }, ExtArgs["result"]["helicopterForCharter"]>
+
+  export type HelicopterForCharterSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    model?: boolean
+    year?: boolean
+    capacity?: boolean
+    range?: boolean
+    pricePerHour?: boolean
+    location?: boolean
+    availableFrom?: boolean
+    availableTo?: boolean
+    description?: boolean
+    registrationNumber?: boolean
+    engineType?: boolean
+    engineCount?: boolean
+    maxSpeed?: boolean
+    cruisingSpeed?: boolean
+    fuelCapacity?: boolean
+    maxAltitude?: boolean
+    flightHours?: boolean
+    lastOverhaul?: boolean
+    airworthinessCertificate?: boolean
+    lastMaintenanceDate?: boolean
+    insuranceStatus?: boolean
+    pilotQualifications?: boolean
+    safetyFeatures?: boolean
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount?: boolean
+    minimumHours?: boolean
+    cancellationPolicy?: boolean
+    packageDeals?: boolean
+    imageUrls?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    status?: boolean
+    views?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }, ExtArgs["result"]["helicopterForCharter"]>
+
+  export type HelicopterForCharterSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    model?: boolean
+    year?: boolean
+    capacity?: boolean
+    range?: boolean
+    pricePerHour?: boolean
+    location?: boolean
+    availableFrom?: boolean
+    availableTo?: boolean
+    description?: boolean
+    registrationNumber?: boolean
+    engineType?: boolean
+    engineCount?: boolean
+    maxSpeed?: boolean
+    cruisingSpeed?: boolean
+    fuelCapacity?: boolean
+    maxAltitude?: boolean
+    flightHours?: boolean
+    lastOverhaul?: boolean
+    airworthinessCertificate?: boolean
+    lastMaintenanceDate?: boolean
+    insuranceStatus?: boolean
+    pilotQualifications?: boolean
+    safetyFeatures?: boolean
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount?: boolean
+    minimumHours?: boolean
+    cancellationPolicy?: boolean
+    packageDeals?: boolean
+    imageUrls?: boolean
+    transactionSignature?: boolean
+    transactionLink?: boolean
+    vendorId?: boolean
+    status?: boolean
+    views?: boolean
+    sponsored?: boolean
+    sponsoredType?: boolean
+    endDate?: boolean
+  }
+
+  export type HelicopterForCharterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "model" | "year" | "capacity" | "range" | "pricePerHour" | "location" | "availableFrom" | "availableTo" | "description" | "registrationNumber" | "engineType" | "engineCount" | "maxSpeed" | "cruisingSpeed" | "fuelCapacity" | "maxAltitude" | "flightHours" | "lastOverhaul" | "airworthinessCertificate" | "lastMaintenanceDate" | "insuranceStatus" | "pilotQualifications" | "safetyFeatures" | "hasWifi" | "hasRefreshments" | "hasEntertainmentSystem" | "hasClimatControl" | "depositAmount" | "minimumHours" | "cancellationPolicy" | "packageDeals" | "imageUrls" | "transactionSignature" | "transactionLink" | "vendorId" | "status" | "views" | "sponsored" | "sponsoredType" | "endDate", ExtArgs["result"]["helicopterForCharter"]>
+
+  export type $HelicopterForCharterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HelicopterForCharter"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      createdAt: Date
+      updatedAt: Date
+      model: string
+      year: number
+      capacity: number
+      range: number
+      pricePerHour: number
+      location: string
+      availableFrom: Date
+      availableTo: Date
+      description: string | null
+      registrationNumber: string
+      engineType: string
+      engineCount: number
+      maxSpeed: number
+      cruisingSpeed: number
+      fuelCapacity: number
+      maxAltitude: number
+      flightHours: number | null
+      lastOverhaul: Date | null
+      airworthinessCertificate: string
+      lastMaintenanceDate: Date
+      insuranceStatus: string
+      pilotQualifications: string
+      safetyFeatures: string[]
+      hasWifi: boolean
+      hasRefreshments: boolean
+      hasEntertainmentSystem: boolean
+      hasClimatControl: boolean
+      depositAmount: number
+      minimumHours: number
+      cancellationPolicy: string
+      packageDeals: string | null
+      imageUrls: string[]
+      transactionSignature: string
+      transactionLink: string | null
+      vendorId: string
+      status: string
+      views: number
+      sponsored: boolean
+      sponsoredType: string
+      endDate: Date
+    }, ExtArgs["result"]["helicopterForCharter"]>
+    composites: {}
+  }
+
+  type HelicopterForCharterGetPayload<S extends boolean | null | undefined | HelicopterForCharterDefaultArgs> = $Result.GetResult<Prisma.$HelicopterForCharterPayload, S>
+
+  type HelicopterForCharterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HelicopterForCharterFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HelicopterForCharterCountAggregateInputType | true
+    }
+
+  export interface HelicopterForCharterDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HelicopterForCharter'], meta: { name: 'HelicopterForCharter' } }
+    /**
+     * Find zero or one HelicopterForCharter that matches the filter.
+     * @param {HelicopterForCharterFindUniqueArgs} args - Arguments to find a HelicopterForCharter
+     * @example
+     * // Get one HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HelicopterForCharterFindUniqueArgs>(args: SelectSubset<T, HelicopterForCharterFindUniqueArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HelicopterForCharter that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HelicopterForCharterFindUniqueOrThrowArgs} args - Arguments to find a HelicopterForCharter
+     * @example
+     * // Get one HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HelicopterForCharterFindUniqueOrThrowArgs>(args: SelectSubset<T, HelicopterForCharterFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForCharter that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterFindFirstArgs} args - Arguments to find a HelicopterForCharter
+     * @example
+     * // Get one HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HelicopterForCharterFindFirstArgs>(args?: SelectSubset<T, HelicopterForCharterFindFirstArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForCharter that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterFindFirstOrThrowArgs} args - Arguments to find a HelicopterForCharter
+     * @example
+     * // Get one HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HelicopterForCharterFindFirstOrThrowArgs>(args?: SelectSubset<T, HelicopterForCharterFindFirstOrThrowArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HelicopterForCharters that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HelicopterForCharters
+     * const helicopterForCharters = await prisma.helicopterForCharter.findMany()
+     * 
+     * // Get first 10 HelicopterForCharters
+     * const helicopterForCharters = await prisma.helicopterForCharter.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const helicopterForCharterWithIdOnly = await prisma.helicopterForCharter.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HelicopterForCharterFindManyArgs>(args?: SelectSubset<T, HelicopterForCharterFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HelicopterForCharter.
+     * @param {HelicopterForCharterCreateArgs} args - Arguments to create a HelicopterForCharter.
+     * @example
+     * // Create one HelicopterForCharter
+     * const HelicopterForCharter = await prisma.helicopterForCharter.create({
+     *   data: {
+     *     // ... data to create a HelicopterForCharter
+     *   }
+     * })
+     * 
+     */
+    create<T extends HelicopterForCharterCreateArgs>(args: SelectSubset<T, HelicopterForCharterCreateArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HelicopterForCharters.
+     * @param {HelicopterForCharterCreateManyArgs} args - Arguments to create many HelicopterForCharters.
+     * @example
+     * // Create many HelicopterForCharters
+     * const helicopterForCharter = await prisma.helicopterForCharter.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HelicopterForCharterCreateManyArgs>(args?: SelectSubset<T, HelicopterForCharterCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HelicopterForCharters and returns the data saved in the database.
+     * @param {HelicopterForCharterCreateManyAndReturnArgs} args - Arguments to create many HelicopterForCharters.
+     * @example
+     * // Create many HelicopterForCharters
+     * const helicopterForCharter = await prisma.helicopterForCharter.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HelicopterForCharters and only return the `id`
+     * const helicopterForCharterWithIdOnly = await prisma.helicopterForCharter.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HelicopterForCharterCreateManyAndReturnArgs>(args?: SelectSubset<T, HelicopterForCharterCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HelicopterForCharter.
+     * @param {HelicopterForCharterDeleteArgs} args - Arguments to delete one HelicopterForCharter.
+     * @example
+     * // Delete one HelicopterForCharter
+     * const HelicopterForCharter = await prisma.helicopterForCharter.delete({
+     *   where: {
+     *     // ... filter to delete one HelicopterForCharter
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HelicopterForCharterDeleteArgs>(args: SelectSubset<T, HelicopterForCharterDeleteArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HelicopterForCharter.
+     * @param {HelicopterForCharterUpdateArgs} args - Arguments to update one HelicopterForCharter.
+     * @example
+     * // Update one HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HelicopterForCharterUpdateArgs>(args: SelectSubset<T, HelicopterForCharterUpdateArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HelicopterForCharters.
+     * @param {HelicopterForCharterDeleteManyArgs} args - Arguments to filter HelicopterForCharters to delete.
+     * @example
+     * // Delete a few HelicopterForCharters
+     * const { count } = await prisma.helicopterForCharter.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HelicopterForCharterDeleteManyArgs>(args?: SelectSubset<T, HelicopterForCharterDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForCharters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HelicopterForCharters
+     * const helicopterForCharter = await prisma.helicopterForCharter.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HelicopterForCharterUpdateManyArgs>(args: SelectSubset<T, HelicopterForCharterUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForCharters and returns the data updated in the database.
+     * @param {HelicopterForCharterUpdateManyAndReturnArgs} args - Arguments to update many HelicopterForCharters.
+     * @example
+     * // Update many HelicopterForCharters
+     * const helicopterForCharter = await prisma.helicopterForCharter.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HelicopterForCharters and only return the `id`
+     * const helicopterForCharterWithIdOnly = await prisma.helicopterForCharter.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HelicopterForCharterUpdateManyAndReturnArgs>(args: SelectSubset<T, HelicopterForCharterUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HelicopterForCharter.
+     * @param {HelicopterForCharterUpsertArgs} args - Arguments to update or create a HelicopterForCharter.
+     * @example
+     * // Update or create a HelicopterForCharter
+     * const helicopterForCharter = await prisma.helicopterForCharter.upsert({
+     *   create: {
+     *     // ... data to create a HelicopterForCharter
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HelicopterForCharter we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HelicopterForCharterUpsertArgs>(args: SelectSubset<T, HelicopterForCharterUpsertArgs<ExtArgs>>): Prisma__HelicopterForCharterClient<$Result.GetResult<Prisma.$HelicopterForCharterPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HelicopterForCharters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterCountArgs} args - Arguments to filter HelicopterForCharters to count.
+     * @example
+     * // Count the number of HelicopterForCharters
+     * const count = await prisma.helicopterForCharter.count({
+     *   where: {
+     *     // ... the filter for the HelicopterForCharters we want to count
+     *   }
+     * })
+    **/
+    count<T extends HelicopterForCharterCountArgs>(
+      args?: Subset<T, HelicopterForCharterCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HelicopterForCharterCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HelicopterForCharter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HelicopterForCharterAggregateArgs>(args: Subset<T, HelicopterForCharterAggregateArgs>): Prisma.PrismaPromise<GetHelicopterForCharterAggregateType<T>>
+
+    /**
+     * Group by HelicopterForCharter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HelicopterForCharterGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HelicopterForCharterGroupByArgs['orderBy'] }
+        : { orderBy?: HelicopterForCharterGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HelicopterForCharterGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHelicopterForCharterGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HelicopterForCharter model
+   */
+  readonly fields: HelicopterForCharterFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HelicopterForCharter.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HelicopterForCharterClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HelicopterForCharter model
+   */
+  interface HelicopterForCharterFieldRefs {
+    readonly id: FieldRef<"HelicopterForCharter", 'String'>
+    readonly createdAt: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly updatedAt: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly model: FieldRef<"HelicopterForCharter", 'String'>
+    readonly year: FieldRef<"HelicopterForCharter", 'Int'>
+    readonly capacity: FieldRef<"HelicopterForCharter", 'Int'>
+    readonly range: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly pricePerHour: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly location: FieldRef<"HelicopterForCharter", 'String'>
+    readonly availableFrom: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly availableTo: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly description: FieldRef<"HelicopterForCharter", 'String'>
+    readonly registrationNumber: FieldRef<"HelicopterForCharter", 'String'>
+    readonly engineType: FieldRef<"HelicopterForCharter", 'String'>
+    readonly engineCount: FieldRef<"HelicopterForCharter", 'Int'>
+    readonly maxSpeed: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly cruisingSpeed: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly fuelCapacity: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly maxAltitude: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly flightHours: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly lastOverhaul: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly airworthinessCertificate: FieldRef<"HelicopterForCharter", 'String'>
+    readonly lastMaintenanceDate: FieldRef<"HelicopterForCharter", 'DateTime'>
+    readonly insuranceStatus: FieldRef<"HelicopterForCharter", 'String'>
+    readonly pilotQualifications: FieldRef<"HelicopterForCharter", 'String'>
+    readonly safetyFeatures: FieldRef<"HelicopterForCharter", 'String[]'>
+    readonly hasWifi: FieldRef<"HelicopterForCharter", 'Boolean'>
+    readonly hasRefreshments: FieldRef<"HelicopterForCharter", 'Boolean'>
+    readonly hasEntertainmentSystem: FieldRef<"HelicopterForCharter", 'Boolean'>
+    readonly hasClimatControl: FieldRef<"HelicopterForCharter", 'Boolean'>
+    readonly depositAmount: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly minimumHours: FieldRef<"HelicopterForCharter", 'Float'>
+    readonly cancellationPolicy: FieldRef<"HelicopterForCharter", 'String'>
+    readonly packageDeals: FieldRef<"HelicopterForCharter", 'String'>
+    readonly imageUrls: FieldRef<"HelicopterForCharter", 'String[]'>
+    readonly transactionSignature: FieldRef<"HelicopterForCharter", 'String'>
+    readonly transactionLink: FieldRef<"HelicopterForCharter", 'String'>
+    readonly vendorId: FieldRef<"HelicopterForCharter", 'String'>
+    readonly status: FieldRef<"HelicopterForCharter", 'String'>
+    readonly views: FieldRef<"HelicopterForCharter", 'Int'>
+    readonly sponsored: FieldRef<"HelicopterForCharter", 'Boolean'>
+    readonly sponsoredType: FieldRef<"HelicopterForCharter", 'String'>
+    readonly endDate: FieldRef<"HelicopterForCharter", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HelicopterForCharter findUnique
+   */
+  export type HelicopterForCharterFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharter to fetch.
+     */
+    where: HelicopterForCharterWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharter findUniqueOrThrow
+   */
+  export type HelicopterForCharterFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharter to fetch.
+     */
+    where: HelicopterForCharterWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharter findFirst
+   */
+  export type HelicopterForCharterFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharter to fetch.
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharters to fetch.
+     */
+    orderBy?: HelicopterForCharterOrderByWithRelationInput | HelicopterForCharterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForCharters.
+     */
+    cursor?: HelicopterForCharterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForCharters.
+     */
+    distinct?: HelicopterForCharterScalarFieldEnum | HelicopterForCharterScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharter findFirstOrThrow
+   */
+  export type HelicopterForCharterFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharter to fetch.
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharters to fetch.
+     */
+    orderBy?: HelicopterForCharterOrderByWithRelationInput | HelicopterForCharterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForCharters.
+     */
+    cursor?: HelicopterForCharterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForCharters.
+     */
+    distinct?: HelicopterForCharterScalarFieldEnum | HelicopterForCharterScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharter findMany
+   */
+  export type HelicopterForCharterFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharters to fetch.
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharters to fetch.
+     */
+    orderBy?: HelicopterForCharterOrderByWithRelationInput | HelicopterForCharterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HelicopterForCharters.
+     */
+    cursor?: HelicopterForCharterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharters.
+     */
+    skip?: number
+    distinct?: HelicopterForCharterScalarFieldEnum | HelicopterForCharterScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharter create
+   */
+  export type HelicopterForCharterCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HelicopterForCharter.
+     */
+    data: XOR<HelicopterForCharterCreateInput, HelicopterForCharterUncheckedCreateInput>
+  }
+
+  /**
+   * HelicopterForCharter createMany
+   */
+  export type HelicopterForCharterCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HelicopterForCharters.
+     */
+    data: HelicopterForCharterCreateManyInput | HelicopterForCharterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForCharter createManyAndReturn
+   */
+  export type HelicopterForCharterCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * The data used to create many HelicopterForCharters.
+     */
+    data: HelicopterForCharterCreateManyInput | HelicopterForCharterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForCharter update
+   */
+  export type HelicopterForCharterUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HelicopterForCharter.
+     */
+    data: XOR<HelicopterForCharterUpdateInput, HelicopterForCharterUncheckedUpdateInput>
+    /**
+     * Choose, which HelicopterForCharter to update.
+     */
+    where: HelicopterForCharterWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharter updateMany
+   */
+  export type HelicopterForCharterUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HelicopterForCharters.
+     */
+    data: XOR<HelicopterForCharterUpdateManyMutationInput, HelicopterForCharterUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForCharters to update
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * Limit how many HelicopterForCharters to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharter updateManyAndReturn
+   */
+  export type HelicopterForCharterUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * The data used to update HelicopterForCharters.
+     */
+    data: XOR<HelicopterForCharterUpdateManyMutationInput, HelicopterForCharterUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForCharters to update
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * Limit how many HelicopterForCharters to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharter upsert
+   */
+  export type HelicopterForCharterUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HelicopterForCharter to update in case it exists.
+     */
+    where: HelicopterForCharterWhereUniqueInput
+    /**
+     * In case the HelicopterForCharter found by the `where` argument doesn't exist, create a new HelicopterForCharter with this data.
+     */
+    create: XOR<HelicopterForCharterCreateInput, HelicopterForCharterUncheckedCreateInput>
+    /**
+     * In case the HelicopterForCharter was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HelicopterForCharterUpdateInput, HelicopterForCharterUncheckedUpdateInput>
+  }
+
+  /**
+   * HelicopterForCharter delete
+   */
+  export type HelicopterForCharterDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+    /**
+     * Filter which HelicopterForCharter to delete.
+     */
+    where: HelicopterForCharterWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharter deleteMany
+   */
+  export type HelicopterForCharterDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForCharters to delete
+     */
+    where?: HelicopterForCharterWhereInput
+    /**
+     * Limit how many HelicopterForCharters to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharter without action
+   */
+  export type HelicopterForCharterDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharter
+     */
+    select?: HelicopterForCharterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharter
+     */
+    omit?: HelicopterForCharterOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HelicopterForCharterMessages
+   */
+
+  export type AggregateHelicopterForCharterMessages = {
+    _count: HelicopterForCharterMessagesCountAggregateOutputType | null
+    _avg: HelicopterForCharterMessagesAvgAggregateOutputType | null
+    _sum: HelicopterForCharterMessagesSumAggregateOutputType | null
+    _min: HelicopterForCharterMessagesMinAggregateOutputType | null
+    _max: HelicopterForCharterMessagesMaxAggregateOutputType | null
+  }
+
+  export type HelicopterForCharterMessagesAvgAggregateOutputType = {
+    passengerCount: number | null
+  }
+
+  export type HelicopterForCharterMessagesSumAggregateOutputType = {
+    passengerCount: number | null
+  }
+
+  export type HelicopterForCharterMessagesMinAggregateOutputType = {
+    id: string | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    departureLocation: string | null
+    arrivalLocation: string | null
+    departureDate: Date | null
+    returnDate: Date | null
+    passengerCount: number | null
+    specialRequests: string | null
+    listingId: string | null
+    vendorId: string | null
+    createdAt: Date | null
+    read: boolean | null
+  }
+
+  export type HelicopterForCharterMessagesMaxAggregateOutputType = {
+    id: string | null
+    customerName: string | null
+    customerEmail: string | null
+    customerCountry: string | null
+    departureLocation: string | null
+    arrivalLocation: string | null
+    departureDate: Date | null
+    returnDate: Date | null
+    passengerCount: number | null
+    specialRequests: string | null
+    listingId: string | null
+    vendorId: string | null
+    createdAt: Date | null
+    read: boolean | null
+  }
+
+  export type HelicopterForCharterMessagesCountAggregateOutputType = {
+    id: number
+    customerName: number
+    customerEmail: number
+    customerCountry: number
+    departureLocation: number
+    arrivalLocation: number
+    departureDate: number
+    returnDate: number
+    passengerCount: number
+    specialRequests: number
+    listingId: number
+    vendorId: number
+    createdAt: number
+    read: number
+    _all: number
+  }
+
+
+  export type HelicopterForCharterMessagesAvgAggregateInputType = {
+    passengerCount?: true
+  }
+
+  export type HelicopterForCharterMessagesSumAggregateInputType = {
+    passengerCount?: true
+  }
+
+  export type HelicopterForCharterMessagesMinAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+  }
+
+  export type HelicopterForCharterMessagesMaxAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+  }
+
+  export type HelicopterForCharterMessagesCountAggregateInputType = {
+    id?: true
+    customerName?: true
+    customerEmail?: true
+    customerCountry?: true
+    departureLocation?: true
+    arrivalLocation?: true
+    departureDate?: true
+    returnDate?: true
+    passengerCount?: true
+    specialRequests?: true
+    listingId?: true
+    vendorId?: true
+    createdAt?: true
+    read?: true
+    _all?: true
+  }
+
+  export type HelicopterForCharterMessagesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForCharterMessages to aggregate.
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharterMessages to fetch.
+     */
+    orderBy?: HelicopterForCharterMessagesOrderByWithRelationInput | HelicopterForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HelicopterForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HelicopterForCharterMessages
+    **/
+    _count?: true | HelicopterForCharterMessagesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HelicopterForCharterMessagesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HelicopterForCharterMessagesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HelicopterForCharterMessagesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HelicopterForCharterMessagesMaxAggregateInputType
+  }
+
+  export type GetHelicopterForCharterMessagesAggregateType<T extends HelicopterForCharterMessagesAggregateArgs> = {
+        [P in keyof T & keyof AggregateHelicopterForCharterMessages]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHelicopterForCharterMessages[P]>
+      : GetScalarType<T[P], AggregateHelicopterForCharterMessages[P]>
+  }
+
+
+
+
+  export type HelicopterForCharterMessagesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HelicopterForCharterMessagesWhereInput
+    orderBy?: HelicopterForCharterMessagesOrderByWithAggregationInput | HelicopterForCharterMessagesOrderByWithAggregationInput[]
+    by: HelicopterForCharterMessagesScalarFieldEnum[] | HelicopterForCharterMessagesScalarFieldEnum
+    having?: HelicopterForCharterMessagesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HelicopterForCharterMessagesCountAggregateInputType | true
+    _avg?: HelicopterForCharterMessagesAvgAggregateInputType
+    _sum?: HelicopterForCharterMessagesSumAggregateInputType
+    _min?: HelicopterForCharterMessagesMinAggregateInputType
+    _max?: HelicopterForCharterMessagesMaxAggregateInputType
+  }
+
+  export type HelicopterForCharterMessagesGroupByOutputType = {
+    id: string
+    customerName: string
+    customerEmail: string
+    customerCountry: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date
+    returnDate: Date | null
+    passengerCount: number
+    specialRequests: string | null
+    listingId: string
+    vendorId: string
+    createdAt: Date
+    read: boolean
+    _count: HelicopterForCharterMessagesCountAggregateOutputType | null
+    _avg: HelicopterForCharterMessagesAvgAggregateOutputType | null
+    _sum: HelicopterForCharterMessagesSumAggregateOutputType | null
+    _min: HelicopterForCharterMessagesMinAggregateOutputType | null
+    _max: HelicopterForCharterMessagesMaxAggregateOutputType | null
+  }
+
+  type GetHelicopterForCharterMessagesGroupByPayload<T extends HelicopterForCharterMessagesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HelicopterForCharterMessagesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HelicopterForCharterMessagesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HelicopterForCharterMessagesGroupByOutputType[P]>
+            : GetScalarType<T[P], HelicopterForCharterMessagesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HelicopterForCharterMessagesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterForCharterMessages"]>
+
+  export type HelicopterForCharterMessagesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterForCharterMessages"]>
+
+  export type HelicopterForCharterMessagesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["helicopterForCharterMessages"]>
+
+  export type HelicopterForCharterMessagesSelectScalar = {
+    id?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerCountry?: boolean
+    departureLocation?: boolean
+    arrivalLocation?: boolean
+    departureDate?: boolean
+    returnDate?: boolean
+    passengerCount?: boolean
+    specialRequests?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    createdAt?: boolean
+    read?: boolean
+  }
+
+  export type HelicopterForCharterMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "customerEmail" | "customerCountry" | "departureLocation" | "arrivalLocation" | "departureDate" | "returnDate" | "passengerCount" | "specialRequests" | "listingId" | "vendorId" | "createdAt" | "read", ExtArgs["result"]["helicopterForCharterMessages"]>
+
+  export type $HelicopterForCharterMessagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HelicopterForCharterMessages"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      customerName: string
+      customerEmail: string
+      customerCountry: string | null
+      departureLocation: string
+      arrivalLocation: string
+      departureDate: Date
+      returnDate: Date | null
+      passengerCount: number
+      specialRequests: string | null
+      listingId: string
+      vendorId: string
+      createdAt: Date
+      read: boolean
+    }, ExtArgs["result"]["helicopterForCharterMessages"]>
+    composites: {}
+  }
+
+  type HelicopterForCharterMessagesGetPayload<S extends boolean | null | undefined | HelicopterForCharterMessagesDefaultArgs> = $Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload, S>
+
+  type HelicopterForCharterMessagesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HelicopterForCharterMessagesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HelicopterForCharterMessagesCountAggregateInputType | true
+    }
+
+  export interface HelicopterForCharterMessagesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HelicopterForCharterMessages'], meta: { name: 'HelicopterForCharterMessages' } }
+    /**
+     * Find zero or one HelicopterForCharterMessages that matches the filter.
+     * @param {HelicopterForCharterMessagesFindUniqueArgs} args - Arguments to find a HelicopterForCharterMessages
+     * @example
+     * // Get one HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HelicopterForCharterMessagesFindUniqueArgs>(args: SelectSubset<T, HelicopterForCharterMessagesFindUniqueArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HelicopterForCharterMessages that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HelicopterForCharterMessagesFindUniqueOrThrowArgs} args - Arguments to find a HelicopterForCharterMessages
+     * @example
+     * // Get one HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HelicopterForCharterMessagesFindUniqueOrThrowArgs>(args: SelectSubset<T, HelicopterForCharterMessagesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForCharterMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesFindFirstArgs} args - Arguments to find a HelicopterForCharterMessages
+     * @example
+     * // Get one HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HelicopterForCharterMessagesFindFirstArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesFindFirstArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HelicopterForCharterMessages that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesFindFirstOrThrowArgs} args - Arguments to find a HelicopterForCharterMessages
+     * @example
+     * // Get one HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HelicopterForCharterMessagesFindFirstOrThrowArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesFindFirstOrThrowArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HelicopterForCharterMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findMany()
+     * 
+     * // Get first 10 HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const helicopterForCharterMessagesWithIdOnly = await prisma.helicopterForCharterMessages.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HelicopterForCharterMessagesFindManyArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesCreateArgs} args - Arguments to create a HelicopterForCharterMessages.
+     * @example
+     * // Create one HelicopterForCharterMessages
+     * const HelicopterForCharterMessages = await prisma.helicopterForCharterMessages.create({
+     *   data: {
+     *     // ... data to create a HelicopterForCharterMessages
+     *   }
+     * })
+     * 
+     */
+    create<T extends HelicopterForCharterMessagesCreateArgs>(args: SelectSubset<T, HelicopterForCharterMessagesCreateArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesCreateManyArgs} args - Arguments to create many HelicopterForCharterMessages.
+     * @example
+     * // Create many HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HelicopterForCharterMessagesCreateManyArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HelicopterForCharterMessages and returns the data saved in the database.
+     * @param {HelicopterForCharterMessagesCreateManyAndReturnArgs} args - Arguments to create many HelicopterForCharterMessages.
+     * @example
+     * // Create many HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HelicopterForCharterMessages and only return the `id`
+     * const helicopterForCharterMessagesWithIdOnly = await prisma.helicopterForCharterMessages.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HelicopterForCharterMessagesCreateManyAndReturnArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesDeleteArgs} args - Arguments to delete one HelicopterForCharterMessages.
+     * @example
+     * // Delete one HelicopterForCharterMessages
+     * const HelicopterForCharterMessages = await prisma.helicopterForCharterMessages.delete({
+     *   where: {
+     *     // ... filter to delete one HelicopterForCharterMessages
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HelicopterForCharterMessagesDeleteArgs>(args: SelectSubset<T, HelicopterForCharterMessagesDeleteArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesUpdateArgs} args - Arguments to update one HelicopterForCharterMessages.
+     * @example
+     * // Update one HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HelicopterForCharterMessagesUpdateArgs>(args: SelectSubset<T, HelicopterForCharterMessagesUpdateArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesDeleteManyArgs} args - Arguments to filter HelicopterForCharterMessages to delete.
+     * @example
+     * // Delete a few HelicopterForCharterMessages
+     * const { count } = await prisma.helicopterForCharterMessages.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HelicopterForCharterMessagesDeleteManyArgs>(args?: SelectSubset<T, HelicopterForCharterMessagesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HelicopterForCharterMessagesUpdateManyArgs>(args: SelectSubset<T, HelicopterForCharterMessagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HelicopterForCharterMessages and returns the data updated in the database.
+     * @param {HelicopterForCharterMessagesUpdateManyAndReturnArgs} args - Arguments to update many HelicopterForCharterMessages.
+     * @example
+     * // Update many HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HelicopterForCharterMessages and only return the `id`
+     * const helicopterForCharterMessagesWithIdOnly = await prisma.helicopterForCharterMessages.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HelicopterForCharterMessagesUpdateManyAndReturnArgs>(args: SelectSubset<T, HelicopterForCharterMessagesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HelicopterForCharterMessages.
+     * @param {HelicopterForCharterMessagesUpsertArgs} args - Arguments to update or create a HelicopterForCharterMessages.
+     * @example
+     * // Update or create a HelicopterForCharterMessages
+     * const helicopterForCharterMessages = await prisma.helicopterForCharterMessages.upsert({
+     *   create: {
+     *     // ... data to create a HelicopterForCharterMessages
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HelicopterForCharterMessages we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HelicopterForCharterMessagesUpsertArgs>(args: SelectSubset<T, HelicopterForCharterMessagesUpsertArgs<ExtArgs>>): Prisma__HelicopterForCharterMessagesClient<$Result.GetResult<Prisma.$HelicopterForCharterMessagesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HelicopterForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesCountArgs} args - Arguments to filter HelicopterForCharterMessages to count.
+     * @example
+     * // Count the number of HelicopterForCharterMessages
+     * const count = await prisma.helicopterForCharterMessages.count({
+     *   where: {
+     *     // ... the filter for the HelicopterForCharterMessages we want to count
+     *   }
+     * })
+    **/
+    count<T extends HelicopterForCharterMessagesCountArgs>(
+      args?: Subset<T, HelicopterForCharterMessagesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HelicopterForCharterMessagesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HelicopterForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HelicopterForCharterMessagesAggregateArgs>(args: Subset<T, HelicopterForCharterMessagesAggregateArgs>): Prisma.PrismaPromise<GetHelicopterForCharterMessagesAggregateType<T>>
+
+    /**
+     * Group by HelicopterForCharterMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HelicopterForCharterMessagesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HelicopterForCharterMessagesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HelicopterForCharterMessagesGroupByArgs['orderBy'] }
+        : { orderBy?: HelicopterForCharterMessagesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HelicopterForCharterMessagesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHelicopterForCharterMessagesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HelicopterForCharterMessages model
+   */
+  readonly fields: HelicopterForCharterMessagesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HelicopterForCharterMessages.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HelicopterForCharterMessagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HelicopterForCharterMessages model
+   */
+  interface HelicopterForCharterMessagesFieldRefs {
+    readonly id: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly customerName: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly customerEmail: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly customerCountry: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly departureLocation: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly arrivalLocation: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly departureDate: FieldRef<"HelicopterForCharterMessages", 'DateTime'>
+    readonly returnDate: FieldRef<"HelicopterForCharterMessages", 'DateTime'>
+    readonly passengerCount: FieldRef<"HelicopterForCharterMessages", 'Int'>
+    readonly specialRequests: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly listingId: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly vendorId: FieldRef<"HelicopterForCharterMessages", 'String'>
+    readonly createdAt: FieldRef<"HelicopterForCharterMessages", 'DateTime'>
+    readonly read: FieldRef<"HelicopterForCharterMessages", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HelicopterForCharterMessages findUnique
+   */
+  export type HelicopterForCharterMessagesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharterMessages to fetch.
+     */
+    where: HelicopterForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharterMessages findUniqueOrThrow
+   */
+  export type HelicopterForCharterMessagesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharterMessages to fetch.
+     */
+    where: HelicopterForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharterMessages findFirst
+   */
+  export type HelicopterForCharterMessagesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharterMessages to fetch.
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharterMessages to fetch.
+     */
+    orderBy?: HelicopterForCharterMessagesOrderByWithRelationInput | HelicopterForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForCharterMessages.
+     */
+    cursor?: HelicopterForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForCharterMessages.
+     */
+    distinct?: HelicopterForCharterMessagesScalarFieldEnum | HelicopterForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharterMessages findFirstOrThrow
+   */
+  export type HelicopterForCharterMessagesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharterMessages to fetch.
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharterMessages to fetch.
+     */
+    orderBy?: HelicopterForCharterMessagesOrderByWithRelationInput | HelicopterForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HelicopterForCharterMessages.
+     */
+    cursor?: HelicopterForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharterMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HelicopterForCharterMessages.
+     */
+    distinct?: HelicopterForCharterMessagesScalarFieldEnum | HelicopterForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharterMessages findMany
+   */
+  export type HelicopterForCharterMessagesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter, which HelicopterForCharterMessages to fetch.
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HelicopterForCharterMessages to fetch.
+     */
+    orderBy?: HelicopterForCharterMessagesOrderByWithRelationInput | HelicopterForCharterMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HelicopterForCharterMessages.
+     */
+    cursor?: HelicopterForCharterMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HelicopterForCharterMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HelicopterForCharterMessages.
+     */
+    skip?: number
+    distinct?: HelicopterForCharterMessagesScalarFieldEnum | HelicopterForCharterMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * HelicopterForCharterMessages create
+   */
+  export type HelicopterForCharterMessagesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HelicopterForCharterMessages.
+     */
+    data: XOR<HelicopterForCharterMessagesCreateInput, HelicopterForCharterMessagesUncheckedCreateInput>
+  }
+
+  /**
+   * HelicopterForCharterMessages createMany
+   */
+  export type HelicopterForCharterMessagesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HelicopterForCharterMessages.
+     */
+    data: HelicopterForCharterMessagesCreateManyInput | HelicopterForCharterMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForCharterMessages createManyAndReturn
+   */
+  export type HelicopterForCharterMessagesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to create many HelicopterForCharterMessages.
+     */
+    data: HelicopterForCharterMessagesCreateManyInput | HelicopterForCharterMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HelicopterForCharterMessages update
+   */
+  export type HelicopterForCharterMessagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HelicopterForCharterMessages.
+     */
+    data: XOR<HelicopterForCharterMessagesUpdateInput, HelicopterForCharterMessagesUncheckedUpdateInput>
+    /**
+     * Choose, which HelicopterForCharterMessages to update.
+     */
+    where: HelicopterForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharterMessages updateMany
+   */
+  export type HelicopterForCharterMessagesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HelicopterForCharterMessages.
+     */
+    data: XOR<HelicopterForCharterMessagesUpdateManyMutationInput, HelicopterForCharterMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForCharterMessages to update
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * Limit how many HelicopterForCharterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharterMessages updateManyAndReturn
+   */
+  export type HelicopterForCharterMessagesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to update HelicopterForCharterMessages.
+     */
+    data: XOR<HelicopterForCharterMessagesUpdateManyMutationInput, HelicopterForCharterMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which HelicopterForCharterMessages to update
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * Limit how many HelicopterForCharterMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharterMessages upsert
+   */
+  export type HelicopterForCharterMessagesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HelicopterForCharterMessages to update in case it exists.
+     */
+    where: HelicopterForCharterMessagesWhereUniqueInput
+    /**
+     * In case the HelicopterForCharterMessages found by the `where` argument doesn't exist, create a new HelicopterForCharterMessages with this data.
+     */
+    create: XOR<HelicopterForCharterMessagesCreateInput, HelicopterForCharterMessagesUncheckedCreateInput>
+    /**
+     * In case the HelicopterForCharterMessages was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HelicopterForCharterMessagesUpdateInput, HelicopterForCharterMessagesUncheckedUpdateInput>
+  }
+
+  /**
+   * HelicopterForCharterMessages delete
+   */
+  export type HelicopterForCharterMessagesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
+    /**
+     * Filter which HelicopterForCharterMessages to delete.
+     */
+    where: HelicopterForCharterMessagesWhereUniqueInput
+  }
+
+  /**
+   * HelicopterForCharterMessages deleteMany
+   */
+  export type HelicopterForCharterMessagesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HelicopterForCharterMessages to delete
+     */
+    where?: HelicopterForCharterMessagesWhereInput
+    /**
+     * Limit how many HelicopterForCharterMessages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HelicopterForCharterMessages without action
+   */
+  export type HelicopterForCharterMessagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HelicopterForCharterMessages
+     */
+    select?: HelicopterForCharterMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HelicopterForCharterMessages
+     */
+    omit?: HelicopterForCharterMessagesOmit<ExtArgs> | null
   }
 
 
@@ -12915,6 +19741,140 @@ export namespace Prisma {
   };
 
   export type WalletScalarFieldEnum = (typeof WalletScalarFieldEnum)[keyof typeof WalletScalarFieldEnum]
+
+
+  export const HelicopterForSaleListingScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    helicopterName: 'helicopterName',
+    helicopterType: 'helicopterType',
+    manufacturer: 'manufacturer',
+    yearOfManufacture: 'yearOfManufacture',
+    registrationNumber: 'registrationNumber',
+    serialNumber: 'serialNumber',
+    seatingCapacity: 'seatingCapacity',
+    maximumRange: 'maximumRange',
+    cruisingSpeed: 'cruisingSpeed',
+    baggageCapacity: 'baggageCapacity',
+    condition: 'condition',
+    totalFlightHours: 'totalFlightHours',
+    maintenanceHistory: 'maintenanceHistory',
+    lastInspection: 'lastInspection',
+    salePrice: 'salePrice',
+    discounts: 'discounts',
+    avionics: 'avionics',
+    emergencyEquipment: 'emergencyEquipment',
+    cargoHook: 'cargoHook',
+    videoLink: 'videoLink',
+    exteriorImageUrls: 'exteriorImageUrls',
+    interiorImageUrls: 'interiorImageUrls',
+    additionalEquipment: 'additionalEquipment',
+    transactionSignature: 'transactionSignature',
+    transactionLink: 'transactionLink',
+    vendorId: 'vendorId',
+    views: 'views',
+    status: 'status',
+    sponsored: 'sponsored',
+    sponsoredType: 'sponsoredType',
+    endDate: 'endDate'
+  };
+
+  export type HelicopterForSaleListingScalarFieldEnum = (typeof HelicopterForSaleListingScalarFieldEnum)[keyof typeof HelicopterForSaleListingScalarFieldEnum]
+
+
+  export const CabinFeatureScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    name: 'name'
+  };
+
+  export type CabinFeatureScalarFieldEnum = (typeof CabinFeatureScalarFieldEnum)[keyof typeof CabinFeatureScalarFieldEnum]
+
+
+  export const HelicopterMessageScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    customerName: 'customerName',
+    customerEmail: 'customerEmail',
+    customerCountry: 'customerCountry',
+    listingId: 'listingId',
+    vendorId: 'vendorId',
+    message: 'message',
+    read: 'read'
+  };
+
+  export type HelicopterMessageScalarFieldEnum = (typeof HelicopterMessageScalarFieldEnum)[keyof typeof HelicopterMessageScalarFieldEnum]
+
+
+  export const HelicopterForCharterScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    model: 'model',
+    year: 'year',
+    capacity: 'capacity',
+    range: 'range',
+    pricePerHour: 'pricePerHour',
+    location: 'location',
+    availableFrom: 'availableFrom',
+    availableTo: 'availableTo',
+    description: 'description',
+    registrationNumber: 'registrationNumber',
+    engineType: 'engineType',
+    engineCount: 'engineCount',
+    maxSpeed: 'maxSpeed',
+    cruisingSpeed: 'cruisingSpeed',
+    fuelCapacity: 'fuelCapacity',
+    maxAltitude: 'maxAltitude',
+    flightHours: 'flightHours',
+    lastOverhaul: 'lastOverhaul',
+    airworthinessCertificate: 'airworthinessCertificate',
+    lastMaintenanceDate: 'lastMaintenanceDate',
+    insuranceStatus: 'insuranceStatus',
+    pilotQualifications: 'pilotQualifications',
+    safetyFeatures: 'safetyFeatures',
+    hasWifi: 'hasWifi',
+    hasRefreshments: 'hasRefreshments',
+    hasEntertainmentSystem: 'hasEntertainmentSystem',
+    hasClimatControl: 'hasClimatControl',
+    depositAmount: 'depositAmount',
+    minimumHours: 'minimumHours',
+    cancellationPolicy: 'cancellationPolicy',
+    packageDeals: 'packageDeals',
+    imageUrls: 'imageUrls',
+    transactionSignature: 'transactionSignature',
+    transactionLink: 'transactionLink',
+    vendorId: 'vendorId',
+    status: 'status',
+    views: 'views',
+    sponsored: 'sponsored',
+    sponsoredType: 'sponsoredType',
+    endDate: 'endDate'
+  };
+
+  export type HelicopterForCharterScalarFieldEnum = (typeof HelicopterForCharterScalarFieldEnum)[keyof typeof HelicopterForCharterScalarFieldEnum]
+
+
+  export const HelicopterForCharterMessagesScalarFieldEnum: {
+    id: 'id',
+    customerName: 'customerName',
+    customerEmail: 'customerEmail',
+    customerCountry: 'customerCountry',
+    departureLocation: 'departureLocation',
+    arrivalLocation: 'arrivalLocation',
+    departureDate: 'departureDate',
+    returnDate: 'returnDate',
+    passengerCount: 'passengerCount',
+    specialRequests: 'specialRequests',
+    listingId: 'listingId',
+    vendorId: 'vendorId',
+    createdAt: 'createdAt',
+    read: 'read'
+  };
+
+  export type HelicopterForCharterMessagesScalarFieldEnum = (typeof HelicopterForCharterMessagesScalarFieldEnum)[keyof typeof HelicopterForCharterMessagesScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -14245,6 +21205,673 @@ export namespace Prisma {
     NOT?: WalletScalarWhereWithAggregatesInput | WalletScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Wallet"> | string
     wallet?: StringWithAggregatesFilter<"Wallet"> | string
+  }
+
+  export type HelicopterForSaleListingWhereInput = {
+    AND?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
+    OR?: HelicopterForSaleListingWhereInput[]
+    NOT?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
+    id?: UuidFilter<"HelicopterForSaleListing"> | string
+    createdAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    updatedAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    helicopterName?: StringFilter<"HelicopterForSaleListing"> | string
+    helicopterType?: StringFilter<"HelicopterForSaleListing"> | string
+    manufacturer?: StringFilter<"HelicopterForSaleListing"> | string
+    yearOfManufacture?: IntFilter<"HelicopterForSaleListing"> | number
+    registrationNumber?: StringFilter<"HelicopterForSaleListing"> | string
+    serialNumber?: StringFilter<"HelicopterForSaleListing"> | string
+    seatingCapacity?: IntFilter<"HelicopterForSaleListing"> | number
+    maximumRange?: FloatFilter<"HelicopterForSaleListing"> | number
+    cruisingSpeed?: FloatFilter<"HelicopterForSaleListing"> | number
+    baggageCapacity?: StringFilter<"HelicopterForSaleListing"> | string
+    condition?: StringFilter<"HelicopterForSaleListing"> | string
+    totalFlightHours?: FloatFilter<"HelicopterForSaleListing"> | number
+    maintenanceHistory?: StringFilter<"HelicopterForSaleListing"> | string
+    lastInspection?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    salePrice?: FloatFilter<"HelicopterForSaleListing"> | number
+    discounts?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    avionics?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    emergencyEquipment?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    cargoHook?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    videoLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    exteriorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    interiorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    additionalEquipment?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    transactionSignature?: StringFilter<"HelicopterForSaleListing"> | string
+    transactionLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    vendorId?: UuidFilter<"HelicopterForSaleListing"> | string
+    views?: IntFilter<"HelicopterForSaleListing"> | number
+    status?: StringFilter<"HelicopterForSaleListing"> | string
+    sponsored?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    sponsoredType?: StringFilter<"HelicopterForSaleListing"> | string
+    endDate?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    cabinFeatures?: CabinFeatureListRelationFilter
+  }
+
+  export type HelicopterForSaleListingOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    helicopterName?: SortOrder
+    helicopterType?: SortOrder
+    manufacturer?: SortOrder
+    yearOfManufacture?: SortOrder
+    registrationNumber?: SortOrder
+    serialNumber?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    baggageCapacity?: SortOrder
+    condition?: SortOrder
+    totalFlightHours?: SortOrder
+    maintenanceHistory?: SortOrder
+    lastInspection?: SortOrder
+    salePrice?: SortOrder
+    discounts?: SortOrderInput | SortOrder
+    avionics?: SortOrderInput | SortOrder
+    emergencyEquipment?: SortOrder
+    cargoHook?: SortOrder
+    videoLink?: SortOrderInput | SortOrder
+    exteriorImageUrls?: SortOrder
+    interiorImageUrls?: SortOrder
+    additionalEquipment?: SortOrderInput | SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+    views?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+    cabinFeatures?: CabinFeatureOrderByRelationAggregateInput
+  }
+
+  export type HelicopterForSaleListingWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    registrationNumber?: string
+    serialNumber?: string
+    AND?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
+    OR?: HelicopterForSaleListingWhereInput[]
+    NOT?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
+    createdAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    updatedAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    helicopterName?: StringFilter<"HelicopterForSaleListing"> | string
+    helicopterType?: StringFilter<"HelicopterForSaleListing"> | string
+    manufacturer?: StringFilter<"HelicopterForSaleListing"> | string
+    yearOfManufacture?: IntFilter<"HelicopterForSaleListing"> | number
+    seatingCapacity?: IntFilter<"HelicopterForSaleListing"> | number
+    maximumRange?: FloatFilter<"HelicopterForSaleListing"> | number
+    cruisingSpeed?: FloatFilter<"HelicopterForSaleListing"> | number
+    baggageCapacity?: StringFilter<"HelicopterForSaleListing"> | string
+    condition?: StringFilter<"HelicopterForSaleListing"> | string
+    totalFlightHours?: FloatFilter<"HelicopterForSaleListing"> | number
+    maintenanceHistory?: StringFilter<"HelicopterForSaleListing"> | string
+    lastInspection?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    salePrice?: FloatFilter<"HelicopterForSaleListing"> | number
+    discounts?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    avionics?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    emergencyEquipment?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    cargoHook?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    videoLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    exteriorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    interiorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    additionalEquipment?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    transactionSignature?: StringFilter<"HelicopterForSaleListing"> | string
+    transactionLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    vendorId?: UuidFilter<"HelicopterForSaleListing"> | string
+    views?: IntFilter<"HelicopterForSaleListing"> | number
+    status?: StringFilter<"HelicopterForSaleListing"> | string
+    sponsored?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    sponsoredType?: StringFilter<"HelicopterForSaleListing"> | string
+    endDate?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    cabinFeatures?: CabinFeatureListRelationFilter
+  }, "id" | "registrationNumber" | "serialNumber">
+
+  export type HelicopterForSaleListingOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    helicopterName?: SortOrder
+    helicopterType?: SortOrder
+    manufacturer?: SortOrder
+    yearOfManufacture?: SortOrder
+    registrationNumber?: SortOrder
+    serialNumber?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    baggageCapacity?: SortOrder
+    condition?: SortOrder
+    totalFlightHours?: SortOrder
+    maintenanceHistory?: SortOrder
+    lastInspection?: SortOrder
+    salePrice?: SortOrder
+    discounts?: SortOrderInput | SortOrder
+    avionics?: SortOrderInput | SortOrder
+    emergencyEquipment?: SortOrder
+    cargoHook?: SortOrder
+    videoLink?: SortOrderInput | SortOrder
+    exteriorImageUrls?: SortOrder
+    interiorImageUrls?: SortOrder
+    additionalEquipment?: SortOrderInput | SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+    views?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+    _count?: HelicopterForSaleListingCountOrderByAggregateInput
+    _avg?: HelicopterForSaleListingAvgOrderByAggregateInput
+    _max?: HelicopterForSaleListingMaxOrderByAggregateInput
+    _min?: HelicopterForSaleListingMinOrderByAggregateInput
+    _sum?: HelicopterForSaleListingSumOrderByAggregateInput
+  }
+
+  export type HelicopterForSaleListingScalarWhereWithAggregatesInput = {
+    AND?: HelicopterForSaleListingScalarWhereWithAggregatesInput | HelicopterForSaleListingScalarWhereWithAggregatesInput[]
+    OR?: HelicopterForSaleListingScalarWhereWithAggregatesInput[]
+    NOT?: HelicopterForSaleListingScalarWhereWithAggregatesInput | HelicopterForSaleListingScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
+    helicopterName?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    helicopterType?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    manufacturer?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    yearOfManufacture?: IntWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    registrationNumber?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    serialNumber?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    seatingCapacity?: IntWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    maximumRange?: FloatWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    cruisingSpeed?: FloatWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    baggageCapacity?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    condition?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    totalFlightHours?: FloatWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    maintenanceHistory?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    lastInspection?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
+    salePrice?: FloatWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    discounts?: StringNullableWithAggregatesFilter<"HelicopterForSaleListing"> | string | null
+    avionics?: StringNullableWithAggregatesFilter<"HelicopterForSaleListing"> | string | null
+    emergencyEquipment?: BoolWithAggregatesFilter<"HelicopterForSaleListing"> | boolean
+    cargoHook?: BoolWithAggregatesFilter<"HelicopterForSaleListing"> | boolean
+    videoLink?: StringNullableWithAggregatesFilter<"HelicopterForSaleListing"> | string | null
+    exteriorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    interiorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    additionalEquipment?: StringNullableWithAggregatesFilter<"HelicopterForSaleListing"> | string | null
+    transactionSignature?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    transactionLink?: StringNullableWithAggregatesFilter<"HelicopterForSaleListing"> | string | null
+    vendorId?: UuidWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    views?: IntWithAggregatesFilter<"HelicopterForSaleListing"> | number
+    status?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    sponsored?: BoolWithAggregatesFilter<"HelicopterForSaleListing"> | boolean
+    sponsoredType?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    endDate?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
+  }
+
+  export type CabinFeatureWhereInput = {
+    AND?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
+    OR?: CabinFeatureWhereInput[]
+    NOT?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
+    id?: UuidFilter<"CabinFeature"> | string
+    createdAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    updatedAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    name?: StringFilter<"CabinFeature"> | string
+    helicopters?: HelicopterForSaleListingListRelationFilter
+  }
+
+  export type CabinFeatureOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+    helicopters?: HelicopterForSaleListingOrderByRelationAggregateInput
+  }
+
+  export type CabinFeatureWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    name?: string
+    AND?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
+    OR?: CabinFeatureWhereInput[]
+    NOT?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
+    createdAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    updatedAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    helicopters?: HelicopterForSaleListingListRelationFilter
+  }, "id" | "name">
+
+  export type CabinFeatureOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+    _count?: CabinFeatureCountOrderByAggregateInput
+    _max?: CabinFeatureMaxOrderByAggregateInput
+    _min?: CabinFeatureMinOrderByAggregateInput
+  }
+
+  export type CabinFeatureScalarWhereWithAggregatesInput = {
+    AND?: CabinFeatureScalarWhereWithAggregatesInput | CabinFeatureScalarWhereWithAggregatesInput[]
+    OR?: CabinFeatureScalarWhereWithAggregatesInput[]
+    NOT?: CabinFeatureScalarWhereWithAggregatesInput | CabinFeatureScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"CabinFeature"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"CabinFeature"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"CabinFeature"> | Date | string
+    name?: StringWithAggregatesFilter<"CabinFeature"> | string
+  }
+
+  export type HelicopterMessageWhereInput = {
+    AND?: HelicopterMessageWhereInput | HelicopterMessageWhereInput[]
+    OR?: HelicopterMessageWhereInput[]
+    NOT?: HelicopterMessageWhereInput | HelicopterMessageWhereInput[]
+    id?: UuidFilter<"HelicopterMessage"> | string
+    createdAt?: DateTimeFilter<"HelicopterMessage"> | Date | string
+    customerName?: StringFilter<"HelicopterMessage"> | string
+    customerEmail?: StringFilter<"HelicopterMessage"> | string
+    customerCountry?: StringNullableFilter<"HelicopterMessage"> | string | null
+    listingId?: UuidFilter<"HelicopterMessage"> | string
+    vendorId?: UuidFilter<"HelicopterMessage"> | string
+    message?: StringFilter<"HelicopterMessage"> | string
+    read?: BoolFilter<"HelicopterMessage"> | boolean
+  }
+
+  export type HelicopterMessageOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    message?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterMessageWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HelicopterMessageWhereInput | HelicopterMessageWhereInput[]
+    OR?: HelicopterMessageWhereInput[]
+    NOT?: HelicopterMessageWhereInput | HelicopterMessageWhereInput[]
+    createdAt?: DateTimeFilter<"HelicopterMessage"> | Date | string
+    customerName?: StringFilter<"HelicopterMessage"> | string
+    customerEmail?: StringFilter<"HelicopterMessage"> | string
+    customerCountry?: StringNullableFilter<"HelicopterMessage"> | string | null
+    listingId?: UuidFilter<"HelicopterMessage"> | string
+    vendorId?: UuidFilter<"HelicopterMessage"> | string
+    message?: StringFilter<"HelicopterMessage"> | string
+    read?: BoolFilter<"HelicopterMessage"> | boolean
+  }, "id">
+
+  export type HelicopterMessageOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    message?: SortOrder
+    read?: SortOrder
+    _count?: HelicopterMessageCountOrderByAggregateInput
+    _max?: HelicopterMessageMaxOrderByAggregateInput
+    _min?: HelicopterMessageMinOrderByAggregateInput
+  }
+
+  export type HelicopterMessageScalarWhereWithAggregatesInput = {
+    AND?: HelicopterMessageScalarWhereWithAggregatesInput | HelicopterMessageScalarWhereWithAggregatesInput[]
+    OR?: HelicopterMessageScalarWhereWithAggregatesInput[]
+    NOT?: HelicopterMessageScalarWhereWithAggregatesInput | HelicopterMessageScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"HelicopterMessage"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"HelicopterMessage"> | Date | string
+    customerName?: StringWithAggregatesFilter<"HelicopterMessage"> | string
+    customerEmail?: StringWithAggregatesFilter<"HelicopterMessage"> | string
+    customerCountry?: StringNullableWithAggregatesFilter<"HelicopterMessage"> | string | null
+    listingId?: UuidWithAggregatesFilter<"HelicopterMessage"> | string
+    vendorId?: UuidWithAggregatesFilter<"HelicopterMessage"> | string
+    message?: StringWithAggregatesFilter<"HelicopterMessage"> | string
+    read?: BoolWithAggregatesFilter<"HelicopterMessage"> | boolean
+  }
+
+  export type HelicopterForCharterWhereInput = {
+    AND?: HelicopterForCharterWhereInput | HelicopterForCharterWhereInput[]
+    OR?: HelicopterForCharterWhereInput[]
+    NOT?: HelicopterForCharterWhereInput | HelicopterForCharterWhereInput[]
+    id?: UuidFilter<"HelicopterForCharter"> | string
+    createdAt?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    updatedAt?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    model?: StringFilter<"HelicopterForCharter"> | string
+    year?: IntFilter<"HelicopterForCharter"> | number
+    capacity?: IntFilter<"HelicopterForCharter"> | number
+    range?: FloatFilter<"HelicopterForCharter"> | number
+    pricePerHour?: FloatFilter<"HelicopterForCharter"> | number
+    location?: StringFilter<"HelicopterForCharter"> | string
+    availableFrom?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    availableTo?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    description?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    registrationNumber?: StringFilter<"HelicopterForCharter"> | string
+    engineType?: StringFilter<"HelicopterForCharter"> | string
+    engineCount?: IntFilter<"HelicopterForCharter"> | number
+    maxSpeed?: FloatFilter<"HelicopterForCharter"> | number
+    cruisingSpeed?: FloatFilter<"HelicopterForCharter"> | number
+    fuelCapacity?: FloatFilter<"HelicopterForCharter"> | number
+    maxAltitude?: FloatFilter<"HelicopterForCharter"> | number
+    flightHours?: FloatNullableFilter<"HelicopterForCharter"> | number | null
+    lastOverhaul?: DateTimeNullableFilter<"HelicopterForCharter"> | Date | string | null
+    airworthinessCertificate?: StringFilter<"HelicopterForCharter"> | string
+    lastMaintenanceDate?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    insuranceStatus?: StringFilter<"HelicopterForCharter"> | string
+    pilotQualifications?: StringFilter<"HelicopterForCharter"> | string
+    safetyFeatures?: StringNullableListFilter<"HelicopterForCharter">
+    hasWifi?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasRefreshments?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasEntertainmentSystem?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasClimatControl?: BoolFilter<"HelicopterForCharter"> | boolean
+    depositAmount?: FloatFilter<"HelicopterForCharter"> | number
+    minimumHours?: FloatFilter<"HelicopterForCharter"> | number
+    cancellationPolicy?: StringFilter<"HelicopterForCharter"> | string
+    packageDeals?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    imageUrls?: StringNullableListFilter<"HelicopterForCharter">
+    transactionSignature?: StringFilter<"HelicopterForCharter"> | string
+    transactionLink?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    vendorId?: UuidFilter<"HelicopterForCharter"> | string
+    status?: StringFilter<"HelicopterForCharter"> | string
+    views?: IntFilter<"HelicopterForCharter"> | number
+    sponsored?: BoolFilter<"HelicopterForCharter"> | boolean
+    sponsoredType?: StringFilter<"HelicopterForCharter"> | string
+    endDate?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+  }
+
+  export type HelicopterForCharterOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    location?: SortOrder
+    availableFrom?: SortOrder
+    availableTo?: SortOrder
+    description?: SortOrderInput | SortOrder
+    registrationNumber?: SortOrder
+    engineType?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrderInput | SortOrder
+    lastOverhaul?: SortOrderInput | SortOrder
+    airworthinessCertificate?: SortOrder
+    lastMaintenanceDate?: SortOrder
+    insuranceStatus?: SortOrder
+    pilotQualifications?: SortOrder
+    safetyFeatures?: SortOrder
+    hasWifi?: SortOrder
+    hasRefreshments?: SortOrder
+    hasEntertainmentSystem?: SortOrder
+    hasClimatControl?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    cancellationPolicy?: SortOrder
+    packageDeals?: SortOrderInput | SortOrder
+    imageUrls?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    views?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForCharterWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    registrationNumber?: string
+    AND?: HelicopterForCharterWhereInput | HelicopterForCharterWhereInput[]
+    OR?: HelicopterForCharterWhereInput[]
+    NOT?: HelicopterForCharterWhereInput | HelicopterForCharterWhereInput[]
+    createdAt?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    updatedAt?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    model?: StringFilter<"HelicopterForCharter"> | string
+    year?: IntFilter<"HelicopterForCharter"> | number
+    capacity?: IntFilter<"HelicopterForCharter"> | number
+    range?: FloatFilter<"HelicopterForCharter"> | number
+    pricePerHour?: FloatFilter<"HelicopterForCharter"> | number
+    location?: StringFilter<"HelicopterForCharter"> | string
+    availableFrom?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    availableTo?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    description?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    engineType?: StringFilter<"HelicopterForCharter"> | string
+    engineCount?: IntFilter<"HelicopterForCharter"> | number
+    maxSpeed?: FloatFilter<"HelicopterForCharter"> | number
+    cruisingSpeed?: FloatFilter<"HelicopterForCharter"> | number
+    fuelCapacity?: FloatFilter<"HelicopterForCharter"> | number
+    maxAltitude?: FloatFilter<"HelicopterForCharter"> | number
+    flightHours?: FloatNullableFilter<"HelicopterForCharter"> | number | null
+    lastOverhaul?: DateTimeNullableFilter<"HelicopterForCharter"> | Date | string | null
+    airworthinessCertificate?: StringFilter<"HelicopterForCharter"> | string
+    lastMaintenanceDate?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+    insuranceStatus?: StringFilter<"HelicopterForCharter"> | string
+    pilotQualifications?: StringFilter<"HelicopterForCharter"> | string
+    safetyFeatures?: StringNullableListFilter<"HelicopterForCharter">
+    hasWifi?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasRefreshments?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasEntertainmentSystem?: BoolFilter<"HelicopterForCharter"> | boolean
+    hasClimatControl?: BoolFilter<"HelicopterForCharter"> | boolean
+    depositAmount?: FloatFilter<"HelicopterForCharter"> | number
+    minimumHours?: FloatFilter<"HelicopterForCharter"> | number
+    cancellationPolicy?: StringFilter<"HelicopterForCharter"> | string
+    packageDeals?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    imageUrls?: StringNullableListFilter<"HelicopterForCharter">
+    transactionSignature?: StringFilter<"HelicopterForCharter"> | string
+    transactionLink?: StringNullableFilter<"HelicopterForCharter"> | string | null
+    vendorId?: UuidFilter<"HelicopterForCharter"> | string
+    status?: StringFilter<"HelicopterForCharter"> | string
+    views?: IntFilter<"HelicopterForCharter"> | number
+    sponsored?: BoolFilter<"HelicopterForCharter"> | boolean
+    sponsoredType?: StringFilter<"HelicopterForCharter"> | string
+    endDate?: DateTimeFilter<"HelicopterForCharter"> | Date | string
+  }, "id" | "registrationNumber">
+
+  export type HelicopterForCharterOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    location?: SortOrder
+    availableFrom?: SortOrder
+    availableTo?: SortOrder
+    description?: SortOrderInput | SortOrder
+    registrationNumber?: SortOrder
+    engineType?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrderInput | SortOrder
+    lastOverhaul?: SortOrderInput | SortOrder
+    airworthinessCertificate?: SortOrder
+    lastMaintenanceDate?: SortOrder
+    insuranceStatus?: SortOrder
+    pilotQualifications?: SortOrder
+    safetyFeatures?: SortOrder
+    hasWifi?: SortOrder
+    hasRefreshments?: SortOrder
+    hasEntertainmentSystem?: SortOrder
+    hasClimatControl?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    cancellationPolicy?: SortOrder
+    packageDeals?: SortOrderInput | SortOrder
+    imageUrls?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    views?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+    _count?: HelicopterForCharterCountOrderByAggregateInput
+    _avg?: HelicopterForCharterAvgOrderByAggregateInput
+    _max?: HelicopterForCharterMaxOrderByAggregateInput
+    _min?: HelicopterForCharterMinOrderByAggregateInput
+    _sum?: HelicopterForCharterSumOrderByAggregateInput
+  }
+
+  export type HelicopterForCharterScalarWhereWithAggregatesInput = {
+    AND?: HelicopterForCharterScalarWhereWithAggregatesInput | HelicopterForCharterScalarWhereWithAggregatesInput[]
+    OR?: HelicopterForCharterScalarWhereWithAggregatesInput[]
+    NOT?: HelicopterForCharterScalarWhereWithAggregatesInput | HelicopterForCharterScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"HelicopterForCharter"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+    model?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    year?: IntWithAggregatesFilter<"HelicopterForCharter"> | number
+    capacity?: IntWithAggregatesFilter<"HelicopterForCharter"> | number
+    range?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    pricePerHour?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    location?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    availableFrom?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+    availableTo?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+    description?: StringNullableWithAggregatesFilter<"HelicopterForCharter"> | string | null
+    registrationNumber?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    engineType?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    engineCount?: IntWithAggregatesFilter<"HelicopterForCharter"> | number
+    maxSpeed?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    cruisingSpeed?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    fuelCapacity?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    maxAltitude?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    flightHours?: FloatNullableWithAggregatesFilter<"HelicopterForCharter"> | number | null
+    lastOverhaul?: DateTimeNullableWithAggregatesFilter<"HelicopterForCharter"> | Date | string | null
+    airworthinessCertificate?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    lastMaintenanceDate?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+    insuranceStatus?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    pilotQualifications?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    safetyFeatures?: StringNullableListFilter<"HelicopterForCharter">
+    hasWifi?: BoolWithAggregatesFilter<"HelicopterForCharter"> | boolean
+    hasRefreshments?: BoolWithAggregatesFilter<"HelicopterForCharter"> | boolean
+    hasEntertainmentSystem?: BoolWithAggregatesFilter<"HelicopterForCharter"> | boolean
+    hasClimatControl?: BoolWithAggregatesFilter<"HelicopterForCharter"> | boolean
+    depositAmount?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    minimumHours?: FloatWithAggregatesFilter<"HelicopterForCharter"> | number
+    cancellationPolicy?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    packageDeals?: StringNullableWithAggregatesFilter<"HelicopterForCharter"> | string | null
+    imageUrls?: StringNullableListFilter<"HelicopterForCharter">
+    transactionSignature?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    transactionLink?: StringNullableWithAggregatesFilter<"HelicopterForCharter"> | string | null
+    vendorId?: UuidWithAggregatesFilter<"HelicopterForCharter"> | string
+    status?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    views?: IntWithAggregatesFilter<"HelicopterForCharter"> | number
+    sponsored?: BoolWithAggregatesFilter<"HelicopterForCharter"> | boolean
+    sponsoredType?: StringWithAggregatesFilter<"HelicopterForCharter"> | string
+    endDate?: DateTimeWithAggregatesFilter<"HelicopterForCharter"> | Date | string
+  }
+
+  export type HelicopterForCharterMessagesWhereInput = {
+    AND?: HelicopterForCharterMessagesWhereInput | HelicopterForCharterMessagesWhereInput[]
+    OR?: HelicopterForCharterMessagesWhereInput[]
+    NOT?: HelicopterForCharterMessagesWhereInput | HelicopterForCharterMessagesWhereInput[]
+    id?: UuidFilter<"HelicopterForCharterMessages"> | string
+    customerName?: StringFilter<"HelicopterForCharterMessages"> | string
+    customerEmail?: StringFilter<"HelicopterForCharterMessages"> | string
+    customerCountry?: StringNullableFilter<"HelicopterForCharterMessages"> | string | null
+    departureLocation?: StringFilter<"HelicopterForCharterMessages"> | string
+    arrivalLocation?: StringFilter<"HelicopterForCharterMessages"> | string
+    departureDate?: DateTimeFilter<"HelicopterForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableFilter<"HelicopterForCharterMessages"> | Date | string | null
+    passengerCount?: IntFilter<"HelicopterForCharterMessages"> | number
+    specialRequests?: StringNullableFilter<"HelicopterForCharterMessages"> | string | null
+    listingId?: UuidFilter<"HelicopterForCharterMessages"> | string
+    vendorId?: UuidFilter<"HelicopterForCharterMessages"> | string
+    createdAt?: DateTimeFilter<"HelicopterForCharterMessages"> | Date | string
+    read?: BoolFilter<"HelicopterForCharterMessages"> | boolean
+  }
+
+  export type HelicopterForCharterMessagesOrderByWithRelationInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrderInput | SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HelicopterForCharterMessagesWhereInput | HelicopterForCharterMessagesWhereInput[]
+    OR?: HelicopterForCharterMessagesWhereInput[]
+    NOT?: HelicopterForCharterMessagesWhereInput | HelicopterForCharterMessagesWhereInput[]
+    customerName?: StringFilter<"HelicopterForCharterMessages"> | string
+    customerEmail?: StringFilter<"HelicopterForCharterMessages"> | string
+    customerCountry?: StringNullableFilter<"HelicopterForCharterMessages"> | string | null
+    departureLocation?: StringFilter<"HelicopterForCharterMessages"> | string
+    arrivalLocation?: StringFilter<"HelicopterForCharterMessages"> | string
+    departureDate?: DateTimeFilter<"HelicopterForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableFilter<"HelicopterForCharterMessages"> | Date | string | null
+    passengerCount?: IntFilter<"HelicopterForCharterMessages"> | number
+    specialRequests?: StringNullableFilter<"HelicopterForCharterMessages"> | string | null
+    listingId?: UuidFilter<"HelicopterForCharterMessages"> | string
+    vendorId?: UuidFilter<"HelicopterForCharterMessages"> | string
+    createdAt?: DateTimeFilter<"HelicopterForCharterMessages"> | Date | string
+    read?: BoolFilter<"HelicopterForCharterMessages"> | boolean
+  }, "id">
+
+  export type HelicopterForCharterMessagesOrderByWithAggregationInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrderInput | SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrderInput | SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrderInput | SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+    _count?: HelicopterForCharterMessagesCountOrderByAggregateInput
+    _avg?: HelicopterForCharterMessagesAvgOrderByAggregateInput
+    _max?: HelicopterForCharterMessagesMaxOrderByAggregateInput
+    _min?: HelicopterForCharterMessagesMinOrderByAggregateInput
+    _sum?: HelicopterForCharterMessagesSumOrderByAggregateInput
+  }
+
+  export type HelicopterForCharterMessagesScalarWhereWithAggregatesInput = {
+    AND?: HelicopterForCharterMessagesScalarWhereWithAggregatesInput | HelicopterForCharterMessagesScalarWhereWithAggregatesInput[]
+    OR?: HelicopterForCharterMessagesScalarWhereWithAggregatesInput[]
+    NOT?: HelicopterForCharterMessagesScalarWhereWithAggregatesInput | HelicopterForCharterMessagesScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    customerName?: StringWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    customerEmail?: StringWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    customerCountry?: StringNullableWithAggregatesFilter<"HelicopterForCharterMessages"> | string | null
+    departureLocation?: StringWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    arrivalLocation?: StringWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    departureDate?: DateTimeWithAggregatesFilter<"HelicopterForCharterMessages"> | Date | string
+    returnDate?: DateTimeNullableWithAggregatesFilter<"HelicopterForCharterMessages"> | Date | string | null
+    passengerCount?: IntWithAggregatesFilter<"HelicopterForCharterMessages"> | number
+    specialRequests?: StringNullableWithAggregatesFilter<"HelicopterForCharterMessages"> | string | null
+    listingId?: UuidWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    vendorId?: UuidWithAggregatesFilter<"HelicopterForCharterMessages"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"HelicopterForCharterMessages"> | Date | string
+    read?: BoolWithAggregatesFilter<"HelicopterForCharterMessages"> | boolean
   }
 
   export type UserCreateInput = {
@@ -15719,12 +23346,12 @@ export namespace Prisma {
 
   export type WalletCreateInput = {
     id?: string
-    wallet: string
+    wallet?: string
   }
 
   export type WalletUncheckedCreateInput = {
     id?: string
-    wallet: string
+    wallet?: string
   }
 
   export type WalletUpdateInput = {
@@ -15739,7 +23366,7 @@ export namespace Prisma {
 
   export type WalletCreateManyInput = {
     id?: string
-    wallet: string
+    wallet?: string
   }
 
   export type WalletUpdateManyMutationInput = {
@@ -15750,6 +23377,847 @@ export namespace Prisma {
   export type WalletUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     wallet?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type HelicopterForSaleListingCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date | string
+    salePrice: number
+    discounts?: string | null
+    avionics?: string | null
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: string | null
+    exteriorImageUrls?: HelicopterForSaleListingCreateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingCreateinteriorImageUrlsInput | string[]
+    additionalEquipment?: string | null
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    views?: number
+    status?: string
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+    cabinFeatures?: CabinFeatureCreateNestedManyWithoutHelicoptersInput
+  }
+
+  export type HelicopterForSaleListingUncheckedCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date | string
+    salePrice: number
+    discounts?: string | null
+    avionics?: string | null
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: string | null
+    exteriorImageUrls?: HelicopterForSaleListingCreateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingCreateinteriorImageUrlsInput | string[]
+    additionalEquipment?: string | null
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    views?: number
+    status?: string
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+    cabinFeatures?: CabinFeatureUncheckedCreateNestedManyWithoutHelicoptersInput
+  }
+
+  export type HelicopterForSaleListingUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    cabinFeatures?: CabinFeatureUpdateManyWithoutHelicoptersNestedInput
+  }
+
+  export type HelicopterForSaleListingUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    cabinFeatures?: CabinFeatureUncheckedUpdateManyWithoutHelicoptersNestedInput
+  }
+
+  export type HelicopterForSaleListingCreateManyInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date | string
+    salePrice: number
+    discounts?: string | null
+    avionics?: string | null
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: string | null
+    exteriorImageUrls?: HelicopterForSaleListingCreateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingCreateinteriorImageUrlsInput | string[]
+    additionalEquipment?: string | null
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    views?: number
+    status?: string
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForSaleListingUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForSaleListingUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CabinFeatureCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+    helicopters?: HelicopterForSaleListingCreateNestedManyWithoutCabinFeaturesInput
+  }
+
+  export type CabinFeatureUncheckedCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+    helicopters?: HelicopterForSaleListingUncheckedCreateNestedManyWithoutCabinFeaturesInput
+  }
+
+  export type CabinFeatureUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    helicopters?: HelicopterForSaleListingUpdateManyWithoutCabinFeaturesNestedInput
+  }
+
+  export type CabinFeatureUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    helicopters?: HelicopterForSaleListingUncheckedUpdateManyWithoutCabinFeaturesNestedInput
+  }
+
+  export type CabinFeatureCreateManyInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+  }
+
+  export type CabinFeatureUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CabinFeatureUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type HelicopterMessageCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    listingId: string
+    vendorId: string
+    message: string
+    read?: boolean
+  }
+
+  export type HelicopterMessageUncheckedCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    listingId: string
+    vendorId: string
+    message: string
+    read?: boolean
+  }
+
+  export type HelicopterMessageUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterMessageUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterMessageCreateManyInput = {
+    id?: string
+    createdAt?: Date | string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    listingId: string
+    vendorId: string
+    message: string
+    read?: boolean
+  }
+
+  export type HelicopterMessageUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterMessageUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterForCharterCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    model: string
+    year: number
+    capacity: number
+    range: number
+    pricePerHour: number
+    location: string
+    availableFrom: Date | string
+    availableTo: Date | string
+    description?: string | null
+    registrationNumber: string
+    engineType: string
+    engineCount: number
+    maxSpeed: number
+    cruisingSpeed: number
+    fuelCapacity: number
+    maxAltitude: number
+    flightHours?: number | null
+    lastOverhaul?: Date | string | null
+    airworthinessCertificate: string
+    lastMaintenanceDate: Date | string
+    insuranceStatus: string
+    pilotQualifications: string
+    safetyFeatures?: HelicopterForCharterCreatesafetyFeaturesInput | string[]
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount: number
+    minimumHours: number
+    cancellationPolicy: string
+    packageDeals?: string | null
+    imageUrls?: HelicopterForCharterCreateimageUrlsInput | string[]
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    status?: string
+    views?: number
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForCharterUncheckedCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    model: string
+    year: number
+    capacity: number
+    range: number
+    pricePerHour: number
+    location: string
+    availableFrom: Date | string
+    availableTo: Date | string
+    description?: string | null
+    registrationNumber: string
+    engineType: string
+    engineCount: number
+    maxSpeed: number
+    cruisingSpeed: number
+    fuelCapacity: number
+    maxAltitude: number
+    flightHours?: number | null
+    lastOverhaul?: Date | string | null
+    airworthinessCertificate: string
+    lastMaintenanceDate: Date | string
+    insuranceStatus: string
+    pilotQualifications: string
+    safetyFeatures?: HelicopterForCharterCreatesafetyFeaturesInput | string[]
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount: number
+    minimumHours: number
+    cancellationPolicy: string
+    packageDeals?: string | null
+    imageUrls?: HelicopterForCharterCreateimageUrlsInput | string[]
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    status?: string
+    views?: number
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForCharterUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    capacity?: IntFieldUpdateOperationsInput | number
+    range?: FloatFieldUpdateOperationsInput | number
+    pricePerHour?: FloatFieldUpdateOperationsInput | number
+    location?: StringFieldUpdateOperationsInput | string
+    availableFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    availableTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    engineType?: StringFieldUpdateOperationsInput | string
+    engineCount?: IntFieldUpdateOperationsInput | number
+    maxSpeed?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    fuelCapacity?: FloatFieldUpdateOperationsInput | number
+    maxAltitude?: FloatFieldUpdateOperationsInput | number
+    flightHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    lastOverhaul?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    airworthinessCertificate?: StringFieldUpdateOperationsInput | string
+    lastMaintenanceDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    insuranceStatus?: StringFieldUpdateOperationsInput | string
+    pilotQualifications?: StringFieldUpdateOperationsInput | string
+    safetyFeatures?: HelicopterForCharterUpdatesafetyFeaturesInput | string[]
+    hasWifi?: BoolFieldUpdateOperationsInput | boolean
+    hasRefreshments?: BoolFieldUpdateOperationsInput | boolean
+    hasEntertainmentSystem?: BoolFieldUpdateOperationsInput | boolean
+    hasClimatControl?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: FloatFieldUpdateOperationsInput | number
+    minimumHours?: FloatFieldUpdateOperationsInput | number
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    packageDeals?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrls?: HelicopterForCharterUpdateimageUrlsInput | string[]
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForCharterUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    capacity?: IntFieldUpdateOperationsInput | number
+    range?: FloatFieldUpdateOperationsInput | number
+    pricePerHour?: FloatFieldUpdateOperationsInput | number
+    location?: StringFieldUpdateOperationsInput | string
+    availableFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    availableTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    engineType?: StringFieldUpdateOperationsInput | string
+    engineCount?: IntFieldUpdateOperationsInput | number
+    maxSpeed?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    fuelCapacity?: FloatFieldUpdateOperationsInput | number
+    maxAltitude?: FloatFieldUpdateOperationsInput | number
+    flightHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    lastOverhaul?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    airworthinessCertificate?: StringFieldUpdateOperationsInput | string
+    lastMaintenanceDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    insuranceStatus?: StringFieldUpdateOperationsInput | string
+    pilotQualifications?: StringFieldUpdateOperationsInput | string
+    safetyFeatures?: HelicopterForCharterUpdatesafetyFeaturesInput | string[]
+    hasWifi?: BoolFieldUpdateOperationsInput | boolean
+    hasRefreshments?: BoolFieldUpdateOperationsInput | boolean
+    hasEntertainmentSystem?: BoolFieldUpdateOperationsInput | boolean
+    hasClimatControl?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: FloatFieldUpdateOperationsInput | number
+    minimumHours?: FloatFieldUpdateOperationsInput | number
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    packageDeals?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrls?: HelicopterForCharterUpdateimageUrlsInput | string[]
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForCharterCreateManyInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    model: string
+    year: number
+    capacity: number
+    range: number
+    pricePerHour: number
+    location: string
+    availableFrom: Date | string
+    availableTo: Date | string
+    description?: string | null
+    registrationNumber: string
+    engineType: string
+    engineCount: number
+    maxSpeed: number
+    cruisingSpeed: number
+    fuelCapacity: number
+    maxAltitude: number
+    flightHours?: number | null
+    lastOverhaul?: Date | string | null
+    airworthinessCertificate: string
+    lastMaintenanceDate: Date | string
+    insuranceStatus: string
+    pilotQualifications: string
+    safetyFeatures?: HelicopterForCharterCreatesafetyFeaturesInput | string[]
+    hasWifi?: boolean
+    hasRefreshments?: boolean
+    hasEntertainmentSystem?: boolean
+    hasClimatControl?: boolean
+    depositAmount: number
+    minimumHours: number
+    cancellationPolicy: string
+    packageDeals?: string | null
+    imageUrls?: HelicopterForCharterCreateimageUrlsInput | string[]
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    status?: string
+    views?: number
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForCharterUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    capacity?: IntFieldUpdateOperationsInput | number
+    range?: FloatFieldUpdateOperationsInput | number
+    pricePerHour?: FloatFieldUpdateOperationsInput | number
+    location?: StringFieldUpdateOperationsInput | string
+    availableFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    availableTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    engineType?: StringFieldUpdateOperationsInput | string
+    engineCount?: IntFieldUpdateOperationsInput | number
+    maxSpeed?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    fuelCapacity?: FloatFieldUpdateOperationsInput | number
+    maxAltitude?: FloatFieldUpdateOperationsInput | number
+    flightHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    lastOverhaul?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    airworthinessCertificate?: StringFieldUpdateOperationsInput | string
+    lastMaintenanceDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    insuranceStatus?: StringFieldUpdateOperationsInput | string
+    pilotQualifications?: StringFieldUpdateOperationsInput | string
+    safetyFeatures?: HelicopterForCharterUpdatesafetyFeaturesInput | string[]
+    hasWifi?: BoolFieldUpdateOperationsInput | boolean
+    hasRefreshments?: BoolFieldUpdateOperationsInput | boolean
+    hasEntertainmentSystem?: BoolFieldUpdateOperationsInput | boolean
+    hasClimatControl?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: FloatFieldUpdateOperationsInput | number
+    minimumHours?: FloatFieldUpdateOperationsInput | number
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    packageDeals?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrls?: HelicopterForCharterUpdateimageUrlsInput | string[]
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForCharterUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    capacity?: IntFieldUpdateOperationsInput | number
+    range?: FloatFieldUpdateOperationsInput | number
+    pricePerHour?: FloatFieldUpdateOperationsInput | number
+    location?: StringFieldUpdateOperationsInput | string
+    availableFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    availableTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    engineType?: StringFieldUpdateOperationsInput | string
+    engineCount?: IntFieldUpdateOperationsInput | number
+    maxSpeed?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    fuelCapacity?: FloatFieldUpdateOperationsInput | number
+    maxAltitude?: FloatFieldUpdateOperationsInput | number
+    flightHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    lastOverhaul?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    airworthinessCertificate?: StringFieldUpdateOperationsInput | string
+    lastMaintenanceDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    insuranceStatus?: StringFieldUpdateOperationsInput | string
+    pilotQualifications?: StringFieldUpdateOperationsInput | string
+    safetyFeatures?: HelicopterForCharterUpdatesafetyFeaturesInput | string[]
+    hasWifi?: BoolFieldUpdateOperationsInput | boolean
+    hasRefreshments?: BoolFieldUpdateOperationsInput | boolean
+    hasEntertainmentSystem?: BoolFieldUpdateOperationsInput | boolean
+    hasClimatControl?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: FloatFieldUpdateOperationsInput | number
+    minimumHours?: FloatFieldUpdateOperationsInput | number
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    packageDeals?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrls?: HelicopterForCharterUpdateimageUrlsInput | string[]
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForCharterMessagesCreateInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type HelicopterForCharterMessagesUncheckedCreateInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type HelicopterForCharterMessagesUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterForCharterMessagesUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterForCharterMessagesCreateManyInput = {
+    id?: string
+    customerName: string
+    customerEmail: string
+    customerCountry?: string | null
+    departureLocation: string
+    arrivalLocation: string
+    departureDate: Date | string
+    returnDate?: Date | string | null
+    passengerCount: number
+    specialRequests?: string | null
+    listingId: string
+    vendorId: string
+    createdAt?: Date | string
+    read?: boolean
+  }
+
+  export type HelicopterForCharterMessagesUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HelicopterForCharterMessagesUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    customerEmail?: StringFieldUpdateOperationsInput | string
+    customerCountry?: NullableStringFieldUpdateOperationsInput | string | null
+    departureLocation?: StringFieldUpdateOperationsInput | string
+    arrivalLocation?: StringFieldUpdateOperationsInput | string
+    departureDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    returnDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    passengerCount?: IntFieldUpdateOperationsInput | number
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    read?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -16820,6 +25288,435 @@ export namespace Prisma {
     wallet?: SortOrder
   }
 
+  export type CabinFeatureListRelationFilter = {
+    every?: CabinFeatureWhereInput
+    some?: CabinFeatureWhereInput
+    none?: CabinFeatureWhereInput
+  }
+
+  export type CabinFeatureOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type HelicopterForSaleListingCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    helicopterName?: SortOrder
+    helicopterType?: SortOrder
+    manufacturer?: SortOrder
+    yearOfManufacture?: SortOrder
+    registrationNumber?: SortOrder
+    serialNumber?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    baggageCapacity?: SortOrder
+    condition?: SortOrder
+    totalFlightHours?: SortOrder
+    maintenanceHistory?: SortOrder
+    lastInspection?: SortOrder
+    salePrice?: SortOrder
+    discounts?: SortOrder
+    avionics?: SortOrder
+    emergencyEquipment?: SortOrder
+    cargoHook?: SortOrder
+    videoLink?: SortOrder
+    exteriorImageUrls?: SortOrder
+    interiorImageUrls?: SortOrder
+    additionalEquipment?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    views?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForSaleListingAvgOrderByAggregateInput = {
+    yearOfManufacture?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    totalFlightHours?: SortOrder
+    salePrice?: SortOrder
+    views?: SortOrder
+  }
+
+  export type HelicopterForSaleListingMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    helicopterName?: SortOrder
+    helicopterType?: SortOrder
+    manufacturer?: SortOrder
+    yearOfManufacture?: SortOrder
+    registrationNumber?: SortOrder
+    serialNumber?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    baggageCapacity?: SortOrder
+    condition?: SortOrder
+    totalFlightHours?: SortOrder
+    maintenanceHistory?: SortOrder
+    lastInspection?: SortOrder
+    salePrice?: SortOrder
+    discounts?: SortOrder
+    avionics?: SortOrder
+    emergencyEquipment?: SortOrder
+    cargoHook?: SortOrder
+    videoLink?: SortOrder
+    additionalEquipment?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    views?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForSaleListingMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    helicopterName?: SortOrder
+    helicopterType?: SortOrder
+    manufacturer?: SortOrder
+    yearOfManufacture?: SortOrder
+    registrationNumber?: SortOrder
+    serialNumber?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    baggageCapacity?: SortOrder
+    condition?: SortOrder
+    totalFlightHours?: SortOrder
+    maintenanceHistory?: SortOrder
+    lastInspection?: SortOrder
+    salePrice?: SortOrder
+    discounts?: SortOrder
+    avionics?: SortOrder
+    emergencyEquipment?: SortOrder
+    cargoHook?: SortOrder
+    videoLink?: SortOrder
+    additionalEquipment?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    views?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForSaleListingSumOrderByAggregateInput = {
+    yearOfManufacture?: SortOrder
+    seatingCapacity?: SortOrder
+    maximumRange?: SortOrder
+    cruisingSpeed?: SortOrder
+    totalFlightHours?: SortOrder
+    salePrice?: SortOrder
+    views?: SortOrder
+  }
+
+  export type HelicopterForSaleListingListRelationFilter = {
+    every?: HelicopterForSaleListingWhereInput
+    some?: HelicopterForSaleListingWhereInput
+    none?: HelicopterForSaleListingWhereInput
+  }
+
+  export type HelicopterForSaleListingOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CabinFeatureCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CabinFeatureMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CabinFeatureMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+  }
+
+  export type HelicopterMessageCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    message?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterMessageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    message?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterMessageMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    message?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterForCharterCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    location?: SortOrder
+    availableFrom?: SortOrder
+    availableTo?: SortOrder
+    description?: SortOrder
+    registrationNumber?: SortOrder
+    engineType?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrder
+    lastOverhaul?: SortOrder
+    airworthinessCertificate?: SortOrder
+    lastMaintenanceDate?: SortOrder
+    insuranceStatus?: SortOrder
+    pilotQualifications?: SortOrder
+    safetyFeatures?: SortOrder
+    hasWifi?: SortOrder
+    hasRefreshments?: SortOrder
+    hasEntertainmentSystem?: SortOrder
+    hasClimatControl?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    cancellationPolicy?: SortOrder
+    packageDeals?: SortOrder
+    imageUrls?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    views?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForCharterAvgOrderByAggregateInput = {
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    views?: SortOrder
+  }
+
+  export type HelicopterForCharterMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    location?: SortOrder
+    availableFrom?: SortOrder
+    availableTo?: SortOrder
+    description?: SortOrder
+    registrationNumber?: SortOrder
+    engineType?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrder
+    lastOverhaul?: SortOrder
+    airworthinessCertificate?: SortOrder
+    lastMaintenanceDate?: SortOrder
+    insuranceStatus?: SortOrder
+    pilotQualifications?: SortOrder
+    hasWifi?: SortOrder
+    hasRefreshments?: SortOrder
+    hasEntertainmentSystem?: SortOrder
+    hasClimatControl?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    cancellationPolicy?: SortOrder
+    packageDeals?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    views?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForCharterMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    location?: SortOrder
+    availableFrom?: SortOrder
+    availableTo?: SortOrder
+    description?: SortOrder
+    registrationNumber?: SortOrder
+    engineType?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrder
+    lastOverhaul?: SortOrder
+    airworthinessCertificate?: SortOrder
+    lastMaintenanceDate?: SortOrder
+    insuranceStatus?: SortOrder
+    pilotQualifications?: SortOrder
+    hasWifi?: SortOrder
+    hasRefreshments?: SortOrder
+    hasEntertainmentSystem?: SortOrder
+    hasClimatControl?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    cancellationPolicy?: SortOrder
+    packageDeals?: SortOrder
+    transactionSignature?: SortOrder
+    transactionLink?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    views?: SortOrder
+    sponsored?: SortOrder
+    sponsoredType?: SortOrder
+    endDate?: SortOrder
+  }
+
+  export type HelicopterForCharterSumOrderByAggregateInput = {
+    year?: SortOrder
+    capacity?: SortOrder
+    range?: SortOrder
+    pricePerHour?: SortOrder
+    engineCount?: SortOrder
+    maxSpeed?: SortOrder
+    cruisingSpeed?: SortOrder
+    fuelCapacity?: SortOrder
+    maxAltitude?: SortOrder
+    flightHours?: SortOrder
+    depositAmount?: SortOrder
+    minimumHours?: SortOrder
+    views?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesCountOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesAvgOrderByAggregateInput = {
+    passengerCount?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesMinOrderByAggregateInput = {
+    id?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerCountry?: SortOrder
+    departureLocation?: SortOrder
+    arrivalLocation?: SortOrder
+    departureDate?: SortOrder
+    returnDate?: SortOrder
+    passengerCount?: SortOrder
+    specialRequests?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    createdAt?: SortOrder
+    read?: SortOrder
+  }
+
+  export type HelicopterForCharterMessagesSumOrderByAggregateInput = {
+    passengerCount?: SortOrder
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -16937,6 +25834,118 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type HelicopterForSaleListingCreateexteriorImageUrlsInput = {
+    set: string[]
+  }
+
+  export type HelicopterForSaleListingCreateinteriorImageUrlsInput = {
+    set: string[]
+  }
+
+  export type CabinFeatureCreateNestedManyWithoutHelicoptersInput = {
+    create?: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput> | CabinFeatureCreateWithoutHelicoptersInput[] | CabinFeatureUncheckedCreateWithoutHelicoptersInput[]
+    connectOrCreate?: CabinFeatureCreateOrConnectWithoutHelicoptersInput | CabinFeatureCreateOrConnectWithoutHelicoptersInput[]
+    connect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+  }
+
+  export type CabinFeatureUncheckedCreateNestedManyWithoutHelicoptersInput = {
+    create?: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput> | CabinFeatureCreateWithoutHelicoptersInput[] | CabinFeatureUncheckedCreateWithoutHelicoptersInput[]
+    connectOrCreate?: CabinFeatureCreateOrConnectWithoutHelicoptersInput | CabinFeatureCreateOrConnectWithoutHelicoptersInput[]
+    connect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+  }
+
+  export type HelicopterForSaleListingUpdateexteriorImageUrlsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type HelicopterForSaleListingUpdateinteriorImageUrlsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type CabinFeatureUpdateManyWithoutHelicoptersNestedInput = {
+    create?: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput> | CabinFeatureCreateWithoutHelicoptersInput[] | CabinFeatureUncheckedCreateWithoutHelicoptersInput[]
+    connectOrCreate?: CabinFeatureCreateOrConnectWithoutHelicoptersInput | CabinFeatureCreateOrConnectWithoutHelicoptersInput[]
+    upsert?: CabinFeatureUpsertWithWhereUniqueWithoutHelicoptersInput | CabinFeatureUpsertWithWhereUniqueWithoutHelicoptersInput[]
+    set?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    disconnect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    delete?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    connect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    update?: CabinFeatureUpdateWithWhereUniqueWithoutHelicoptersInput | CabinFeatureUpdateWithWhereUniqueWithoutHelicoptersInput[]
+    updateMany?: CabinFeatureUpdateManyWithWhereWithoutHelicoptersInput | CabinFeatureUpdateManyWithWhereWithoutHelicoptersInput[]
+    deleteMany?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
+  }
+
+  export type CabinFeatureUncheckedUpdateManyWithoutHelicoptersNestedInput = {
+    create?: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput> | CabinFeatureCreateWithoutHelicoptersInput[] | CabinFeatureUncheckedCreateWithoutHelicoptersInput[]
+    connectOrCreate?: CabinFeatureCreateOrConnectWithoutHelicoptersInput | CabinFeatureCreateOrConnectWithoutHelicoptersInput[]
+    upsert?: CabinFeatureUpsertWithWhereUniqueWithoutHelicoptersInput | CabinFeatureUpsertWithWhereUniqueWithoutHelicoptersInput[]
+    set?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    disconnect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    delete?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    connect?: CabinFeatureWhereUniqueInput | CabinFeatureWhereUniqueInput[]
+    update?: CabinFeatureUpdateWithWhereUniqueWithoutHelicoptersInput | CabinFeatureUpdateWithWhereUniqueWithoutHelicoptersInput[]
+    updateMany?: CabinFeatureUpdateManyWithWhereWithoutHelicoptersInput | CabinFeatureUpdateManyWithWhereWithoutHelicoptersInput[]
+    deleteMany?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
+  }
+
+  export type HelicopterForSaleListingCreateNestedManyWithoutCabinFeaturesInput = {
+    create?: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput> | HelicopterForSaleListingCreateWithoutCabinFeaturesInput[] | HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput[]
+    connectOrCreate?: HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput | HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput[]
+    connect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+  }
+
+  export type HelicopterForSaleListingUncheckedCreateNestedManyWithoutCabinFeaturesInput = {
+    create?: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput> | HelicopterForSaleListingCreateWithoutCabinFeaturesInput[] | HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput[]
+    connectOrCreate?: HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput | HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput[]
+    connect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+  }
+
+  export type HelicopterForSaleListingUpdateManyWithoutCabinFeaturesNestedInput = {
+    create?: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput> | HelicopterForSaleListingCreateWithoutCabinFeaturesInput[] | HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput[]
+    connectOrCreate?: HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput | HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput[]
+    upsert?: HelicopterForSaleListingUpsertWithWhereUniqueWithoutCabinFeaturesInput | HelicopterForSaleListingUpsertWithWhereUniqueWithoutCabinFeaturesInput[]
+    set?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    disconnect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    delete?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    connect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    update?: HelicopterForSaleListingUpdateWithWhereUniqueWithoutCabinFeaturesInput | HelicopterForSaleListingUpdateWithWhereUniqueWithoutCabinFeaturesInput[]
+    updateMany?: HelicopterForSaleListingUpdateManyWithWhereWithoutCabinFeaturesInput | HelicopterForSaleListingUpdateManyWithWhereWithoutCabinFeaturesInput[]
+    deleteMany?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
+  }
+
+  export type HelicopterForSaleListingUncheckedUpdateManyWithoutCabinFeaturesNestedInput = {
+    create?: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput> | HelicopterForSaleListingCreateWithoutCabinFeaturesInput[] | HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput[]
+    connectOrCreate?: HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput | HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput[]
+    upsert?: HelicopterForSaleListingUpsertWithWhereUniqueWithoutCabinFeaturesInput | HelicopterForSaleListingUpsertWithWhereUniqueWithoutCabinFeaturesInput[]
+    set?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    disconnect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    delete?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    connect?: HelicopterForSaleListingWhereUniqueInput | HelicopterForSaleListingWhereUniqueInput[]
+    update?: HelicopterForSaleListingUpdateWithWhereUniqueWithoutCabinFeaturesInput | HelicopterForSaleListingUpdateWithWhereUniqueWithoutCabinFeaturesInput[]
+    updateMany?: HelicopterForSaleListingUpdateManyWithWhereWithoutCabinFeaturesInput | HelicopterForSaleListingUpdateManyWithWhereWithoutCabinFeaturesInput[]
+    deleteMany?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
+  }
+
+  export type HelicopterForCharterCreatesafetyFeaturesInput = {
+    set: string[]
+  }
+
+  export type HelicopterForCharterCreateimageUrlsInput = {
+    set: string[]
+  }
+
+  export type HelicopterForCharterUpdatesafetyFeaturesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type HelicopterForCharterUpdateimageUrlsInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -17235,6 +26244,318 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type CabinFeatureCreateWithoutHelicoptersInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+  }
+
+  export type CabinFeatureUncheckedCreateWithoutHelicoptersInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+  }
+
+  export type CabinFeatureCreateOrConnectWithoutHelicoptersInput = {
+    where: CabinFeatureWhereUniqueInput
+    create: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput>
+  }
+
+  export type CabinFeatureUpsertWithWhereUniqueWithoutHelicoptersInput = {
+    where: CabinFeatureWhereUniqueInput
+    update: XOR<CabinFeatureUpdateWithoutHelicoptersInput, CabinFeatureUncheckedUpdateWithoutHelicoptersInput>
+    create: XOR<CabinFeatureCreateWithoutHelicoptersInput, CabinFeatureUncheckedCreateWithoutHelicoptersInput>
+  }
+
+  export type CabinFeatureUpdateWithWhereUniqueWithoutHelicoptersInput = {
+    where: CabinFeatureWhereUniqueInput
+    data: XOR<CabinFeatureUpdateWithoutHelicoptersInput, CabinFeatureUncheckedUpdateWithoutHelicoptersInput>
+  }
+
+  export type CabinFeatureUpdateManyWithWhereWithoutHelicoptersInput = {
+    where: CabinFeatureScalarWhereInput
+    data: XOR<CabinFeatureUpdateManyMutationInput, CabinFeatureUncheckedUpdateManyWithoutHelicoptersInput>
+  }
+
+  export type CabinFeatureScalarWhereInput = {
+    AND?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
+    OR?: CabinFeatureScalarWhereInput[]
+    NOT?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
+    id?: UuidFilter<"CabinFeature"> | string
+    createdAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    updatedAt?: DateTimeFilter<"CabinFeature"> | Date | string
+    name?: StringFilter<"CabinFeature"> | string
+  }
+
+  export type HelicopterForSaleListingCreateWithoutCabinFeaturesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date | string
+    salePrice: number
+    discounts?: string | null
+    avionics?: string | null
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: string | null
+    exteriorImageUrls?: HelicopterForSaleListingCreateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingCreateinteriorImageUrlsInput | string[]
+    additionalEquipment?: string | null
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    views?: number
+    status?: string
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    helicopterName: string
+    helicopterType: string
+    manufacturer: string
+    yearOfManufacture: number
+    registrationNumber: string
+    serialNumber: string
+    seatingCapacity: number
+    maximumRange: number
+    cruisingSpeed: number
+    baggageCapacity: string
+    condition: string
+    totalFlightHours: number
+    maintenanceHistory: string
+    lastInspection: Date | string
+    salePrice: number
+    discounts?: string | null
+    avionics?: string | null
+    emergencyEquipment?: boolean
+    cargoHook?: boolean
+    videoLink?: string | null
+    exteriorImageUrls?: HelicopterForSaleListingCreateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingCreateinteriorImageUrlsInput | string[]
+    additionalEquipment?: string | null
+    transactionSignature: string
+    transactionLink?: string | null
+    vendorId: string
+    views?: number
+    status?: string
+    sponsored?: boolean
+    sponsoredType?: string
+    endDate?: Date | string
+  }
+
+  export type HelicopterForSaleListingCreateOrConnectWithoutCabinFeaturesInput = {
+    where: HelicopterForSaleListingWhereUniqueInput
+    create: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput>
+  }
+
+  export type HelicopterForSaleListingUpsertWithWhereUniqueWithoutCabinFeaturesInput = {
+    where: HelicopterForSaleListingWhereUniqueInput
+    update: XOR<HelicopterForSaleListingUpdateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedUpdateWithoutCabinFeaturesInput>
+    create: XOR<HelicopterForSaleListingCreateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedCreateWithoutCabinFeaturesInput>
+  }
+
+  export type HelicopterForSaleListingUpdateWithWhereUniqueWithoutCabinFeaturesInput = {
+    where: HelicopterForSaleListingWhereUniqueInput
+    data: XOR<HelicopterForSaleListingUpdateWithoutCabinFeaturesInput, HelicopterForSaleListingUncheckedUpdateWithoutCabinFeaturesInput>
+  }
+
+  export type HelicopterForSaleListingUpdateManyWithWhereWithoutCabinFeaturesInput = {
+    where: HelicopterForSaleListingScalarWhereInput
+    data: XOR<HelicopterForSaleListingUpdateManyMutationInput, HelicopterForSaleListingUncheckedUpdateManyWithoutCabinFeaturesInput>
+  }
+
+  export type HelicopterForSaleListingScalarWhereInput = {
+    AND?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
+    OR?: HelicopterForSaleListingScalarWhereInput[]
+    NOT?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
+    id?: UuidFilter<"HelicopterForSaleListing"> | string
+    createdAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    updatedAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    helicopterName?: StringFilter<"HelicopterForSaleListing"> | string
+    helicopterType?: StringFilter<"HelicopterForSaleListing"> | string
+    manufacturer?: StringFilter<"HelicopterForSaleListing"> | string
+    yearOfManufacture?: IntFilter<"HelicopterForSaleListing"> | number
+    registrationNumber?: StringFilter<"HelicopterForSaleListing"> | string
+    serialNumber?: StringFilter<"HelicopterForSaleListing"> | string
+    seatingCapacity?: IntFilter<"HelicopterForSaleListing"> | number
+    maximumRange?: FloatFilter<"HelicopterForSaleListing"> | number
+    cruisingSpeed?: FloatFilter<"HelicopterForSaleListing"> | number
+    baggageCapacity?: StringFilter<"HelicopterForSaleListing"> | string
+    condition?: StringFilter<"HelicopterForSaleListing"> | string
+    totalFlightHours?: FloatFilter<"HelicopterForSaleListing"> | number
+    maintenanceHistory?: StringFilter<"HelicopterForSaleListing"> | string
+    lastInspection?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+    salePrice?: FloatFilter<"HelicopterForSaleListing"> | number
+    discounts?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    avionics?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    emergencyEquipment?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    cargoHook?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    videoLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    exteriorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    interiorImageUrls?: StringNullableListFilter<"HelicopterForSaleListing">
+    additionalEquipment?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    transactionSignature?: StringFilter<"HelicopterForSaleListing"> | string
+    transactionLink?: StringNullableFilter<"HelicopterForSaleListing"> | string | null
+    vendorId?: UuidFilter<"HelicopterForSaleListing"> | string
+    views?: IntFilter<"HelicopterForSaleListing"> | number
+    status?: StringFilter<"HelicopterForSaleListing"> | string
+    sponsored?: BoolFilter<"HelicopterForSaleListing"> | boolean
+    sponsoredType?: StringFilter<"HelicopterForSaleListing"> | string
+    endDate?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
+  }
+
+  export type CabinFeatureUpdateWithoutHelicoptersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CabinFeatureUncheckedUpdateWithoutHelicoptersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CabinFeatureUncheckedUpdateManyWithoutHelicoptersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type HelicopterForSaleListingUpdateWithoutCabinFeaturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForSaleListingUncheckedUpdateWithoutCabinFeaturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HelicopterForSaleListingUncheckedUpdateManyWithoutCabinFeaturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    helicopterName?: StringFieldUpdateOperationsInput | string
+    helicopterType?: StringFieldUpdateOperationsInput | string
+    manufacturer?: StringFieldUpdateOperationsInput | string
+    yearOfManufacture?: IntFieldUpdateOperationsInput | number
+    registrationNumber?: StringFieldUpdateOperationsInput | string
+    serialNumber?: StringFieldUpdateOperationsInput | string
+    seatingCapacity?: IntFieldUpdateOperationsInput | number
+    maximumRange?: FloatFieldUpdateOperationsInput | number
+    cruisingSpeed?: FloatFieldUpdateOperationsInput | number
+    baggageCapacity?: StringFieldUpdateOperationsInput | string
+    condition?: StringFieldUpdateOperationsInput | string
+    totalFlightHours?: FloatFieldUpdateOperationsInput | number
+    maintenanceHistory?: StringFieldUpdateOperationsInput | string
+    lastInspection?: DateTimeFieldUpdateOperationsInput | Date | string
+    salePrice?: FloatFieldUpdateOperationsInput | number
+    discounts?: NullableStringFieldUpdateOperationsInput | string | null
+    avionics?: NullableStringFieldUpdateOperationsInput | string | null
+    emergencyEquipment?: BoolFieldUpdateOperationsInput | boolean
+    cargoHook?: BoolFieldUpdateOperationsInput | boolean
+    videoLink?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorImageUrls?: HelicopterForSaleListingUpdateexteriorImageUrlsInput | string[]
+    interiorImageUrls?: HelicopterForSaleListingUpdateinteriorImageUrlsInput | string[]
+    additionalEquipment?: NullableStringFieldUpdateOperationsInput | string | null
+    transactionSignature?: StringFieldUpdateOperationsInput | string
+    transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorId?: StringFieldUpdateOperationsInput | string
+    views?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    sponsoredType?: StringFieldUpdateOperationsInput | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

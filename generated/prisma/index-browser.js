@@ -335,6 +335,125 @@ exports.Prisma.WalletScalarFieldEnum = {
   wallet: 'wallet'
 };
 
+exports.Prisma.HelicopterForSaleListingScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  helicopterName: 'helicopterName',
+  helicopterType: 'helicopterType',
+  manufacturer: 'manufacturer',
+  yearOfManufacture: 'yearOfManufacture',
+  registrationNumber: 'registrationNumber',
+  serialNumber: 'serialNumber',
+  seatingCapacity: 'seatingCapacity',
+  maximumRange: 'maximumRange',
+  cruisingSpeed: 'cruisingSpeed',
+  baggageCapacity: 'baggageCapacity',
+  condition: 'condition',
+  totalFlightHours: 'totalFlightHours',
+  maintenanceHistory: 'maintenanceHistory',
+  lastInspection: 'lastInspection',
+  salePrice: 'salePrice',
+  discounts: 'discounts',
+  avionics: 'avionics',
+  emergencyEquipment: 'emergencyEquipment',
+  cargoHook: 'cargoHook',
+  videoLink: 'videoLink',
+  exteriorImageUrls: 'exteriorImageUrls',
+  interiorImageUrls: 'interiorImageUrls',
+  additionalEquipment: 'additionalEquipment',
+  transactionSignature: 'transactionSignature',
+  transactionLink: 'transactionLink',
+  vendorId: 'vendorId',
+  views: 'views',
+  status: 'status',
+  sponsored: 'sponsored',
+  sponsoredType: 'sponsoredType',
+  endDate: 'endDate'
+};
+
+exports.Prisma.CabinFeatureScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  name: 'name'
+};
+
+exports.Prisma.HelicopterMessageScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  customerName: 'customerName',
+  customerEmail: 'customerEmail',
+  customerCountry: 'customerCountry',
+  listingId: 'listingId',
+  vendorId: 'vendorId',
+  message: 'message',
+  read: 'read'
+};
+
+exports.Prisma.HelicopterForCharterScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  model: 'model',
+  year: 'year',
+  capacity: 'capacity',
+  range: 'range',
+  pricePerHour: 'pricePerHour',
+  location: 'location',
+  availableFrom: 'availableFrom',
+  availableTo: 'availableTo',
+  description: 'description',
+  registrationNumber: 'registrationNumber',
+  engineType: 'engineType',
+  engineCount: 'engineCount',
+  maxSpeed: 'maxSpeed',
+  cruisingSpeed: 'cruisingSpeed',
+  fuelCapacity: 'fuelCapacity',
+  maxAltitude: 'maxAltitude',
+  flightHours: 'flightHours',
+  lastOverhaul: 'lastOverhaul',
+  airworthinessCertificate: 'airworthinessCertificate',
+  lastMaintenanceDate: 'lastMaintenanceDate',
+  insuranceStatus: 'insuranceStatus',
+  pilotQualifications: 'pilotQualifications',
+  safetyFeatures: 'safetyFeatures',
+  hasWifi: 'hasWifi',
+  hasRefreshments: 'hasRefreshments',
+  hasEntertainmentSystem: 'hasEntertainmentSystem',
+  hasClimatControl: 'hasClimatControl',
+  depositAmount: 'depositAmount',
+  minimumHours: 'minimumHours',
+  cancellationPolicy: 'cancellationPolicy',
+  packageDeals: 'packageDeals',
+  imageUrls: 'imageUrls',
+  transactionSignature: 'transactionSignature',
+  transactionLink: 'transactionLink',
+  vendorId: 'vendorId',
+  status: 'status',
+  views: 'views',
+  sponsored: 'sponsored',
+  sponsoredType: 'sponsoredType',
+  endDate: 'endDate'
+};
+
+exports.Prisma.HelicopterForCharterMessagesScalarFieldEnum = {
+  id: 'id',
+  customerName: 'customerName',
+  customerEmail: 'customerEmail',
+  customerCountry: 'customerCountry',
+  departureLocation: 'departureLocation',
+  arrivalLocation: 'arrivalLocation',
+  departureDate: 'departureDate',
+  returnDate: 'returnDate',
+  passengerCount: 'passengerCount',
+  specialRequests: 'specialRequests',
+  listingId: 'listingId',
+  vendorId: 'vendorId',
+  createdAt: 'createdAt',
+  read: 'read'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -374,7 +493,12 @@ exports.Prisma.ModelName = {
   JetForCharter: 'JetForCharter',
   JetForSaleMessages: 'JetForSaleMessages',
   JetForCharterMessages: 'JetForCharterMessages',
-  Wallet: 'Wallet'
+  Wallet: 'Wallet',
+  HelicopterForSaleListing: 'HelicopterForSaleListing',
+  CabinFeature: 'CabinFeature',
+  HelicopterMessage: 'HelicopterMessage',
+  HelicopterForCharter: 'HelicopterForCharter',
+  HelicopterForCharterMessages: 'HelicopterForCharterMessages'
 };
 
 /**

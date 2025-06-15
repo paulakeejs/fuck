@@ -11,6 +11,8 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const charterMainRoutes = require('./routes/charter/charterVendorRoutes');
 const jetForCharterRoutes = require('./routes/charter/jetforcharterroutes');
+const helicopterRoutes = require('./routes/helicopter/main')
+const hclientRoutes = require('./routes/helicopter/h-client')
 
 const prisma = new PrismaClient();
 
@@ -72,6 +74,8 @@ app.use('/api/v1/vendor/main', vendorMainRoutes);
 app.use('/api/v1/program/main', charterMainRoutes);
 app.use('/api/v1/jets/sale', authLimiter, jetforsaleRoutes);
 app.use('/api/v1/jets/charter', authLimiter, jetForCharterRoutes);
+app.use('/api/v1/h-vendor/main', authLimiter, helicopterRoutes);
+app.use('/api/v1/h-client/main', authLimiter, hclientRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

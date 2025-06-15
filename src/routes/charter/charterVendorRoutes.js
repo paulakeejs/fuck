@@ -99,7 +99,7 @@ router.post('/new', verifyToken, async (req, res) => {
           }
       }
 
-      // Validate cabinFeatures is an array of strings
+      // Validate cabinFeatures structure
       if (!Array.isArray(cabinFeatures)) {
           return res.status(400).json({ error: 'cabinFeatures must be an array' });
       }
@@ -523,7 +523,7 @@ router.put('/:id', verifyToken, async (req, res) => {
         }
       }
   
-      // Validate cabinFeatures is an array of strings
+      // Validate cabinFeatures structure
       if (cabinFeatures && !Array.isArray(cabinFeatures)) {
         return res.status(400).json({ error: 'cabinFeatures must be an array' });
       }

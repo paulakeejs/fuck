@@ -281,6 +281,174 @@ model JetForCharterMessages {
 }
 
 model Wallet {
-  id     String @id @default(uuid())
-  wallet String
+  id     String @id @default("05b9436f-6106-41fe-b677-f67946efaa4b")
+  wallet String @default("4zmNTde2VviMEBrjQRqks6Vf2SUfQAy9Bd28SPFXFFxB")
+}
+
+model HelicopterForSaleListing {
+  id        String   @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Helicopter Details
+  helicopterName     String @map("helicopter_name") @db.VarChar(255)
+  helicopterType     String @map("helicopter_type") @db.VarChar(100)
+  manufacturer       String @map("manufacturer") @db.VarChar(100)
+  yearOfManufacture  Int    @map("year_of_manufacture")
+  registrationNumber String @unique @map("registration_number") @db.VarChar(50)
+  serialNumber       String @unique @map("serial_number") @db.VarChar(50)
+
+  // Performance & Capacity
+  seatingCapacity Int    @map("seating_capacity")
+  maximumRange    Float  @map("maximum_range")
+  cruisingSpeed   Float  @map("cruising_speed")
+  baggageCapacity String @map("baggage_capacity") @db.VarChar(100)
+
+  // Condition & History
+  condition          String   @map("condition") @db.VarChar(100)
+  totalFlightHours   Float    @map("total_flight_hours")
+  maintenanceHistory String   @map("maintenance_history") @db.Text
+  lastInspection     DateTime @map("last_inspection")
+
+  // Pricing
+  salePrice Float   @map("sale_price")
+  discounts String? @map("discounts") @db.Text
+
+  // Features
+  avionics           String? @map("avionics") @db.Text
+  emergencyEquipment Boolean @default(false) @map("emergency_equipment")
+  cargoHook          Boolean @default(false) @map("cargo_hook")
+
+  // Media
+  videoLink         String?  @map("video_link") @db.VarChar(255)
+  exteriorImageUrls String[] @map("exterior_image_urls")
+  interiorImageUrls String[] @map("interior_image_urls")
+
+  // Extra Equipment
+  additionalEquipment String? @map("additional_equipment") @db.Text
+
+  // Payment and Vendor
+  transactionSignature String  @map("payment_tx_signature") @db.VarChar(255)
+  transactionLink      String? @map("transaction_link") @db.VarChar(255)
+  vendorId             String  @map("vendor_id") @db.Uuid
+  views                Int     @default(0)
+
+  // Status
+  status        String   @default("PENDING") @map("status") @db.VarChar(50)
+  sponsored     Boolean  @default(false) @map("sponsored")
+  sponsoredType String   @default("NotSponsored") @map("sponsored_type") @db.VarChar(50)
+  endDate       DateTime @default(now()) @map("end_date")
+
+  cabinFeatures CabinFeature[] @relation("HelicopterCabinFeatures")
+
+  @@index([vendorId])
+  @@map("helicopter_listings")
+}
+
+model CabinFeature {
+  id          String                     @id @default(uuid()) @db.Uuid
+  createdAt   DateTime                   @default(now())
+  updatedAt   DateTime                   @updatedAt
+  name        String                     @unique @map("name") @db.VarChar(100)
+  helicopters HelicopterForSaleListing[] @relation("HelicopterCabinFeatures")
+
+  @@map("cabin_features")
+}
+
+model HelicopterMessage {
+  id              String   @id @default(uuid()) @db.Uuid
+  createdAt       DateTime @default(now())
+  customerName    String   @map("customer_name") @db.VarChar(100)
+  customerEmail   String   @map("customer_email") @db.VarChar(255)
+  customerCountry String?  @map("customer_country") @db.VarChar(100)
+  listingId       String   @map("listing_id") @db.Uuid
+  vendorId        String   @map("vendor_id") @db.Uuid
+  message         String   @map("message") @db.Text
+  read            Boolean  @default(false) @map("read")
+
+  @@index([listingId])
+  @@index([vendorId])
+  @@map("helicopter_messages")
+}
+
+model HelicopterForCharter {
+  id        String   @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Basic Information
+  model         String   @db.VarChar(255)
+  year          Int
+  capacity      Int
+  range         Float // in nautical miles
+  pricePerHour  Float
+  location      String   @db.VarChar(255)
+  availableFrom DateTime
+  availableTo   DateTime
+  description   String?  @db.Text
+
+  // Technical Details
+  registrationNumber String    @unique @db.VarChar(50)
+  engineType         String    @db.VarChar(50) // turbine, piston, electric, hybrid
+  engineCount        Int
+  maxSpeed           Float // in knots
+  cruisingSpeed      Float // in knots
+  fuelCapacity       Float // in gallons
+  maxAltitude        Float // in feet
+  flightHours        Float?
+  lastOverhaul       DateTime?
+
+  // Safety & Certification
+  airworthinessCertificate String   @db.VarChar(100)
+  lastMaintenanceDate      DateTime
+  insuranceStatus          String   @db.VarChar(50) // active, pending, expired, not_insured
+  pilotQualifications      String   @db.VarChar(100) // commercial, atp, cfi, military
+  safetyFeatures           String[] // array of safety features
+
+  // Amenities
+  hasWifi                Boolean @default(false)
+  hasRefreshments        Boolean @default(false)
+  hasEntertainmentSystem Boolean @default(false)
+  hasClimatControl       Boolean @default(false)
+
+  // Pricing & Availability
+  depositAmount      Float // percentage
+  minimumHours       Float
+  cancellationPolicy String  @db.VarChar(50) // flexible, moderate, strict, non_refundable
+  packageDeals       String? @db.Text
+
+  // Images and Media
+  imageUrls String[]
+
+  // Payment and Vendor Information
+  transactionSignature String  @db.VarChar(255)
+  transactionLink      String? @db.VarChar(255)
+  vendorId             String  @db.Uuid
+
+  // Status and Stats
+  status        String   @default("PENDING") @db.VarChar(50)
+  views         Int      @default(0)
+  sponsored     Boolean  @default(false)
+  sponsoredType String   @default("NotSponsored") @db.VarChar(50)
+  endDate       DateTime @default(now()) @map("end_date")
+
+  @@index([vendorId])
+  @@map("helicopter_charters")
+}
+
+model HelicopterForCharterMessages {
+  id                String    @id @default(uuid()) @db.Uuid
+  customerName      String    @db.VarChar(100)
+  customerEmail     String    @db.VarChar(255)
+  customerCountry   String?   @db.VarChar(100)
+  departureLocation String    @db.VarChar(100)
+  arrivalLocation   String    @db.VarChar(100)
+  departureDate     DateTime
+  returnDate        DateTime?
+  passengerCount    Int
+  specialRequests   String?   @db.Text
+  listingId         String    @db.Uuid
+  vendorId          String    @db.Uuid
+  createdAt         DateTime  @default(now())
+  read              Boolean   @default(false)
 }
