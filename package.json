@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:migrate": "prisma migrate deploy --name init",
     "prisma:studio": "prisma studio",
     "prisma:push": "prisma db push",
     "test": "jest"
@@ -51,3 +51,4 @@
     "schema": "prisma/schema.prisma"
   }
 }
+
