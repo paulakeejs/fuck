@@ -5270,13 +5270,18 @@ export namespace Prisma {
     baggageCapacity: number | null
     numberOfEngines: number | null
     engineThrust: number | null
-    previousOwners: number | null
     range: number | null
     cruiseSpeed: number | null
     maxAltitude: number | null
     runwayLength: number | null
     emptyWeight: number | null
     maxTakeoffWeight: number | null
+    fuelCapacity: number | null
+    fuelConsumption: number | null
+    serviceCeiling: number | null
+    takeoffDistance: number | null
+    landingDistance: number | null
+    previousOwners: number | null
     views: number | null
   }
 
@@ -5292,19 +5297,25 @@ export namespace Prisma {
     baggageCapacity: number | null
     numberOfEngines: number | null
     engineThrust: number | null
-    previousOwners: number | null
     range: number | null
     cruiseSpeed: number | null
     maxAltitude: number | null
     runwayLength: number | null
     emptyWeight: number | null
     maxTakeoffWeight: number | null
+    fuelCapacity: number | null
+    fuelConsumption: number | null
+    serviceCeiling: number | null
+    takeoffDistance: number | null
+    landingDistance: number | null
+    previousOwners: number | null
     views: number | null
   }
 
   export type JetMinAggregateOutputType = {
     id: string | null
     createdAt: Date | null
+    updatedAt: Date | null
     manufacturer: string | null
     otherManufacturer: string | null
     model: string | null
@@ -5316,10 +5327,12 @@ export namespace Prisma {
     engineHours: number | null
     avionicsSuite: string | null
     interiorConfig: string | null
+    layoutImageUrl: string | null
     price: string | null
     currentLocation: string | null
     registrationNumber: string | null
     contactDetails: string | null
+    description: string | null
     aircraftType: string | null
     seatingCapacity: number | null
     cabinHeight: number | null
@@ -5329,24 +5342,35 @@ export namespace Prisma {
     numberOfEngines: number | null
     engineType: string | null
     engineThrust: number | null
-    certification: string | null
-    noiseCompliance: string | null
-    lastInspectionDate: Date | null
-    nextInspectionDue: Date | null
-    maintenanceStatus: string | null
-    previousOwners: number | null
-    maintenanceProgram: string | null
-    airframeEngineStatus: string | null
-    refurbishmentDate: string | null
-    wifiConnectivity: string | null
-    lavatoryGalleyDetails: string | null
-    cabinAmenities: string | null
     range: number | null
     cruiseSpeed: number | null
     maxAltitude: number | null
     runwayLength: number | null
     emptyWeight: number | null
     maxTakeoffWeight: number | null
+    fuelCapacity: number | null
+    fuelConsumption: number | null
+    serviceCeiling: number | null
+    takeoffDistance: number | null
+    landingDistance: number | null
+    certification: string | null
+    noiseCompliance: string | null
+    operationalRestrictions: string | null
+    lastInspectionDate: Date | null
+    nextInspectionDue: Date | null
+    maintenanceStatus: string | null
+    maintenanceProgram: string | null
+    airframeEngineStatus: string | null
+    refurbishmentDate: string | null
+    avionicsUpdates: string | null
+    warrantyRemaining: string | null
+    wifiConnectivity: string | null
+    lavatoryGalleyDetails: string | null
+    cabinAmenities: string | null
+    interiorDesigner: string | null
+    exteriorPaintScheme: string | null
+    recentUpgrades: string | null
+    previousOwners: number | null
     deliveryAvailability: string | null
     paymentTxSignature: string | null
     transactionLink: string | null
@@ -5361,6 +5385,7 @@ export namespace Prisma {
   export type JetMaxAggregateOutputType = {
     id: string | null
     createdAt: Date | null
+    updatedAt: Date | null
     manufacturer: string | null
     otherManufacturer: string | null
     model: string | null
@@ -5372,10 +5397,12 @@ export namespace Prisma {
     engineHours: number | null
     avionicsSuite: string | null
     interiorConfig: string | null
+    layoutImageUrl: string | null
     price: string | null
     currentLocation: string | null
     registrationNumber: string | null
     contactDetails: string | null
+    description: string | null
     aircraftType: string | null
     seatingCapacity: number | null
     cabinHeight: number | null
@@ -5385,24 +5412,35 @@ export namespace Prisma {
     numberOfEngines: number | null
     engineType: string | null
     engineThrust: number | null
-    certification: string | null
-    noiseCompliance: string | null
-    lastInspectionDate: Date | null
-    nextInspectionDue: Date | null
-    maintenanceStatus: string | null
-    previousOwners: number | null
-    maintenanceProgram: string | null
-    airframeEngineStatus: string | null
-    refurbishmentDate: string | null
-    wifiConnectivity: string | null
-    lavatoryGalleyDetails: string | null
-    cabinAmenities: string | null
     range: number | null
     cruiseSpeed: number | null
     maxAltitude: number | null
     runwayLength: number | null
     emptyWeight: number | null
     maxTakeoffWeight: number | null
+    fuelCapacity: number | null
+    fuelConsumption: number | null
+    serviceCeiling: number | null
+    takeoffDistance: number | null
+    landingDistance: number | null
+    certification: string | null
+    noiseCompliance: string | null
+    operationalRestrictions: string | null
+    lastInspectionDate: Date | null
+    nextInspectionDue: Date | null
+    maintenanceStatus: string | null
+    maintenanceProgram: string | null
+    airframeEngineStatus: string | null
+    refurbishmentDate: string | null
+    avionicsUpdates: string | null
+    warrantyRemaining: string | null
+    wifiConnectivity: string | null
+    lavatoryGalleyDetails: string | null
+    cabinAmenities: string | null
+    interiorDesigner: string | null
+    exteriorPaintScheme: string | null
+    recentUpgrades: string | null
+    previousOwners: number | null
     deliveryAvailability: string | null
     paymentTxSignature: string | null
     transactionLink: string | null
@@ -5417,6 +5455,7 @@ export namespace Prisma {
   export type JetCountAggregateOutputType = {
     id: number
     createdAt: number
+    updatedAt: number
     manufacturer: number
     otherManufacturer: number
     model: number
@@ -5430,10 +5469,12 @@ export namespace Prisma {
     interiorConfig: number
     interiorImageUrls: number
     exteriorImageUrls: number
+    layoutImageUrl: number
     price: number
     currentLocation: number
     registrationNumber: number
     contactDetails: number
+    description: number
     aircraftType: number
     seatingCapacity: number
     cabinHeight: number
@@ -5443,24 +5484,35 @@ export namespace Prisma {
     numberOfEngines: number
     engineType: number
     engineThrust: number
-    certification: number
-    noiseCompliance: number
-    lastInspectionDate: number
-    nextInspectionDue: number
-    maintenanceStatus: number
-    previousOwners: number
-    maintenanceProgram: number
-    airframeEngineStatus: number
-    refurbishmentDate: number
-    wifiConnectivity: number
-    lavatoryGalleyDetails: number
-    cabinAmenities: number
     range: number
     cruiseSpeed: number
     maxAltitude: number
     runwayLength: number
     emptyWeight: number
     maxTakeoffWeight: number
+    fuelCapacity: number
+    fuelConsumption: number
+    serviceCeiling: number
+    takeoffDistance: number
+    landingDistance: number
+    certification: number
+    noiseCompliance: number
+    operationalRestrictions: number
+    lastInspectionDate: number
+    nextInspectionDue: number
+    maintenanceStatus: number
+    maintenanceProgram: number
+    airframeEngineStatus: number
+    refurbishmentDate: number
+    avionicsUpdates: number
+    warrantyRemaining: number
+    wifiConnectivity: number
+    lavatoryGalleyDetails: number
+    cabinAmenities: number
+    interiorDesigner: number
+    exteriorPaintScheme: number
+    recentUpgrades: number
+    previousOwners: number
     deliveryAvailability: number
     paymentTxSignature: number
     transactionLink: number
@@ -5486,13 +5538,18 @@ export namespace Prisma {
     baggageCapacity?: true
     numberOfEngines?: true
     engineThrust?: true
-    previousOwners?: true
     range?: true
     cruiseSpeed?: true
     maxAltitude?: true
     runwayLength?: true
     emptyWeight?: true
     maxTakeoffWeight?: true
+    fuelCapacity?: true
+    fuelConsumption?: true
+    serviceCeiling?: true
+    takeoffDistance?: true
+    landingDistance?: true
+    previousOwners?: true
     views?: true
   }
 
@@ -5508,19 +5565,25 @@ export namespace Prisma {
     baggageCapacity?: true
     numberOfEngines?: true
     engineThrust?: true
-    previousOwners?: true
     range?: true
     cruiseSpeed?: true
     maxAltitude?: true
     runwayLength?: true
     emptyWeight?: true
     maxTakeoffWeight?: true
+    fuelCapacity?: true
+    fuelConsumption?: true
+    serviceCeiling?: true
+    takeoffDistance?: true
+    landingDistance?: true
+    previousOwners?: true
     views?: true
   }
 
   export type JetMinAggregateInputType = {
     id?: true
     createdAt?: true
+    updatedAt?: true
     manufacturer?: true
     otherManufacturer?: true
     model?: true
@@ -5532,10 +5595,12 @@ export namespace Prisma {
     engineHours?: true
     avionicsSuite?: true
     interiorConfig?: true
+    layoutImageUrl?: true
     price?: true
     currentLocation?: true
     registrationNumber?: true
     contactDetails?: true
+    description?: true
     aircraftType?: true
     seatingCapacity?: true
     cabinHeight?: true
@@ -5545,24 +5610,35 @@ export namespace Prisma {
     numberOfEngines?: true
     engineType?: true
     engineThrust?: true
-    certification?: true
-    noiseCompliance?: true
-    lastInspectionDate?: true
-    nextInspectionDue?: true
-    maintenanceStatus?: true
-    previousOwners?: true
-    maintenanceProgram?: true
-    airframeEngineStatus?: true
-    refurbishmentDate?: true
-    wifiConnectivity?: true
-    lavatoryGalleyDetails?: true
-    cabinAmenities?: true
     range?: true
     cruiseSpeed?: true
     maxAltitude?: true
     runwayLength?: true
     emptyWeight?: true
     maxTakeoffWeight?: true
+    fuelCapacity?: true
+    fuelConsumption?: true
+    serviceCeiling?: true
+    takeoffDistance?: true
+    landingDistance?: true
+    certification?: true
+    noiseCompliance?: true
+    operationalRestrictions?: true
+    lastInspectionDate?: true
+    nextInspectionDue?: true
+    maintenanceStatus?: true
+    maintenanceProgram?: true
+    airframeEngineStatus?: true
+    refurbishmentDate?: true
+    avionicsUpdates?: true
+    warrantyRemaining?: true
+    wifiConnectivity?: true
+    lavatoryGalleyDetails?: true
+    cabinAmenities?: true
+    interiorDesigner?: true
+    exteriorPaintScheme?: true
+    recentUpgrades?: true
+    previousOwners?: true
     deliveryAvailability?: true
     paymentTxSignature?: true
     transactionLink?: true
@@ -5577,6 +5653,7 @@ export namespace Prisma {
   export type JetMaxAggregateInputType = {
     id?: true
     createdAt?: true
+    updatedAt?: true
     manufacturer?: true
     otherManufacturer?: true
     model?: true
@@ -5588,10 +5665,12 @@ export namespace Prisma {
     engineHours?: true
     avionicsSuite?: true
     interiorConfig?: true
+    layoutImageUrl?: true
     price?: true
     currentLocation?: true
     registrationNumber?: true
     contactDetails?: true
+    description?: true
     aircraftType?: true
     seatingCapacity?: true
     cabinHeight?: true
@@ -5601,24 +5680,35 @@ export namespace Prisma {
     numberOfEngines?: true
     engineType?: true
     engineThrust?: true
-    certification?: true
-    noiseCompliance?: true
-    lastInspectionDate?: true
-    nextInspectionDue?: true
-    maintenanceStatus?: true
-    previousOwners?: true
-    maintenanceProgram?: true
-    airframeEngineStatus?: true
-    refurbishmentDate?: true
-    wifiConnectivity?: true
-    lavatoryGalleyDetails?: true
-    cabinAmenities?: true
     range?: true
     cruiseSpeed?: true
     maxAltitude?: true
     runwayLength?: true
     emptyWeight?: true
     maxTakeoffWeight?: true
+    fuelCapacity?: true
+    fuelConsumption?: true
+    serviceCeiling?: true
+    takeoffDistance?: true
+    landingDistance?: true
+    certification?: true
+    noiseCompliance?: true
+    operationalRestrictions?: true
+    lastInspectionDate?: true
+    nextInspectionDue?: true
+    maintenanceStatus?: true
+    maintenanceProgram?: true
+    airframeEngineStatus?: true
+    refurbishmentDate?: true
+    avionicsUpdates?: true
+    warrantyRemaining?: true
+    wifiConnectivity?: true
+    lavatoryGalleyDetails?: true
+    cabinAmenities?: true
+    interiorDesigner?: true
+    exteriorPaintScheme?: true
+    recentUpgrades?: true
+    previousOwners?: true
     deliveryAvailability?: true
     paymentTxSignature?: true
     transactionLink?: true
@@ -5633,6 +5723,7 @@ export namespace Prisma {
   export type JetCountAggregateInputType = {
     id?: true
     createdAt?: true
+    updatedAt?: true
     manufacturer?: true
     otherManufacturer?: true
     model?: true
@@ -5646,10 +5737,12 @@ export namespace Prisma {
     interiorConfig?: true
     interiorImageUrls?: true
     exteriorImageUrls?: true
+    layoutImageUrl?: true
     price?: true
     currentLocation?: true
     registrationNumber?: true
     contactDetails?: true
+    description?: true
     aircraftType?: true
     seatingCapacity?: true
     cabinHeight?: true
@@ -5659,24 +5752,35 @@ export namespace Prisma {
     numberOfEngines?: true
     engineType?: true
     engineThrust?: true
-    certification?: true
-    noiseCompliance?: true
-    lastInspectionDate?: true
-    nextInspectionDue?: true
-    maintenanceStatus?: true
-    previousOwners?: true
-    maintenanceProgram?: true
-    airframeEngineStatus?: true
-    refurbishmentDate?: true
-    wifiConnectivity?: true
-    lavatoryGalleyDetails?: true
-    cabinAmenities?: true
     range?: true
     cruiseSpeed?: true
     maxAltitude?: true
     runwayLength?: true
     emptyWeight?: true
     maxTakeoffWeight?: true
+    fuelCapacity?: true
+    fuelConsumption?: true
+    serviceCeiling?: true
+    takeoffDistance?: true
+    landingDistance?: true
+    certification?: true
+    noiseCompliance?: true
+    operationalRestrictions?: true
+    lastInspectionDate?: true
+    nextInspectionDue?: true
+    maintenanceStatus?: true
+    maintenanceProgram?: true
+    airframeEngineStatus?: true
+    refurbishmentDate?: true
+    avionicsUpdates?: true
+    warrantyRemaining?: true
+    wifiConnectivity?: true
+    lavatoryGalleyDetails?: true
+    cabinAmenities?: true
+    interiorDesigner?: true
+    exteriorPaintScheme?: true
+    recentUpgrades?: true
+    previousOwners?: true
     deliveryAvailability?: true
     paymentTxSignature?: true
     transactionLink?: true
@@ -5778,6 +5882,7 @@ export namespace Prisma {
   export type JetGroupByOutputType = {
     id: string
     createdAt: Date
+    updatedAt: Date
     manufacturer: string
     otherManufacturer: string | null
     model: string
@@ -5791,10 +5896,12 @@ export namespace Prisma {
     interiorConfig: string
     interiorImageUrls: string[]
     exteriorImageUrls: string[]
+    layoutImageUrl: string
     price: string
     currentLocation: string
     registrationNumber: string
     contactDetails: string
+    description: string
     aircraftType: string
     seatingCapacity: number
     cabinHeight: number
@@ -5804,24 +5911,35 @@ export namespace Prisma {
     numberOfEngines: number
     engineType: string
     engineThrust: number
-    certification: string
-    noiseCompliance: string
-    lastInspectionDate: Date
-    nextInspectionDue: Date
-    maintenanceStatus: string
-    previousOwners: number | null
-    maintenanceProgram: string | null
-    airframeEngineStatus: string | null
-    refurbishmentDate: string | null
-    wifiConnectivity: string | null
-    lavatoryGalleyDetails: string | null
-    cabinAmenities: string | null
     range: number | null
     cruiseSpeed: number | null
     maxAltitude: number | null
     runwayLength: number | null
     emptyWeight: number | null
     maxTakeoffWeight: number | null
+    fuelCapacity: number | null
+    fuelConsumption: number | null
+    serviceCeiling: number | null
+    takeoffDistance: number | null
+    landingDistance: number | null
+    certification: string
+    noiseCompliance: string
+    operationalRestrictions: string | null
+    lastInspectionDate: Date
+    nextInspectionDue: Date
+    maintenanceStatus: string
+    maintenanceProgram: string | null
+    airframeEngineStatus: string | null
+    refurbishmentDate: string | null
+    avionicsUpdates: string | null
+    warrantyRemaining: string | null
+    wifiConnectivity: string | null
+    lavatoryGalleyDetails: string | null
+    cabinAmenities: string | null
+    interiorDesigner: string | null
+    exteriorPaintScheme: string | null
+    recentUpgrades: string | null
+    previousOwners: number | null
     deliveryAvailability: string | null
     paymentTxSignature: string
     transactionLink: string | null
@@ -5830,7 +5948,7 @@ export namespace Prisma {
     status: string
     sponsored: boolean
     sponsoredType: string
-    end_date: Date
+    end_date: Date | null
     _count: JetCountAggregateOutputType | null
     _avg: JetAvgAggregateOutputType | null
     _sum: JetSumAggregateOutputType | null
@@ -5855,6 +5973,7 @@ export namespace Prisma {
   export type JetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     manufacturer?: boolean
     otherManufacturer?: boolean
     model?: boolean
@@ -5868,10 +5987,12 @@ export namespace Prisma {
     interiorConfig?: boolean
     interiorImageUrls?: boolean
     exteriorImageUrls?: boolean
+    layoutImageUrl?: boolean
     price?: boolean
     currentLocation?: boolean
     registrationNumber?: boolean
     contactDetails?: boolean
+    description?: boolean
     aircraftType?: boolean
     seatingCapacity?: boolean
     cabinHeight?: boolean
@@ -5881,24 +6002,35 @@ export namespace Prisma {
     numberOfEngines?: boolean
     engineType?: boolean
     engineThrust?: boolean
-    certification?: boolean
-    noiseCompliance?: boolean
-    lastInspectionDate?: boolean
-    nextInspectionDue?: boolean
-    maintenanceStatus?: boolean
-    previousOwners?: boolean
-    maintenanceProgram?: boolean
-    airframeEngineStatus?: boolean
-    refurbishmentDate?: boolean
-    wifiConnectivity?: boolean
-    lavatoryGalleyDetails?: boolean
-    cabinAmenities?: boolean
     range?: boolean
     cruiseSpeed?: boolean
     maxAltitude?: boolean
     runwayLength?: boolean
     emptyWeight?: boolean
     maxTakeoffWeight?: boolean
+    fuelCapacity?: boolean
+    fuelConsumption?: boolean
+    serviceCeiling?: boolean
+    takeoffDistance?: boolean
+    landingDistance?: boolean
+    certification?: boolean
+    noiseCompliance?: boolean
+    operationalRestrictions?: boolean
+    lastInspectionDate?: boolean
+    nextInspectionDue?: boolean
+    maintenanceStatus?: boolean
+    maintenanceProgram?: boolean
+    airframeEngineStatus?: boolean
+    refurbishmentDate?: boolean
+    avionicsUpdates?: boolean
+    warrantyRemaining?: boolean
+    wifiConnectivity?: boolean
+    lavatoryGalleyDetails?: boolean
+    cabinAmenities?: boolean
+    interiorDesigner?: boolean
+    exteriorPaintScheme?: boolean
+    recentUpgrades?: boolean
+    previousOwners?: boolean
     deliveryAvailability?: boolean
     paymentTxSignature?: boolean
     transactionLink?: boolean
@@ -5913,6 +6045,7 @@ export namespace Prisma {
   export type JetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     manufacturer?: boolean
     otherManufacturer?: boolean
     model?: boolean
@@ -5926,10 +6059,12 @@ export namespace Prisma {
     interiorConfig?: boolean
     interiorImageUrls?: boolean
     exteriorImageUrls?: boolean
+    layoutImageUrl?: boolean
     price?: boolean
     currentLocation?: boolean
     registrationNumber?: boolean
     contactDetails?: boolean
+    description?: boolean
     aircraftType?: boolean
     seatingCapacity?: boolean
     cabinHeight?: boolean
@@ -5939,24 +6074,35 @@ export namespace Prisma {
     numberOfEngines?: boolean
     engineType?: boolean
     engineThrust?: boolean
-    certification?: boolean
-    noiseCompliance?: boolean
-    lastInspectionDate?: boolean
-    nextInspectionDue?: boolean
-    maintenanceStatus?: boolean
-    previousOwners?: boolean
-    maintenanceProgram?: boolean
-    airframeEngineStatus?: boolean
-    refurbishmentDate?: boolean
-    wifiConnectivity?: boolean
-    lavatoryGalleyDetails?: boolean
-    cabinAmenities?: boolean
     range?: boolean
     cruiseSpeed?: boolean
     maxAltitude?: boolean
     runwayLength?: boolean
     emptyWeight?: boolean
     maxTakeoffWeight?: boolean
+    fuelCapacity?: boolean
+    fuelConsumption?: boolean
+    serviceCeiling?: boolean
+    takeoffDistance?: boolean
+    landingDistance?: boolean
+    certification?: boolean
+    noiseCompliance?: boolean
+    operationalRestrictions?: boolean
+    lastInspectionDate?: boolean
+    nextInspectionDue?: boolean
+    maintenanceStatus?: boolean
+    maintenanceProgram?: boolean
+    airframeEngineStatus?: boolean
+    refurbishmentDate?: boolean
+    avionicsUpdates?: boolean
+    warrantyRemaining?: boolean
+    wifiConnectivity?: boolean
+    lavatoryGalleyDetails?: boolean
+    cabinAmenities?: boolean
+    interiorDesigner?: boolean
+    exteriorPaintScheme?: boolean
+    recentUpgrades?: boolean
+    previousOwners?: boolean
     deliveryAvailability?: boolean
     paymentTxSignature?: boolean
     transactionLink?: boolean
@@ -5971,6 +6117,7 @@ export namespace Prisma {
   export type JetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     manufacturer?: boolean
     otherManufacturer?: boolean
     model?: boolean
@@ -5984,10 +6131,12 @@ export namespace Prisma {
     interiorConfig?: boolean
     interiorImageUrls?: boolean
     exteriorImageUrls?: boolean
+    layoutImageUrl?: boolean
     price?: boolean
     currentLocation?: boolean
     registrationNumber?: boolean
     contactDetails?: boolean
+    description?: boolean
     aircraftType?: boolean
     seatingCapacity?: boolean
     cabinHeight?: boolean
@@ -5997,24 +6146,35 @@ export namespace Prisma {
     numberOfEngines?: boolean
     engineType?: boolean
     engineThrust?: boolean
-    certification?: boolean
-    noiseCompliance?: boolean
-    lastInspectionDate?: boolean
-    nextInspectionDue?: boolean
-    maintenanceStatus?: boolean
-    previousOwners?: boolean
-    maintenanceProgram?: boolean
-    airframeEngineStatus?: boolean
-    refurbishmentDate?: boolean
-    wifiConnectivity?: boolean
-    lavatoryGalleyDetails?: boolean
-    cabinAmenities?: boolean
     range?: boolean
     cruiseSpeed?: boolean
     maxAltitude?: boolean
     runwayLength?: boolean
     emptyWeight?: boolean
     maxTakeoffWeight?: boolean
+    fuelCapacity?: boolean
+    fuelConsumption?: boolean
+    serviceCeiling?: boolean
+    takeoffDistance?: boolean
+    landingDistance?: boolean
+    certification?: boolean
+    noiseCompliance?: boolean
+    operationalRestrictions?: boolean
+    lastInspectionDate?: boolean
+    nextInspectionDue?: boolean
+    maintenanceStatus?: boolean
+    maintenanceProgram?: boolean
+    airframeEngineStatus?: boolean
+    refurbishmentDate?: boolean
+    avionicsUpdates?: boolean
+    warrantyRemaining?: boolean
+    wifiConnectivity?: boolean
+    lavatoryGalleyDetails?: boolean
+    cabinAmenities?: boolean
+    interiorDesigner?: boolean
+    exteriorPaintScheme?: boolean
+    recentUpgrades?: boolean
+    previousOwners?: boolean
     deliveryAvailability?: boolean
     paymentTxSignature?: boolean
     transactionLink?: boolean
@@ -6029,6 +6189,7 @@ export namespace Prisma {
   export type JetSelectScalar = {
     id?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     manufacturer?: boolean
     otherManufacturer?: boolean
     model?: boolean
@@ -6042,10 +6203,12 @@ export namespace Prisma {
     interiorConfig?: boolean
     interiorImageUrls?: boolean
     exteriorImageUrls?: boolean
+    layoutImageUrl?: boolean
     price?: boolean
     currentLocation?: boolean
     registrationNumber?: boolean
     contactDetails?: boolean
+    description?: boolean
     aircraftType?: boolean
     seatingCapacity?: boolean
     cabinHeight?: boolean
@@ -6055,24 +6218,35 @@ export namespace Prisma {
     numberOfEngines?: boolean
     engineType?: boolean
     engineThrust?: boolean
-    certification?: boolean
-    noiseCompliance?: boolean
-    lastInspectionDate?: boolean
-    nextInspectionDue?: boolean
-    maintenanceStatus?: boolean
-    previousOwners?: boolean
-    maintenanceProgram?: boolean
-    airframeEngineStatus?: boolean
-    refurbishmentDate?: boolean
-    wifiConnectivity?: boolean
-    lavatoryGalleyDetails?: boolean
-    cabinAmenities?: boolean
     range?: boolean
     cruiseSpeed?: boolean
     maxAltitude?: boolean
     runwayLength?: boolean
     emptyWeight?: boolean
     maxTakeoffWeight?: boolean
+    fuelCapacity?: boolean
+    fuelConsumption?: boolean
+    serviceCeiling?: boolean
+    takeoffDistance?: boolean
+    landingDistance?: boolean
+    certification?: boolean
+    noiseCompliance?: boolean
+    operationalRestrictions?: boolean
+    lastInspectionDate?: boolean
+    nextInspectionDue?: boolean
+    maintenanceStatus?: boolean
+    maintenanceProgram?: boolean
+    airframeEngineStatus?: boolean
+    refurbishmentDate?: boolean
+    avionicsUpdates?: boolean
+    warrantyRemaining?: boolean
+    wifiConnectivity?: boolean
+    lavatoryGalleyDetails?: boolean
+    cabinAmenities?: boolean
+    interiorDesigner?: boolean
+    exteriorPaintScheme?: boolean
+    recentUpgrades?: boolean
+    previousOwners?: boolean
     deliveryAvailability?: boolean
     paymentTxSignature?: boolean
     transactionLink?: boolean
@@ -6084,7 +6258,7 @@ export namespace Prisma {
     end_date?: boolean
   }
 
-  export type JetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "manufacturer" | "otherManufacturer" | "model" | "year" | "serialNumber" | "totalTimeSinceNew" | "totalLandings" | "engineMakeModel" | "engineHours" | "avionicsSuite" | "interiorConfig" | "interiorImageUrls" | "exteriorImageUrls" | "price" | "currentLocation" | "registrationNumber" | "contactDetails" | "aircraftType" | "seatingCapacity" | "cabinHeight" | "cabinWidth" | "cabinLength" | "baggageCapacity" | "numberOfEngines" | "engineType" | "engineThrust" | "certification" | "noiseCompliance" | "lastInspectionDate" | "nextInspectionDue" | "maintenanceStatus" | "previousOwners" | "maintenanceProgram" | "airframeEngineStatus" | "refurbishmentDate" | "wifiConnectivity" | "lavatoryGalleyDetails" | "cabinAmenities" | "range" | "cruiseSpeed" | "maxAltitude" | "runwayLength" | "emptyWeight" | "maxTakeoffWeight" | "deliveryAvailability" | "paymentTxSignature" | "transactionLink" | "vendorId" | "views" | "status" | "sponsored" | "sponsoredType" | "end_date", ExtArgs["result"]["jet"]>
+  export type JetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "manufacturer" | "otherManufacturer" | "model" | "year" | "serialNumber" | "totalTimeSinceNew" | "totalLandings" | "engineMakeModel" | "engineHours" | "avionicsSuite" | "interiorConfig" | "interiorImageUrls" | "exteriorImageUrls" | "layoutImageUrl" | "price" | "currentLocation" | "registrationNumber" | "contactDetails" | "description" | "aircraftType" | "seatingCapacity" | "cabinHeight" | "cabinWidth" | "cabinLength" | "baggageCapacity" | "numberOfEngines" | "engineType" | "engineThrust" | "range" | "cruiseSpeed" | "maxAltitude" | "runwayLength" | "emptyWeight" | "maxTakeoffWeight" | "fuelCapacity" | "fuelConsumption" | "serviceCeiling" | "takeoffDistance" | "landingDistance" | "certification" | "noiseCompliance" | "operationalRestrictions" | "lastInspectionDate" | "nextInspectionDue" | "maintenanceStatus" | "maintenanceProgram" | "airframeEngineStatus" | "refurbishmentDate" | "avionicsUpdates" | "warrantyRemaining" | "wifiConnectivity" | "lavatoryGalleyDetails" | "cabinAmenities" | "interiorDesigner" | "exteriorPaintScheme" | "recentUpgrades" | "previousOwners" | "deliveryAvailability" | "paymentTxSignature" | "transactionLink" | "vendorId" | "views" | "status" | "sponsored" | "sponsoredType" | "end_date", ExtArgs["result"]["jet"]>
 
   export type $JetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Jet"
@@ -6092,6 +6266,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       createdAt: Date
+      updatedAt: Date
       manufacturer: string
       otherManufacturer: string | null
       model: string
@@ -6105,10 +6280,12 @@ export namespace Prisma {
       interiorConfig: string
       interiorImageUrls: string[]
       exteriorImageUrls: string[]
+      layoutImageUrl: string
       price: string
       currentLocation: string
       registrationNumber: string
       contactDetails: string
+      description: string
       aircraftType: string
       seatingCapacity: number
       cabinHeight: number
@@ -6118,24 +6295,35 @@ export namespace Prisma {
       numberOfEngines: number
       engineType: string
       engineThrust: number
-      certification: string
-      noiseCompliance: string
-      lastInspectionDate: Date
-      nextInspectionDue: Date
-      maintenanceStatus: string
-      previousOwners: number | null
-      maintenanceProgram: string | null
-      airframeEngineStatus: string | null
-      refurbishmentDate: string | null
-      wifiConnectivity: string | null
-      lavatoryGalleyDetails: string | null
-      cabinAmenities: string | null
       range: number | null
       cruiseSpeed: number | null
       maxAltitude: number | null
       runwayLength: number | null
       emptyWeight: number | null
       maxTakeoffWeight: number | null
+      fuelCapacity: number | null
+      fuelConsumption: number | null
+      serviceCeiling: number | null
+      takeoffDistance: number | null
+      landingDistance: number | null
+      certification: string
+      noiseCompliance: string
+      operationalRestrictions: string | null
+      lastInspectionDate: Date
+      nextInspectionDue: Date
+      maintenanceStatus: string
+      maintenanceProgram: string | null
+      airframeEngineStatus: string | null
+      refurbishmentDate: string | null
+      avionicsUpdates: string | null
+      warrantyRemaining: string | null
+      wifiConnectivity: string | null
+      lavatoryGalleyDetails: string | null
+      cabinAmenities: string | null
+      interiorDesigner: string | null
+      exteriorPaintScheme: string | null
+      recentUpgrades: string | null
+      previousOwners: number | null
       deliveryAvailability: string | null
       paymentTxSignature: string
       transactionLink: string | null
@@ -6144,7 +6332,7 @@ export namespace Prisma {
       status: string
       sponsored: boolean
       sponsoredType: string
-      end_date: Date
+      end_date: Date | null
     }, ExtArgs["result"]["jet"]>
     composites: {}
   }
@@ -6570,6 +6758,7 @@ export namespace Prisma {
   interface JetFieldRefs {
     readonly id: FieldRef<"Jet", 'String'>
     readonly createdAt: FieldRef<"Jet", 'DateTime'>
+    readonly updatedAt: FieldRef<"Jet", 'DateTime'>
     readonly manufacturer: FieldRef<"Jet", 'String'>
     readonly otherManufacturer: FieldRef<"Jet", 'String'>
     readonly model: FieldRef<"Jet", 'String'>
@@ -6578,15 +6767,17 @@ export namespace Prisma {
     readonly totalTimeSinceNew: FieldRef<"Jet", 'Int'>
     readonly totalLandings: FieldRef<"Jet", 'Int'>
     readonly engineMakeModel: FieldRef<"Jet", 'String'>
-    readonly engineHours: FieldRef<"Jet", 'Int'>
+    readonly engineHours: FieldRef<"Jet", 'Float'>
     readonly avionicsSuite: FieldRef<"Jet", 'String'>
     readonly interiorConfig: FieldRef<"Jet", 'String'>
     readonly interiorImageUrls: FieldRef<"Jet", 'String[]'>
     readonly exteriorImageUrls: FieldRef<"Jet", 'String[]'>
+    readonly layoutImageUrl: FieldRef<"Jet", 'String'>
     readonly price: FieldRef<"Jet", 'String'>
     readonly currentLocation: FieldRef<"Jet", 'String'>
     readonly registrationNumber: FieldRef<"Jet", 'String'>
     readonly contactDetails: FieldRef<"Jet", 'String'>
+    readonly description: FieldRef<"Jet", 'String'>
     readonly aircraftType: FieldRef<"Jet", 'String'>
     readonly seatingCapacity: FieldRef<"Jet", 'Int'>
     readonly cabinHeight: FieldRef<"Jet", 'Float'>
@@ -6596,24 +6787,35 @@ export namespace Prisma {
     readonly numberOfEngines: FieldRef<"Jet", 'Int'>
     readonly engineType: FieldRef<"Jet", 'String'>
     readonly engineThrust: FieldRef<"Jet", 'Float'>
-    readonly certification: FieldRef<"Jet", 'String'>
-    readonly noiseCompliance: FieldRef<"Jet", 'String'>
-    readonly lastInspectionDate: FieldRef<"Jet", 'DateTime'>
-    readonly nextInspectionDue: FieldRef<"Jet", 'DateTime'>
-    readonly maintenanceStatus: FieldRef<"Jet", 'String'>
-    readonly previousOwners: FieldRef<"Jet", 'Int'>
-    readonly maintenanceProgram: FieldRef<"Jet", 'String'>
-    readonly airframeEngineStatus: FieldRef<"Jet", 'String'>
-    readonly refurbishmentDate: FieldRef<"Jet", 'String'>
-    readonly wifiConnectivity: FieldRef<"Jet", 'String'>
-    readonly lavatoryGalleyDetails: FieldRef<"Jet", 'String'>
-    readonly cabinAmenities: FieldRef<"Jet", 'String'>
     readonly range: FieldRef<"Jet", 'Float'>
     readonly cruiseSpeed: FieldRef<"Jet", 'Float'>
     readonly maxAltitude: FieldRef<"Jet", 'Float'>
     readonly runwayLength: FieldRef<"Jet", 'Float'>
     readonly emptyWeight: FieldRef<"Jet", 'Float'>
     readonly maxTakeoffWeight: FieldRef<"Jet", 'Float'>
+    readonly fuelCapacity: FieldRef<"Jet", 'Float'>
+    readonly fuelConsumption: FieldRef<"Jet", 'Float'>
+    readonly serviceCeiling: FieldRef<"Jet", 'Float'>
+    readonly takeoffDistance: FieldRef<"Jet", 'Float'>
+    readonly landingDistance: FieldRef<"Jet", 'Float'>
+    readonly certification: FieldRef<"Jet", 'String'>
+    readonly noiseCompliance: FieldRef<"Jet", 'String'>
+    readonly operationalRestrictions: FieldRef<"Jet", 'String'>
+    readonly lastInspectionDate: FieldRef<"Jet", 'DateTime'>
+    readonly nextInspectionDue: FieldRef<"Jet", 'DateTime'>
+    readonly maintenanceStatus: FieldRef<"Jet", 'String'>
+    readonly maintenanceProgram: FieldRef<"Jet", 'String'>
+    readonly airframeEngineStatus: FieldRef<"Jet", 'String'>
+    readonly refurbishmentDate: FieldRef<"Jet", 'String'>
+    readonly avionicsUpdates: FieldRef<"Jet", 'String'>
+    readonly warrantyRemaining: FieldRef<"Jet", 'String'>
+    readonly wifiConnectivity: FieldRef<"Jet", 'String'>
+    readonly lavatoryGalleyDetails: FieldRef<"Jet", 'String'>
+    readonly cabinAmenities: FieldRef<"Jet", 'String'>
+    readonly interiorDesigner: FieldRef<"Jet", 'String'>
+    readonly exteriorPaintScheme: FieldRef<"Jet", 'String'>
+    readonly recentUpgrades: FieldRef<"Jet", 'String'>
+    readonly previousOwners: FieldRef<"Jet", 'Int'>
     readonly deliveryAvailability: FieldRef<"Jet", 'String'>
     readonly paymentTxSignature: FieldRef<"Jet", 'String'>
     readonly transactionLink: FieldRef<"Jet", 'String'>
@@ -10043,6 +10245,7 @@ export namespace Prisma {
     customerName: string | null
     customerEmail: string | null
     customerCountry: string | null
+    customerPhone: string | null
     listingId: string | null
     vendorId: string | null
     message: string | null
@@ -10055,6 +10258,7 @@ export namespace Prisma {
     customerName: string | null
     customerEmail: string | null
     customerCountry: string | null
+    customerPhone: string | null
     listingId: string | null
     vendorId: string | null
     message: string | null
@@ -10067,6 +10271,7 @@ export namespace Prisma {
     customerName: number
     customerEmail: number
     customerCountry: number
+    customerPhone: number
     listingId: number
     vendorId: number
     message: number
@@ -10081,6 +10286,7 @@ export namespace Prisma {
     customerName?: true
     customerEmail?: true
     customerCountry?: true
+    customerPhone?: true
     listingId?: true
     vendorId?: true
     message?: true
@@ -10093,6 +10299,7 @@ export namespace Prisma {
     customerName?: true
     customerEmail?: true
     customerCountry?: true
+    customerPhone?: true
     listingId?: true
     vendorId?: true
     message?: true
@@ -10105,6 +10312,7 @@ export namespace Prisma {
     customerName?: true
     customerEmail?: true
     customerCountry?: true
+    customerPhone?: true
     listingId?: true
     vendorId?: true
     message?: true
@@ -10190,6 +10398,7 @@ export namespace Prisma {
     customerName: string
     customerEmail: string
     customerCountry: string
+    customerPhone: string
     listingId: string
     vendorId: string
     message: string
@@ -10219,6 +10428,7 @@ export namespace Prisma {
     customerName?: boolean
     customerEmail?: boolean
     customerCountry?: boolean
+    customerPhone?: boolean
     listingId?: boolean
     vendorId?: boolean
     message?: boolean
@@ -10231,6 +10441,7 @@ export namespace Prisma {
     customerName?: boolean
     customerEmail?: boolean
     customerCountry?: boolean
+    customerPhone?: boolean
     listingId?: boolean
     vendorId?: boolean
     message?: boolean
@@ -10243,6 +10454,7 @@ export namespace Prisma {
     customerName?: boolean
     customerEmail?: boolean
     customerCountry?: boolean
+    customerPhone?: boolean
     listingId?: boolean
     vendorId?: boolean
     message?: boolean
@@ -10255,6 +10467,7 @@ export namespace Prisma {
     customerName?: boolean
     customerEmail?: boolean
     customerCountry?: boolean
+    customerPhone?: boolean
     listingId?: boolean
     vendorId?: boolean
     message?: boolean
@@ -10262,7 +10475,7 @@ export namespace Prisma {
     read?: boolean
   }
 
-  export type JetForSaleMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "customerEmail" | "customerCountry" | "listingId" | "vendorId" | "message" | "createdAt" | "read", ExtArgs["result"]["jetForSaleMessages"]>
+  export type JetForSaleMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "customerEmail" | "customerCountry" | "customerPhone" | "listingId" | "vendorId" | "message" | "createdAt" | "read", ExtArgs["result"]["jetForSaleMessages"]>
 
   export type $JetForSaleMessagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "JetForSaleMessages"
@@ -10272,6 +10485,7 @@ export namespace Prisma {
       customerName: string
       customerEmail: string
       customerCountry: string
+      customerPhone: string
       listingId: string
       vendorId: string
       message: string
@@ -10704,6 +10918,7 @@ export namespace Prisma {
     readonly customerName: FieldRef<"JetForSaleMessages", 'String'>
     readonly customerEmail: FieldRef<"JetForSaleMessages", 'String'>
     readonly customerCountry: FieldRef<"JetForSaleMessages", 'String'>
+    readonly customerPhone: FieldRef<"JetForSaleMessages", 'String'>
     readonly listingId: FieldRef<"JetForSaleMessages", 'String'>
     readonly vendorId: FieldRef<"JetForSaleMessages", 'String'>
     readonly message: FieldRef<"JetForSaleMessages", 'String'>
@@ -19547,6 +19762,7 @@ export namespace Prisma {
   export const JetScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
     manufacturer: 'manufacturer',
     otherManufacturer: 'otherManufacturer',
     model: 'model',
@@ -19560,10 +19776,12 @@ export namespace Prisma {
     interiorConfig: 'interiorConfig',
     interiorImageUrls: 'interiorImageUrls',
     exteriorImageUrls: 'exteriorImageUrls',
+    layoutImageUrl: 'layoutImageUrl',
     price: 'price',
     currentLocation: 'currentLocation',
     registrationNumber: 'registrationNumber',
     contactDetails: 'contactDetails',
+    description: 'description',
     aircraftType: 'aircraftType',
     seatingCapacity: 'seatingCapacity',
     cabinHeight: 'cabinHeight',
@@ -19573,24 +19791,35 @@ export namespace Prisma {
     numberOfEngines: 'numberOfEngines',
     engineType: 'engineType',
     engineThrust: 'engineThrust',
-    certification: 'certification',
-    noiseCompliance: 'noiseCompliance',
-    lastInspectionDate: 'lastInspectionDate',
-    nextInspectionDue: 'nextInspectionDue',
-    maintenanceStatus: 'maintenanceStatus',
-    previousOwners: 'previousOwners',
-    maintenanceProgram: 'maintenanceProgram',
-    airframeEngineStatus: 'airframeEngineStatus',
-    refurbishmentDate: 'refurbishmentDate',
-    wifiConnectivity: 'wifiConnectivity',
-    lavatoryGalleyDetails: 'lavatoryGalleyDetails',
-    cabinAmenities: 'cabinAmenities',
     range: 'range',
     cruiseSpeed: 'cruiseSpeed',
     maxAltitude: 'maxAltitude',
     runwayLength: 'runwayLength',
     emptyWeight: 'emptyWeight',
     maxTakeoffWeight: 'maxTakeoffWeight',
+    fuelCapacity: 'fuelCapacity',
+    fuelConsumption: 'fuelConsumption',
+    serviceCeiling: 'serviceCeiling',
+    takeoffDistance: 'takeoffDistance',
+    landingDistance: 'landingDistance',
+    certification: 'certification',
+    noiseCompliance: 'noiseCompliance',
+    operationalRestrictions: 'operationalRestrictions',
+    lastInspectionDate: 'lastInspectionDate',
+    nextInspectionDue: 'nextInspectionDue',
+    maintenanceStatus: 'maintenanceStatus',
+    maintenanceProgram: 'maintenanceProgram',
+    airframeEngineStatus: 'airframeEngineStatus',
+    refurbishmentDate: 'refurbishmentDate',
+    avionicsUpdates: 'avionicsUpdates',
+    warrantyRemaining: 'warrantyRemaining',
+    wifiConnectivity: 'wifiConnectivity',
+    lavatoryGalleyDetails: 'lavatoryGalleyDetails',
+    cabinAmenities: 'cabinAmenities',
+    interiorDesigner: 'interiorDesigner',
+    exteriorPaintScheme: 'exteriorPaintScheme',
+    recentUpgrades: 'recentUpgrades',
+    previousOwners: 'previousOwners',
     deliveryAvailability: 'deliveryAvailability',
     paymentTxSignature: 'paymentTxSignature',
     transactionLink: 'transactionLink',
@@ -19705,6 +19934,7 @@ export namespace Prisma {
     customerName: 'customerName',
     customerEmail: 'customerEmail',
     customerCountry: 'customerCountry',
+    customerPhone: 'customerPhone',
     listingId: 'listingId',
     vendorId: 'vendorId',
     message: 'message',
@@ -20228,6 +20458,7 @@ export namespace Prisma {
     NOT?: JetWhereInput | JetWhereInput[]
     id?: StringFilter<"Jet"> | string
     createdAt?: DateTimeFilter<"Jet"> | Date | string
+    updatedAt?: DateTimeFilter<"Jet"> | Date | string
     manufacturer?: StringFilter<"Jet"> | string
     otherManufacturer?: StringNullableFilter<"Jet"> | string | null
     model?: StringFilter<"Jet"> | string
@@ -20236,15 +20467,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFilter<"Jet"> | number
     totalLandings?: IntFilter<"Jet"> | number
     engineMakeModel?: StringFilter<"Jet"> | string
-    engineHours?: IntFilter<"Jet"> | number
+    engineHours?: FloatFilter<"Jet"> | number
     avionicsSuite?: StringFilter<"Jet"> | string
     interiorConfig?: StringFilter<"Jet"> | string
     interiorImageUrls?: StringNullableListFilter<"Jet">
     exteriorImageUrls?: StringNullableListFilter<"Jet">
+    layoutImageUrl?: StringFilter<"Jet"> | string
     price?: StringFilter<"Jet"> | string
     currentLocation?: StringFilter<"Jet"> | string
     registrationNumber?: StringFilter<"Jet"> | string
     contactDetails?: StringFilter<"Jet"> | string
+    description?: StringFilter<"Jet"> | string
     aircraftType?: StringFilter<"Jet"> | string
     seatingCapacity?: IntFilter<"Jet"> | number
     cabinHeight?: FloatFilter<"Jet"> | number
@@ -20254,24 +20487,35 @@ export namespace Prisma {
     numberOfEngines?: IntFilter<"Jet"> | number
     engineType?: StringFilter<"Jet"> | string
     engineThrust?: FloatFilter<"Jet"> | number
-    certification?: StringFilter<"Jet"> | string
-    noiseCompliance?: StringFilter<"Jet"> | string
-    lastInspectionDate?: DateTimeFilter<"Jet"> | Date | string
-    nextInspectionDue?: DateTimeFilter<"Jet"> | Date | string
-    maintenanceStatus?: StringFilter<"Jet"> | string
-    previousOwners?: IntNullableFilter<"Jet"> | number | null
-    maintenanceProgram?: StringNullableFilter<"Jet"> | string | null
-    airframeEngineStatus?: StringNullableFilter<"Jet"> | string | null
-    refurbishmentDate?: StringNullableFilter<"Jet"> | string | null
-    wifiConnectivity?: StringNullableFilter<"Jet"> | string | null
-    lavatoryGalleyDetails?: StringNullableFilter<"Jet"> | string | null
-    cabinAmenities?: StringNullableFilter<"Jet"> | string | null
     range?: FloatNullableFilter<"Jet"> | number | null
     cruiseSpeed?: FloatNullableFilter<"Jet"> | number | null
     maxAltitude?: FloatNullableFilter<"Jet"> | number | null
     runwayLength?: FloatNullableFilter<"Jet"> | number | null
     emptyWeight?: FloatNullableFilter<"Jet"> | number | null
     maxTakeoffWeight?: FloatNullableFilter<"Jet"> | number | null
+    fuelCapacity?: FloatNullableFilter<"Jet"> | number | null
+    fuelConsumption?: FloatNullableFilter<"Jet"> | number | null
+    serviceCeiling?: FloatNullableFilter<"Jet"> | number | null
+    takeoffDistance?: FloatNullableFilter<"Jet"> | number | null
+    landingDistance?: FloatNullableFilter<"Jet"> | number | null
+    certification?: StringFilter<"Jet"> | string
+    noiseCompliance?: StringFilter<"Jet"> | string
+    operationalRestrictions?: StringNullableFilter<"Jet"> | string | null
+    lastInspectionDate?: DateTimeFilter<"Jet"> | Date | string
+    nextInspectionDue?: DateTimeFilter<"Jet"> | Date | string
+    maintenanceStatus?: StringFilter<"Jet"> | string
+    maintenanceProgram?: StringNullableFilter<"Jet"> | string | null
+    airframeEngineStatus?: StringNullableFilter<"Jet"> | string | null
+    refurbishmentDate?: StringNullableFilter<"Jet"> | string | null
+    avionicsUpdates?: StringNullableFilter<"Jet"> | string | null
+    warrantyRemaining?: StringNullableFilter<"Jet"> | string | null
+    wifiConnectivity?: StringNullableFilter<"Jet"> | string | null
+    lavatoryGalleyDetails?: StringNullableFilter<"Jet"> | string | null
+    cabinAmenities?: StringNullableFilter<"Jet"> | string | null
+    interiorDesigner?: StringNullableFilter<"Jet"> | string | null
+    exteriorPaintScheme?: StringNullableFilter<"Jet"> | string | null
+    recentUpgrades?: StringNullableFilter<"Jet"> | string | null
+    previousOwners?: IntNullableFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableFilter<"Jet"> | string | null
     paymentTxSignature?: StringFilter<"Jet"> | string
     transactionLink?: StringNullableFilter<"Jet"> | string | null
@@ -20280,12 +20524,13 @@ export namespace Prisma {
     status?: StringFilter<"Jet"> | string
     sponsored?: BoolFilter<"Jet"> | boolean
     sponsoredType?: StringFilter<"Jet"> | string
-    end_date?: DateTimeFilter<"Jet"> | Date | string
+    end_date?: DateTimeNullableFilter<"Jet"> | Date | string | null
   }
 
   export type JetOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     manufacturer?: SortOrder
     otherManufacturer?: SortOrderInput | SortOrder
     model?: SortOrder
@@ -20299,10 +20544,12 @@ export namespace Prisma {
     interiorConfig?: SortOrder
     interiorImageUrls?: SortOrder
     exteriorImageUrls?: SortOrder
+    layoutImageUrl?: SortOrder
     price?: SortOrder
     currentLocation?: SortOrder
     registrationNumber?: SortOrder
     contactDetails?: SortOrder
+    description?: SortOrder
     aircraftType?: SortOrder
     seatingCapacity?: SortOrder
     cabinHeight?: SortOrder
@@ -20312,24 +20559,35 @@ export namespace Prisma {
     numberOfEngines?: SortOrder
     engineType?: SortOrder
     engineThrust?: SortOrder
-    certification?: SortOrder
-    noiseCompliance?: SortOrder
-    lastInspectionDate?: SortOrder
-    nextInspectionDue?: SortOrder
-    maintenanceStatus?: SortOrder
-    previousOwners?: SortOrderInput | SortOrder
-    maintenanceProgram?: SortOrderInput | SortOrder
-    airframeEngineStatus?: SortOrderInput | SortOrder
-    refurbishmentDate?: SortOrderInput | SortOrder
-    wifiConnectivity?: SortOrderInput | SortOrder
-    lavatoryGalleyDetails?: SortOrderInput | SortOrder
-    cabinAmenities?: SortOrderInput | SortOrder
     range?: SortOrderInput | SortOrder
     cruiseSpeed?: SortOrderInput | SortOrder
     maxAltitude?: SortOrderInput | SortOrder
     runwayLength?: SortOrderInput | SortOrder
     emptyWeight?: SortOrderInput | SortOrder
     maxTakeoffWeight?: SortOrderInput | SortOrder
+    fuelCapacity?: SortOrderInput | SortOrder
+    fuelConsumption?: SortOrderInput | SortOrder
+    serviceCeiling?: SortOrderInput | SortOrder
+    takeoffDistance?: SortOrderInput | SortOrder
+    landingDistance?: SortOrderInput | SortOrder
+    certification?: SortOrder
+    noiseCompliance?: SortOrder
+    operationalRestrictions?: SortOrderInput | SortOrder
+    lastInspectionDate?: SortOrder
+    nextInspectionDue?: SortOrder
+    maintenanceStatus?: SortOrder
+    maintenanceProgram?: SortOrderInput | SortOrder
+    airframeEngineStatus?: SortOrderInput | SortOrder
+    refurbishmentDate?: SortOrderInput | SortOrder
+    avionicsUpdates?: SortOrderInput | SortOrder
+    warrantyRemaining?: SortOrderInput | SortOrder
+    wifiConnectivity?: SortOrderInput | SortOrder
+    lavatoryGalleyDetails?: SortOrderInput | SortOrder
+    cabinAmenities?: SortOrderInput | SortOrder
+    interiorDesigner?: SortOrderInput | SortOrder
+    exteriorPaintScheme?: SortOrderInput | SortOrder
+    recentUpgrades?: SortOrderInput | SortOrder
+    previousOwners?: SortOrderInput | SortOrder
     deliveryAvailability?: SortOrderInput | SortOrder
     paymentTxSignature?: SortOrder
     transactionLink?: SortOrderInput | SortOrder
@@ -20338,7 +20596,7 @@ export namespace Prisma {
     status?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    end_date?: SortOrder
+    end_date?: SortOrderInput | SortOrder
   }
 
   export type JetWhereUniqueInput = Prisma.AtLeast<{
@@ -20348,6 +20606,7 @@ export namespace Prisma {
     OR?: JetWhereInput[]
     NOT?: JetWhereInput | JetWhereInput[]
     createdAt?: DateTimeFilter<"Jet"> | Date | string
+    updatedAt?: DateTimeFilter<"Jet"> | Date | string
     manufacturer?: StringFilter<"Jet"> | string
     otherManufacturer?: StringNullableFilter<"Jet"> | string | null
     model?: StringFilter<"Jet"> | string
@@ -20356,14 +20615,16 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFilter<"Jet"> | number
     totalLandings?: IntFilter<"Jet"> | number
     engineMakeModel?: StringFilter<"Jet"> | string
-    engineHours?: IntFilter<"Jet"> | number
+    engineHours?: FloatFilter<"Jet"> | number
     avionicsSuite?: StringFilter<"Jet"> | string
     interiorConfig?: StringFilter<"Jet"> | string
     interiorImageUrls?: StringNullableListFilter<"Jet">
     exteriorImageUrls?: StringNullableListFilter<"Jet">
+    layoutImageUrl?: StringFilter<"Jet"> | string
     price?: StringFilter<"Jet"> | string
     currentLocation?: StringFilter<"Jet"> | string
     contactDetails?: StringFilter<"Jet"> | string
+    description?: StringFilter<"Jet"> | string
     aircraftType?: StringFilter<"Jet"> | string
     seatingCapacity?: IntFilter<"Jet"> | number
     cabinHeight?: FloatFilter<"Jet"> | number
@@ -20373,24 +20634,35 @@ export namespace Prisma {
     numberOfEngines?: IntFilter<"Jet"> | number
     engineType?: StringFilter<"Jet"> | string
     engineThrust?: FloatFilter<"Jet"> | number
-    certification?: StringFilter<"Jet"> | string
-    noiseCompliance?: StringFilter<"Jet"> | string
-    lastInspectionDate?: DateTimeFilter<"Jet"> | Date | string
-    nextInspectionDue?: DateTimeFilter<"Jet"> | Date | string
-    maintenanceStatus?: StringFilter<"Jet"> | string
-    previousOwners?: IntNullableFilter<"Jet"> | number | null
-    maintenanceProgram?: StringNullableFilter<"Jet"> | string | null
-    airframeEngineStatus?: StringNullableFilter<"Jet"> | string | null
-    refurbishmentDate?: StringNullableFilter<"Jet"> | string | null
-    wifiConnectivity?: StringNullableFilter<"Jet"> | string | null
-    lavatoryGalleyDetails?: StringNullableFilter<"Jet"> | string | null
-    cabinAmenities?: StringNullableFilter<"Jet"> | string | null
     range?: FloatNullableFilter<"Jet"> | number | null
     cruiseSpeed?: FloatNullableFilter<"Jet"> | number | null
     maxAltitude?: FloatNullableFilter<"Jet"> | number | null
     runwayLength?: FloatNullableFilter<"Jet"> | number | null
     emptyWeight?: FloatNullableFilter<"Jet"> | number | null
     maxTakeoffWeight?: FloatNullableFilter<"Jet"> | number | null
+    fuelCapacity?: FloatNullableFilter<"Jet"> | number | null
+    fuelConsumption?: FloatNullableFilter<"Jet"> | number | null
+    serviceCeiling?: FloatNullableFilter<"Jet"> | number | null
+    takeoffDistance?: FloatNullableFilter<"Jet"> | number | null
+    landingDistance?: FloatNullableFilter<"Jet"> | number | null
+    certification?: StringFilter<"Jet"> | string
+    noiseCompliance?: StringFilter<"Jet"> | string
+    operationalRestrictions?: StringNullableFilter<"Jet"> | string | null
+    lastInspectionDate?: DateTimeFilter<"Jet"> | Date | string
+    nextInspectionDue?: DateTimeFilter<"Jet"> | Date | string
+    maintenanceStatus?: StringFilter<"Jet"> | string
+    maintenanceProgram?: StringNullableFilter<"Jet"> | string | null
+    airframeEngineStatus?: StringNullableFilter<"Jet"> | string | null
+    refurbishmentDate?: StringNullableFilter<"Jet"> | string | null
+    avionicsUpdates?: StringNullableFilter<"Jet"> | string | null
+    warrantyRemaining?: StringNullableFilter<"Jet"> | string | null
+    wifiConnectivity?: StringNullableFilter<"Jet"> | string | null
+    lavatoryGalleyDetails?: StringNullableFilter<"Jet"> | string | null
+    cabinAmenities?: StringNullableFilter<"Jet"> | string | null
+    interiorDesigner?: StringNullableFilter<"Jet"> | string | null
+    exteriorPaintScheme?: StringNullableFilter<"Jet"> | string | null
+    recentUpgrades?: StringNullableFilter<"Jet"> | string | null
+    previousOwners?: IntNullableFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableFilter<"Jet"> | string | null
     paymentTxSignature?: StringFilter<"Jet"> | string
     transactionLink?: StringNullableFilter<"Jet"> | string | null
@@ -20399,12 +20671,13 @@ export namespace Prisma {
     status?: StringFilter<"Jet"> | string
     sponsored?: BoolFilter<"Jet"> | boolean
     sponsoredType?: StringFilter<"Jet"> | string
-    end_date?: DateTimeFilter<"Jet"> | Date | string
+    end_date?: DateTimeNullableFilter<"Jet"> | Date | string | null
   }, "id" | "registrationNumber">
 
   export type JetOrderByWithAggregationInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     manufacturer?: SortOrder
     otherManufacturer?: SortOrderInput | SortOrder
     model?: SortOrder
@@ -20418,10 +20691,12 @@ export namespace Prisma {
     interiorConfig?: SortOrder
     interiorImageUrls?: SortOrder
     exteriorImageUrls?: SortOrder
+    layoutImageUrl?: SortOrder
     price?: SortOrder
     currentLocation?: SortOrder
     registrationNumber?: SortOrder
     contactDetails?: SortOrder
+    description?: SortOrder
     aircraftType?: SortOrder
     seatingCapacity?: SortOrder
     cabinHeight?: SortOrder
@@ -20431,24 +20706,35 @@ export namespace Prisma {
     numberOfEngines?: SortOrder
     engineType?: SortOrder
     engineThrust?: SortOrder
-    certification?: SortOrder
-    noiseCompliance?: SortOrder
-    lastInspectionDate?: SortOrder
-    nextInspectionDue?: SortOrder
-    maintenanceStatus?: SortOrder
-    previousOwners?: SortOrderInput | SortOrder
-    maintenanceProgram?: SortOrderInput | SortOrder
-    airframeEngineStatus?: SortOrderInput | SortOrder
-    refurbishmentDate?: SortOrderInput | SortOrder
-    wifiConnectivity?: SortOrderInput | SortOrder
-    lavatoryGalleyDetails?: SortOrderInput | SortOrder
-    cabinAmenities?: SortOrderInput | SortOrder
     range?: SortOrderInput | SortOrder
     cruiseSpeed?: SortOrderInput | SortOrder
     maxAltitude?: SortOrderInput | SortOrder
     runwayLength?: SortOrderInput | SortOrder
     emptyWeight?: SortOrderInput | SortOrder
     maxTakeoffWeight?: SortOrderInput | SortOrder
+    fuelCapacity?: SortOrderInput | SortOrder
+    fuelConsumption?: SortOrderInput | SortOrder
+    serviceCeiling?: SortOrderInput | SortOrder
+    takeoffDistance?: SortOrderInput | SortOrder
+    landingDistance?: SortOrderInput | SortOrder
+    certification?: SortOrder
+    noiseCompliance?: SortOrder
+    operationalRestrictions?: SortOrderInput | SortOrder
+    lastInspectionDate?: SortOrder
+    nextInspectionDue?: SortOrder
+    maintenanceStatus?: SortOrder
+    maintenanceProgram?: SortOrderInput | SortOrder
+    airframeEngineStatus?: SortOrderInput | SortOrder
+    refurbishmentDate?: SortOrderInput | SortOrder
+    avionicsUpdates?: SortOrderInput | SortOrder
+    warrantyRemaining?: SortOrderInput | SortOrder
+    wifiConnectivity?: SortOrderInput | SortOrder
+    lavatoryGalleyDetails?: SortOrderInput | SortOrder
+    cabinAmenities?: SortOrderInput | SortOrder
+    interiorDesigner?: SortOrderInput | SortOrder
+    exteriorPaintScheme?: SortOrderInput | SortOrder
+    recentUpgrades?: SortOrderInput | SortOrder
+    previousOwners?: SortOrderInput | SortOrder
     deliveryAvailability?: SortOrderInput | SortOrder
     paymentTxSignature?: SortOrder
     transactionLink?: SortOrderInput | SortOrder
@@ -20457,7 +20743,7 @@ export namespace Prisma {
     status?: SortOrder
     sponsored?: SortOrder
     sponsoredType?: SortOrder
-    end_date?: SortOrder
+    end_date?: SortOrderInput | SortOrder
     _count?: JetCountOrderByAggregateInput
     _avg?: JetAvgOrderByAggregateInput
     _max?: JetMaxOrderByAggregateInput
@@ -20471,6 +20757,7 @@ export namespace Prisma {
     NOT?: JetScalarWhereWithAggregatesInput | JetScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Jet"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
     manufacturer?: StringWithAggregatesFilter<"Jet"> | string
     otherManufacturer?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     model?: StringWithAggregatesFilter<"Jet"> | string
@@ -20479,15 +20766,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntWithAggregatesFilter<"Jet"> | number
     totalLandings?: IntWithAggregatesFilter<"Jet"> | number
     engineMakeModel?: StringWithAggregatesFilter<"Jet"> | string
-    engineHours?: IntWithAggregatesFilter<"Jet"> | number
+    engineHours?: FloatWithAggregatesFilter<"Jet"> | number
     avionicsSuite?: StringWithAggregatesFilter<"Jet"> | string
     interiorConfig?: StringWithAggregatesFilter<"Jet"> | string
     interiorImageUrls?: StringNullableListFilter<"Jet">
     exteriorImageUrls?: StringNullableListFilter<"Jet">
+    layoutImageUrl?: StringWithAggregatesFilter<"Jet"> | string
     price?: StringWithAggregatesFilter<"Jet"> | string
     currentLocation?: StringWithAggregatesFilter<"Jet"> | string
     registrationNumber?: StringWithAggregatesFilter<"Jet"> | string
     contactDetails?: StringWithAggregatesFilter<"Jet"> | string
+    description?: StringWithAggregatesFilter<"Jet"> | string
     aircraftType?: StringWithAggregatesFilter<"Jet"> | string
     seatingCapacity?: IntWithAggregatesFilter<"Jet"> | number
     cabinHeight?: FloatWithAggregatesFilter<"Jet"> | number
@@ -20497,24 +20786,35 @@ export namespace Prisma {
     numberOfEngines?: IntWithAggregatesFilter<"Jet"> | number
     engineType?: StringWithAggregatesFilter<"Jet"> | string
     engineThrust?: FloatWithAggregatesFilter<"Jet"> | number
-    certification?: StringWithAggregatesFilter<"Jet"> | string
-    noiseCompliance?: StringWithAggregatesFilter<"Jet"> | string
-    lastInspectionDate?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
-    nextInspectionDue?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
-    maintenanceStatus?: StringWithAggregatesFilter<"Jet"> | string
-    previousOwners?: IntNullableWithAggregatesFilter<"Jet"> | number | null
-    maintenanceProgram?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    airframeEngineStatus?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    refurbishmentDate?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    wifiConnectivity?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    lavatoryGalleyDetails?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    cabinAmenities?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     range?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
     cruiseSpeed?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
     maxAltitude?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
     runwayLength?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
     emptyWeight?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
     maxTakeoffWeight?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    fuelCapacity?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    fuelConsumption?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    serviceCeiling?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    takeoffDistance?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    landingDistance?: FloatNullableWithAggregatesFilter<"Jet"> | number | null
+    certification?: StringWithAggregatesFilter<"Jet"> | string
+    noiseCompliance?: StringWithAggregatesFilter<"Jet"> | string
+    operationalRestrictions?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    lastInspectionDate?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
+    nextInspectionDue?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
+    maintenanceStatus?: StringWithAggregatesFilter<"Jet"> | string
+    maintenanceProgram?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    airframeEngineStatus?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    refurbishmentDate?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    avionicsUpdates?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    warrantyRemaining?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    wifiConnectivity?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    lavatoryGalleyDetails?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    cabinAmenities?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    interiorDesigner?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    exteriorPaintScheme?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    recentUpgrades?: StringNullableWithAggregatesFilter<"Jet"> | string | null
+    previousOwners?: IntNullableWithAggregatesFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     paymentTxSignature?: StringWithAggregatesFilter<"Jet"> | string
     transactionLink?: StringNullableWithAggregatesFilter<"Jet"> | string | null
@@ -20523,7 +20823,7 @@ export namespace Prisma {
     status?: StringWithAggregatesFilter<"Jet"> | string
     sponsored?: BoolWithAggregatesFilter<"Jet"> | boolean
     sponsoredType?: StringWithAggregatesFilter<"Jet"> | string
-    end_date?: DateTimeWithAggregatesFilter<"Jet"> | Date | string
+    end_date?: DateTimeNullableWithAggregatesFilter<"Jet"> | Date | string | null
   }
 
   export type JetForBidsWhereInput = {
@@ -21007,6 +21307,7 @@ export namespace Prisma {
     customerName?: StringFilter<"JetForSaleMessages"> | string
     customerEmail?: StringFilter<"JetForSaleMessages"> | string
     customerCountry?: StringFilter<"JetForSaleMessages"> | string
+    customerPhone?: StringFilter<"JetForSaleMessages"> | string
     listingId?: StringFilter<"JetForSaleMessages"> | string
     vendorId?: StringFilter<"JetForSaleMessages"> | string
     message?: StringFilter<"JetForSaleMessages"> | string
@@ -21019,6 +21320,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerEmail?: SortOrder
     customerCountry?: SortOrder
+    customerPhone?: SortOrder
     listingId?: SortOrder
     vendorId?: SortOrder
     message?: SortOrder
@@ -21034,6 +21336,7 @@ export namespace Prisma {
     customerName?: StringFilter<"JetForSaleMessages"> | string
     customerEmail?: StringFilter<"JetForSaleMessages"> | string
     customerCountry?: StringFilter<"JetForSaleMessages"> | string
+    customerPhone?: StringFilter<"JetForSaleMessages"> | string
     listingId?: StringFilter<"JetForSaleMessages"> | string
     vendorId?: StringFilter<"JetForSaleMessages"> | string
     message?: StringFilter<"JetForSaleMessages"> | string
@@ -21046,6 +21349,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerEmail?: SortOrder
     customerCountry?: SortOrder
+    customerPhone?: SortOrder
     listingId?: SortOrder
     vendorId?: SortOrder
     message?: SortOrder
@@ -21064,6 +21368,7 @@ export namespace Prisma {
     customerName?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     customerEmail?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     customerCountry?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
+    customerPhone?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     listingId?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     vendorId?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
     message?: StringWithAggregatesFilter<"JetForSaleMessages"> | string
@@ -22115,6 +22420,7 @@ export namespace Prisma {
   export type JetCreateInput = {
     id?: string
     createdAt?: Date | string
+    updatedAt?: Date | string
     manufacturer: string
     otherManufacturer?: string | null
     model: string
@@ -22128,10 +22434,12 @@ export namespace Prisma {
     interiorConfig: string
     interiorImageUrls?: JetCreateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetCreateexteriorImageUrlsInput | string[]
+    layoutImageUrl: string
     price: string
     currentLocation: string
     registrationNumber: string
     contactDetails: string
+    description: string
     aircraftType: string
     seatingCapacity: number
     cabinHeight: number
@@ -22141,24 +22449,35 @@ export namespace Prisma {
     numberOfEngines: number
     engineType: string
     engineThrust: number
-    certification?: string
-    noiseCompliance: string
-    lastInspectionDate: Date | string
-    nextInspectionDue: Date | string
-    maintenanceStatus: string
-    previousOwners?: number | null
-    maintenanceProgram?: string | null
-    airframeEngineStatus?: string | null
-    refurbishmentDate?: string | null
-    wifiConnectivity?: string | null
-    lavatoryGalleyDetails?: string | null
-    cabinAmenities?: string | null
     range?: number | null
     cruiseSpeed?: number | null
     maxAltitude?: number | null
     runwayLength?: number | null
     emptyWeight?: number | null
     maxTakeoffWeight?: number | null
+    fuelCapacity?: number | null
+    fuelConsumption?: number | null
+    serviceCeiling?: number | null
+    takeoffDistance?: number | null
+    landingDistance?: number | null
+    certification?: string
+    noiseCompliance: string
+    operationalRestrictions?: string | null
+    lastInspectionDate: Date | string
+    nextInspectionDue: Date | string
+    maintenanceStatus: string
+    maintenanceProgram?: string | null
+    airframeEngineStatus?: string | null
+    refurbishmentDate?: string | null
+    avionicsUpdates?: string | null
+    warrantyRemaining?: string | null
+    wifiConnectivity?: string | null
+    lavatoryGalleyDetails?: string | null
+    cabinAmenities?: string | null
+    interiorDesigner?: string | null
+    exteriorPaintScheme?: string | null
+    recentUpgrades?: string | null
+    previousOwners?: number | null
     deliveryAvailability?: string | null
     paymentTxSignature: string
     transactionLink?: string | null
@@ -22167,12 +22486,13 @@ export namespace Prisma {
     status?: string
     sponsored?: boolean
     sponsoredType?: string
-    end_date?: Date | string
+    end_date?: Date | string | null
   }
 
   export type JetUncheckedCreateInput = {
     id?: string
     createdAt?: Date | string
+    updatedAt?: Date | string
     manufacturer: string
     otherManufacturer?: string | null
     model: string
@@ -22186,10 +22506,12 @@ export namespace Prisma {
     interiorConfig: string
     interiorImageUrls?: JetCreateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetCreateexteriorImageUrlsInput | string[]
+    layoutImageUrl: string
     price: string
     currentLocation: string
     registrationNumber: string
     contactDetails: string
+    description: string
     aircraftType: string
     seatingCapacity: number
     cabinHeight: number
@@ -22199,24 +22521,35 @@ export namespace Prisma {
     numberOfEngines: number
     engineType: string
     engineThrust: number
-    certification?: string
-    noiseCompliance: string
-    lastInspectionDate: Date | string
-    nextInspectionDue: Date | string
-    maintenanceStatus: string
-    previousOwners?: number | null
-    maintenanceProgram?: string | null
-    airframeEngineStatus?: string | null
-    refurbishmentDate?: string | null
-    wifiConnectivity?: string | null
-    lavatoryGalleyDetails?: string | null
-    cabinAmenities?: string | null
     range?: number | null
     cruiseSpeed?: number | null
     maxAltitude?: number | null
     runwayLength?: number | null
     emptyWeight?: number | null
     maxTakeoffWeight?: number | null
+    fuelCapacity?: number | null
+    fuelConsumption?: number | null
+    serviceCeiling?: number | null
+    takeoffDistance?: number | null
+    landingDistance?: number | null
+    certification?: string
+    noiseCompliance: string
+    operationalRestrictions?: string | null
+    lastInspectionDate: Date | string
+    nextInspectionDue: Date | string
+    maintenanceStatus: string
+    maintenanceProgram?: string | null
+    airframeEngineStatus?: string | null
+    refurbishmentDate?: string | null
+    avionicsUpdates?: string | null
+    warrantyRemaining?: string | null
+    wifiConnectivity?: string | null
+    lavatoryGalleyDetails?: string | null
+    cabinAmenities?: string | null
+    interiorDesigner?: string | null
+    exteriorPaintScheme?: string | null
+    recentUpgrades?: string | null
+    previousOwners?: number | null
     deliveryAvailability?: string | null
     paymentTxSignature: string
     transactionLink?: string | null
@@ -22225,12 +22558,13 @@ export namespace Prisma {
     status?: string
     sponsored?: boolean
     sponsoredType?: string
-    end_date?: Date | string
+    end_date?: Date | string | null
   }
 
   export type JetUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     manufacturer?: StringFieldUpdateOperationsInput | string
     otherManufacturer?: NullableStringFieldUpdateOperationsInput | string | null
     model?: StringFieldUpdateOperationsInput | string
@@ -22239,15 +22573,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFieldUpdateOperationsInput | number
     totalLandings?: IntFieldUpdateOperationsInput | number
     engineMakeModel?: StringFieldUpdateOperationsInput | string
-    engineHours?: IntFieldUpdateOperationsInput | number
+    engineHours?: FloatFieldUpdateOperationsInput | number
     avionicsSuite?: StringFieldUpdateOperationsInput | string
     interiorConfig?: StringFieldUpdateOperationsInput | string
     interiorImageUrls?: JetUpdateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetUpdateexteriorImageUrlsInput | string[]
+    layoutImageUrl?: StringFieldUpdateOperationsInput | string
     price?: StringFieldUpdateOperationsInput | string
     currentLocation?: StringFieldUpdateOperationsInput | string
     registrationNumber?: StringFieldUpdateOperationsInput | string
     contactDetails?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     aircraftType?: StringFieldUpdateOperationsInput | string
     seatingCapacity?: IntFieldUpdateOperationsInput | number
     cabinHeight?: FloatFieldUpdateOperationsInput | number
@@ -22257,24 +22593,35 @@ export namespace Prisma {
     numberOfEngines?: IntFieldUpdateOperationsInput | number
     engineType?: StringFieldUpdateOperationsInput | string
     engineThrust?: FloatFieldUpdateOperationsInput | number
-    certification?: StringFieldUpdateOperationsInput | string
-    noiseCompliance?: StringFieldUpdateOperationsInput | string
-    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenanceStatus?: StringFieldUpdateOperationsInput | string
-    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
-    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
-    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
-    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
-    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
-    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
     range?: NullableFloatFieldUpdateOperationsInput | number | null
     cruiseSpeed?: NullableFloatFieldUpdateOperationsInput | number | null
     maxAltitude?: NullableFloatFieldUpdateOperationsInput | number | null
     runwayLength?: NullableFloatFieldUpdateOperationsInput | number | null
     emptyWeight?: NullableFloatFieldUpdateOperationsInput | number | null
     maxTakeoffWeight?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelCapacity?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelConsumption?: NullableFloatFieldUpdateOperationsInput | number | null
+    serviceCeiling?: NullableFloatFieldUpdateOperationsInput | number | null
+    takeoffDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    landingDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    certification?: StringFieldUpdateOperationsInput | string
+    noiseCompliance?: StringFieldUpdateOperationsInput | string
+    operationalRestrictions?: NullableStringFieldUpdateOperationsInput | string | null
+    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
+    maintenanceStatus?: StringFieldUpdateOperationsInput | string
+    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
+    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
+    avionicsUpdates?: NullableStringFieldUpdateOperationsInput | string | null
+    warrantyRemaining?: NullableStringFieldUpdateOperationsInput | string | null
+    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
+    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
+    interiorDesigner?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorPaintScheme?: NullableStringFieldUpdateOperationsInput | string | null
+    recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
+    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
     paymentTxSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22283,12 +22630,13 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type JetUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     manufacturer?: StringFieldUpdateOperationsInput | string
     otherManufacturer?: NullableStringFieldUpdateOperationsInput | string | null
     model?: StringFieldUpdateOperationsInput | string
@@ -22297,15 +22645,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFieldUpdateOperationsInput | number
     totalLandings?: IntFieldUpdateOperationsInput | number
     engineMakeModel?: StringFieldUpdateOperationsInput | string
-    engineHours?: IntFieldUpdateOperationsInput | number
+    engineHours?: FloatFieldUpdateOperationsInput | number
     avionicsSuite?: StringFieldUpdateOperationsInput | string
     interiorConfig?: StringFieldUpdateOperationsInput | string
     interiorImageUrls?: JetUpdateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetUpdateexteriorImageUrlsInput | string[]
+    layoutImageUrl?: StringFieldUpdateOperationsInput | string
     price?: StringFieldUpdateOperationsInput | string
     currentLocation?: StringFieldUpdateOperationsInput | string
     registrationNumber?: StringFieldUpdateOperationsInput | string
     contactDetails?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     aircraftType?: StringFieldUpdateOperationsInput | string
     seatingCapacity?: IntFieldUpdateOperationsInput | number
     cabinHeight?: FloatFieldUpdateOperationsInput | number
@@ -22315,24 +22665,35 @@ export namespace Prisma {
     numberOfEngines?: IntFieldUpdateOperationsInput | number
     engineType?: StringFieldUpdateOperationsInput | string
     engineThrust?: FloatFieldUpdateOperationsInput | number
-    certification?: StringFieldUpdateOperationsInput | string
-    noiseCompliance?: StringFieldUpdateOperationsInput | string
-    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenanceStatus?: StringFieldUpdateOperationsInput | string
-    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
-    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
-    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
-    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
-    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
-    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
     range?: NullableFloatFieldUpdateOperationsInput | number | null
     cruiseSpeed?: NullableFloatFieldUpdateOperationsInput | number | null
     maxAltitude?: NullableFloatFieldUpdateOperationsInput | number | null
     runwayLength?: NullableFloatFieldUpdateOperationsInput | number | null
     emptyWeight?: NullableFloatFieldUpdateOperationsInput | number | null
     maxTakeoffWeight?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelCapacity?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelConsumption?: NullableFloatFieldUpdateOperationsInput | number | null
+    serviceCeiling?: NullableFloatFieldUpdateOperationsInput | number | null
+    takeoffDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    landingDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    certification?: StringFieldUpdateOperationsInput | string
+    noiseCompliance?: StringFieldUpdateOperationsInput | string
+    operationalRestrictions?: NullableStringFieldUpdateOperationsInput | string | null
+    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
+    maintenanceStatus?: StringFieldUpdateOperationsInput | string
+    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
+    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
+    avionicsUpdates?: NullableStringFieldUpdateOperationsInput | string | null
+    warrantyRemaining?: NullableStringFieldUpdateOperationsInput | string | null
+    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
+    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
+    interiorDesigner?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorPaintScheme?: NullableStringFieldUpdateOperationsInput | string | null
+    recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
+    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
     paymentTxSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22341,12 +22702,13 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type JetCreateManyInput = {
     id?: string
     createdAt?: Date | string
+    updatedAt?: Date | string
     manufacturer: string
     otherManufacturer?: string | null
     model: string
@@ -22360,10 +22722,12 @@ export namespace Prisma {
     interiorConfig: string
     interiorImageUrls?: JetCreateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetCreateexteriorImageUrlsInput | string[]
+    layoutImageUrl: string
     price: string
     currentLocation: string
     registrationNumber: string
     contactDetails: string
+    description: string
     aircraftType: string
     seatingCapacity: number
     cabinHeight: number
@@ -22373,24 +22737,35 @@ export namespace Prisma {
     numberOfEngines: number
     engineType: string
     engineThrust: number
-    certification?: string
-    noiseCompliance: string
-    lastInspectionDate: Date | string
-    nextInspectionDue: Date | string
-    maintenanceStatus: string
-    previousOwners?: number | null
-    maintenanceProgram?: string | null
-    airframeEngineStatus?: string | null
-    refurbishmentDate?: string | null
-    wifiConnectivity?: string | null
-    lavatoryGalleyDetails?: string | null
-    cabinAmenities?: string | null
     range?: number | null
     cruiseSpeed?: number | null
     maxAltitude?: number | null
     runwayLength?: number | null
     emptyWeight?: number | null
     maxTakeoffWeight?: number | null
+    fuelCapacity?: number | null
+    fuelConsumption?: number | null
+    serviceCeiling?: number | null
+    takeoffDistance?: number | null
+    landingDistance?: number | null
+    certification?: string
+    noiseCompliance: string
+    operationalRestrictions?: string | null
+    lastInspectionDate: Date | string
+    nextInspectionDue: Date | string
+    maintenanceStatus: string
+    maintenanceProgram?: string | null
+    airframeEngineStatus?: string | null
+    refurbishmentDate?: string | null
+    avionicsUpdates?: string | null
+    warrantyRemaining?: string | null
+    wifiConnectivity?: string | null
+    lavatoryGalleyDetails?: string | null
+    cabinAmenities?: string | null
+    interiorDesigner?: string | null
+    exteriorPaintScheme?: string | null
+    recentUpgrades?: string | null
+    previousOwners?: number | null
     deliveryAvailability?: string | null
     paymentTxSignature: string
     transactionLink?: string | null
@@ -22399,12 +22774,13 @@ export namespace Prisma {
     status?: string
     sponsored?: boolean
     sponsoredType?: string
-    end_date?: Date | string
+    end_date?: Date | string | null
   }
 
   export type JetUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     manufacturer?: StringFieldUpdateOperationsInput | string
     otherManufacturer?: NullableStringFieldUpdateOperationsInput | string | null
     model?: StringFieldUpdateOperationsInput | string
@@ -22413,15 +22789,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFieldUpdateOperationsInput | number
     totalLandings?: IntFieldUpdateOperationsInput | number
     engineMakeModel?: StringFieldUpdateOperationsInput | string
-    engineHours?: IntFieldUpdateOperationsInput | number
+    engineHours?: FloatFieldUpdateOperationsInput | number
     avionicsSuite?: StringFieldUpdateOperationsInput | string
     interiorConfig?: StringFieldUpdateOperationsInput | string
     interiorImageUrls?: JetUpdateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetUpdateexteriorImageUrlsInput | string[]
+    layoutImageUrl?: StringFieldUpdateOperationsInput | string
     price?: StringFieldUpdateOperationsInput | string
     currentLocation?: StringFieldUpdateOperationsInput | string
     registrationNumber?: StringFieldUpdateOperationsInput | string
     contactDetails?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     aircraftType?: StringFieldUpdateOperationsInput | string
     seatingCapacity?: IntFieldUpdateOperationsInput | number
     cabinHeight?: FloatFieldUpdateOperationsInput | number
@@ -22431,24 +22809,35 @@ export namespace Prisma {
     numberOfEngines?: IntFieldUpdateOperationsInput | number
     engineType?: StringFieldUpdateOperationsInput | string
     engineThrust?: FloatFieldUpdateOperationsInput | number
-    certification?: StringFieldUpdateOperationsInput | string
-    noiseCompliance?: StringFieldUpdateOperationsInput | string
-    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenanceStatus?: StringFieldUpdateOperationsInput | string
-    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
-    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
-    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
-    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
-    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
-    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
     range?: NullableFloatFieldUpdateOperationsInput | number | null
     cruiseSpeed?: NullableFloatFieldUpdateOperationsInput | number | null
     maxAltitude?: NullableFloatFieldUpdateOperationsInput | number | null
     runwayLength?: NullableFloatFieldUpdateOperationsInput | number | null
     emptyWeight?: NullableFloatFieldUpdateOperationsInput | number | null
     maxTakeoffWeight?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelCapacity?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelConsumption?: NullableFloatFieldUpdateOperationsInput | number | null
+    serviceCeiling?: NullableFloatFieldUpdateOperationsInput | number | null
+    takeoffDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    landingDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    certification?: StringFieldUpdateOperationsInput | string
+    noiseCompliance?: StringFieldUpdateOperationsInput | string
+    operationalRestrictions?: NullableStringFieldUpdateOperationsInput | string | null
+    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
+    maintenanceStatus?: StringFieldUpdateOperationsInput | string
+    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
+    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
+    avionicsUpdates?: NullableStringFieldUpdateOperationsInput | string | null
+    warrantyRemaining?: NullableStringFieldUpdateOperationsInput | string | null
+    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
+    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
+    interiorDesigner?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorPaintScheme?: NullableStringFieldUpdateOperationsInput | string | null
+    recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
+    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
     paymentTxSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22457,12 +22846,13 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type JetUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     manufacturer?: StringFieldUpdateOperationsInput | string
     otherManufacturer?: NullableStringFieldUpdateOperationsInput | string | null
     model?: StringFieldUpdateOperationsInput | string
@@ -22471,15 +22861,17 @@ export namespace Prisma {
     totalTimeSinceNew?: IntFieldUpdateOperationsInput | number
     totalLandings?: IntFieldUpdateOperationsInput | number
     engineMakeModel?: StringFieldUpdateOperationsInput | string
-    engineHours?: IntFieldUpdateOperationsInput | number
+    engineHours?: FloatFieldUpdateOperationsInput | number
     avionicsSuite?: StringFieldUpdateOperationsInput | string
     interiorConfig?: StringFieldUpdateOperationsInput | string
     interiorImageUrls?: JetUpdateinteriorImageUrlsInput | string[]
     exteriorImageUrls?: JetUpdateexteriorImageUrlsInput | string[]
+    layoutImageUrl?: StringFieldUpdateOperationsInput | string
     price?: StringFieldUpdateOperationsInput | string
     currentLocation?: StringFieldUpdateOperationsInput | string
     registrationNumber?: StringFieldUpdateOperationsInput | string
     contactDetails?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     aircraftType?: StringFieldUpdateOperationsInput | string
     seatingCapacity?: IntFieldUpdateOperationsInput | number
     cabinHeight?: FloatFieldUpdateOperationsInput | number
@@ -22489,24 +22881,35 @@ export namespace Prisma {
     numberOfEngines?: IntFieldUpdateOperationsInput | number
     engineType?: StringFieldUpdateOperationsInput | string
     engineThrust?: FloatFieldUpdateOperationsInput | number
-    certification?: StringFieldUpdateOperationsInput | string
-    noiseCompliance?: StringFieldUpdateOperationsInput | string
-    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenanceStatus?: StringFieldUpdateOperationsInput | string
-    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
-    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
-    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
-    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
-    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
-    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
     range?: NullableFloatFieldUpdateOperationsInput | number | null
     cruiseSpeed?: NullableFloatFieldUpdateOperationsInput | number | null
     maxAltitude?: NullableFloatFieldUpdateOperationsInput | number | null
     runwayLength?: NullableFloatFieldUpdateOperationsInput | number | null
     emptyWeight?: NullableFloatFieldUpdateOperationsInput | number | null
     maxTakeoffWeight?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelCapacity?: NullableFloatFieldUpdateOperationsInput | number | null
+    fuelConsumption?: NullableFloatFieldUpdateOperationsInput | number | null
+    serviceCeiling?: NullableFloatFieldUpdateOperationsInput | number | null
+    takeoffDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    landingDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    certification?: StringFieldUpdateOperationsInput | string
+    noiseCompliance?: StringFieldUpdateOperationsInput | string
+    operationalRestrictions?: NullableStringFieldUpdateOperationsInput | string | null
+    lastInspectionDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextInspectionDue?: DateTimeFieldUpdateOperationsInput | Date | string
+    maintenanceStatus?: StringFieldUpdateOperationsInput | string
+    maintenanceProgram?: NullableStringFieldUpdateOperationsInput | string | null
+    airframeEngineStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    refurbishmentDate?: NullableStringFieldUpdateOperationsInput | string | null
+    avionicsUpdates?: NullableStringFieldUpdateOperationsInput | string | null
+    warrantyRemaining?: NullableStringFieldUpdateOperationsInput | string | null
+    wifiConnectivity?: NullableStringFieldUpdateOperationsInput | string | null
+    lavatoryGalleyDetails?: NullableStringFieldUpdateOperationsInput | string | null
+    cabinAmenities?: NullableStringFieldUpdateOperationsInput | string | null
+    interiorDesigner?: NullableStringFieldUpdateOperationsInput | string | null
+    exteriorPaintScheme?: NullableStringFieldUpdateOperationsInput | string | null
+    recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
+    previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
     paymentTxSignature?: StringFieldUpdateOperationsInput | string
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22515,7 +22918,7 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    end_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type JetForBidsCreateInput = {
@@ -23146,6 +23549,7 @@ export namespace Prisma {
     customerName: string
     customerEmail: string
     customerCountry: string
+    customerPhone: string
     listingId: string
     vendorId: string
     message: string
@@ -23158,6 +23562,7 @@ export namespace Prisma {
     customerName: string
     customerEmail: string
     customerCountry: string
+    customerPhone: string
     listingId: string
     vendorId: string
     message: string
@@ -23170,6 +23575,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerEmail?: StringFieldUpdateOperationsInput | string
     customerCountry?: StringFieldUpdateOperationsInput | string
+    customerPhone?: StringFieldUpdateOperationsInput | string
     listingId?: StringFieldUpdateOperationsInput | string
     vendorId?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -23182,6 +23588,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerEmail?: StringFieldUpdateOperationsInput | string
     customerCountry?: StringFieldUpdateOperationsInput | string
+    customerPhone?: StringFieldUpdateOperationsInput | string
     listingId?: StringFieldUpdateOperationsInput | string
     vendorId?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -23194,6 +23601,7 @@ export namespace Prisma {
     customerName: string
     customerEmail: string
     customerCountry: string
+    customerPhone: string
     listingId: string
     vendorId: string
     message: string
@@ -23206,6 +23614,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerEmail?: StringFieldUpdateOperationsInput | string
     customerCountry?: StringFieldUpdateOperationsInput | string
+    customerPhone?: StringFieldUpdateOperationsInput | string
     listingId?: StringFieldUpdateOperationsInput | string
     vendorId?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -23218,6 +23627,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerEmail?: StringFieldUpdateOperationsInput | string
     customerCountry?: StringFieldUpdateOperationsInput | string
+    customerPhone?: StringFieldUpdateOperationsInput | string
     listingId?: StringFieldUpdateOperationsInput | string
     vendorId?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -24442,14 +24852,6 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
-  }
-
   export type FloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -24461,15 +24863,12 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
   }
 
   export type FloatNullableFilter<$PrismaModel = never> = {
@@ -24483,9 +24882,32 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type JetCountOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     manufacturer?: SortOrder
     otherManufacturer?: SortOrder
     model?: SortOrder
@@ -24499,10 +24921,12 @@ export namespace Prisma {
     interiorConfig?: SortOrder
     interiorImageUrls?: SortOrder
     exteriorImageUrls?: SortOrder
+    layoutImageUrl?: SortOrder
     price?: SortOrder
     currentLocation?: SortOrder
     registrationNumber?: SortOrder
     contactDetails?: SortOrder
+    description?: SortOrder
     aircraftType?: SortOrder
     seatingCapacity?: SortOrder
     cabinHeight?: SortOrder
@@ -24512,24 +24936,35 @@ export namespace Prisma {
     numberOfEngines?: SortOrder
     engineType?: SortOrder
     engineThrust?: SortOrder
-    certification?: SortOrder
-    noiseCompliance?: SortOrder
-    lastInspectionDate?: SortOrder
-    nextInspectionDue?: SortOrder
-    maintenanceStatus?: SortOrder
-    previousOwners?: SortOrder
-    maintenanceProgram?: SortOrder
-    airframeEngineStatus?: SortOrder
-    refurbishmentDate?: SortOrder
-    wifiConnectivity?: SortOrder
-    lavatoryGalleyDetails?: SortOrder
-    cabinAmenities?: SortOrder
     range?: SortOrder
     cruiseSpeed?: SortOrder
     maxAltitude?: SortOrder
     runwayLength?: SortOrder
     emptyWeight?: SortOrder
     maxTakeoffWeight?: SortOrder
+    fuelCapacity?: SortOrder
+    fuelConsumption?: SortOrder
+    serviceCeiling?: SortOrder
+    takeoffDistance?: SortOrder
+    landingDistance?: SortOrder
+    certification?: SortOrder
+    noiseCompliance?: SortOrder
+    operationalRestrictions?: SortOrder
+    lastInspectionDate?: SortOrder
+    nextInspectionDue?: SortOrder
+    maintenanceStatus?: SortOrder
+    maintenanceProgram?: SortOrder
+    airframeEngineStatus?: SortOrder
+    refurbishmentDate?: SortOrder
+    avionicsUpdates?: SortOrder
+    warrantyRemaining?: SortOrder
+    wifiConnectivity?: SortOrder
+    lavatoryGalleyDetails?: SortOrder
+    cabinAmenities?: SortOrder
+    interiorDesigner?: SortOrder
+    exteriorPaintScheme?: SortOrder
+    recentUpgrades?: SortOrder
+    previousOwners?: SortOrder
     deliveryAvailability?: SortOrder
     paymentTxSignature?: SortOrder
     transactionLink?: SortOrder
@@ -24553,19 +24988,25 @@ export namespace Prisma {
     baggageCapacity?: SortOrder
     numberOfEngines?: SortOrder
     engineThrust?: SortOrder
-    previousOwners?: SortOrder
     range?: SortOrder
     cruiseSpeed?: SortOrder
     maxAltitude?: SortOrder
     runwayLength?: SortOrder
     emptyWeight?: SortOrder
     maxTakeoffWeight?: SortOrder
+    fuelCapacity?: SortOrder
+    fuelConsumption?: SortOrder
+    serviceCeiling?: SortOrder
+    takeoffDistance?: SortOrder
+    landingDistance?: SortOrder
+    previousOwners?: SortOrder
     views?: SortOrder
   }
 
   export type JetMaxOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     manufacturer?: SortOrder
     otherManufacturer?: SortOrder
     model?: SortOrder
@@ -24577,10 +25018,12 @@ export namespace Prisma {
     engineHours?: SortOrder
     avionicsSuite?: SortOrder
     interiorConfig?: SortOrder
+    layoutImageUrl?: SortOrder
     price?: SortOrder
     currentLocation?: SortOrder
     registrationNumber?: SortOrder
     contactDetails?: SortOrder
+    description?: SortOrder
     aircraftType?: SortOrder
     seatingCapacity?: SortOrder
     cabinHeight?: SortOrder
@@ -24590,24 +25033,35 @@ export namespace Prisma {
     numberOfEngines?: SortOrder
     engineType?: SortOrder
     engineThrust?: SortOrder
-    certification?: SortOrder
-    noiseCompliance?: SortOrder
-    lastInspectionDate?: SortOrder
-    nextInspectionDue?: SortOrder
-    maintenanceStatus?: SortOrder
-    previousOwners?: SortOrder
-    maintenanceProgram?: SortOrder
-    airframeEngineStatus?: SortOrder
-    refurbishmentDate?: SortOrder
-    wifiConnectivity?: SortOrder
-    lavatoryGalleyDetails?: SortOrder
-    cabinAmenities?: SortOrder
     range?: SortOrder
     cruiseSpeed?: SortOrder
     maxAltitude?: SortOrder
     runwayLength?: SortOrder
     emptyWeight?: SortOrder
     maxTakeoffWeight?: SortOrder
+    fuelCapacity?: SortOrder
+    fuelConsumption?: SortOrder
+    serviceCeiling?: SortOrder
+    takeoffDistance?: SortOrder
+    landingDistance?: SortOrder
+    certification?: SortOrder
+    noiseCompliance?: SortOrder
+    operationalRestrictions?: SortOrder
+    lastInspectionDate?: SortOrder
+    nextInspectionDue?: SortOrder
+    maintenanceStatus?: SortOrder
+    maintenanceProgram?: SortOrder
+    airframeEngineStatus?: SortOrder
+    refurbishmentDate?: SortOrder
+    avionicsUpdates?: SortOrder
+    warrantyRemaining?: SortOrder
+    wifiConnectivity?: SortOrder
+    lavatoryGalleyDetails?: SortOrder
+    cabinAmenities?: SortOrder
+    interiorDesigner?: SortOrder
+    exteriorPaintScheme?: SortOrder
+    recentUpgrades?: SortOrder
+    previousOwners?: SortOrder
     deliveryAvailability?: SortOrder
     paymentTxSignature?: SortOrder
     transactionLink?: SortOrder
@@ -24622,6 +25076,7 @@ export namespace Prisma {
   export type JetMinOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     manufacturer?: SortOrder
     otherManufacturer?: SortOrder
     model?: SortOrder
@@ -24633,10 +25088,12 @@ export namespace Prisma {
     engineHours?: SortOrder
     avionicsSuite?: SortOrder
     interiorConfig?: SortOrder
+    layoutImageUrl?: SortOrder
     price?: SortOrder
     currentLocation?: SortOrder
     registrationNumber?: SortOrder
     contactDetails?: SortOrder
+    description?: SortOrder
     aircraftType?: SortOrder
     seatingCapacity?: SortOrder
     cabinHeight?: SortOrder
@@ -24646,24 +25103,35 @@ export namespace Prisma {
     numberOfEngines?: SortOrder
     engineType?: SortOrder
     engineThrust?: SortOrder
-    certification?: SortOrder
-    noiseCompliance?: SortOrder
-    lastInspectionDate?: SortOrder
-    nextInspectionDue?: SortOrder
-    maintenanceStatus?: SortOrder
-    previousOwners?: SortOrder
-    maintenanceProgram?: SortOrder
-    airframeEngineStatus?: SortOrder
-    refurbishmentDate?: SortOrder
-    wifiConnectivity?: SortOrder
-    lavatoryGalleyDetails?: SortOrder
-    cabinAmenities?: SortOrder
     range?: SortOrder
     cruiseSpeed?: SortOrder
     maxAltitude?: SortOrder
     runwayLength?: SortOrder
     emptyWeight?: SortOrder
     maxTakeoffWeight?: SortOrder
+    fuelCapacity?: SortOrder
+    fuelConsumption?: SortOrder
+    serviceCeiling?: SortOrder
+    takeoffDistance?: SortOrder
+    landingDistance?: SortOrder
+    certification?: SortOrder
+    noiseCompliance?: SortOrder
+    operationalRestrictions?: SortOrder
+    lastInspectionDate?: SortOrder
+    nextInspectionDue?: SortOrder
+    maintenanceStatus?: SortOrder
+    maintenanceProgram?: SortOrder
+    airframeEngineStatus?: SortOrder
+    refurbishmentDate?: SortOrder
+    avionicsUpdates?: SortOrder
+    warrantyRemaining?: SortOrder
+    wifiConnectivity?: SortOrder
+    lavatoryGalleyDetails?: SortOrder
+    cabinAmenities?: SortOrder
+    interiorDesigner?: SortOrder
+    exteriorPaintScheme?: SortOrder
+    recentUpgrades?: SortOrder
+    previousOwners?: SortOrder
     deliveryAvailability?: SortOrder
     paymentTxSignature?: SortOrder
     transactionLink?: SortOrder
@@ -24687,13 +25155,18 @@ export namespace Prisma {
     baggageCapacity?: SortOrder
     numberOfEngines?: SortOrder
     engineThrust?: SortOrder
-    previousOwners?: SortOrder
     range?: SortOrder
     cruiseSpeed?: SortOrder
     maxAltitude?: SortOrder
     runwayLength?: SortOrder
     emptyWeight?: SortOrder
     maxTakeoffWeight?: SortOrder
+    fuelCapacity?: SortOrder
+    fuelConsumption?: SortOrder
+    serviceCeiling?: SortOrder
+    takeoffDistance?: SortOrder
+    landingDistance?: SortOrder
+    previousOwners?: SortOrder
     views?: SortOrder
   }
 
@@ -24729,6 +25202,22 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -24745,20 +25234,18 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type JetForBidsCountOrderByAggregateInput = {
@@ -25131,6 +25618,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerEmail?: SortOrder
     customerCountry?: SortOrder
+    customerPhone?: SortOrder
     listingId?: SortOrder
     vendorId?: SortOrder
     message?: SortOrder
@@ -25143,6 +25631,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerEmail?: SortOrder
     customerCountry?: SortOrder
+    customerPhone?: SortOrder
     listingId?: SortOrder
     vendorId?: SortOrder
     message?: SortOrder
@@ -25155,6 +25644,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerEmail?: SortOrder
     customerCountry?: SortOrder
+    customerPhone?: SortOrder
     listingId?: SortOrder
     vendorId?: SortOrder
     message?: SortOrder
@@ -25172,17 +25662,6 @@ export namespace Prisma {
     gte?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedUuidFilter<$PrismaModel> | string
-  }
-
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type JetForCharterMessagesCountOrderByAggregateInput = {
@@ -25257,20 +25736,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type WalletCountOrderByAggregateInput = {
@@ -25749,6 +26214,14 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type JetUpdateinteriorImageUrlsInput = {
     set?: string[]
     push?: string | string[]
@@ -25759,8 +26232,8 @@ export namespace Prisma {
     push?: string | string[]
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -25775,12 +26248,8 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type NullableFloatFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type JetForBidsCreateinteriorImageUrlsInput = {
@@ -25830,10 +26299,6 @@ export namespace Prisma {
   export type JetForCharterUpdateinteriorImagesInput = {
     set?: string[]
     push?: string | string[]
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type HelicopterForSaleListingCreateexteriorImageUrlsInput = {
@@ -26092,6 +26557,17 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -26124,6 +26600,22 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -26140,20 +26632,18 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedEnumTripOptionFilter<$PrismaModel = never> = {
@@ -26207,17 +26697,6 @@ export namespace Prisma {
     not?: NestedUuidFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -26230,20 +26709,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type CabinFeatureCreateWithoutHelicoptersInput = {

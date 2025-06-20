@@ -30,6 +30,7 @@ router.get('/vendor/:id', async (req, res) => {
                 status: true,
                 serviceType:true,
                 createdAt: true,
+                brandImage:true
             }
         });
 

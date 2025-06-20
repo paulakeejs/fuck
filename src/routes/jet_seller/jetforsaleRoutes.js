@@ -27,7 +27,7 @@ router.get('/index', async (req, res) => {
 router.post('/messages/new',async (req, res) => {
     try {
       // Extract data from request body
-      const { customerName, customerEmail, customerCountry, listingId, vendorId, message } = req.body;
+      const { customerName, customerEmail, customerCountry, customerPhone, listingId, vendorId, message } = req.body;
   
       // Basic validation: ensure all required fields are present
       if (!customerName || !customerEmail || !customerCountry || !listingId || !vendorId || !message) {
@@ -43,6 +43,7 @@ router.post('/messages/new',async (req, res) => {
           customerName,
           customerEmail,
           customerCountry,
+          customerPhone,
           listingId,
           vendorId,
           message
@@ -83,8 +84,9 @@ router.get('/user/:id', async (req, res) => {
                 status: true,
                 description:true,
                 serviceType:true,
+                brandImage:true,
                 createdAt: true,
-                website:true
+                website:true,
             }
         });
 

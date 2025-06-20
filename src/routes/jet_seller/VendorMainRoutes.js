@@ -131,10 +131,12 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       interiorConfig,
       interiorImageUrls = [],
       exteriorImageUrls = [],
+      layoutImageUrl,
       price,
       currentLocation,
       registrationNumber,
       contactDetails,
+      description,
       // Aircraft Specifications
       aircraftType,
       seatingCapacity,
@@ -167,6 +169,18 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       emptyWeight,
       maxTakeoffWeight,
       deliveryAvailability,
+      // New fields
+      fuelCapacity,
+      fuelConsumption,
+      serviceCeiling,
+      takeoffDistance,
+      landingDistance,
+      warrantyRemaining,
+      avionicsUpdates,
+      interiorDesigner,
+      exteriorPaintScheme,
+      recentUpgrades,
+      operationalRestrictions,
       // Payment fields
       paymentTxSignature,
       transactionLink,
@@ -189,9 +203,10 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       currentLocation,
       registrationNumber,
       contactDetails,
+      description,
       paymentTxSignature,
       vendorId,
-      // New required fields
+      // Aircraft specifications
       aircraftType,
       seatingCapacity,
       cabinHeight,
@@ -201,11 +216,14 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       numberOfEngines,
       engineType,
       engineThrust,
+      // Certification
       certification,
       noiseCompliance,
+      // Maintenance
       lastInspectionDate,
       nextInspectionDue,
-      maintenanceStatus
+      maintenanceStatus,
+      layoutImageUrl,
     };
 
     // Validate required fields
@@ -226,74 +244,57 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       });
     }
 
-    // Parse numeric fields
-    const parsedYear = parseInt(year);
-    const parsedTotalTimeSinceNew = parseInt(totalTimeSinceNew);
-    const parsedTotalLandings = parseInt(totalLandings);
-    const parsedEngineHours = parseInt(engineHours);
-    const parsedSeatingCapacity = parseInt(seatingCapacity);
-    const parsedNumberOfEngines = parseInt(numberOfEngines);
-    const parsedPreviousOwners = previousOwners ? parseInt(previousOwners) : null;
-    const parsedRange = range ? parseFloat(range) : null;
-    const parsedCruiseSpeed = cruiseSpeed ? parseFloat(cruiseSpeed) : null;
-    const parsedMaxAltitude = maxAltitude ? parseFloat(maxAltitude) : null;
-    const parsedRunwayLength = runwayLength ? parseFloat(runwayLength) : null;
-    const parsedEmptyWeight = emptyWeight ? parseFloat(emptyWeight) : null;
-    const parsedMaxTakeoffWeight = maxTakeoffWeight ? parseFloat(maxTakeoffWeight) : null;
-    const parsedCabinHeight = parseFloat(cabinHeight);
-    const parsedCabinWidth = parseFloat(cabinWidth);
-    const parsedCabinLength = parseFloat(cabinLength);
-    const parsedBaggageCapacity = parseFloat(baggageCapacity);
-    const parsedEngineThrust = parseFloat(engineThrust);
-
-    // Validate parsed numbers
-    const numericValidations = {
-      year: parsedYear,
-      totalTimeSinceNew: parsedTotalTimeSinceNew,
-      totalLandings: parsedTotalLandings,
-      engineHours: parsedEngineHours,
-      seatingCapacity: parsedSeatingCapacity,
-      numberOfEngines: parsedNumberOfEngines,
-      cabinHeight: parsedCabinHeight,
-      cabinWidth: parsedCabinWidth,
-      cabinLength: parsedCabinLength,
-      baggageCapacity: parsedBaggageCapacity,
-      engineThrust: parsedEngineThrust,
-      ...(previousOwners && { previousOwners: parsedPreviousOwners }),
-      ...(range && { range: parsedRange }),
-      ...(cruiseSpeed && { cruiseSpeed: parsedCruiseSpeed }),
-      ...(maxAltitude && { maxAltitude: parsedMaxAltitude }),
-      ...(runwayLength && { runwayLength: parsedRunwayLength }),
-      ...(emptyWeight && { emptyWeight: parsedEmptyWeight }),
-      ...(maxTakeoffWeight && { maxTakeoffWeight: parsedMaxTakeoffWeight })
+    // Parse and validate numeric fields
+    const parseNumber = (value, fieldName, allowNull = false) => {
+      if (allowNull && (value === null || value === undefined || value === '')) {
+        return null;
+      }
+      const num = Number(value);
+      if (isNaN(num)) {
+        throw new Error(`Invalid numeric value for field: ${fieldName}`);
+      }
+      return num;
     };
 
-    for (const [field, value] of Object.entries(numericValidations)) {
-      if (isNaN(value)) {
-        return res.status(400).json({
-          success: false,
-          error: `Invalid numeric value for field: ${field}`
-        });
-      }
-    }
+    const numericFields = {
+      year: parseInt(year),
+      totalTimeSinceNew: parseNumber(totalTimeSinceNew, 'totalTimeSinceNew'),
+      totalLandings: parseNumber(totalLandings, 'totalLandings'),
+      engineHours: parseNumber(engineHours, 'engineHours'),
+      seatingCapacity: parseNumber(seatingCapacity, 'seatingCapacity'),
+      numberOfEngines: parseNumber(numberOfEngines, 'numberOfEngines'),
+      cabinHeight: parseNumber(cabinHeight, 'cabinHeight'),
+      cabinWidth: parseNumber(cabinWidth, 'cabinWidth'),
+      cabinLength: parseNumber(cabinLength, 'cabinLength'),
+      baggageCapacity: parseNumber(baggageCapacity, 'baggageCapacity'),
+      engineThrust: parseNumber(engineThrust, 'engineThrust'),
+      previousOwners: parseNumber(previousOwners, 'previousOwners', true),
+      range: parseNumber(range, 'range', true),
+      cruiseSpeed: parseNumber(cruiseSpeed, 'cruiseSpeed', true),
+      maxAltitude: parseNumber(maxAltitude, 'maxAltitude', true),
+      runwayLength: parseNumber(runwayLength, 'runwayLength', true),
+      emptyWeight: parseNumber(emptyWeight, 'emptyWeight', true),
+      maxTakeoffWeight: parseNumber(maxTakeoffWeight, 'maxTakeoffWeight', true),
+      fuelCapacity: parseNumber(fuelCapacity, 'fuelCapacity', true),
+      fuelConsumption: parseNumber(fuelConsumption, 'fuelConsumption', true),
+      serviceCeiling: parseNumber(serviceCeiling, 'serviceCeiling', true),
+      takeoffDistance: parseNumber(takeoffDistance, 'takeoffDistance', true),
+      landingDistance: parseNumber(landingDistance, 'landingDistance', true)
+    };
 
     // Validate dates
-    const parsedLastInspectionDate = new Date(lastInspectionDate);
-    const parsedNextInspectionDue = new Date(nextInspectionDue);
-    
-    if (isNaN(parsedLastInspectionDate.getTime())) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid last inspection date'
-      });
-    }
+    const parseDate = (dateString, fieldName) => {
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        throw new Error(`Invalid date format for ${fieldName}`);
+      }
+      return date;
+    };
 
-    if (isNaN(parsedNextInspectionDue.getTime())) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid next inspection due date'
-      });
-    }
+    const dateFields = {
+      lastInspectionDate: parseDate(lastInspectionDate, 'lastInspectionDate'),
+      nextInspectionDue: parseDate(nextInspectionDue, 'nextInspectionDue')
+    };
 
     // Handle manufacturer logic
     const finalManufacturer = manufacturer === 'Other' ? otherManufacturer : manufacturer;
@@ -307,95 +308,137 @@ router.post('/jets/add', verifyToken, async (req, res) => {
     // Create the jet listing
     const newListing = await prisma.jet.create({
       data: {
+        // Basic Information
         manufacturer: finalManufacturer,
         otherManufacturer: manufacturer === 'Other' ? otherManufacturer : null,
         model,
-        year: parsedYear,
+        year: numericFields.year,
         serialNumber,
-        totalTimeSinceNew: parsedTotalTimeSinceNew,
-        totalLandings: parsedTotalLandings,
+        totalTimeSinceNew: numericFields.totalTimeSinceNew,
+        totalLandings: numericFields.totalLandings,
         engineMakeModel,
-        engineHours: parsedEngineHours,
+        engineHours: numericFields.engineHours,
         avionicsSuite,
         interiorConfig,
         interiorImageUrls,
+        layoutImageUrl,
         exteriorImageUrls,
         price,
         currentLocation,
         registrationNumber,
         contactDetails,
+        description,
+        
         // Aircraft Specifications
         aircraftType,
-        seatingCapacity: parsedSeatingCapacity,
-        cabinHeight: parsedCabinHeight,
-        cabinWidth: parsedCabinWidth,
-        cabinLength: parsedCabinLength,
-        baggageCapacity: parsedBaggageCapacity,
-        numberOfEngines: parsedNumberOfEngines,
+        seatingCapacity: numericFields.seatingCapacity,
+        cabinHeight: numericFields.cabinHeight,
+        cabinWidth: numericFields.cabinWidth,
+        cabinLength: numericFields.cabinLength,
+        baggageCapacity: numericFields.baggageCapacity,
+        numberOfEngines: numericFields.numberOfEngines,
         engineType,
-        engineThrust: parsedEngineThrust,
+        engineThrust: numericFields.engineThrust,
+        
+        // Performance Specifications
+        range: numericFields.range,
+        cruiseSpeed: numericFields.cruiseSpeed,
+        maxAltitude: numericFields.maxAltitude,
+        runwayLength: numericFields.runwayLength,
+        emptyWeight: numericFields.emptyWeight,
+        maxTakeoffWeight: numericFields.maxTakeoffWeight,
+        fuelCapacity: numericFields.fuelCapacity,
+        fuelConsumption: numericFields.fuelConsumption,
+        serviceCeiling: numericFields.serviceCeiling,
+        takeoffDistance: numericFields.takeoffDistance,
+        landingDistance: numericFields.landingDistance,
+        
         // Certification & Compliance
         certification,
         noiseCompliance,
-        // Operational Status
-        lastInspectionDate: parsedLastInspectionDate,
-        nextInspectionDue: parsedNextInspectionDue,
+        operationalRestrictions: operationalRestrictions || null,
+        
+        // Maintenance & History
+        lastInspectionDate: dateFields.lastInspectionDate,
+        nextInspectionDue: dateFields.nextInspectionDue,
         maintenanceStatus,
-        // Optional fields
-        previousOwners: parsedPreviousOwners,
         maintenanceProgram: maintenanceProgram || null,
         airframeEngineStatus: airframeEngineStatus || null,
         refurbishmentDate: refurbishmentDate || null,
+        avionicsUpdates: avionicsUpdates || null,
+        warrantyRemaining: warrantyRemaining || null,
+        
+        // Interior/Exterior Details
         wifiConnectivity: wifiConnectivity || null,
         lavatoryGalleyDetails: lavatoryGalleyDetails || null,
         cabinAmenities: cabinAmenities || null,
-        range: parsedRange,
-        cruiseSpeed: parsedCruiseSpeed,
-        maxAltitude: parsedMaxAltitude,
-        runwayLength: parsedRunwayLength,
-        emptyWeight: parsedEmptyWeight,
-        maxTakeoffWeight: parsedMaxTakeoffWeight,
+        interiorDesigner: interiorDesigner || null,
+        exteriorPaintScheme: exteriorPaintScheme || null,
+        recentUpgrades: recentUpgrades || null,
+        
+        // Ownership History
+        previousOwners: numericFields.previousOwners,
+        
+        // Availability
         deliveryAvailability: deliveryAvailability || null,
+        
         // Payment fields
         paymentTxSignature,
         transactionLink: transactionLink || null,
         vendorId,
-        status: 'PENDING'
+        
+        // Status
+        status: 'PENDING',
+        sponsored: false,
+        sponsoredType: 'NotSponsored'
       }
     });
 
-    res.status(200).json({
+    res.status(201).json({
       success: true,
       message: 'Jet listing created successfully',
       jet: newListing
     });
 
   } catch (error) {
-    console.error('Error creating jet listing:', error.message, error.stack);
+    console.error('Error creating jet listing:', error);
 
-    switch (error.code) {
-      case 'P2002':
-        if (error.meta?.target?.includes('registration_number')) {
-          return res.status(409).json({
-            success: false,
-            message: 'A jet with this registration number already exists'
-          });
-        }
-        break;
-
-      case 'P2003':
-        return res.status(404).json({
+    // Handle Prisma errors
+    if (error.code === 'P2002') {
+      if (error.meta?.target?.includes('registration_number')) {
+        return res.status(409).json({
           success: false,
-          message: 'Vendor not found'
+          message: 'A jet with this registration number already exists'
         });
-
-      default:
-        return res.status(500).json({
-          success: false,
-          error: 'Internal server error',
-          details: process.env.NODE_ENV === 'development' ? error.message : undefined
-        });
+      }
+      return res.status(409).json({
+        success: false,
+        message: 'Duplicate entry detected',
+        field: error.meta?.target?.[0]
+      });
     }
+
+    if (error.code === 'P2003') {
+      return res.status(404).json({
+        success: false,
+        message: 'Vendor not found'
+      });
+    }
+
+    // Handle validation errors
+    if (error.message && error.message.startsWith('Invalid')) {
+      return res.status(400).json({
+        success: false,
+        message: error.message
+      });
+    }
+
+    // Generic error response
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 });
 router.get('/payment/recipient', verifyToken, async (req, res) => {
@@ -612,6 +655,25 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
       currentLocation,
       registrationNumber,
       contactDetails,
+      description,
+      // Aircraft Specifications
+      aircraftType,
+      seatingCapacity,
+      cabinHeight,
+      cabinWidth,
+      cabinLength,
+      baggageCapacity,
+      numberOfEngines,
+      engineType,
+      engineThrust,
+      // Certification & Compliance
+      certification,
+      noiseCompliance,
+      // Operational Status
+      lastInspectionDate,
+      nextInspectionDue,
+      maintenanceStatus,
+      // Optional fields
       previousOwners,
       maintenanceProgram,
       airframeEngineStatus,
@@ -626,6 +688,18 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
       emptyWeight,
       maxTakeoffWeight,
       deliveryAvailability,
+      // New fields
+      fuelCapacity,
+      fuelConsumption,
+      serviceCeiling,
+      takeoffDistance,
+      landingDistance,
+      warrantyRemaining,
+      avionicsUpdates,
+      interiorDesigner,
+      exteriorPaintScheme,
+      recentUpgrades,
+      operationalRestrictions,
       vendorId
     } = req.body;
 
@@ -657,7 +731,25 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
       currentLocation,
       registrationNumber,
       contactDetails,
-      vendorId
+      description,
+      vendorId,
+      // Aircraft specifications
+      aircraftType,
+      seatingCapacity,
+      cabinHeight,
+      cabinWidth,
+      cabinLength,
+      baggageCapacity,
+      numberOfEngines,
+      engineType,
+      engineThrust,
+      // Certification
+      certification,
+      noiseCompliance,
+      // Maintenance
+      lastInspectionDate,
+      nextInspectionDue,
+      maintenanceStatus
     };
 
     // Validate required fields
@@ -678,38 +770,57 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
       });
     }
 
-    // Parse numeric fields
-    const parsedYear = parseInt(year);
-    const parsedTotalTimeSinceNew = parseInt(totalTimeSinceNew);
-    const parsedTotalLandings = parseInt(totalLandings);
-    const parsedEngineHours = parseInt(engineHours);
-    const parsedPreviousOwners = previousOwners ? parseInt(previousOwners) : null;
-    const parsedRange = range ? parseFloat(range) : null;
-    const parsedCruiseSpeed = cruiseSpeed ? parseFloat(cruiseSpeed) : null;
-    const parsedMaxAltitude = maxAltitude ? parseFloat(maxAltitude) : null;
-    const parsedRunwayLength = runwayLength ? parseFloat(runwayLength) : null;
-    const parsedEmptyWeight = emptyWeight ? parseFloat(emptyWeight) : null;
-    const parsedMaxTakeoffWeight = maxTakeoffWeight ? parseFloat(maxTakeoffWeight) : null;
+    // Parse and validate numeric fields
+    const parseNumber = (value, fieldName, allowNull = false) => {
+      if (allowNull && (value === null || value === undefined || value === '')) {
+        return null;
+      }
+      const num = Number(value);
+      if (isNaN(num)) {
+        throw new Error(`Invalid numeric value for field: ${fieldName}`);
+      }
+      return num;
+    };
 
-    // Validate parsed numbers
-    if (
-      isNaN(parsedYear) ||
-      isNaN(parsedTotalTimeSinceNew) ||
-      isNaN(parsedTotalLandings) ||
-      isNaN(parsedEngineHours) ||
-      (previousOwners && isNaN(parsedPreviousOwners)) ||
-      (range && isNaN(parsedRange)) ||
-      (cruiseSpeed && isNaN(parsedCruiseSpeed)) ||
-      (maxAltitude && isNaN(parsedMaxAltitude)) ||
-      (runwayLength && isNaN(parsedRunwayLength)) ||
-      (emptyWeight && isNaN(parsedEmptyWeight)) ||
-      (maxTakeoffWeight && isNaN(parsedMaxTakeoffWeight))
-    ) {
-      return res.status(400).json({
-        success: false,
-        error: 'Numeric fields (year, totalTimeSinceNew, totalLandings, engineHours, previousOwners, range, cruiseSpeed, maxAltitude, runwayLength, emptyWeight, maxTakeoffWeight) must be valid numbers'
-      });
-    }
+    const numericFields = {
+      year: parseInt(year),
+      totalTimeSinceNew: parseNumber(totalTimeSinceNew, 'totalTimeSinceNew'),
+      totalLandings: parseNumber(totalLandings, 'totalLandings'),
+      engineHours: parseNumber(engineHours, 'engineHours'),
+      seatingCapacity: parseNumber(seatingCapacity, 'seatingCapacity'),
+      numberOfEngines: parseNumber(numberOfEngines, 'numberOfEngines'),
+      cabinHeight: parseNumber(cabinHeight, 'cabinHeight'),
+      cabinWidth: parseNumber(cabinWidth, 'cabinWidth'),
+      cabinLength: parseNumber(cabinLength, 'cabinLength'),
+      baggageCapacity: parseNumber(baggageCapacity, 'baggageCapacity'),
+      engineThrust: parseNumber(engineThrust, 'engineThrust'),
+      previousOwners: parseNumber(previousOwners, 'previousOwners', true),
+      range: parseNumber(range, 'range', true),
+      cruiseSpeed: parseNumber(cruiseSpeed, 'cruiseSpeed', true),
+      maxAltitude: parseNumber(maxAltitude, 'maxAltitude', true),
+      runwayLength: parseNumber(runwayLength, 'runwayLength', true),
+      emptyWeight: parseNumber(emptyWeight, 'emptyWeight', true),
+      maxTakeoffWeight: parseNumber(maxTakeoffWeight, 'maxTakeoffWeight', true),
+      fuelCapacity: parseNumber(fuelCapacity, 'fuelCapacity', true),
+      fuelConsumption: parseNumber(fuelConsumption, 'fuelConsumption', true),
+      serviceCeiling: parseNumber(serviceCeiling, 'serviceCeiling', true),
+      takeoffDistance: parseNumber(takeoffDistance, 'takeoffDistance', true),
+      landingDistance: parseNumber(landingDistance, 'landingDistance', true)
+    };
+
+    // Validate dates
+    const parseDate = (dateString, fieldName) => {
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        throw new Error(`Invalid date format for ${fieldName}`);
+      }
+      return date;
+    };
+
+    const dateFields = {
+      lastInspectionDate: parseDate(lastInspectionDate, 'lastInspectionDate'),
+      nextInspectionDue: parseDate(nextInspectionDue, 'nextInspectionDue')
+    };
 
     // Handle manufacturer logic
     const finalManufacturer = manufacturer === 'Other' ? otherManufacturer : manufacturer;
@@ -724,15 +835,16 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
     const updatedListing = await prisma.jet.update({
       where: { id: jetId },
       data: {
+        // Basic Information
         manufacturer: finalManufacturer,
         otherManufacturer: manufacturer === 'Other' ? otherManufacturer : null,
         model,
-        year: parsedYear,
+        year: numericFields.year,
         serialNumber,
-        totalTimeSinceNew: parsedTotalTimeSinceNew,
-        totalLandings: parsedTotalLandings,
+        totalTimeSinceNew: numericFields.totalTimeSinceNew,
+        totalLandings: numericFields.totalLandings,
         engineMakeModel,
-        engineHours: parsedEngineHours,
+        engineHours: numericFields.engineHours,
         avionicsSuite,
         interiorConfig,
         interiorImageUrls,
@@ -741,21 +853,63 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
         currentLocation,
         registrationNumber,
         contactDetails,
-        previousOwners: parsedPreviousOwners,
+        description,
+        
+        // Aircraft Specifications
+        aircraftType,
+        seatingCapacity: numericFields.seatingCapacity,
+        cabinHeight: numericFields.cabinHeight,
+        cabinWidth: numericFields.cabinWidth,
+        cabinLength: numericFields.cabinLength,
+        baggageCapacity: numericFields.baggageCapacity,
+        numberOfEngines: numericFields.numberOfEngines,
+        engineType,
+        engineThrust: numericFields.engineThrust,
+        
+        // Performance Specifications
+        range: numericFields.range,
+        cruiseSpeed: numericFields.cruiseSpeed,
+        maxAltitude: numericFields.maxAltitude,
+        runwayLength: numericFields.runwayLength,
+        emptyWeight: numericFields.emptyWeight,
+        maxTakeoffWeight: numericFields.maxTakeoffWeight,
+        fuelCapacity: numericFields.fuelCapacity,
+        fuelConsumption: numericFields.fuelConsumption,
+        serviceCeiling: numericFields.serviceCeiling,
+        takeoffDistance: numericFields.takeoffDistance,
+        landingDistance: numericFields.landingDistance,
+        
+        // Certification & Compliance
+        certification,
+        noiseCompliance,
+        operationalRestrictions: operationalRestrictions || null,
+        
+        // Maintenance & History
+        lastInspectionDate: dateFields.lastInspectionDate,
+        nextInspectionDue: dateFields.nextInspectionDue,
+        maintenanceStatus,
         maintenanceProgram: maintenanceProgram || null,
         airframeEngineStatus: airframeEngineStatus || null,
         refurbishmentDate: refurbishmentDate || null,
+        avionicsUpdates: avionicsUpdates || null,
+        warrantyRemaining: warrantyRemaining || null,
+        
+        // Interior/Exterior Details
         wifiConnectivity: wifiConnectivity || null,
         lavatoryGalleyDetails: lavatoryGalleyDetails || null,
         cabinAmenities: cabinAmenities || null,
-        range: parsedRange,
-        cruiseSpeed: parsedCruiseSpeed,
-        maxAltitude: parsedMaxAltitude,
-        runwayLength: parsedRunwayLength,
-        emptyWeight: parsedEmptyWeight,
-        maxTakeoffWeight: parsedMaxTakeoffWeight,
+        interiorDesigner: interiorDesigner || null,
+        exteriorPaintScheme: exteriorPaintScheme || null,
+        recentUpgrades: recentUpgrades || null,
+        
+        // Ownership History
+        previousOwners: numericFields.previousOwners,
+        
+        // Availability
         deliveryAvailability: deliveryAvailability || null,
-        vendorId,
+        
+        // Vendor
+        vendorId
       }
     });
 
@@ -766,31 +920,44 @@ router.put('/edit/:id', verifyToken, async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error updating jet listing:', error.message, error.stack);
+    console.error('Error updating jet listing:', error);
 
-    switch (error.code) {
-      case 'P2002':
-        if (error.meta?.target?.includes('registration_number')) {
-          return res.status(409).json({
-            success: false,
-            message: 'A jet with this registration number already exists'
-          });
-        }
-        break;
-
-      case 'P2003':
-        return res.status(404).json({
+    // Handle Prisma errors
+    if (error.code === 'P2002') {
+      if (error.meta?.target?.includes('registration_number')) {
+        return res.status(409).json({
           success: false,
-          message: 'Vendor not found'
+          message: 'A jet with this registration number already exists'
         });
-
-      default:
-        return res.status(500).json({
-          success: false,
-          error: 'Internal server error',
-          details: process.env.NODE_ENV === 'development' ? error.message : undefined
-        });
+      }
+      return res.status(409).json({
+        success: false,
+        message: 'Duplicate entry detected',
+        field: error.meta?.target?.[0]
+      });
     }
+
+    if (error.code === 'P2003') {
+      return res.status(404).json({
+        success: false,
+        message: 'Vendor not found'
+      });
+    }
+
+    // Handle validation errors
+    if (error.message && error.message.startsWith('Invalid')) {
+      return res.status(400).json({
+        success: false,
+        message: error.message
+      });
+    }
+
+    // Generic error response
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 });
 router.delete('/delete/:id', verifyToken, async (req, res) => {

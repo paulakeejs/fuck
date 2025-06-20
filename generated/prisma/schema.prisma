@@ -52,6 +52,7 @@ model Admin {
 model Jet {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Required fields from form
   manufacturer       String
@@ -62,15 +63,17 @@ model Jet {
   totalTimeSinceNew  Int      @map("total_time_since_new")
   totalLandings      Int      @map("total_landings")
   engineMakeModel    String   @map("engine_make_model")
-  engineHours        Int      @map("engine_hours")
+  engineHours        Float    @map("engine_hours")
   avionicsSuite      String   @map("avionics_suite")
   interiorConfig     String   @map("interior_config")
   interiorImageUrls  String[] @map("interior_image_urls")
   exteriorImageUrls  String[] @map("exterior_image_urls")
+  layoutImageUrl     String
   price              String
   currentLocation    String   @map("current_location")
   registrationNumber String   @unique @map("registration_number")
   contactDetails     String   @map("contact_details")
+  description        String
 
   // Aircraft Specifications
   aircraftType    String @map("aircraft_type")
@@ -83,30 +86,47 @@ model Jet {
   engineType      String @map("engine_type")
   engineThrust    Float  @map("engine_thrust")
 
+  // Performance Specifications
+  range            Float? @map("range_nm")
+  cruiseSpeed      Float? @map("cruise_speed")
+  maxAltitude      Float? @map("max_altitude")
+  runwayLength     Float? @map("runway_length")
+  emptyWeight      Float? @map("empty_weight")
+  maxTakeoffWeight Float? @map("max_takeoff_weight")
+  fuelCapacity     Float? @map("fuel_capacity")
+  fuelConsumption  Float? @map("fuel_consumption")
+  serviceCeiling   Float? @map("service_ceiling")
+  takeoffDistance  Float? @map("takeoff_distance")
+  landingDistance  Float? @map("landing_distance")
+
   // Certification & Compliance
-  certification   String @default("FAA")
-  noiseCompliance String @map("noise_compliance")
+  certification           String  @default("FAA")
+  noiseCompliance         String  @map("noise_compliance")
+  operationalRestrictions String? @map("operational_restrictions")
 
-  // Operational Status
-  lastInspectionDate DateTime @map("last_inspection_date")
-  nextInspectionDue  DateTime @map("next_inspection_due")
-  maintenanceStatus  String   @map("maintenance_status")
+  // Maintenance & History
+  lastInspectionDate   DateTime @map("last_inspection_date")
+  nextInspectionDue    DateTime @map("next_inspection_due")
+  maintenanceStatus    String   @map("maintenance_status")
+  maintenanceProgram   String?  @map("maintenance_program")
+  airframeEngineStatus String?  @map("airframe_engine_status")
+  refurbishmentDate    String?  @map("refurbishment_date")
+  avionicsUpdates      String?  @map("avionics_updates")
+  warrantyRemaining    String?  @map("warranty_remaining")
 
-  // Optional fields from form
-  previousOwners        Int?    @map("previous_owners")
-  maintenanceProgram    String? @map("maintenance_program")
-  airframeEngineStatus  String? @map("airframe_engine_status")
-  refurbishmentDate     String? @map("refurbishment_date")
+  // Interior/Exterior Details
   wifiConnectivity      String? @map("wifi_connectivity")
   lavatoryGalleyDetails String? @map("lavatory_galley_details")
   cabinAmenities        String? @map("cabin_amenities")
-  range                 Float?
-  cruiseSpeed           Float?  @map("cruise_speed")
-  maxAltitude           Float?  @map("max_altitude")
-  runwayLength          Float?  @map("runway_length")
-  emptyWeight           Float?  @map("empty_weight")
-  maxTakeoffWeight      Float?  @map("max_takeoff_weight")
-  deliveryAvailability  String? @map("delivery_availability")
+  interiorDesigner      String? @map("interior_designer")
+  exteriorPaintScheme   String? @map("exterior_paint_scheme")
+  recentUpgrades        String? @map("recent_upgrades")
+
+  // Ownership History
+  previousOwners Int? @map("previous_owners")
+
+  // Availability
+  deliveryAvailability String? @map("delivery_availability")
 
   // Payment and vendor fields
   paymentTxSignature String  @map("payment_tx_signature")
@@ -114,11 +134,19 @@ model Jet {
   vendorId           String  @map("vendor_id")
   views              Int     @default(0)
 
-  // Status field
-  status        String   @default("PENDING")
-  sponsored     Boolean  @default(false)
-  sponsoredType String   @default("NotSponsored")
-  end_date      DateTime @default(now())
+  // Status fields
+  status        String    @default("PENDING")
+  sponsored     Boolean   @default(false)
+  sponsoredType String    @default("NotSponsored")
+  end_date      DateTime? @map("featured_until")
+
+  // Indexes
+  @@index([manufacturer])
+  @@index([model])
+  @@index([year])
+  @@index([price])
+  @@index([status])
+  @@index([vendorId])
 }
 
 model JetForBids {
@@ -253,6 +281,7 @@ model JetForSaleMessages {
   customerName    String
   customerEmail   String
   customerCountry String
+  customerPhone   String
   listingId       String
   vendorId        String
   message         String
