@@ -83,6 +83,16 @@ export type HelicopterForCharter = $Result.DefaultSelection<Prisma.$HelicopterFo
  * 
  */
 export type HelicopterForCharterMessages = $Result.DefaultSelection<Prisma.$HelicopterForCharterMessagesPayload>
+/**
+ * Model Car
+ * 
+ */
+export type Car = $Result.DefaultSelection<Prisma.$CarPayload>
+/**
+ * Model CarBookings
+ * 
+ */
+export type CarBookings = $Result.DefaultSelection<Prisma.$CarBookingsPayload>
 
 /**
  * Enums
@@ -96,11 +106,103 @@ export namespace $Enums {
 
 export type TripOption = (typeof TripOption)[keyof typeof TripOption]
 
+
+export const CarType: {
+  SEDAN: 'SEDAN',
+  SUV: 'SUV',
+  COUPE: 'COUPE',
+  CONVERTIBLE: 'CONVERTIBLE',
+  SPORTS_CAR: 'SPORTS_CAR',
+  SUPERCAR: 'SUPERCAR',
+  HYPERCAR: 'HYPERCAR',
+  WAGON: 'WAGON',
+  LIMOUSINE: 'LIMOUSINE'
+};
+
+export type CarType = (typeof CarType)[keyof typeof CarType]
+
+
+export const Transmission: {
+  AUTOMATIC: 'AUTOMATIC',
+  MANUAL: 'MANUAL',
+  SEMI_AUTOMATIC: 'SEMI_AUTOMATIC',
+  CVT: 'CVT'
+};
+
+export type Transmission = (typeof Transmission)[keyof typeof Transmission]
+
+
+export const FuelType: {
+  PETROL: 'PETROL',
+  DIESEL: 'DIESEL',
+  ELECTRIC: 'ELECTRIC',
+  HYBRID: 'HYBRID',
+  PLUG_IN_HYBRID: 'PLUG_IN_HYBRID',
+  HYDROGEN: 'HYDROGEN'
+};
+
+export type FuelType = (typeof FuelType)[keyof typeof FuelType]
+
+
+export const DriveType: {
+  REAR_WHEEL_DRIVE: 'REAR_WHEEL_DRIVE',
+  FRONT_WHEEL_DRIVE: 'FRONT_WHEEL_DRIVE',
+  ALL_WHEEL_DRIVE: 'ALL_WHEEL_DRIVE',
+  FOUR_WHEEL_DRIVE: 'FOUR_WHEEL_DRIVE'
+};
+
+export type DriveType = (typeof DriveType)[keyof typeof DriveType]
+
+
+export const ConditionLevel: {
+  BRAND_NEW: 'BRAND_NEW',
+  LIKE_NEW: 'LIKE_NEW',
+  EXCELLENT: 'EXCELLENT',
+  GOOD: 'GOOD',
+  FAIR: 'FAIR'
+};
+
+export type ConditionLevel = (typeof ConditionLevel)[keyof typeof ConditionLevel]
+
+
+export const DeliveryOption: {
+  NONE: 'NONE',
+  LOCAL: 'LOCAL',
+  AIRPORT: 'AIRPORT',
+  CUSTOM: 'CUSTOM'
+};
+
+export type DeliveryOption = (typeof DeliveryOption)[keyof typeof DeliveryOption]
+
 }
 
 export type TripOption = $Enums.TripOption
 
 export const TripOption: typeof $Enums.TripOption
+
+export type CarType = $Enums.CarType
+
+export const CarType: typeof $Enums.CarType
+
+export type Transmission = $Enums.Transmission
+
+export const Transmission: typeof $Enums.Transmission
+
+export type FuelType = $Enums.FuelType
+
+export const FuelType: typeof $Enums.FuelType
+
+export type DriveType = $Enums.DriveType
+
+export const DriveType: typeof $Enums.DriveType
+
+export type ConditionLevel = $Enums.ConditionLevel
+
+export const ConditionLevel: typeof $Enums.ConditionLevel
+
+export type DeliveryOption = $Enums.DeliveryOption
+
+export const DeliveryOption: typeof $Enums.DeliveryOption
 
 /**
  * ##  Prisma Client ʲˢ
@@ -366,6 +468,26 @@ export class PrismaClient<
     * ```
     */
   get helicopterForCharterMessages(): Prisma.HelicopterForCharterMessagesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.car`: Exposes CRUD operations for the **Car** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Cars
+    * const cars = await prisma.car.findMany()
+    * ```
+    */
+  get car(): Prisma.CarDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.carBookings`: Exposes CRUD operations for the **CarBookings** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CarBookings
+    * const carBookings = await prisma.carBookings.findMany()
+    * ```
+    */
+  get carBookings(): Prisma.CarBookingsDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -819,7 +941,9 @@ export namespace Prisma {
     CabinFeature: 'CabinFeature',
     HelicopterMessage: 'HelicopterMessage',
     HelicopterForCharter: 'HelicopterForCharter',
-    HelicopterForCharterMessages: 'HelicopterForCharterMessages'
+    HelicopterForCharterMessages: 'HelicopterForCharterMessages',
+    Car: 'Car',
+    CarBookings: 'CarBookings'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -838,7 +962,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet" | "helicopterForSaleListing" | "cabinFeature" | "helicopterMessage" | "helicopterForCharter" | "helicopterForCharterMessages"
+      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet" | "helicopterForSaleListing" | "cabinFeature" | "helicopterMessage" | "helicopterForCharter" | "helicopterForCharterMessages" | "car" | "carBookings"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1878,6 +2002,154 @@ export namespace Prisma {
           }
         }
       }
+      Car: {
+        payload: Prisma.$CarPayload<ExtArgs>
+        fields: Prisma.CarFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CarFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CarFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          findFirst: {
+            args: Prisma.CarFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CarFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          findMany: {
+            args: Prisma.CarFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>[]
+          }
+          create: {
+            args: Prisma.CarCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          createMany: {
+            args: Prisma.CarCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CarCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>[]
+          }
+          delete: {
+            args: Prisma.CarDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          update: {
+            args: Prisma.CarUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          deleteMany: {
+            args: Prisma.CarDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CarUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CarUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>[]
+          }
+          upsert: {
+            args: Prisma.CarUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarPayload>
+          }
+          aggregate: {
+            args: Prisma.CarAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCar>
+          }
+          groupBy: {
+            args: Prisma.CarGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CarGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CarCountArgs<ExtArgs>
+            result: $Utils.Optional<CarCountAggregateOutputType> | number
+          }
+        }
+      }
+      CarBookings: {
+        payload: Prisma.$CarBookingsPayload<ExtArgs>
+        fields: Prisma.CarBookingsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CarBookingsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CarBookingsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          findFirst: {
+            args: Prisma.CarBookingsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CarBookingsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          findMany: {
+            args: Prisma.CarBookingsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>[]
+          }
+          create: {
+            args: Prisma.CarBookingsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          createMany: {
+            args: Prisma.CarBookingsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CarBookingsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>[]
+          }
+          delete: {
+            args: Prisma.CarBookingsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          update: {
+            args: Prisma.CarBookingsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          deleteMany: {
+            args: Prisma.CarBookingsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CarBookingsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CarBookingsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>[]
+          }
+          upsert: {
+            args: Prisma.CarBookingsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CarBookingsPayload>
+          }
+          aggregate: {
+            args: Prisma.CarBookingsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCarBookings>
+          }
+          groupBy: {
+            args: Prisma.CarBookingsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CarBookingsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CarBookingsCountArgs<ExtArgs>
+            result: $Utils.Optional<CarBookingsCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1976,6 +2248,8 @@ export namespace Prisma {
     helicopterMessage?: HelicopterMessageOmit
     helicopterForCharter?: HelicopterForCharterOmit
     helicopterForCharterMessages?: HelicopterForCharterMessagesOmit
+    car?: CarOmit
+    carBookings?: CarBookingsOmit
   }
 
   /* Types for Logging */
@@ -19703,6 +19977,2543 @@ export namespace Prisma {
 
 
   /**
+   * Model Car
+   */
+
+  export type AggregateCar = {
+    _count: CarCountAggregateOutputType | null
+    _avg: CarAvgAggregateOutputType | null
+    _sum: CarSumAggregateOutputType | null
+    _min: CarMinAggregateOutputType | null
+    _max: CarMaxAggregateOutputType | null
+  }
+
+  export type CarAvgAggregateOutputType = {
+    year: number | null
+    seats: number | null
+    doors: number | null
+    price: number | null
+    weeklyDiscount: number | null
+    monthlyDiscount: number | null
+    deposit: number | null
+    mileage: number | null
+    horsepower: number | null
+    acceleration: number | null
+    topSpeed: number | null
+  }
+
+  export type CarSumAggregateOutputType = {
+    year: number | null
+    seats: number | null
+    doors: number | null
+    price: number | null
+    weeklyDiscount: number | null
+    monthlyDiscount: number | null
+    deposit: number | null
+    mileage: number | null
+    horsepower: number | null
+    acceleration: number | null
+    topSpeed: number | null
+  }
+
+  export type CarMinAggregateOutputType = {
+    id: string | null
+    brand: string | null
+    model: string | null
+    year: number | null
+    carType: $Enums.CarType | null
+    color: string | null
+    interiorColor: string | null
+    seats: number | null
+    doors: number | null
+    transmission: $Enums.Transmission | null
+    driveType: $Enums.DriveType | null
+    fuel: $Enums.FuelType | null
+    condition: $Enums.ConditionLevel | null
+    price: number | null
+    weeklyDiscount: number | null
+    monthlyDiscount: number | null
+    deposit: number | null
+    vin: string | null
+    licensePlate: string | null
+    deliveryOption: $Enums.DeliveryOption | null
+    insuranceInfo: string | null
+    rentalTerms: string | null
+    description: string | null
+    isFeatured: boolean | null
+    isAvailable: boolean | null
+    mileage: number | null
+    engineSize: string | null
+    horsepower: number | null
+    acceleration: number | null
+    topSpeed: number | null
+    location: string | null
+    vendorId: string | null
+    status: string | null
+    sponsored: boolean | null
+    endDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CarMaxAggregateOutputType = {
+    id: string | null
+    brand: string | null
+    model: string | null
+    year: number | null
+    carType: $Enums.CarType | null
+    color: string | null
+    interiorColor: string | null
+    seats: number | null
+    doors: number | null
+    transmission: $Enums.Transmission | null
+    driveType: $Enums.DriveType | null
+    fuel: $Enums.FuelType | null
+    condition: $Enums.ConditionLevel | null
+    price: number | null
+    weeklyDiscount: number | null
+    monthlyDiscount: number | null
+    deposit: number | null
+    vin: string | null
+    licensePlate: string | null
+    deliveryOption: $Enums.DeliveryOption | null
+    insuranceInfo: string | null
+    rentalTerms: string | null
+    description: string | null
+    isFeatured: boolean | null
+    isAvailable: boolean | null
+    mileage: number | null
+    engineSize: string | null
+    horsepower: number | null
+    acceleration: number | null
+    topSpeed: number | null
+    location: string | null
+    vendorId: string | null
+    status: string | null
+    sponsored: boolean | null
+    endDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CarCountAggregateOutputType = {
+    id: number
+    brand: number
+    model: number
+    year: number
+    carType: number
+    color: number
+    interiorColor: number
+    seats: number
+    doors: number
+    transmission: number
+    driveType: number
+    fuel: number
+    condition: number
+    price: number
+    weeklyDiscount: number
+    monthlyDiscount: number
+    deposit: number
+    vin: number
+    licensePlate: number
+    deliveryOption: number
+    insuranceInfo: number
+    rentalTerms: number
+    description: number
+    features: number
+    isFeatured: number
+    isAvailable: number
+    mileage: number
+    engineSize: number
+    horsepower: number
+    acceleration: number
+    topSpeed: number
+    images: number
+    location: number
+    vendorId: number
+    status: number
+    sponsored: number
+    endDate: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CarAvgAggregateInputType = {
+    year?: true
+    seats?: true
+    doors?: true
+    price?: true
+    weeklyDiscount?: true
+    monthlyDiscount?: true
+    deposit?: true
+    mileage?: true
+    horsepower?: true
+    acceleration?: true
+    topSpeed?: true
+  }
+
+  export type CarSumAggregateInputType = {
+    year?: true
+    seats?: true
+    doors?: true
+    price?: true
+    weeklyDiscount?: true
+    monthlyDiscount?: true
+    deposit?: true
+    mileage?: true
+    horsepower?: true
+    acceleration?: true
+    topSpeed?: true
+  }
+
+  export type CarMinAggregateInputType = {
+    id?: true
+    brand?: true
+    model?: true
+    year?: true
+    carType?: true
+    color?: true
+    interiorColor?: true
+    seats?: true
+    doors?: true
+    transmission?: true
+    driveType?: true
+    fuel?: true
+    condition?: true
+    price?: true
+    weeklyDiscount?: true
+    monthlyDiscount?: true
+    deposit?: true
+    vin?: true
+    licensePlate?: true
+    deliveryOption?: true
+    insuranceInfo?: true
+    rentalTerms?: true
+    description?: true
+    isFeatured?: true
+    isAvailable?: true
+    mileage?: true
+    engineSize?: true
+    horsepower?: true
+    acceleration?: true
+    topSpeed?: true
+    location?: true
+    vendorId?: true
+    status?: true
+    sponsored?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CarMaxAggregateInputType = {
+    id?: true
+    brand?: true
+    model?: true
+    year?: true
+    carType?: true
+    color?: true
+    interiorColor?: true
+    seats?: true
+    doors?: true
+    transmission?: true
+    driveType?: true
+    fuel?: true
+    condition?: true
+    price?: true
+    weeklyDiscount?: true
+    monthlyDiscount?: true
+    deposit?: true
+    vin?: true
+    licensePlate?: true
+    deliveryOption?: true
+    insuranceInfo?: true
+    rentalTerms?: true
+    description?: true
+    isFeatured?: true
+    isAvailable?: true
+    mileage?: true
+    engineSize?: true
+    horsepower?: true
+    acceleration?: true
+    topSpeed?: true
+    location?: true
+    vendorId?: true
+    status?: true
+    sponsored?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CarCountAggregateInputType = {
+    id?: true
+    brand?: true
+    model?: true
+    year?: true
+    carType?: true
+    color?: true
+    interiorColor?: true
+    seats?: true
+    doors?: true
+    transmission?: true
+    driveType?: true
+    fuel?: true
+    condition?: true
+    price?: true
+    weeklyDiscount?: true
+    monthlyDiscount?: true
+    deposit?: true
+    vin?: true
+    licensePlate?: true
+    deliveryOption?: true
+    insuranceInfo?: true
+    rentalTerms?: true
+    description?: true
+    features?: true
+    isFeatured?: true
+    isAvailable?: true
+    mileage?: true
+    engineSize?: true
+    horsepower?: true
+    acceleration?: true
+    topSpeed?: true
+    images?: true
+    location?: true
+    vendorId?: true
+    status?: true
+    sponsored?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CarAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Car to aggregate.
+     */
+    where?: CarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cars to fetch.
+     */
+    orderBy?: CarOrderByWithRelationInput | CarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Cars
+    **/
+    _count?: true | CarCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CarAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CarSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CarMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CarMaxAggregateInputType
+  }
+
+  export type GetCarAggregateType<T extends CarAggregateArgs> = {
+        [P in keyof T & keyof AggregateCar]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCar[P]>
+      : GetScalarType<T[P], AggregateCar[P]>
+  }
+
+
+
+
+  export type CarGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CarWhereInput
+    orderBy?: CarOrderByWithAggregationInput | CarOrderByWithAggregationInput[]
+    by: CarScalarFieldEnum[] | CarScalarFieldEnum
+    having?: CarScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CarCountAggregateInputType | true
+    _avg?: CarAvgAggregateInputType
+    _sum?: CarSumAggregateInputType
+    _min?: CarMinAggregateInputType
+    _max?: CarMaxAggregateInputType
+  }
+
+  export type CarGroupByOutputType = {
+    id: string
+    brand: string
+    model: string
+    year: number
+    carType: $Enums.CarType
+    color: string
+    interiorColor: string
+    seats: number
+    doors: number | null
+    transmission: $Enums.Transmission
+    driveType: $Enums.DriveType
+    fuel: $Enums.FuelType
+    condition: $Enums.ConditionLevel | null
+    price: number
+    weeklyDiscount: number | null
+    monthlyDiscount: number | null
+    deposit: number | null
+    vin: string | null
+    licensePlate: string | null
+    deliveryOption: $Enums.DeliveryOption | null
+    insuranceInfo: string | null
+    rentalTerms: string | null
+    description: string
+    features: string[]
+    isFeatured: boolean
+    isAvailable: boolean
+    mileage: number | null
+    engineSize: string | null
+    horsepower: number | null
+    acceleration: number | null
+    topSpeed: number | null
+    images: string[]
+    location: string
+    vendorId: string
+    status: string
+    sponsored: boolean
+    endDate: Date
+    createdAt: Date
+    updatedAt: Date
+    _count: CarCountAggregateOutputType | null
+    _avg: CarAvgAggregateOutputType | null
+    _sum: CarSumAggregateOutputType | null
+    _min: CarMinAggregateOutputType | null
+    _max: CarMaxAggregateOutputType | null
+  }
+
+  type GetCarGroupByPayload<T extends CarGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CarGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CarGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CarGroupByOutputType[P]>
+            : GetScalarType<T[P], CarGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CarSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    brand?: boolean
+    model?: boolean
+    year?: boolean
+    carType?: boolean
+    color?: boolean
+    interiorColor?: boolean
+    seats?: boolean
+    doors?: boolean
+    transmission?: boolean
+    driveType?: boolean
+    fuel?: boolean
+    condition?: boolean
+    price?: boolean
+    weeklyDiscount?: boolean
+    monthlyDiscount?: boolean
+    deposit?: boolean
+    vin?: boolean
+    licensePlate?: boolean
+    deliveryOption?: boolean
+    insuranceInfo?: boolean
+    rentalTerms?: boolean
+    description?: boolean
+    features?: boolean
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: boolean
+    engineSize?: boolean
+    horsepower?: boolean
+    acceleration?: boolean
+    topSpeed?: boolean
+    images?: boolean
+    location?: boolean
+    vendorId?: boolean
+    status?: boolean
+    sponsored?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["car"]>
+
+  export type CarSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    brand?: boolean
+    model?: boolean
+    year?: boolean
+    carType?: boolean
+    color?: boolean
+    interiorColor?: boolean
+    seats?: boolean
+    doors?: boolean
+    transmission?: boolean
+    driveType?: boolean
+    fuel?: boolean
+    condition?: boolean
+    price?: boolean
+    weeklyDiscount?: boolean
+    monthlyDiscount?: boolean
+    deposit?: boolean
+    vin?: boolean
+    licensePlate?: boolean
+    deliveryOption?: boolean
+    insuranceInfo?: boolean
+    rentalTerms?: boolean
+    description?: boolean
+    features?: boolean
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: boolean
+    engineSize?: boolean
+    horsepower?: boolean
+    acceleration?: boolean
+    topSpeed?: boolean
+    images?: boolean
+    location?: boolean
+    vendorId?: boolean
+    status?: boolean
+    sponsored?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["car"]>
+
+  export type CarSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    brand?: boolean
+    model?: boolean
+    year?: boolean
+    carType?: boolean
+    color?: boolean
+    interiorColor?: boolean
+    seats?: boolean
+    doors?: boolean
+    transmission?: boolean
+    driveType?: boolean
+    fuel?: boolean
+    condition?: boolean
+    price?: boolean
+    weeklyDiscount?: boolean
+    monthlyDiscount?: boolean
+    deposit?: boolean
+    vin?: boolean
+    licensePlate?: boolean
+    deliveryOption?: boolean
+    insuranceInfo?: boolean
+    rentalTerms?: boolean
+    description?: boolean
+    features?: boolean
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: boolean
+    engineSize?: boolean
+    horsepower?: boolean
+    acceleration?: boolean
+    topSpeed?: boolean
+    images?: boolean
+    location?: boolean
+    vendorId?: boolean
+    status?: boolean
+    sponsored?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["car"]>
+
+  export type CarSelectScalar = {
+    id?: boolean
+    brand?: boolean
+    model?: boolean
+    year?: boolean
+    carType?: boolean
+    color?: boolean
+    interiorColor?: boolean
+    seats?: boolean
+    doors?: boolean
+    transmission?: boolean
+    driveType?: boolean
+    fuel?: boolean
+    condition?: boolean
+    price?: boolean
+    weeklyDiscount?: boolean
+    monthlyDiscount?: boolean
+    deposit?: boolean
+    vin?: boolean
+    licensePlate?: boolean
+    deliveryOption?: boolean
+    insuranceInfo?: boolean
+    rentalTerms?: boolean
+    description?: boolean
+    features?: boolean
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: boolean
+    engineSize?: boolean
+    horsepower?: boolean
+    acceleration?: boolean
+    topSpeed?: boolean
+    images?: boolean
+    location?: boolean
+    vendorId?: boolean
+    status?: boolean
+    sponsored?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CarOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "brand" | "model" | "year" | "carType" | "color" | "interiorColor" | "seats" | "doors" | "transmission" | "driveType" | "fuel" | "condition" | "price" | "weeklyDiscount" | "monthlyDiscount" | "deposit" | "vin" | "licensePlate" | "deliveryOption" | "insuranceInfo" | "rentalTerms" | "description" | "features" | "isFeatured" | "isAvailable" | "mileage" | "engineSize" | "horsepower" | "acceleration" | "topSpeed" | "images" | "location" | "vendorId" | "status" | "sponsored" | "endDate" | "createdAt" | "updatedAt", ExtArgs["result"]["car"]>
+
+  export type $CarPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Car"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      brand: string
+      model: string
+      year: number
+      carType: $Enums.CarType
+      color: string
+      interiorColor: string
+      seats: number
+      doors: number | null
+      transmission: $Enums.Transmission
+      driveType: $Enums.DriveType
+      fuel: $Enums.FuelType
+      condition: $Enums.ConditionLevel | null
+      price: number
+      weeklyDiscount: number | null
+      monthlyDiscount: number | null
+      deposit: number | null
+      vin: string | null
+      licensePlate: string | null
+      deliveryOption: $Enums.DeliveryOption | null
+      insuranceInfo: string | null
+      rentalTerms: string | null
+      description: string
+      features: string[]
+      isFeatured: boolean
+      isAvailable: boolean
+      mileage: number | null
+      engineSize: string | null
+      horsepower: number | null
+      acceleration: number | null
+      topSpeed: number | null
+      images: string[]
+      location: string
+      vendorId: string
+      status: string
+      sponsored: boolean
+      endDate: Date
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["car"]>
+    composites: {}
+  }
+
+  type CarGetPayload<S extends boolean | null | undefined | CarDefaultArgs> = $Result.GetResult<Prisma.$CarPayload, S>
+
+  type CarCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CarFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CarCountAggregateInputType | true
+    }
+
+  export interface CarDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Car'], meta: { name: 'Car' } }
+    /**
+     * Find zero or one Car that matches the filter.
+     * @param {CarFindUniqueArgs} args - Arguments to find a Car
+     * @example
+     * // Get one Car
+     * const car = await prisma.car.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CarFindUniqueArgs>(args: SelectSubset<T, CarFindUniqueArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Car that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CarFindUniqueOrThrowArgs} args - Arguments to find a Car
+     * @example
+     * // Get one Car
+     * const car = await prisma.car.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CarFindUniqueOrThrowArgs>(args: SelectSubset<T, CarFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Car that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarFindFirstArgs} args - Arguments to find a Car
+     * @example
+     * // Get one Car
+     * const car = await prisma.car.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CarFindFirstArgs>(args?: SelectSubset<T, CarFindFirstArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Car that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarFindFirstOrThrowArgs} args - Arguments to find a Car
+     * @example
+     * // Get one Car
+     * const car = await prisma.car.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CarFindFirstOrThrowArgs>(args?: SelectSubset<T, CarFindFirstOrThrowArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Cars that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Cars
+     * const cars = await prisma.car.findMany()
+     * 
+     * // Get first 10 Cars
+     * const cars = await prisma.car.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const carWithIdOnly = await prisma.car.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CarFindManyArgs>(args?: SelectSubset<T, CarFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Car.
+     * @param {CarCreateArgs} args - Arguments to create a Car.
+     * @example
+     * // Create one Car
+     * const Car = await prisma.car.create({
+     *   data: {
+     *     // ... data to create a Car
+     *   }
+     * })
+     * 
+     */
+    create<T extends CarCreateArgs>(args: SelectSubset<T, CarCreateArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Cars.
+     * @param {CarCreateManyArgs} args - Arguments to create many Cars.
+     * @example
+     * // Create many Cars
+     * const car = await prisma.car.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CarCreateManyArgs>(args?: SelectSubset<T, CarCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Cars and returns the data saved in the database.
+     * @param {CarCreateManyAndReturnArgs} args - Arguments to create many Cars.
+     * @example
+     * // Create many Cars
+     * const car = await prisma.car.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Cars and only return the `id`
+     * const carWithIdOnly = await prisma.car.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CarCreateManyAndReturnArgs>(args?: SelectSubset<T, CarCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Car.
+     * @param {CarDeleteArgs} args - Arguments to delete one Car.
+     * @example
+     * // Delete one Car
+     * const Car = await prisma.car.delete({
+     *   where: {
+     *     // ... filter to delete one Car
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CarDeleteArgs>(args: SelectSubset<T, CarDeleteArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Car.
+     * @param {CarUpdateArgs} args - Arguments to update one Car.
+     * @example
+     * // Update one Car
+     * const car = await prisma.car.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CarUpdateArgs>(args: SelectSubset<T, CarUpdateArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Cars.
+     * @param {CarDeleteManyArgs} args - Arguments to filter Cars to delete.
+     * @example
+     * // Delete a few Cars
+     * const { count } = await prisma.car.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CarDeleteManyArgs>(args?: SelectSubset<T, CarDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Cars.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Cars
+     * const car = await prisma.car.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CarUpdateManyArgs>(args: SelectSubset<T, CarUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Cars and returns the data updated in the database.
+     * @param {CarUpdateManyAndReturnArgs} args - Arguments to update many Cars.
+     * @example
+     * // Update many Cars
+     * const car = await prisma.car.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Cars and only return the `id`
+     * const carWithIdOnly = await prisma.car.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CarUpdateManyAndReturnArgs>(args: SelectSubset<T, CarUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Car.
+     * @param {CarUpsertArgs} args - Arguments to update or create a Car.
+     * @example
+     * // Update or create a Car
+     * const car = await prisma.car.upsert({
+     *   create: {
+     *     // ... data to create a Car
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Car we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CarUpsertArgs>(args: SelectSubset<T, CarUpsertArgs<ExtArgs>>): Prisma__CarClient<$Result.GetResult<Prisma.$CarPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Cars.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarCountArgs} args - Arguments to filter Cars to count.
+     * @example
+     * // Count the number of Cars
+     * const count = await prisma.car.count({
+     *   where: {
+     *     // ... the filter for the Cars we want to count
+     *   }
+     * })
+    **/
+    count<T extends CarCountArgs>(
+      args?: Subset<T, CarCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CarCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Car.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CarAggregateArgs>(args: Subset<T, CarAggregateArgs>): Prisma.PrismaPromise<GetCarAggregateType<T>>
+
+    /**
+     * Group by Car.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CarGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CarGroupByArgs['orderBy'] }
+        : { orderBy?: CarGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CarGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCarGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Car model
+   */
+  readonly fields: CarFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Car.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CarClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Car model
+   */
+  interface CarFieldRefs {
+    readonly id: FieldRef<"Car", 'String'>
+    readonly brand: FieldRef<"Car", 'String'>
+    readonly model: FieldRef<"Car", 'String'>
+    readonly year: FieldRef<"Car", 'Int'>
+    readonly carType: FieldRef<"Car", 'CarType'>
+    readonly color: FieldRef<"Car", 'String'>
+    readonly interiorColor: FieldRef<"Car", 'String'>
+    readonly seats: FieldRef<"Car", 'Int'>
+    readonly doors: FieldRef<"Car", 'Int'>
+    readonly transmission: FieldRef<"Car", 'Transmission'>
+    readonly driveType: FieldRef<"Car", 'DriveType'>
+    readonly fuel: FieldRef<"Car", 'FuelType'>
+    readonly condition: FieldRef<"Car", 'ConditionLevel'>
+    readonly price: FieldRef<"Car", 'Float'>
+    readonly weeklyDiscount: FieldRef<"Car", 'Float'>
+    readonly monthlyDiscount: FieldRef<"Car", 'Float'>
+    readonly deposit: FieldRef<"Car", 'Float'>
+    readonly vin: FieldRef<"Car", 'String'>
+    readonly licensePlate: FieldRef<"Car", 'String'>
+    readonly deliveryOption: FieldRef<"Car", 'DeliveryOption'>
+    readonly insuranceInfo: FieldRef<"Car", 'String'>
+    readonly rentalTerms: FieldRef<"Car", 'String'>
+    readonly description: FieldRef<"Car", 'String'>
+    readonly features: FieldRef<"Car", 'String[]'>
+    readonly isFeatured: FieldRef<"Car", 'Boolean'>
+    readonly isAvailable: FieldRef<"Car", 'Boolean'>
+    readonly mileage: FieldRef<"Car", 'Int'>
+    readonly engineSize: FieldRef<"Car", 'String'>
+    readonly horsepower: FieldRef<"Car", 'Int'>
+    readonly acceleration: FieldRef<"Car", 'Float'>
+    readonly topSpeed: FieldRef<"Car", 'Int'>
+    readonly images: FieldRef<"Car", 'String[]'>
+    readonly location: FieldRef<"Car", 'String'>
+    readonly vendorId: FieldRef<"Car", 'String'>
+    readonly status: FieldRef<"Car", 'String'>
+    readonly sponsored: FieldRef<"Car", 'Boolean'>
+    readonly endDate: FieldRef<"Car", 'DateTime'>
+    readonly createdAt: FieldRef<"Car", 'DateTime'>
+    readonly updatedAt: FieldRef<"Car", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Car findUnique
+   */
+  export type CarFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter, which Car to fetch.
+     */
+    where: CarWhereUniqueInput
+  }
+
+  /**
+   * Car findUniqueOrThrow
+   */
+  export type CarFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter, which Car to fetch.
+     */
+    where: CarWhereUniqueInput
+  }
+
+  /**
+   * Car findFirst
+   */
+  export type CarFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter, which Car to fetch.
+     */
+    where?: CarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cars to fetch.
+     */
+    orderBy?: CarOrderByWithRelationInput | CarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Cars.
+     */
+    cursor?: CarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Cars.
+     */
+    distinct?: CarScalarFieldEnum | CarScalarFieldEnum[]
+  }
+
+  /**
+   * Car findFirstOrThrow
+   */
+  export type CarFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter, which Car to fetch.
+     */
+    where?: CarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cars to fetch.
+     */
+    orderBy?: CarOrderByWithRelationInput | CarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Cars.
+     */
+    cursor?: CarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cars.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Cars.
+     */
+    distinct?: CarScalarFieldEnum | CarScalarFieldEnum[]
+  }
+
+  /**
+   * Car findMany
+   */
+  export type CarFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter, which Cars to fetch.
+     */
+    where?: CarWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cars to fetch.
+     */
+    orderBy?: CarOrderByWithRelationInput | CarOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Cars.
+     */
+    cursor?: CarWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cars from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cars.
+     */
+    skip?: number
+    distinct?: CarScalarFieldEnum | CarScalarFieldEnum[]
+  }
+
+  /**
+   * Car create
+   */
+  export type CarCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Car.
+     */
+    data: XOR<CarCreateInput, CarUncheckedCreateInput>
+  }
+
+  /**
+   * Car createMany
+   */
+  export type CarCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Cars.
+     */
+    data: CarCreateManyInput | CarCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Car createManyAndReturn
+   */
+  export type CarCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * The data used to create many Cars.
+     */
+    data: CarCreateManyInput | CarCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Car update
+   */
+  export type CarUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Car.
+     */
+    data: XOR<CarUpdateInput, CarUncheckedUpdateInput>
+    /**
+     * Choose, which Car to update.
+     */
+    where: CarWhereUniqueInput
+  }
+
+  /**
+   * Car updateMany
+   */
+  export type CarUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Cars.
+     */
+    data: XOR<CarUpdateManyMutationInput, CarUncheckedUpdateManyInput>
+    /**
+     * Filter which Cars to update
+     */
+    where?: CarWhereInput
+    /**
+     * Limit how many Cars to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Car updateManyAndReturn
+   */
+  export type CarUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * The data used to update Cars.
+     */
+    data: XOR<CarUpdateManyMutationInput, CarUncheckedUpdateManyInput>
+    /**
+     * Filter which Cars to update
+     */
+    where?: CarWhereInput
+    /**
+     * Limit how many Cars to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Car upsert
+   */
+  export type CarUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Car to update in case it exists.
+     */
+    where: CarWhereUniqueInput
+    /**
+     * In case the Car found by the `where` argument doesn't exist, create a new Car with this data.
+     */
+    create: XOR<CarCreateInput, CarUncheckedCreateInput>
+    /**
+     * In case the Car was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CarUpdateInput, CarUncheckedUpdateInput>
+  }
+
+  /**
+   * Car delete
+   */
+  export type CarDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+    /**
+     * Filter which Car to delete.
+     */
+    where: CarWhereUniqueInput
+  }
+
+  /**
+   * Car deleteMany
+   */
+  export type CarDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Cars to delete
+     */
+    where?: CarWhereInput
+    /**
+     * Limit how many Cars to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Car without action
+   */
+  export type CarDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Car
+     */
+    select?: CarSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Car
+     */
+    omit?: CarOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model CarBookings
+   */
+
+  export type AggregateCarBookings = {
+    _count: CarBookingsCountAggregateOutputType | null
+    _min: CarBookingsMinAggregateOutputType | null
+    _max: CarBookingsMaxAggregateOutputType | null
+  }
+
+  export type CarBookingsMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    email: string | null
+    phone: string | null
+    message: string | null
+    listingId: string | null
+    vendorId: string | null
+    read: boolean | null
+  }
+
+  export type CarBookingsMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    email: string | null
+    phone: string | null
+    message: string | null
+    listingId: string | null
+    vendorId: string | null
+    read: boolean | null
+  }
+
+  export type CarBookingsCountAggregateOutputType = {
+    id: number
+    name: number
+    email: number
+    phone: number
+    message: number
+    listingId: number
+    vendorId: number
+    read: number
+    _all: number
+  }
+
+
+  export type CarBookingsMinAggregateInputType = {
+    id?: true
+    name?: true
+    email?: true
+    phone?: true
+    message?: true
+    listingId?: true
+    vendorId?: true
+    read?: true
+  }
+
+  export type CarBookingsMaxAggregateInputType = {
+    id?: true
+    name?: true
+    email?: true
+    phone?: true
+    message?: true
+    listingId?: true
+    vendorId?: true
+    read?: true
+  }
+
+  export type CarBookingsCountAggregateInputType = {
+    id?: true
+    name?: true
+    email?: true
+    phone?: true
+    message?: true
+    listingId?: true
+    vendorId?: true
+    read?: true
+    _all?: true
+  }
+
+  export type CarBookingsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CarBookings to aggregate.
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CarBookings to fetch.
+     */
+    orderBy?: CarBookingsOrderByWithRelationInput | CarBookingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CarBookingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CarBookings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CarBookings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CarBookings
+    **/
+    _count?: true | CarBookingsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CarBookingsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CarBookingsMaxAggregateInputType
+  }
+
+  export type GetCarBookingsAggregateType<T extends CarBookingsAggregateArgs> = {
+        [P in keyof T & keyof AggregateCarBookings]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCarBookings[P]>
+      : GetScalarType<T[P], AggregateCarBookings[P]>
+  }
+
+
+
+
+  export type CarBookingsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CarBookingsWhereInput
+    orderBy?: CarBookingsOrderByWithAggregationInput | CarBookingsOrderByWithAggregationInput[]
+    by: CarBookingsScalarFieldEnum[] | CarBookingsScalarFieldEnum
+    having?: CarBookingsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CarBookingsCountAggregateInputType | true
+    _min?: CarBookingsMinAggregateInputType
+    _max?: CarBookingsMaxAggregateInputType
+  }
+
+  export type CarBookingsGroupByOutputType = {
+    id: string
+    name: string
+    email: string
+    phone: string
+    message: string
+    listingId: string
+    vendorId: string
+    read: boolean
+    _count: CarBookingsCountAggregateOutputType | null
+    _min: CarBookingsMinAggregateOutputType | null
+    _max: CarBookingsMaxAggregateOutputType | null
+  }
+
+  type GetCarBookingsGroupByPayload<T extends CarBookingsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CarBookingsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CarBookingsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CarBookingsGroupByOutputType[P]>
+            : GetScalarType<T[P], CarBookingsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CarBookingsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["carBookings"]>
+
+  export type CarBookingsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["carBookings"]>
+
+  export type CarBookingsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    read?: boolean
+  }, ExtArgs["result"]["carBookings"]>
+
+  export type CarBookingsSelectScalar = {
+    id?: boolean
+    name?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    listingId?: boolean
+    vendorId?: boolean
+    read?: boolean
+  }
+
+  export type CarBookingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "message" | "listingId" | "vendorId" | "read", ExtArgs["result"]["carBookings"]>
+
+  export type $CarBookingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CarBookings"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      email: string
+      phone: string
+      message: string
+      listingId: string
+      vendorId: string
+      read: boolean
+    }, ExtArgs["result"]["carBookings"]>
+    composites: {}
+  }
+
+  type CarBookingsGetPayload<S extends boolean | null | undefined | CarBookingsDefaultArgs> = $Result.GetResult<Prisma.$CarBookingsPayload, S>
+
+  type CarBookingsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CarBookingsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CarBookingsCountAggregateInputType | true
+    }
+
+  export interface CarBookingsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CarBookings'], meta: { name: 'CarBookings' } }
+    /**
+     * Find zero or one CarBookings that matches the filter.
+     * @param {CarBookingsFindUniqueArgs} args - Arguments to find a CarBookings
+     * @example
+     * // Get one CarBookings
+     * const carBookings = await prisma.carBookings.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CarBookingsFindUniqueArgs>(args: SelectSubset<T, CarBookingsFindUniqueArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CarBookings that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CarBookingsFindUniqueOrThrowArgs} args - Arguments to find a CarBookings
+     * @example
+     * // Get one CarBookings
+     * const carBookings = await prisma.carBookings.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CarBookingsFindUniqueOrThrowArgs>(args: SelectSubset<T, CarBookingsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CarBookings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsFindFirstArgs} args - Arguments to find a CarBookings
+     * @example
+     * // Get one CarBookings
+     * const carBookings = await prisma.carBookings.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CarBookingsFindFirstArgs>(args?: SelectSubset<T, CarBookingsFindFirstArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CarBookings that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsFindFirstOrThrowArgs} args - Arguments to find a CarBookings
+     * @example
+     * // Get one CarBookings
+     * const carBookings = await prisma.carBookings.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CarBookingsFindFirstOrThrowArgs>(args?: SelectSubset<T, CarBookingsFindFirstOrThrowArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CarBookings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CarBookings
+     * const carBookings = await prisma.carBookings.findMany()
+     * 
+     * // Get first 10 CarBookings
+     * const carBookings = await prisma.carBookings.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const carBookingsWithIdOnly = await prisma.carBookings.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CarBookingsFindManyArgs>(args?: SelectSubset<T, CarBookingsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CarBookings.
+     * @param {CarBookingsCreateArgs} args - Arguments to create a CarBookings.
+     * @example
+     * // Create one CarBookings
+     * const CarBookings = await prisma.carBookings.create({
+     *   data: {
+     *     // ... data to create a CarBookings
+     *   }
+     * })
+     * 
+     */
+    create<T extends CarBookingsCreateArgs>(args: SelectSubset<T, CarBookingsCreateArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CarBookings.
+     * @param {CarBookingsCreateManyArgs} args - Arguments to create many CarBookings.
+     * @example
+     * // Create many CarBookings
+     * const carBookings = await prisma.carBookings.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CarBookingsCreateManyArgs>(args?: SelectSubset<T, CarBookingsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CarBookings and returns the data saved in the database.
+     * @param {CarBookingsCreateManyAndReturnArgs} args - Arguments to create many CarBookings.
+     * @example
+     * // Create many CarBookings
+     * const carBookings = await prisma.carBookings.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CarBookings and only return the `id`
+     * const carBookingsWithIdOnly = await prisma.carBookings.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CarBookingsCreateManyAndReturnArgs>(args?: SelectSubset<T, CarBookingsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CarBookings.
+     * @param {CarBookingsDeleteArgs} args - Arguments to delete one CarBookings.
+     * @example
+     * // Delete one CarBookings
+     * const CarBookings = await prisma.carBookings.delete({
+     *   where: {
+     *     // ... filter to delete one CarBookings
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CarBookingsDeleteArgs>(args: SelectSubset<T, CarBookingsDeleteArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CarBookings.
+     * @param {CarBookingsUpdateArgs} args - Arguments to update one CarBookings.
+     * @example
+     * // Update one CarBookings
+     * const carBookings = await prisma.carBookings.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CarBookingsUpdateArgs>(args: SelectSubset<T, CarBookingsUpdateArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CarBookings.
+     * @param {CarBookingsDeleteManyArgs} args - Arguments to filter CarBookings to delete.
+     * @example
+     * // Delete a few CarBookings
+     * const { count } = await prisma.carBookings.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CarBookingsDeleteManyArgs>(args?: SelectSubset<T, CarBookingsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CarBookings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CarBookings
+     * const carBookings = await prisma.carBookings.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CarBookingsUpdateManyArgs>(args: SelectSubset<T, CarBookingsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CarBookings and returns the data updated in the database.
+     * @param {CarBookingsUpdateManyAndReturnArgs} args - Arguments to update many CarBookings.
+     * @example
+     * // Update many CarBookings
+     * const carBookings = await prisma.carBookings.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CarBookings and only return the `id`
+     * const carBookingsWithIdOnly = await prisma.carBookings.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CarBookingsUpdateManyAndReturnArgs>(args: SelectSubset<T, CarBookingsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CarBookings.
+     * @param {CarBookingsUpsertArgs} args - Arguments to update or create a CarBookings.
+     * @example
+     * // Update or create a CarBookings
+     * const carBookings = await prisma.carBookings.upsert({
+     *   create: {
+     *     // ... data to create a CarBookings
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CarBookings we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CarBookingsUpsertArgs>(args: SelectSubset<T, CarBookingsUpsertArgs<ExtArgs>>): Prisma__CarBookingsClient<$Result.GetResult<Prisma.$CarBookingsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CarBookings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsCountArgs} args - Arguments to filter CarBookings to count.
+     * @example
+     * // Count the number of CarBookings
+     * const count = await prisma.carBookings.count({
+     *   where: {
+     *     // ... the filter for the CarBookings we want to count
+     *   }
+     * })
+    **/
+    count<T extends CarBookingsCountArgs>(
+      args?: Subset<T, CarBookingsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CarBookingsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CarBookings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CarBookingsAggregateArgs>(args: Subset<T, CarBookingsAggregateArgs>): Prisma.PrismaPromise<GetCarBookingsAggregateType<T>>
+
+    /**
+     * Group by CarBookings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CarBookingsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CarBookingsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CarBookingsGroupByArgs['orderBy'] }
+        : { orderBy?: CarBookingsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CarBookingsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCarBookingsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CarBookings model
+   */
+  readonly fields: CarBookingsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CarBookings.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CarBookingsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CarBookings model
+   */
+  interface CarBookingsFieldRefs {
+    readonly id: FieldRef<"CarBookings", 'String'>
+    readonly name: FieldRef<"CarBookings", 'String'>
+    readonly email: FieldRef<"CarBookings", 'String'>
+    readonly phone: FieldRef<"CarBookings", 'String'>
+    readonly message: FieldRef<"CarBookings", 'String'>
+    readonly listingId: FieldRef<"CarBookings", 'String'>
+    readonly vendorId: FieldRef<"CarBookings", 'String'>
+    readonly read: FieldRef<"CarBookings", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CarBookings findUnique
+   */
+  export type CarBookingsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter, which CarBookings to fetch.
+     */
+    where: CarBookingsWhereUniqueInput
+  }
+
+  /**
+   * CarBookings findUniqueOrThrow
+   */
+  export type CarBookingsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter, which CarBookings to fetch.
+     */
+    where: CarBookingsWhereUniqueInput
+  }
+
+  /**
+   * CarBookings findFirst
+   */
+  export type CarBookingsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter, which CarBookings to fetch.
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CarBookings to fetch.
+     */
+    orderBy?: CarBookingsOrderByWithRelationInput | CarBookingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CarBookings.
+     */
+    cursor?: CarBookingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CarBookings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CarBookings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CarBookings.
+     */
+    distinct?: CarBookingsScalarFieldEnum | CarBookingsScalarFieldEnum[]
+  }
+
+  /**
+   * CarBookings findFirstOrThrow
+   */
+  export type CarBookingsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter, which CarBookings to fetch.
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CarBookings to fetch.
+     */
+    orderBy?: CarBookingsOrderByWithRelationInput | CarBookingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CarBookings.
+     */
+    cursor?: CarBookingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CarBookings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CarBookings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CarBookings.
+     */
+    distinct?: CarBookingsScalarFieldEnum | CarBookingsScalarFieldEnum[]
+  }
+
+  /**
+   * CarBookings findMany
+   */
+  export type CarBookingsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter, which CarBookings to fetch.
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CarBookings to fetch.
+     */
+    orderBy?: CarBookingsOrderByWithRelationInput | CarBookingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CarBookings.
+     */
+    cursor?: CarBookingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CarBookings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CarBookings.
+     */
+    skip?: number
+    distinct?: CarBookingsScalarFieldEnum | CarBookingsScalarFieldEnum[]
+  }
+
+  /**
+   * CarBookings create
+   */
+  export type CarBookingsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * The data needed to create a CarBookings.
+     */
+    data: XOR<CarBookingsCreateInput, CarBookingsUncheckedCreateInput>
+  }
+
+  /**
+   * CarBookings createMany
+   */
+  export type CarBookingsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CarBookings.
+     */
+    data: CarBookingsCreateManyInput | CarBookingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CarBookings createManyAndReturn
+   */
+  export type CarBookingsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * The data used to create many CarBookings.
+     */
+    data: CarBookingsCreateManyInput | CarBookingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CarBookings update
+   */
+  export type CarBookingsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * The data needed to update a CarBookings.
+     */
+    data: XOR<CarBookingsUpdateInput, CarBookingsUncheckedUpdateInput>
+    /**
+     * Choose, which CarBookings to update.
+     */
+    where: CarBookingsWhereUniqueInput
+  }
+
+  /**
+   * CarBookings updateMany
+   */
+  export type CarBookingsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CarBookings.
+     */
+    data: XOR<CarBookingsUpdateManyMutationInput, CarBookingsUncheckedUpdateManyInput>
+    /**
+     * Filter which CarBookings to update
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * Limit how many CarBookings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CarBookings updateManyAndReturn
+   */
+  export type CarBookingsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * The data used to update CarBookings.
+     */
+    data: XOR<CarBookingsUpdateManyMutationInput, CarBookingsUncheckedUpdateManyInput>
+    /**
+     * Filter which CarBookings to update
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * Limit how many CarBookings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CarBookings upsert
+   */
+  export type CarBookingsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * The filter to search for the CarBookings to update in case it exists.
+     */
+    where: CarBookingsWhereUniqueInput
+    /**
+     * In case the CarBookings found by the `where` argument doesn't exist, create a new CarBookings with this data.
+     */
+    create: XOR<CarBookingsCreateInput, CarBookingsUncheckedCreateInput>
+    /**
+     * In case the CarBookings was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CarBookingsUpdateInput, CarBookingsUncheckedUpdateInput>
+  }
+
+  /**
+   * CarBookings delete
+   */
+  export type CarBookingsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+    /**
+     * Filter which CarBookings to delete.
+     */
+    where: CarBookingsWhereUniqueInput
+  }
+
+  /**
+   * CarBookings deleteMany
+   */
+  export type CarBookingsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CarBookings to delete
+     */
+    where?: CarBookingsWhereInput
+    /**
+     * Limit how many CarBookings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CarBookings without action
+   */
+  export type CarBookingsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CarBookings
+     */
+    select?: CarBookingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CarBookings
+     */
+    omit?: CarBookingsOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -20107,6 +22918,65 @@ export namespace Prisma {
   export type HelicopterForCharterMessagesScalarFieldEnum = (typeof HelicopterForCharterMessagesScalarFieldEnum)[keyof typeof HelicopterForCharterMessagesScalarFieldEnum]
 
 
+  export const CarScalarFieldEnum: {
+    id: 'id',
+    brand: 'brand',
+    model: 'model',
+    year: 'year',
+    carType: 'carType',
+    color: 'color',
+    interiorColor: 'interiorColor',
+    seats: 'seats',
+    doors: 'doors',
+    transmission: 'transmission',
+    driveType: 'driveType',
+    fuel: 'fuel',
+    condition: 'condition',
+    price: 'price',
+    weeklyDiscount: 'weeklyDiscount',
+    monthlyDiscount: 'monthlyDiscount',
+    deposit: 'deposit',
+    vin: 'vin',
+    licensePlate: 'licensePlate',
+    deliveryOption: 'deliveryOption',
+    insuranceInfo: 'insuranceInfo',
+    rentalTerms: 'rentalTerms',
+    description: 'description',
+    features: 'features',
+    isFeatured: 'isFeatured',
+    isAvailable: 'isAvailable',
+    mileage: 'mileage',
+    engineSize: 'engineSize',
+    horsepower: 'horsepower',
+    acceleration: 'acceleration',
+    topSpeed: 'topSpeed',
+    images: 'images',
+    location: 'location',
+    vendorId: 'vendorId',
+    status: 'status',
+    sponsored: 'sponsored',
+    endDate: 'endDate',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CarScalarFieldEnum = (typeof CarScalarFieldEnum)[keyof typeof CarScalarFieldEnum]
+
+
+  export const CarBookingsScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    email: 'email',
+    phone: 'phone',
+    message: 'message',
+    listingId: 'listingId',
+    vendorId: 'vendorId',
+    read: 'read'
+  };
+
+  export type CarBookingsScalarFieldEnum = (typeof CarBookingsScalarFieldEnum)[keyof typeof CarBookingsScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -20240,6 +23110,90 @@ export namespace Prisma {
    * Reference to a field of type 'QueryMode'
    */
   export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'CarType'
+   */
+  export type EnumCarTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CarType'>
+    
+
+
+  /**
+   * Reference to a field of type 'CarType[]'
+   */
+  export type ListEnumCarTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CarType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Transmission'
+   */
+  export type EnumTransmissionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Transmission'>
+    
+
+
+  /**
+   * Reference to a field of type 'Transmission[]'
+   */
+  export type ListEnumTransmissionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Transmission[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'DriveType'
+   */
+  export type EnumDriveTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DriveType'>
+    
+
+
+  /**
+   * Reference to a field of type 'DriveType[]'
+   */
+  export type ListEnumDriveTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DriveType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'FuelType'
+   */
+  export type EnumFuelTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'FuelType'>
+    
+
+
+  /**
+   * Reference to a field of type 'FuelType[]'
+   */
+  export type ListEnumFuelTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'FuelType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'ConditionLevel'
+   */
+  export type EnumConditionLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ConditionLevel'>
+    
+
+
+  /**
+   * Reference to a field of type 'ConditionLevel[]'
+   */
+  export type ListEnumConditionLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ConditionLevel[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'DeliveryOption'
+   */
+  export type EnumDeliveryOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DeliveryOption'>
+    
+
+
+  /**
+   * Reference to a field of type 'DeliveryOption[]'
+   */
+  export type ListEnumDeliveryOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DeliveryOption[]'>
     
   /**
    * Deep Input Types
@@ -21516,7 +24470,7 @@ export namespace Prisma {
     AND?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
     OR?: HelicopterForSaleListingWhereInput[]
     NOT?: HelicopterForSaleListingWhereInput | HelicopterForSaleListingWhereInput[]
-    id?: UuidFilter<"HelicopterForSaleListing"> | string
+    id?: StringFilter<"HelicopterForSaleListing"> | string
     createdAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
     updatedAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
     helicopterName?: StringFilter<"HelicopterForSaleListing"> | string
@@ -21678,7 +24632,7 @@ export namespace Prisma {
     AND?: HelicopterForSaleListingScalarWhereWithAggregatesInput | HelicopterForSaleListingScalarWhereWithAggregatesInput[]
     OR?: HelicopterForSaleListingScalarWhereWithAggregatesInput[]
     NOT?: HelicopterForSaleListingScalarWhereWithAggregatesInput | HelicopterForSaleListingScalarWhereWithAggregatesInput[]
-    id?: UuidWithAggregatesFilter<"HelicopterForSaleListing"> | string
+    id?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
     createdAt?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"HelicopterForSaleListing"> | Date | string
     helicopterName?: StringWithAggregatesFilter<"HelicopterForSaleListing"> | string
@@ -21718,7 +24672,7 @@ export namespace Prisma {
     AND?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
     OR?: CabinFeatureWhereInput[]
     NOT?: CabinFeatureWhereInput | CabinFeatureWhereInput[]
-    id?: UuidFilter<"CabinFeature"> | string
+    id?: StringFilter<"CabinFeature"> | string
     createdAt?: DateTimeFilter<"CabinFeature"> | Date | string
     updatedAt?: DateTimeFilter<"CabinFeature"> | Date | string
     name?: StringFilter<"CabinFeature"> | string
@@ -21758,7 +24712,7 @@ export namespace Prisma {
     AND?: CabinFeatureScalarWhereWithAggregatesInput | CabinFeatureScalarWhereWithAggregatesInput[]
     OR?: CabinFeatureScalarWhereWithAggregatesInput[]
     NOT?: CabinFeatureScalarWhereWithAggregatesInput | CabinFeatureScalarWhereWithAggregatesInput[]
-    id?: UuidWithAggregatesFilter<"CabinFeature"> | string
+    id?: StringWithAggregatesFilter<"CabinFeature"> | string
     createdAt?: DateTimeWithAggregatesFilter<"CabinFeature"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"CabinFeature"> | Date | string
     name?: StringWithAggregatesFilter<"CabinFeature"> | string
@@ -22177,6 +25131,297 @@ export namespace Prisma {
     vendorId?: UuidWithAggregatesFilter<"HelicopterForCharterMessages"> | string
     createdAt?: DateTimeWithAggregatesFilter<"HelicopterForCharterMessages"> | Date | string
     read?: BoolWithAggregatesFilter<"HelicopterForCharterMessages"> | boolean
+  }
+
+  export type CarWhereInput = {
+    AND?: CarWhereInput | CarWhereInput[]
+    OR?: CarWhereInput[]
+    NOT?: CarWhereInput | CarWhereInput[]
+    id?: StringFilter<"Car"> | string
+    brand?: StringFilter<"Car"> | string
+    model?: StringFilter<"Car"> | string
+    year?: IntFilter<"Car"> | number
+    carType?: EnumCarTypeFilter<"Car"> | $Enums.CarType
+    color?: StringFilter<"Car"> | string
+    interiorColor?: StringFilter<"Car"> | string
+    seats?: IntFilter<"Car"> | number
+    doors?: IntNullableFilter<"Car"> | number | null
+    transmission?: EnumTransmissionFilter<"Car"> | $Enums.Transmission
+    driveType?: EnumDriveTypeFilter<"Car"> | $Enums.DriveType
+    fuel?: EnumFuelTypeFilter<"Car"> | $Enums.FuelType
+    condition?: EnumConditionLevelNullableFilter<"Car"> | $Enums.ConditionLevel | null
+    price?: FloatFilter<"Car"> | number
+    weeklyDiscount?: FloatNullableFilter<"Car"> | number | null
+    monthlyDiscount?: FloatNullableFilter<"Car"> | number | null
+    deposit?: FloatNullableFilter<"Car"> | number | null
+    vin?: StringNullableFilter<"Car"> | string | null
+    licensePlate?: StringNullableFilter<"Car"> | string | null
+    deliveryOption?: EnumDeliveryOptionNullableFilter<"Car"> | $Enums.DeliveryOption | null
+    insuranceInfo?: StringNullableFilter<"Car"> | string | null
+    rentalTerms?: StringNullableFilter<"Car"> | string | null
+    description?: StringFilter<"Car"> | string
+    features?: StringNullableListFilter<"Car">
+    isFeatured?: BoolFilter<"Car"> | boolean
+    isAvailable?: BoolFilter<"Car"> | boolean
+    mileage?: IntNullableFilter<"Car"> | number | null
+    engineSize?: StringNullableFilter<"Car"> | string | null
+    horsepower?: IntNullableFilter<"Car"> | number | null
+    acceleration?: FloatNullableFilter<"Car"> | number | null
+    topSpeed?: IntNullableFilter<"Car"> | number | null
+    images?: StringNullableListFilter<"Car">
+    location?: StringFilter<"Car"> | string
+    vendorId?: StringFilter<"Car"> | string
+    status?: StringFilter<"Car"> | string
+    sponsored?: BoolFilter<"Car"> | boolean
+    endDate?: DateTimeFilter<"Car"> | Date | string
+    createdAt?: DateTimeFilter<"Car"> | Date | string
+    updatedAt?: DateTimeFilter<"Car"> | Date | string
+  }
+
+  export type CarOrderByWithRelationInput = {
+    id?: SortOrder
+    brand?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    carType?: SortOrder
+    color?: SortOrder
+    interiorColor?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrderInput | SortOrder
+    transmission?: SortOrder
+    driveType?: SortOrder
+    fuel?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrderInput | SortOrder
+    monthlyDiscount?: SortOrderInput | SortOrder
+    deposit?: SortOrderInput | SortOrder
+    vin?: SortOrderInput | SortOrder
+    licensePlate?: SortOrderInput | SortOrder
+    deliveryOption?: SortOrderInput | SortOrder
+    insuranceInfo?: SortOrderInput | SortOrder
+    rentalTerms?: SortOrderInput | SortOrder
+    description?: SortOrder
+    features?: SortOrder
+    isFeatured?: SortOrder
+    isAvailable?: SortOrder
+    mileage?: SortOrderInput | SortOrder
+    engineSize?: SortOrderInput | SortOrder
+    horsepower?: SortOrderInput | SortOrder
+    acceleration?: SortOrderInput | SortOrder
+    topSpeed?: SortOrderInput | SortOrder
+    images?: SortOrder
+    location?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CarWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CarWhereInput | CarWhereInput[]
+    OR?: CarWhereInput[]
+    NOT?: CarWhereInput | CarWhereInput[]
+    brand?: StringFilter<"Car"> | string
+    model?: StringFilter<"Car"> | string
+    year?: IntFilter<"Car"> | number
+    carType?: EnumCarTypeFilter<"Car"> | $Enums.CarType
+    color?: StringFilter<"Car"> | string
+    interiorColor?: StringFilter<"Car"> | string
+    seats?: IntFilter<"Car"> | number
+    doors?: IntNullableFilter<"Car"> | number | null
+    transmission?: EnumTransmissionFilter<"Car"> | $Enums.Transmission
+    driveType?: EnumDriveTypeFilter<"Car"> | $Enums.DriveType
+    fuel?: EnumFuelTypeFilter<"Car"> | $Enums.FuelType
+    condition?: EnumConditionLevelNullableFilter<"Car"> | $Enums.ConditionLevel | null
+    price?: FloatFilter<"Car"> | number
+    weeklyDiscount?: FloatNullableFilter<"Car"> | number | null
+    monthlyDiscount?: FloatNullableFilter<"Car"> | number | null
+    deposit?: FloatNullableFilter<"Car"> | number | null
+    vin?: StringNullableFilter<"Car"> | string | null
+    licensePlate?: StringNullableFilter<"Car"> | string | null
+    deliveryOption?: EnumDeliveryOptionNullableFilter<"Car"> | $Enums.DeliveryOption | null
+    insuranceInfo?: StringNullableFilter<"Car"> | string | null
+    rentalTerms?: StringNullableFilter<"Car"> | string | null
+    description?: StringFilter<"Car"> | string
+    features?: StringNullableListFilter<"Car">
+    isFeatured?: BoolFilter<"Car"> | boolean
+    isAvailable?: BoolFilter<"Car"> | boolean
+    mileage?: IntNullableFilter<"Car"> | number | null
+    engineSize?: StringNullableFilter<"Car"> | string | null
+    horsepower?: IntNullableFilter<"Car"> | number | null
+    acceleration?: FloatNullableFilter<"Car"> | number | null
+    topSpeed?: IntNullableFilter<"Car"> | number | null
+    images?: StringNullableListFilter<"Car">
+    location?: StringFilter<"Car"> | string
+    vendorId?: StringFilter<"Car"> | string
+    status?: StringFilter<"Car"> | string
+    sponsored?: BoolFilter<"Car"> | boolean
+    endDate?: DateTimeFilter<"Car"> | Date | string
+    createdAt?: DateTimeFilter<"Car"> | Date | string
+    updatedAt?: DateTimeFilter<"Car"> | Date | string
+  }, "id">
+
+  export type CarOrderByWithAggregationInput = {
+    id?: SortOrder
+    brand?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    carType?: SortOrder
+    color?: SortOrder
+    interiorColor?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrderInput | SortOrder
+    transmission?: SortOrder
+    driveType?: SortOrder
+    fuel?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrderInput | SortOrder
+    monthlyDiscount?: SortOrderInput | SortOrder
+    deposit?: SortOrderInput | SortOrder
+    vin?: SortOrderInput | SortOrder
+    licensePlate?: SortOrderInput | SortOrder
+    deliveryOption?: SortOrderInput | SortOrder
+    insuranceInfo?: SortOrderInput | SortOrder
+    rentalTerms?: SortOrderInput | SortOrder
+    description?: SortOrder
+    features?: SortOrder
+    isFeatured?: SortOrder
+    isAvailable?: SortOrder
+    mileage?: SortOrderInput | SortOrder
+    engineSize?: SortOrderInput | SortOrder
+    horsepower?: SortOrderInput | SortOrder
+    acceleration?: SortOrderInput | SortOrder
+    topSpeed?: SortOrderInput | SortOrder
+    images?: SortOrder
+    location?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: CarCountOrderByAggregateInput
+    _avg?: CarAvgOrderByAggregateInput
+    _max?: CarMaxOrderByAggregateInput
+    _min?: CarMinOrderByAggregateInput
+    _sum?: CarSumOrderByAggregateInput
+  }
+
+  export type CarScalarWhereWithAggregatesInput = {
+    AND?: CarScalarWhereWithAggregatesInput | CarScalarWhereWithAggregatesInput[]
+    OR?: CarScalarWhereWithAggregatesInput[]
+    NOT?: CarScalarWhereWithAggregatesInput | CarScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Car"> | string
+    brand?: StringWithAggregatesFilter<"Car"> | string
+    model?: StringWithAggregatesFilter<"Car"> | string
+    year?: IntWithAggregatesFilter<"Car"> | number
+    carType?: EnumCarTypeWithAggregatesFilter<"Car"> | $Enums.CarType
+    color?: StringWithAggregatesFilter<"Car"> | string
+    interiorColor?: StringWithAggregatesFilter<"Car"> | string
+    seats?: IntWithAggregatesFilter<"Car"> | number
+    doors?: IntNullableWithAggregatesFilter<"Car"> | number | null
+    transmission?: EnumTransmissionWithAggregatesFilter<"Car"> | $Enums.Transmission
+    driveType?: EnumDriveTypeWithAggregatesFilter<"Car"> | $Enums.DriveType
+    fuel?: EnumFuelTypeWithAggregatesFilter<"Car"> | $Enums.FuelType
+    condition?: EnumConditionLevelNullableWithAggregatesFilter<"Car"> | $Enums.ConditionLevel | null
+    price?: FloatWithAggregatesFilter<"Car"> | number
+    weeklyDiscount?: FloatNullableWithAggregatesFilter<"Car"> | number | null
+    monthlyDiscount?: FloatNullableWithAggregatesFilter<"Car"> | number | null
+    deposit?: FloatNullableWithAggregatesFilter<"Car"> | number | null
+    vin?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    licensePlate?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    deliveryOption?: EnumDeliveryOptionNullableWithAggregatesFilter<"Car"> | $Enums.DeliveryOption | null
+    insuranceInfo?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    rentalTerms?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    description?: StringWithAggregatesFilter<"Car"> | string
+    features?: StringNullableListFilter<"Car">
+    isFeatured?: BoolWithAggregatesFilter<"Car"> | boolean
+    isAvailable?: BoolWithAggregatesFilter<"Car"> | boolean
+    mileage?: IntNullableWithAggregatesFilter<"Car"> | number | null
+    engineSize?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    horsepower?: IntNullableWithAggregatesFilter<"Car"> | number | null
+    acceleration?: FloatNullableWithAggregatesFilter<"Car"> | number | null
+    topSpeed?: IntNullableWithAggregatesFilter<"Car"> | number | null
+    images?: StringNullableListFilter<"Car">
+    location?: StringWithAggregatesFilter<"Car"> | string
+    vendorId?: StringWithAggregatesFilter<"Car"> | string
+    status?: StringWithAggregatesFilter<"Car"> | string
+    sponsored?: BoolWithAggregatesFilter<"Car"> | boolean
+    endDate?: DateTimeWithAggregatesFilter<"Car"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Car"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Car"> | Date | string
+  }
+
+  export type CarBookingsWhereInput = {
+    AND?: CarBookingsWhereInput | CarBookingsWhereInput[]
+    OR?: CarBookingsWhereInput[]
+    NOT?: CarBookingsWhereInput | CarBookingsWhereInput[]
+    id?: StringFilter<"CarBookings"> | string
+    name?: StringFilter<"CarBookings"> | string
+    email?: StringFilter<"CarBookings"> | string
+    phone?: StringFilter<"CarBookings"> | string
+    message?: StringFilter<"CarBookings"> | string
+    listingId?: StringFilter<"CarBookings"> | string
+    vendorId?: StringFilter<"CarBookings"> | string
+    read?: BoolFilter<"CarBookings"> | boolean
+  }
+
+  export type CarBookingsOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    read?: SortOrder
+  }
+
+  export type CarBookingsWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CarBookingsWhereInput | CarBookingsWhereInput[]
+    OR?: CarBookingsWhereInput[]
+    NOT?: CarBookingsWhereInput | CarBookingsWhereInput[]
+    name?: StringFilter<"CarBookings"> | string
+    email?: StringFilter<"CarBookings"> | string
+    phone?: StringFilter<"CarBookings"> | string
+    message?: StringFilter<"CarBookings"> | string
+    listingId?: StringFilter<"CarBookings"> | string
+    vendorId?: StringFilter<"CarBookings"> | string
+    read?: BoolFilter<"CarBookings"> | boolean
+  }, "id">
+
+  export type CarBookingsOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    read?: SortOrder
+    _count?: CarBookingsCountOrderByAggregateInput
+    _max?: CarBookingsMaxOrderByAggregateInput
+    _min?: CarBookingsMinOrderByAggregateInput
+  }
+
+  export type CarBookingsScalarWhereWithAggregatesInput = {
+    AND?: CarBookingsScalarWhereWithAggregatesInput | CarBookingsScalarWhereWithAggregatesInput[]
+    OR?: CarBookingsScalarWhereWithAggregatesInput[]
+    NOT?: CarBookingsScalarWhereWithAggregatesInput | CarBookingsScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"CarBookings"> | string
+    name?: StringWithAggregatesFilter<"CarBookings"> | string
+    email?: StringWithAggregatesFilter<"CarBookings"> | string
+    phone?: StringWithAggregatesFilter<"CarBookings"> | string
+    message?: StringWithAggregatesFilter<"CarBookings"> | string
+    listingId?: StringWithAggregatesFilter<"CarBookings"> | string
+    vendorId?: StringWithAggregatesFilter<"CarBookings"> | string
+    read?: BoolWithAggregatesFilter<"CarBookings"> | boolean
   }
 
   export type UserCreateInput = {
@@ -24630,6 +27875,377 @@ export namespace Prisma {
     read?: BoolFieldUpdateOperationsInput | boolean
   }
 
+  export type CarCreateInput = {
+    id?: string
+    brand: string
+    model: string
+    year: number
+    carType: $Enums.CarType
+    color: string
+    interiorColor: string
+    seats: number
+    doors?: number | null
+    transmission: $Enums.Transmission
+    driveType: $Enums.DriveType
+    fuel: $Enums.FuelType
+    condition?: $Enums.ConditionLevel | null
+    price: number
+    weeklyDiscount?: number | null
+    monthlyDiscount?: number | null
+    deposit?: number | null
+    vin?: string | null
+    licensePlate?: string | null
+    deliveryOption?: $Enums.DeliveryOption | null
+    insuranceInfo?: string | null
+    rentalTerms?: string | null
+    description: string
+    features?: CarCreatefeaturesInput | string[]
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: number | null
+    engineSize?: string | null
+    horsepower?: number | null
+    acceleration?: number | null
+    topSpeed?: number | null
+    images?: CarCreateimagesInput | string[]
+    location: string
+    vendorId: string
+    status?: string
+    sponsored?: boolean
+    endDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CarUncheckedCreateInput = {
+    id?: string
+    brand: string
+    model: string
+    year: number
+    carType: $Enums.CarType
+    color: string
+    interiorColor: string
+    seats: number
+    doors?: number | null
+    transmission: $Enums.Transmission
+    driveType: $Enums.DriveType
+    fuel: $Enums.FuelType
+    condition?: $Enums.ConditionLevel | null
+    price: number
+    weeklyDiscount?: number | null
+    monthlyDiscount?: number | null
+    deposit?: number | null
+    vin?: string | null
+    licensePlate?: string | null
+    deliveryOption?: $Enums.DeliveryOption | null
+    insuranceInfo?: string | null
+    rentalTerms?: string | null
+    description: string
+    features?: CarCreatefeaturesInput | string[]
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: number | null
+    engineSize?: string | null
+    horsepower?: number | null
+    acceleration?: number | null
+    topSpeed?: number | null
+    images?: CarCreateimagesInput | string[]
+    location: string
+    vendorId: string
+    status?: string
+    sponsored?: boolean
+    endDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CarUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
+    color?: StringFieldUpdateOperationsInput | string
+    interiorColor?: StringFieldUpdateOperationsInput | string
+    seats?: IntFieldUpdateOperationsInput | number
+    doors?: NullableIntFieldUpdateOperationsInput | number | null
+    transmission?: EnumTransmissionFieldUpdateOperationsInput | $Enums.Transmission
+    driveType?: EnumDriveTypeFieldUpdateOperationsInput | $Enums.DriveType
+    fuel?: EnumFuelTypeFieldUpdateOperationsInput | $Enums.FuelType
+    condition?: NullableEnumConditionLevelFieldUpdateOperationsInput | $Enums.ConditionLevel | null
+    price?: FloatFieldUpdateOperationsInput | number
+    weeklyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    monthlyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    deposit?: NullableFloatFieldUpdateOperationsInput | number | null
+    vin?: NullableStringFieldUpdateOperationsInput | string | null
+    licensePlate?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryOption?: NullableEnumDeliveryOptionFieldUpdateOperationsInput | $Enums.DeliveryOption | null
+    insuranceInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    rentalTerms?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    features?: CarUpdatefeaturesInput | string[]
+    isFeatured?: BoolFieldUpdateOperationsInput | boolean
+    isAvailable?: BoolFieldUpdateOperationsInput | boolean
+    mileage?: NullableIntFieldUpdateOperationsInput | number | null
+    engineSize?: NullableStringFieldUpdateOperationsInput | string | null
+    horsepower?: NullableIntFieldUpdateOperationsInput | number | null
+    acceleration?: NullableFloatFieldUpdateOperationsInput | number | null
+    topSpeed?: NullableIntFieldUpdateOperationsInput | number | null
+    images?: CarUpdateimagesInput | string[]
+    location?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CarUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
+    color?: StringFieldUpdateOperationsInput | string
+    interiorColor?: StringFieldUpdateOperationsInput | string
+    seats?: IntFieldUpdateOperationsInput | number
+    doors?: NullableIntFieldUpdateOperationsInput | number | null
+    transmission?: EnumTransmissionFieldUpdateOperationsInput | $Enums.Transmission
+    driveType?: EnumDriveTypeFieldUpdateOperationsInput | $Enums.DriveType
+    fuel?: EnumFuelTypeFieldUpdateOperationsInput | $Enums.FuelType
+    condition?: NullableEnumConditionLevelFieldUpdateOperationsInput | $Enums.ConditionLevel | null
+    price?: FloatFieldUpdateOperationsInput | number
+    weeklyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    monthlyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    deposit?: NullableFloatFieldUpdateOperationsInput | number | null
+    vin?: NullableStringFieldUpdateOperationsInput | string | null
+    licensePlate?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryOption?: NullableEnumDeliveryOptionFieldUpdateOperationsInput | $Enums.DeliveryOption | null
+    insuranceInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    rentalTerms?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    features?: CarUpdatefeaturesInput | string[]
+    isFeatured?: BoolFieldUpdateOperationsInput | boolean
+    isAvailable?: BoolFieldUpdateOperationsInput | boolean
+    mileage?: NullableIntFieldUpdateOperationsInput | number | null
+    engineSize?: NullableStringFieldUpdateOperationsInput | string | null
+    horsepower?: NullableIntFieldUpdateOperationsInput | number | null
+    acceleration?: NullableFloatFieldUpdateOperationsInput | number | null
+    topSpeed?: NullableIntFieldUpdateOperationsInput | number | null
+    images?: CarUpdateimagesInput | string[]
+    location?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CarCreateManyInput = {
+    id?: string
+    brand: string
+    model: string
+    year: number
+    carType: $Enums.CarType
+    color: string
+    interiorColor: string
+    seats: number
+    doors?: number | null
+    transmission: $Enums.Transmission
+    driveType: $Enums.DriveType
+    fuel: $Enums.FuelType
+    condition?: $Enums.ConditionLevel | null
+    price: number
+    weeklyDiscount?: number | null
+    monthlyDiscount?: number | null
+    deposit?: number | null
+    vin?: string | null
+    licensePlate?: string | null
+    deliveryOption?: $Enums.DeliveryOption | null
+    insuranceInfo?: string | null
+    rentalTerms?: string | null
+    description: string
+    features?: CarCreatefeaturesInput | string[]
+    isFeatured?: boolean
+    isAvailable?: boolean
+    mileage?: number | null
+    engineSize?: string | null
+    horsepower?: number | null
+    acceleration?: number | null
+    topSpeed?: number | null
+    images?: CarCreateimagesInput | string[]
+    location: string
+    vendorId: string
+    status?: string
+    sponsored?: boolean
+    endDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CarUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
+    color?: StringFieldUpdateOperationsInput | string
+    interiorColor?: StringFieldUpdateOperationsInput | string
+    seats?: IntFieldUpdateOperationsInput | number
+    doors?: NullableIntFieldUpdateOperationsInput | number | null
+    transmission?: EnumTransmissionFieldUpdateOperationsInput | $Enums.Transmission
+    driveType?: EnumDriveTypeFieldUpdateOperationsInput | $Enums.DriveType
+    fuel?: EnumFuelTypeFieldUpdateOperationsInput | $Enums.FuelType
+    condition?: NullableEnumConditionLevelFieldUpdateOperationsInput | $Enums.ConditionLevel | null
+    price?: FloatFieldUpdateOperationsInput | number
+    weeklyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    monthlyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    deposit?: NullableFloatFieldUpdateOperationsInput | number | null
+    vin?: NullableStringFieldUpdateOperationsInput | string | null
+    licensePlate?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryOption?: NullableEnumDeliveryOptionFieldUpdateOperationsInput | $Enums.DeliveryOption | null
+    insuranceInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    rentalTerms?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    features?: CarUpdatefeaturesInput | string[]
+    isFeatured?: BoolFieldUpdateOperationsInput | boolean
+    isAvailable?: BoolFieldUpdateOperationsInput | boolean
+    mileage?: NullableIntFieldUpdateOperationsInput | number | null
+    engineSize?: NullableStringFieldUpdateOperationsInput | string | null
+    horsepower?: NullableIntFieldUpdateOperationsInput | number | null
+    acceleration?: NullableFloatFieldUpdateOperationsInput | number | null
+    topSpeed?: NullableIntFieldUpdateOperationsInput | number | null
+    images?: CarUpdateimagesInput | string[]
+    location?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CarUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    model?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    carType?: EnumCarTypeFieldUpdateOperationsInput | $Enums.CarType
+    color?: StringFieldUpdateOperationsInput | string
+    interiorColor?: StringFieldUpdateOperationsInput | string
+    seats?: IntFieldUpdateOperationsInput | number
+    doors?: NullableIntFieldUpdateOperationsInput | number | null
+    transmission?: EnumTransmissionFieldUpdateOperationsInput | $Enums.Transmission
+    driveType?: EnumDriveTypeFieldUpdateOperationsInput | $Enums.DriveType
+    fuel?: EnumFuelTypeFieldUpdateOperationsInput | $Enums.FuelType
+    condition?: NullableEnumConditionLevelFieldUpdateOperationsInput | $Enums.ConditionLevel | null
+    price?: FloatFieldUpdateOperationsInput | number
+    weeklyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    monthlyDiscount?: NullableFloatFieldUpdateOperationsInput | number | null
+    deposit?: NullableFloatFieldUpdateOperationsInput | number | null
+    vin?: NullableStringFieldUpdateOperationsInput | string | null
+    licensePlate?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryOption?: NullableEnumDeliveryOptionFieldUpdateOperationsInput | $Enums.DeliveryOption | null
+    insuranceInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    rentalTerms?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    features?: CarUpdatefeaturesInput | string[]
+    isFeatured?: BoolFieldUpdateOperationsInput | boolean
+    isAvailable?: BoolFieldUpdateOperationsInput | boolean
+    mileage?: NullableIntFieldUpdateOperationsInput | number | null
+    engineSize?: NullableStringFieldUpdateOperationsInput | string | null
+    horsepower?: NullableIntFieldUpdateOperationsInput | number | null
+    acceleration?: NullableFloatFieldUpdateOperationsInput | number | null
+    topSpeed?: NullableIntFieldUpdateOperationsInput | number | null
+    images?: CarUpdateimagesInput | string[]
+    location?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    sponsored?: BoolFieldUpdateOperationsInput | boolean
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CarBookingsCreateInput = {
+    id?: string
+    name: string
+    email: string
+    phone: string
+    message: string
+    listingId: string
+    vendorId: string
+    read?: boolean
+  }
+
+  export type CarBookingsUncheckedCreateInput = {
+    id?: string
+    name: string
+    email: string
+    phone: string
+    message: string
+    listingId: string
+    vendorId: string
+    read?: boolean
+  }
+
+  export type CarBookingsUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type CarBookingsUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type CarBookingsCreateManyInput = {
+    id?: string
+    name: string
+    email: string
+    phone: string
+    message: string
+    listingId: string
+    vendorId: string
+    read?: boolean
+  }
+
+  export type CarBookingsUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type CarBookingsUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    listingId?: StringFieldUpdateOperationsInput | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    read?: BoolFieldUpdateOperationsInput | boolean
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -26182,6 +29798,291 @@ export namespace Prisma {
     passengerCount?: SortOrder
   }
 
+  export type EnumCarTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.CarType | EnumCarTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumCarTypeFilter<$PrismaModel> | $Enums.CarType
+  }
+
+  export type EnumTransmissionFilter<$PrismaModel = never> = {
+    equals?: $Enums.Transmission | EnumTransmissionFieldRefInput<$PrismaModel>
+    in?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTransmissionFilter<$PrismaModel> | $Enums.Transmission
+  }
+
+  export type EnumDriveTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.DriveType | EnumDriveTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumDriveTypeFilter<$PrismaModel> | $Enums.DriveType
+  }
+
+  export type EnumFuelTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.FuelType | EnumFuelTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumFuelTypeFilter<$PrismaModel> | $Enums.FuelType
+  }
+
+  export type EnumConditionLevelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConditionLevel | EnumConditionLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumConditionLevelNullableFilter<$PrismaModel> | $Enums.ConditionLevel | null
+  }
+
+  export type EnumDeliveryOptionNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.DeliveryOption | EnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    in?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel> | $Enums.DeliveryOption | null
+  }
+
+  export type CarCountOrderByAggregateInput = {
+    id?: SortOrder
+    brand?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    carType?: SortOrder
+    color?: SortOrder
+    interiorColor?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrder
+    transmission?: SortOrder
+    driveType?: SortOrder
+    fuel?: SortOrder
+    condition?: SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrder
+    monthlyDiscount?: SortOrder
+    deposit?: SortOrder
+    vin?: SortOrder
+    licensePlate?: SortOrder
+    deliveryOption?: SortOrder
+    insuranceInfo?: SortOrder
+    rentalTerms?: SortOrder
+    description?: SortOrder
+    features?: SortOrder
+    isFeatured?: SortOrder
+    isAvailable?: SortOrder
+    mileage?: SortOrder
+    engineSize?: SortOrder
+    horsepower?: SortOrder
+    acceleration?: SortOrder
+    topSpeed?: SortOrder
+    images?: SortOrder
+    location?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CarAvgOrderByAggregateInput = {
+    year?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrder
+    monthlyDiscount?: SortOrder
+    deposit?: SortOrder
+    mileage?: SortOrder
+    horsepower?: SortOrder
+    acceleration?: SortOrder
+    topSpeed?: SortOrder
+  }
+
+  export type CarMaxOrderByAggregateInput = {
+    id?: SortOrder
+    brand?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    carType?: SortOrder
+    color?: SortOrder
+    interiorColor?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrder
+    transmission?: SortOrder
+    driveType?: SortOrder
+    fuel?: SortOrder
+    condition?: SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrder
+    monthlyDiscount?: SortOrder
+    deposit?: SortOrder
+    vin?: SortOrder
+    licensePlate?: SortOrder
+    deliveryOption?: SortOrder
+    insuranceInfo?: SortOrder
+    rentalTerms?: SortOrder
+    description?: SortOrder
+    isFeatured?: SortOrder
+    isAvailable?: SortOrder
+    mileage?: SortOrder
+    engineSize?: SortOrder
+    horsepower?: SortOrder
+    acceleration?: SortOrder
+    topSpeed?: SortOrder
+    location?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CarMinOrderByAggregateInput = {
+    id?: SortOrder
+    brand?: SortOrder
+    model?: SortOrder
+    year?: SortOrder
+    carType?: SortOrder
+    color?: SortOrder
+    interiorColor?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrder
+    transmission?: SortOrder
+    driveType?: SortOrder
+    fuel?: SortOrder
+    condition?: SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrder
+    monthlyDiscount?: SortOrder
+    deposit?: SortOrder
+    vin?: SortOrder
+    licensePlate?: SortOrder
+    deliveryOption?: SortOrder
+    insuranceInfo?: SortOrder
+    rentalTerms?: SortOrder
+    description?: SortOrder
+    isFeatured?: SortOrder
+    isAvailable?: SortOrder
+    mileage?: SortOrder
+    engineSize?: SortOrder
+    horsepower?: SortOrder
+    acceleration?: SortOrder
+    topSpeed?: SortOrder
+    location?: SortOrder
+    vendorId?: SortOrder
+    status?: SortOrder
+    sponsored?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CarSumOrderByAggregateInput = {
+    year?: SortOrder
+    seats?: SortOrder
+    doors?: SortOrder
+    price?: SortOrder
+    weeklyDiscount?: SortOrder
+    monthlyDiscount?: SortOrder
+    deposit?: SortOrder
+    mileage?: SortOrder
+    horsepower?: SortOrder
+    acceleration?: SortOrder
+    topSpeed?: SortOrder
+  }
+
+  export type EnumCarTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CarType | EnumCarTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumCarTypeWithAggregatesFilter<$PrismaModel> | $Enums.CarType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCarTypeFilter<$PrismaModel>
+    _max?: NestedEnumCarTypeFilter<$PrismaModel>
+  }
+
+  export type EnumTransmissionWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Transmission | EnumTransmissionFieldRefInput<$PrismaModel>
+    in?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTransmissionWithAggregatesFilter<$PrismaModel> | $Enums.Transmission
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTransmissionFilter<$PrismaModel>
+    _max?: NestedEnumTransmissionFilter<$PrismaModel>
+  }
+
+  export type EnumDriveTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.DriveType | EnumDriveTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumDriveTypeWithAggregatesFilter<$PrismaModel> | $Enums.DriveType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumDriveTypeFilter<$PrismaModel>
+    _max?: NestedEnumDriveTypeFilter<$PrismaModel>
+  }
+
+  export type EnumFuelTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.FuelType | EnumFuelTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumFuelTypeWithAggregatesFilter<$PrismaModel> | $Enums.FuelType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumFuelTypeFilter<$PrismaModel>
+    _max?: NestedEnumFuelTypeFilter<$PrismaModel>
+  }
+
+  export type EnumConditionLevelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConditionLevel | EnumConditionLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumConditionLevelNullableWithAggregatesFilter<$PrismaModel> | $Enums.ConditionLevel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumConditionLevelNullableFilter<$PrismaModel>
+    _max?: NestedEnumConditionLevelNullableFilter<$PrismaModel>
+  }
+
+  export type EnumDeliveryOptionNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.DeliveryOption | EnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    in?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumDeliveryOptionNullableWithAggregatesFilter<$PrismaModel> | $Enums.DeliveryOption | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
+    _max?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
+  }
+
+  export type CarBookingsCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    read?: SortOrder
+  }
+
+  export type CarBookingsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    read?: SortOrder
+  }
+
+  export type CarBookingsMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    listingId?: SortOrder
+    vendorId?: SortOrder
+    read?: SortOrder
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -26409,6 +30310,48 @@ export namespace Prisma {
   }
 
   export type HelicopterForCharterUpdateimageUrlsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type CarCreatefeaturesInput = {
+    set: string[]
+  }
+
+  export type CarCreateimagesInput = {
+    set: string[]
+  }
+
+  export type EnumCarTypeFieldUpdateOperationsInput = {
+    set?: $Enums.CarType
+  }
+
+  export type EnumTransmissionFieldUpdateOperationsInput = {
+    set?: $Enums.Transmission
+  }
+
+  export type EnumDriveTypeFieldUpdateOperationsInput = {
+    set?: $Enums.DriveType
+  }
+
+  export type EnumFuelTypeFieldUpdateOperationsInput = {
+    set?: $Enums.FuelType
+  }
+
+  export type NullableEnumConditionLevelFieldUpdateOperationsInput = {
+    set?: $Enums.ConditionLevel | null
+  }
+
+  export type NullableEnumDeliveryOptionFieldUpdateOperationsInput = {
+    set?: $Enums.DeliveryOption | null
+  }
+
+  export type CarUpdatefeaturesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type CarUpdateimagesInput = {
     set?: string[]
     push?: string | string[]
   }
@@ -26711,6 +30654,108 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedEnumCarTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.CarType | EnumCarTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumCarTypeFilter<$PrismaModel> | $Enums.CarType
+  }
+
+  export type NestedEnumTransmissionFilter<$PrismaModel = never> = {
+    equals?: $Enums.Transmission | EnumTransmissionFieldRefInput<$PrismaModel>
+    in?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTransmissionFilter<$PrismaModel> | $Enums.Transmission
+  }
+
+  export type NestedEnumDriveTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.DriveType | EnumDriveTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumDriveTypeFilter<$PrismaModel> | $Enums.DriveType
+  }
+
+  export type NestedEnumFuelTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.FuelType | EnumFuelTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumFuelTypeFilter<$PrismaModel> | $Enums.FuelType
+  }
+
+  export type NestedEnumConditionLevelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConditionLevel | EnumConditionLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumConditionLevelNullableFilter<$PrismaModel> | $Enums.ConditionLevel | null
+  }
+
+  export type NestedEnumDeliveryOptionNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.DeliveryOption | EnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    in?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel> | $Enums.DeliveryOption | null
+  }
+
+  export type NestedEnumCarTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CarType | EnumCarTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CarType[] | ListEnumCarTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumCarTypeWithAggregatesFilter<$PrismaModel> | $Enums.CarType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCarTypeFilter<$PrismaModel>
+    _max?: NestedEnumCarTypeFilter<$PrismaModel>
+  }
+
+  export type NestedEnumTransmissionWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Transmission | EnumTransmissionFieldRefInput<$PrismaModel>
+    in?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Transmission[] | ListEnumTransmissionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTransmissionWithAggregatesFilter<$PrismaModel> | $Enums.Transmission
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTransmissionFilter<$PrismaModel>
+    _max?: NestedEnumTransmissionFilter<$PrismaModel>
+  }
+
+  export type NestedEnumDriveTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.DriveType | EnumDriveTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.DriveType[] | ListEnumDriveTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumDriveTypeWithAggregatesFilter<$PrismaModel> | $Enums.DriveType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumDriveTypeFilter<$PrismaModel>
+    _max?: NestedEnumDriveTypeFilter<$PrismaModel>
+  }
+
+  export type NestedEnumFuelTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.FuelType | EnumFuelTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.FuelType[] | ListEnumFuelTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumFuelTypeWithAggregatesFilter<$PrismaModel> | $Enums.FuelType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumFuelTypeFilter<$PrismaModel>
+    _max?: NestedEnumFuelTypeFilter<$PrismaModel>
+  }
+
+  export type NestedEnumConditionLevelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConditionLevel | EnumConditionLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.ConditionLevel[] | ListEnumConditionLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumConditionLevelNullableWithAggregatesFilter<$PrismaModel> | $Enums.ConditionLevel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumConditionLevelNullableFilter<$PrismaModel>
+    _max?: NestedEnumConditionLevelNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumDeliveryOptionNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.DeliveryOption | EnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    in?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.DeliveryOption[] | ListEnumDeliveryOptionFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumDeliveryOptionNullableWithAggregatesFilter<$PrismaModel> | $Enums.DeliveryOption | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
+    _max?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
+  }
+
   export type CabinFeatureCreateWithoutHelicoptersInput = {
     id?: string
     createdAt?: Date | string
@@ -26750,7 +30795,7 @@ export namespace Prisma {
     AND?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
     OR?: CabinFeatureScalarWhereInput[]
     NOT?: CabinFeatureScalarWhereInput | CabinFeatureScalarWhereInput[]
-    id?: UuidFilter<"CabinFeature"> | string
+    id?: StringFilter<"CabinFeature"> | string
     createdAt?: DateTimeFilter<"CabinFeature"> | Date | string
     updatedAt?: DateTimeFilter<"CabinFeature"> | Date | string
     name?: StringFilter<"CabinFeature"> | string
@@ -26855,7 +30900,7 @@ export namespace Prisma {
     AND?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
     OR?: HelicopterForSaleListingScalarWhereInput[]
     NOT?: HelicopterForSaleListingScalarWhereInput | HelicopterForSaleListingScalarWhereInput[]
-    id?: UuidFilter<"HelicopterForSaleListing"> | string
+    id?: StringFilter<"HelicopterForSaleListing"> | string
     createdAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
     updatedAt?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
     helicopterName?: StringFilter<"HelicopterForSaleListing"> | string

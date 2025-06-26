@@ -13,8 +13,8 @@ const charterMainRoutes = require('./routes/charter/charterVendorRoutes');
 const jetForCharterRoutes = require('./routes/charter/jetforcharterroutes');
 const helicopterRoutes = require('./routes/helicopter/main')
 const hclientRoutes = require('./routes/helicopter/h-client')
-
-const prisma = new PrismaClient();
+const carRoutes = require('./routes/cars/main')
+const carCliRoutes = require('./routes/cars/client')
 
 const corsOptions = {
     origin: 'http://localhost:5173',
@@ -76,6 +76,8 @@ app.use('/api/v1/jets/sale', authLimiter, jetforsaleRoutes);
 app.use('/api/v1/jets/charter', authLimiter, jetForCharterRoutes);
 app.use('/api/v1/h-vendor/main', authLimiter, helicopterRoutes);
 app.use('/api/v1/h-client/main', authLimiter, hclientRoutes);
+app.use('/api/v1/lux/main',authLimiter,carRoutes)
+app.use('/api/v1/cars/client',authLimiter,carCliRoutes)
 
 // Health check endpoint
 app.get('/health', (req, res) => {

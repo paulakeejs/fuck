@@ -315,7 +315,7 @@ model Wallet {
 }
 
 model HelicopterForSaleListing {
-  id        String   @id @default(uuid()) @db.Uuid
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -375,10 +375,10 @@ model HelicopterForSaleListing {
 }
 
 model CabinFeature {
-  id          String                     @id @default(uuid()) @db.Uuid
+  id          String                     @id @default(uuid())
   createdAt   DateTime                   @default(now())
   updatedAt   DateTime                   @updatedAt
-  name        String                     @unique @map("name") @db.VarChar(100)
+  name        String                     @unique @map("name")
   helicopters HelicopterForSaleListing[] @relation("HelicopterCabinFeatures")
 
   @@map("cabin_features")
@@ -480,4 +480,107 @@ model HelicopterForCharterMessages {
   vendorId          String    @db.Uuid
   createdAt         DateTime  @default(now())
   read              Boolean   @default(false)
+}
+
+model Car {
+  id              String          @id @default(uuid())
+  brand           String
+  model           String
+  year            Int
+  carType         CarType
+  color           String
+  interiorColor   String
+  seats           Int
+  doors           Int?
+  transmission    Transmission
+  driveType       DriveType
+  fuel            FuelType
+  condition       ConditionLevel?
+  price           Float
+  weeklyDiscount  Float?
+  monthlyDiscount Float?
+  deposit         Float?
+  vin             String?
+  licensePlate    String?
+  deliveryOption  DeliveryOption?
+  insuranceInfo   String?
+  rentalTerms     String?
+  description     String
+  features        String[]
+  isFeatured      Boolean         @default(false)
+  isAvailable     Boolean         @default(true)
+  mileage         Int?
+  engineSize      String?
+  horsepower      Int?
+  acceleration    Float?
+  topSpeed        Int?
+  images          String[]
+  location        String
+  vendorId        String
+  status          String          @default("PENDING")
+  sponsored       Boolean         @default(false)
+  endDate         DateTime        @default(now())
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+enum CarType {
+  SEDAN
+  SUV
+  COUPE
+  CONVERTIBLE
+  SPORTS_CAR
+  SUPERCAR
+  HYPERCAR
+  WAGON
+  LIMOUSINE
+}
+
+enum Transmission {
+  AUTOMATIC
+  MANUAL
+  SEMI_AUTOMATIC
+  CVT
+}
+
+enum FuelType {
+  PETROL
+  DIESEL
+  ELECTRIC
+  HYBRID
+  PLUG_IN_HYBRID
+  HYDROGEN
+}
+
+enum DriveType {
+  REAR_WHEEL_DRIVE
+  FRONT_WHEEL_DRIVE
+  ALL_WHEEL_DRIVE
+  FOUR_WHEEL_DRIVE
+}
+
+enum ConditionLevel {
+  BRAND_NEW
+  LIKE_NEW
+  EXCELLENT
+  GOOD
+  FAIR
+}
+
+enum DeliveryOption {
+  NONE
+  LOCAL
+  AIRPORT
+  CUSTOM
+}
+
+model CarBookings {
+  id        String  @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  message   String
+  listingId String
+  vendorId  String
+  read      Boolean @default(false)
 }

@@ -469,6 +469,59 @@ exports.Prisma.HelicopterForCharterMessagesScalarFieldEnum = {
   read: 'read'
 };
 
+exports.Prisma.CarScalarFieldEnum = {
+  id: 'id',
+  brand: 'brand',
+  model: 'model',
+  year: 'year',
+  carType: 'carType',
+  color: 'color',
+  interiorColor: 'interiorColor',
+  seats: 'seats',
+  doors: 'doors',
+  transmission: 'transmission',
+  driveType: 'driveType',
+  fuel: 'fuel',
+  condition: 'condition',
+  price: 'price',
+  weeklyDiscount: 'weeklyDiscount',
+  monthlyDiscount: 'monthlyDiscount',
+  deposit: 'deposit',
+  vin: 'vin',
+  licensePlate: 'licensePlate',
+  deliveryOption: 'deliveryOption',
+  insuranceInfo: 'insuranceInfo',
+  rentalTerms: 'rentalTerms',
+  description: 'description',
+  features: 'features',
+  isFeatured: 'isFeatured',
+  isAvailable: 'isAvailable',
+  mileage: 'mileage',
+  engineSize: 'engineSize',
+  horsepower: 'horsepower',
+  acceleration: 'acceleration',
+  topSpeed: 'topSpeed',
+  images: 'images',
+  location: 'location',
+  vendorId: 'vendorId',
+  status: 'status',
+  sponsored: 'sponsored',
+  endDate: 'endDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CarBookingsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  message: 'message',
+  listingId: 'listingId',
+  vendorId: 'vendorId',
+  read: 'read'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -499,6 +552,56 @@ exports.TripOption = exports.$Enums.TripOption = {
   BOTH: 'BOTH'
 };
 
+exports.CarType = exports.$Enums.CarType = {
+  SEDAN: 'SEDAN',
+  SUV: 'SUV',
+  COUPE: 'COUPE',
+  CONVERTIBLE: 'CONVERTIBLE',
+  SPORTS_CAR: 'SPORTS_CAR',
+  SUPERCAR: 'SUPERCAR',
+  HYPERCAR: 'HYPERCAR',
+  WAGON: 'WAGON',
+  LIMOUSINE: 'LIMOUSINE'
+};
+
+exports.Transmission = exports.$Enums.Transmission = {
+  AUTOMATIC: 'AUTOMATIC',
+  MANUAL: 'MANUAL',
+  SEMI_AUTOMATIC: 'SEMI_AUTOMATIC',
+  CVT: 'CVT'
+};
+
+exports.DriveType = exports.$Enums.DriveType = {
+  REAR_WHEEL_DRIVE: 'REAR_WHEEL_DRIVE',
+  FRONT_WHEEL_DRIVE: 'FRONT_WHEEL_DRIVE',
+  ALL_WHEEL_DRIVE: 'ALL_WHEEL_DRIVE',
+  FOUR_WHEEL_DRIVE: 'FOUR_WHEEL_DRIVE'
+};
+
+exports.FuelType = exports.$Enums.FuelType = {
+  PETROL: 'PETROL',
+  DIESEL: 'DIESEL',
+  ELECTRIC: 'ELECTRIC',
+  HYBRID: 'HYBRID',
+  PLUG_IN_HYBRID: 'PLUG_IN_HYBRID',
+  HYDROGEN: 'HYDROGEN'
+};
+
+exports.ConditionLevel = exports.$Enums.ConditionLevel = {
+  BRAND_NEW: 'BRAND_NEW',
+  LIKE_NEW: 'LIKE_NEW',
+  EXCELLENT: 'EXCELLENT',
+  GOOD: 'GOOD',
+  FAIR: 'FAIR'
+};
+
+exports.DeliveryOption = exports.$Enums.DeliveryOption = {
+  NONE: 'NONE',
+  LOCAL: 'LOCAL',
+  AIRPORT: 'AIRPORT',
+  CUSTOM: 'CUSTOM'
+};
+
 exports.Prisma.ModelName = {
   User: 'User',
   Vendor: 'Vendor',
@@ -513,7 +616,9 @@ exports.Prisma.ModelName = {
   CabinFeature: 'CabinFeature',
   HelicopterMessage: 'HelicopterMessage',
   HelicopterForCharter: 'HelicopterForCharter',
-  HelicopterForCharterMessages: 'HelicopterForCharterMessages'
+  HelicopterForCharterMessages: 'HelicopterForCharterMessages',
+  Car: 'Car',
+  CarBookings: 'CarBookings'
 };
 
 /**
