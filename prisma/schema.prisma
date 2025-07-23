@@ -26,6 +26,7 @@ model User {
 model Vendor {
   id            String   @id @default(uuid())
   createdAt     DateTime @default(now())
+  completed     Boolean  @default(false)
   email         String   @unique
   name          String
   companyName   String
@@ -129,7 +130,7 @@ model Jet {
   deliveryAvailability String? @map("delivery_availability")
 
   // Payment and vendor fields
-  paymentTxSignature String  @map("payment_tx_signature")
+  paymentTxSignature String? @default("Signature") @map("payment_tx_signature")
   transactionLink    String? @map("transaction_link")
   vendorId           String  @map("vendor_id")
   views              Int     @default(0)
@@ -227,7 +228,7 @@ model JetForCharter {
 
   // Availability
   homeBase        String
-  availableRoutes String
+  availableRoutes Json // Array of {departure: string, destination: string}
   operatingDays   String
   noticeRequired  String
 

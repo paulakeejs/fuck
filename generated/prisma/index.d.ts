@@ -3413,6 +3413,7 @@ export namespace Prisma {
   export type VendorMinAggregateOutputType = {
     id: string | null
     createdAt: Date | null
+    completed: boolean | null
     email: string | null
     name: string | null
     companyName: string | null
@@ -3431,6 +3432,7 @@ export namespace Prisma {
   export type VendorMaxAggregateOutputType = {
     id: string | null
     createdAt: Date | null
+    completed: boolean | null
     email: string | null
     name: string | null
     companyName: string | null
@@ -3449,6 +3451,7 @@ export namespace Prisma {
   export type VendorCountAggregateOutputType = {
     id: number
     createdAt: number
+    completed: number
     email: number
     name: number
     companyName: number
@@ -3469,6 +3472,7 @@ export namespace Prisma {
   export type VendorMinAggregateInputType = {
     id?: true
     createdAt?: true
+    completed?: true
     email?: true
     name?: true
     companyName?: true
@@ -3487,6 +3491,7 @@ export namespace Prisma {
   export type VendorMaxAggregateInputType = {
     id?: true
     createdAt?: true
+    completed?: true
     email?: true
     name?: true
     companyName?: true
@@ -3505,6 +3510,7 @@ export namespace Prisma {
   export type VendorCountAggregateInputType = {
     id?: true
     createdAt?: true
+    completed?: true
     email?: true
     name?: true
     companyName?: true
@@ -3596,6 +3602,7 @@ export namespace Prisma {
   export type VendorGroupByOutputType = {
     id: string
     createdAt: Date
+    completed: boolean
     email: string
     name: string
     companyName: string
@@ -3631,6 +3638,7 @@ export namespace Prisma {
   export type VendorSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    completed?: boolean
     email?: boolean
     name?: boolean
     companyName?: boolean
@@ -3649,6 +3657,7 @@ export namespace Prisma {
   export type VendorSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    completed?: boolean
     email?: boolean
     name?: boolean
     companyName?: boolean
@@ -3667,6 +3676,7 @@ export namespace Prisma {
   export type VendorSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
+    completed?: boolean
     email?: boolean
     name?: boolean
     companyName?: boolean
@@ -3685,6 +3695,7 @@ export namespace Prisma {
   export type VendorSelectScalar = {
     id?: boolean
     createdAt?: boolean
+    completed?: boolean
     email?: boolean
     name?: boolean
     companyName?: boolean
@@ -3700,7 +3711,7 @@ export namespace Prisma {
     walletAddress?: boolean
   }
 
-  export type VendorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "email" | "name" | "companyName" | "country" | "phone" | "serviceType" | "status" | "website" | "description" | "document" | "password" | "brandImage" | "walletAddress", ExtArgs["result"]["vendor"]>
+  export type VendorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "completed" | "email" | "name" | "companyName" | "country" | "phone" | "serviceType" | "status" | "website" | "description" | "document" | "password" | "brandImage" | "walletAddress", ExtArgs["result"]["vendor"]>
 
   export type $VendorPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Vendor"
@@ -3708,6 +3719,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       createdAt: Date
+      completed: boolean
       email: string
       name: string
       companyName: string
@@ -4146,6 +4158,7 @@ export namespace Prisma {
   interface VendorFieldRefs {
     readonly id: FieldRef<"Vendor", 'String'>
     readonly createdAt: FieldRef<"Vendor", 'DateTime'>
+    readonly completed: FieldRef<"Vendor", 'Boolean'>
     readonly email: FieldRef<"Vendor", 'String'>
     readonly name: FieldRef<"Vendor", 'String'>
     readonly companyName: FieldRef<"Vendor", 'String'>
@@ -6215,7 +6228,7 @@ export namespace Prisma {
     recentUpgrades: string | null
     previousOwners: number | null
     deliveryAvailability: string | null
-    paymentTxSignature: string
+    paymentTxSignature: string | null
     transactionLink: string | null
     vendorId: string
     views: number
@@ -6599,7 +6612,7 @@ export namespace Prisma {
       recentUpgrades: string | null
       previousOwners: number | null
       deliveryAvailability: string | null
-      paymentTxSignature: string
+      paymentTxSignature: string | null
       transactionLink: string | null
       vendorId: string
       views: number
@@ -9084,7 +9097,6 @@ export namespace Prisma {
     cruisingSpeed: string | null
     baggageCapacity: string | null
     homeBase: string | null
-    availableRoutes: string | null
     operatingDays: string | null
     noticeRequired: string | null
     pricePerHour: string | null
@@ -9122,7 +9134,6 @@ export namespace Prisma {
     cruisingSpeed: string | null
     baggageCapacity: string | null
     homeBase: string | null
-    availableRoutes: string | null
     operatingDays: string | null
     noticeRequired: string | null
     pricePerHour: string | null
@@ -9212,7 +9223,6 @@ export namespace Prisma {
     cruisingSpeed?: true
     baggageCapacity?: true
     homeBase?: true
-    availableRoutes?: true
     operatingDays?: true
     noticeRequired?: true
     pricePerHour?: true
@@ -9250,7 +9260,6 @@ export namespace Prisma {
     cruisingSpeed?: true
     baggageCapacity?: true
     homeBase?: true
-    availableRoutes?: true
     operatingDays?: true
     noticeRequired?: true
     pricePerHour?: true
@@ -9417,7 +9426,7 @@ export namespace Prisma {
     cruisingSpeed: string
     baggageCapacity: string
     homeBase: string
-    availableRoutes: string
+    availableRoutes: JsonValue
     operatingDays: string
     noticeRequired: string
     pricePerHour: string
@@ -9651,7 +9660,7 @@ export namespace Prisma {
       cruisingSpeed: string
       baggageCapacity: string
       homeBase: string
-      availableRoutes: string
+      availableRoutes: Prisma.JsonValue
       operatingDays: string
       noticeRequired: string
       pricePerHour: string
@@ -10113,7 +10122,7 @@ export namespace Prisma {
     readonly cruisingSpeed: FieldRef<"JetForCharter", 'String'>
     readonly baggageCapacity: FieldRef<"JetForCharter", 'String'>
     readonly homeBase: FieldRef<"JetForCharter", 'String'>
-    readonly availableRoutes: FieldRef<"JetForCharter", 'String'>
+    readonly availableRoutes: FieldRef<"JetForCharter", 'Json'>
     readonly operatingDays: FieldRef<"JetForCharter", 'String'>
     readonly noticeRequired: FieldRef<"JetForCharter", 'String'>
     readonly pricePerHour: FieldRef<"JetForCharter", 'String'>
@@ -22541,6 +22550,7 @@ export namespace Prisma {
   export const VendorScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
+    completed: 'completed',
     email: 'email',
     name: 'name',
     companyName: 'companyName',
@@ -23086,20 +23096,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'TripOption'
-   */
-  export type EnumTripOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TripOption'>
-    
-
-
-  /**
-   * Reference to a field of type 'TripOption[]'
-   */
-  export type ListEnumTripOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TripOption[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Json'
    */
   export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
@@ -23110,6 +23106,20 @@ export namespace Prisma {
    * Reference to a field of type 'QueryMode'
    */
   export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'TripOption'
+   */
+  export type EnumTripOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TripOption'>
+    
+
+
+  /**
+   * Reference to a field of type 'TripOption[]'
+   */
+  export type ListEnumTripOptionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TripOption[]'>
     
 
 
@@ -23258,6 +23268,7 @@ export namespace Prisma {
     NOT?: VendorWhereInput | VendorWhereInput[]
     id?: StringFilter<"Vendor"> | string
     createdAt?: DateTimeFilter<"Vendor"> | Date | string
+    completed?: BoolFilter<"Vendor"> | boolean
     email?: StringFilter<"Vendor"> | string
     name?: StringFilter<"Vendor"> | string
     companyName?: StringFilter<"Vendor"> | string
@@ -23276,6 +23287,7 @@ export namespace Prisma {
   export type VendorOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    completed?: SortOrder
     email?: SortOrder
     name?: SortOrder
     companyName?: SortOrder
@@ -23298,6 +23310,7 @@ export namespace Prisma {
     OR?: VendorWhereInput[]
     NOT?: VendorWhereInput | VendorWhereInput[]
     createdAt?: DateTimeFilter<"Vendor"> | Date | string
+    completed?: BoolFilter<"Vendor"> | boolean
     name?: StringFilter<"Vendor"> | string
     companyName?: StringFilter<"Vendor"> | string
     country?: StringNullableFilter<"Vendor"> | string | null
@@ -23315,6 +23328,7 @@ export namespace Prisma {
   export type VendorOrderByWithAggregationInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    completed?: SortOrder
     email?: SortOrder
     name?: SortOrder
     companyName?: SortOrder
@@ -23339,6 +23353,7 @@ export namespace Prisma {
     NOT?: VendorScalarWhereWithAggregatesInput | VendorScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Vendor"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Vendor"> | Date | string
+    completed?: BoolWithAggregatesFilter<"Vendor"> | boolean
     email?: StringWithAggregatesFilter<"Vendor"> | string
     name?: StringWithAggregatesFilter<"Vendor"> | string
     companyName?: StringWithAggregatesFilter<"Vendor"> | string
@@ -23471,7 +23486,7 @@ export namespace Prisma {
     recentUpgrades?: StringNullableFilter<"Jet"> | string | null
     previousOwners?: IntNullableFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableFilter<"Jet"> | string | null
-    paymentTxSignature?: StringFilter<"Jet"> | string
+    paymentTxSignature?: StringNullableFilter<"Jet"> | string | null
     transactionLink?: StringNullableFilter<"Jet"> | string | null
     vendorId?: StringFilter<"Jet"> | string
     views?: IntFilter<"Jet"> | number
@@ -23543,7 +23558,7 @@ export namespace Prisma {
     recentUpgrades?: SortOrderInput | SortOrder
     previousOwners?: SortOrderInput | SortOrder
     deliveryAvailability?: SortOrderInput | SortOrder
-    paymentTxSignature?: SortOrder
+    paymentTxSignature?: SortOrderInput | SortOrder
     transactionLink?: SortOrderInput | SortOrder
     vendorId?: SortOrder
     views?: SortOrder
@@ -23618,7 +23633,7 @@ export namespace Prisma {
     recentUpgrades?: StringNullableFilter<"Jet"> | string | null
     previousOwners?: IntNullableFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableFilter<"Jet"> | string | null
-    paymentTxSignature?: StringFilter<"Jet"> | string
+    paymentTxSignature?: StringNullableFilter<"Jet"> | string | null
     transactionLink?: StringNullableFilter<"Jet"> | string | null
     vendorId?: StringFilter<"Jet"> | string
     views?: IntFilter<"Jet"> | number
@@ -23690,7 +23705,7 @@ export namespace Prisma {
     recentUpgrades?: SortOrderInput | SortOrder
     previousOwners?: SortOrderInput | SortOrder
     deliveryAvailability?: SortOrderInput | SortOrder
-    paymentTxSignature?: SortOrder
+    paymentTxSignature?: SortOrderInput | SortOrder
     transactionLink?: SortOrderInput | SortOrder
     vendorId?: SortOrder
     views?: SortOrder
@@ -23770,7 +23785,7 @@ export namespace Prisma {
     recentUpgrades?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     previousOwners?: IntNullableWithAggregatesFilter<"Jet"> | number | null
     deliveryAvailability?: StringNullableWithAggregatesFilter<"Jet"> | string | null
-    paymentTxSignature?: StringWithAggregatesFilter<"Jet"> | string
+    paymentTxSignature?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     transactionLink?: StringNullableWithAggregatesFilter<"Jet"> | string | null
     vendorId?: StringWithAggregatesFilter<"Jet"> | string
     views?: IntWithAggregatesFilter<"Jet"> | number
@@ -24047,7 +24062,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFilter<"JetForCharter"> | string
     baggageCapacity?: StringFilter<"JetForCharter"> | string
     homeBase?: StringFilter<"JetForCharter"> | string
-    availableRoutes?: StringFilter<"JetForCharter"> | string
+    availableRoutes?: JsonFilter<"JetForCharter">
     operatingDays?: StringFilter<"JetForCharter"> | string
     noticeRequired?: StringFilter<"JetForCharter"> | string
     pricePerHour?: StringFilter<"JetForCharter"> | string
@@ -24134,7 +24149,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFilter<"JetForCharter"> | string
     baggageCapacity?: StringFilter<"JetForCharter"> | string
     homeBase?: StringFilter<"JetForCharter"> | string
-    availableRoutes?: StringFilter<"JetForCharter"> | string
+    availableRoutes?: JsonFilter<"JetForCharter">
     operatingDays?: StringFilter<"JetForCharter"> | string
     noticeRequired?: StringFilter<"JetForCharter"> | string
     pricePerHour?: StringFilter<"JetForCharter"> | string
@@ -24226,7 +24241,7 @@ export namespace Prisma {
     cruisingSpeed?: StringWithAggregatesFilter<"JetForCharter"> | string
     baggageCapacity?: StringWithAggregatesFilter<"JetForCharter"> | string
     homeBase?: StringWithAggregatesFilter<"JetForCharter"> | string
-    availableRoutes?: StringWithAggregatesFilter<"JetForCharter"> | string
+    availableRoutes?: JsonWithAggregatesFilter<"JetForCharter">
     operatingDays?: StringWithAggregatesFilter<"JetForCharter"> | string
     noticeRequired?: StringWithAggregatesFilter<"JetForCharter"> | string
     pricePerHour?: StringWithAggregatesFilter<"JetForCharter"> | string
@@ -25483,6 +25498,7 @@ export namespace Prisma {
   export type VendorCreateInput = {
     id?: string
     createdAt?: Date | string
+    completed?: boolean
     email: string
     name: string
     companyName: string
@@ -25501,6 +25517,7 @@ export namespace Prisma {
   export type VendorUncheckedCreateInput = {
     id?: string
     createdAt?: Date | string
+    completed?: boolean
     email: string
     name: string
     companyName: string
@@ -25519,6 +25536,7 @@ export namespace Prisma {
   export type VendorUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    completed?: BoolFieldUpdateOperationsInput | boolean
     email?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     companyName?: StringFieldUpdateOperationsInput | string
@@ -25537,6 +25555,7 @@ export namespace Prisma {
   export type VendorUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    completed?: BoolFieldUpdateOperationsInput | boolean
     email?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     companyName?: StringFieldUpdateOperationsInput | string
@@ -25555,6 +25574,7 @@ export namespace Prisma {
   export type VendorCreateManyInput = {
     id?: string
     createdAt?: Date | string
+    completed?: boolean
     email: string
     name: string
     companyName: string
@@ -25573,6 +25593,7 @@ export namespace Prisma {
   export type VendorUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    completed?: BoolFieldUpdateOperationsInput | boolean
     email?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     companyName?: StringFieldUpdateOperationsInput | string
@@ -25591,6 +25612,7 @@ export namespace Prisma {
   export type VendorUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    completed?: BoolFieldUpdateOperationsInput | boolean
     email?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     companyName?: StringFieldUpdateOperationsInput | string
@@ -25724,7 +25746,7 @@ export namespace Prisma {
     recentUpgrades?: string | null
     previousOwners?: number | null
     deliveryAvailability?: string | null
-    paymentTxSignature: string
+    paymentTxSignature?: string | null
     transactionLink?: string | null
     vendorId: string
     views?: number
@@ -25796,7 +25818,7 @@ export namespace Prisma {
     recentUpgrades?: string | null
     previousOwners?: number | null
     deliveryAvailability?: string | null
-    paymentTxSignature: string
+    paymentTxSignature?: string | null
     transactionLink?: string | null
     vendorId: string
     views?: number
@@ -25868,7 +25890,7 @@ export namespace Prisma {
     recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
     previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
-    paymentTxSignature?: StringFieldUpdateOperationsInput | string
+    paymentTxSignature?: NullableStringFieldUpdateOperationsInput | string | null
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
     vendorId?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -25940,7 +25962,7 @@ export namespace Prisma {
     recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
     previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
-    paymentTxSignature?: StringFieldUpdateOperationsInput | string
+    paymentTxSignature?: NullableStringFieldUpdateOperationsInput | string | null
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
     vendorId?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -26012,7 +26034,7 @@ export namespace Prisma {
     recentUpgrades?: string | null
     previousOwners?: number | null
     deliveryAvailability?: string | null
-    paymentTxSignature: string
+    paymentTxSignature?: string | null
     transactionLink?: string | null
     vendorId: string
     views?: number
@@ -26084,7 +26106,7 @@ export namespace Prisma {
     recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
     previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
-    paymentTxSignature?: StringFieldUpdateOperationsInput | string
+    paymentTxSignature?: NullableStringFieldUpdateOperationsInput | string | null
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
     vendorId?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -26156,7 +26178,7 @@ export namespace Prisma {
     recentUpgrades?: NullableStringFieldUpdateOperationsInput | string | null
     previousOwners?: NullableIntFieldUpdateOperationsInput | number | null
     deliveryAvailability?: NullableStringFieldUpdateOperationsInput | string | null
-    paymentTxSignature?: StringFieldUpdateOperationsInput | string
+    paymentTxSignature?: NullableStringFieldUpdateOperationsInput | string | null
     transactionLink?: NullableStringFieldUpdateOperationsInput | string | null
     vendorId?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -26510,7 +26532,7 @@ export namespace Prisma {
     cruisingSpeed: string
     baggageCapacity: string
     homeBase: string
-    availableRoutes: string
+    availableRoutes: JsonNullValueInput | InputJsonValue
     operatingDays: string
     noticeRequired: string
     pricePerHour: string
@@ -26552,7 +26574,7 @@ export namespace Prisma {
     cruisingSpeed: string
     baggageCapacity: string
     homeBase: string
-    availableRoutes: string
+    availableRoutes: JsonNullValueInput | InputJsonValue
     operatingDays: string
     noticeRequired: string
     pricePerHour: string
@@ -26594,7 +26616,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFieldUpdateOperationsInput | string
     baggageCapacity?: StringFieldUpdateOperationsInput | string
     homeBase?: StringFieldUpdateOperationsInput | string
-    availableRoutes?: StringFieldUpdateOperationsInput | string
+    availableRoutes?: JsonNullValueInput | InputJsonValue
     operatingDays?: StringFieldUpdateOperationsInput | string
     noticeRequired?: StringFieldUpdateOperationsInput | string
     pricePerHour?: StringFieldUpdateOperationsInput | string
@@ -26636,7 +26658,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFieldUpdateOperationsInput | string
     baggageCapacity?: StringFieldUpdateOperationsInput | string
     homeBase?: StringFieldUpdateOperationsInput | string
-    availableRoutes?: StringFieldUpdateOperationsInput | string
+    availableRoutes?: JsonNullValueInput | InputJsonValue
     operatingDays?: StringFieldUpdateOperationsInput | string
     noticeRequired?: StringFieldUpdateOperationsInput | string
     pricePerHour?: StringFieldUpdateOperationsInput | string
@@ -26678,7 +26700,7 @@ export namespace Prisma {
     cruisingSpeed: string
     baggageCapacity: string
     homeBase: string
-    availableRoutes: string
+    availableRoutes: JsonNullValueInput | InputJsonValue
     operatingDays: string
     noticeRequired: string
     pricePerHour: string
@@ -26720,7 +26742,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFieldUpdateOperationsInput | string
     baggageCapacity?: StringFieldUpdateOperationsInput | string
     homeBase?: StringFieldUpdateOperationsInput | string
-    availableRoutes?: StringFieldUpdateOperationsInput | string
+    availableRoutes?: JsonNullValueInput | InputJsonValue
     operatingDays?: StringFieldUpdateOperationsInput | string
     noticeRequired?: StringFieldUpdateOperationsInput | string
     pricePerHour?: StringFieldUpdateOperationsInput | string
@@ -26762,7 +26784,7 @@ export namespace Prisma {
     cruisingSpeed?: StringFieldUpdateOperationsInput | string
     baggageCapacity?: StringFieldUpdateOperationsInput | string
     homeBase?: StringFieldUpdateOperationsInput | string
-    availableRoutes?: StringFieldUpdateOperationsInput | string
+    availableRoutes?: JsonNullValueInput | InputJsonValue
     operatingDays?: StringFieldUpdateOperationsInput | string
     noticeRequired?: StringFieldUpdateOperationsInput | string
     pricePerHour?: StringFieldUpdateOperationsInput | string
@@ -28350,6 +28372,7 @@ export namespace Prisma {
   export type VendorCountOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    completed?: SortOrder
     email?: SortOrder
     name?: SortOrder
     companyName?: SortOrder
@@ -28368,6 +28391,7 @@ export namespace Prisma {
   export type VendorMaxOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    completed?: SortOrder
     email?: SortOrder
     name?: SortOrder
     companyName?: SortOrder
@@ -28386,6 +28410,7 @@ export namespace Prisma {
   export type VendorMinOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
+    completed?: SortOrder
     email?: SortOrder
     name?: SortOrder
     companyName?: SortOrder
@@ -29036,13 +29061,6 @@ export namespace Prisma {
     currentBid?: SortOrder
     bidCount?: SortOrder
   }
-
-  export type EnumTripOptionFilter<$PrismaModel = never> = {
-    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
-    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    not?: NestedEnumTripOptionFilter<$PrismaModel> | $Enums.TripOption
-  }
   export type JsonFilter<$PrismaModel = never> =
     | PatchUndefined<
         Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -29065,6 +29083,13 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type EnumTripOptionFilter<$PrismaModel = never> = {
+    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
+    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTripOptionFilter<$PrismaModel> | $Enums.TripOption
   }
 
   export type JetForCharterCountOrderByAggregateInput = {
@@ -29128,7 +29153,6 @@ export namespace Prisma {
     cruisingSpeed?: SortOrder
     baggageCapacity?: SortOrder
     homeBase?: SortOrder
-    availableRoutes?: SortOrder
     operatingDays?: SortOrder
     noticeRequired?: SortOrder
     pricePerHour?: SortOrder
@@ -29166,7 +29190,6 @@ export namespace Prisma {
     cruisingSpeed?: SortOrder
     baggageCapacity?: SortOrder
     homeBase?: SortOrder
-    availableRoutes?: SortOrder
     operatingDays?: SortOrder
     noticeRequired?: SortOrder
     pricePerHour?: SortOrder
@@ -29191,16 +29214,6 @@ export namespace Prisma {
 
   export type JetForCharterSumOrderByAggregateInput = {
     views?: SortOrder
-  }
-
-  export type EnumTripOptionWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
-    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    not?: NestedEnumTripOptionWithAggregatesFilter<$PrismaModel> | $Enums.TripOption
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumTripOptionFilter<$PrismaModel>
-    _max?: NestedEnumTripOptionFilter<$PrismaModel>
   }
   export type JsonWithAggregatesFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -29227,6 +29240,16 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedJsonFilter<$PrismaModel>
     _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type EnumTripOptionWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
+    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTripOptionWithAggregatesFilter<$PrismaModel> | $Enums.TripOption
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTripOptionFilter<$PrismaModel>
+    _max?: NestedEnumTripOptionFilter<$PrismaModel>
   }
 
   export type JetForSaleMessagesCountOrderByAggregateInput = {
@@ -30595,16 +30618,6 @@ export namespace Prisma {
     notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
     not?: NestedEnumTripOptionFilter<$PrismaModel> | $Enums.TripOption
   }
-
-  export type NestedEnumTripOptionWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
-    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
-    not?: NestedEnumTripOptionWithAggregatesFilter<$PrismaModel> | $Enums.TripOption
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumTripOptionFilter<$PrismaModel>
-    _max?: NestedEnumTripOptionFilter<$PrismaModel>
-  }
   export type NestedJsonFilter<$PrismaModel = never> =
     | PatchUndefined<
         Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -30627,6 +30640,16 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedEnumTripOptionWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TripOption | EnumTripOptionFieldRefInput<$PrismaModel>
+    in?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TripOption[] | ListEnumTripOptionFieldRefInput<$PrismaModel>
+    not?: NestedEnumTripOptionWithAggregatesFilter<$PrismaModel> | $Enums.TripOption
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTripOptionFilter<$PrismaModel>
+    _max?: NestedEnumTripOptionFilter<$PrismaModel>
   }
 
   export type NestedUuidFilter<$PrismaModel = never> = {

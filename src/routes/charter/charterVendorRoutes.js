@@ -62,8 +62,6 @@ router.post('/new', verifyToken, async (req, res) => {
           pricePerHour,
           minimumFlightTime,
           tripOption,
-          transactionSignature,
-          transactionLink,
       };
 
       const missingFields = Object.entries(requiredFields)
@@ -75,6 +73,36 @@ router.post('/new', verifyToken, async (req, res) => {
               error: 'Missing required fields',
               missingFields,
           });
+      }
+
+      // Validate availableRoutes structure
+      if (!Array.isArray(availableRoutes)) {
+          return res.status(400).json({ 
+              error: 'availableRoutes must be an array' 
+          });
+      }
+
+      if (availableRoutes.length === 0) {
+          return res.status(400).json({ 
+              error: 'At least one available route is required' 
+          });
+      }
+
+      // Validate each route object
+      for (let i = 0; i < availableRoutes.length; i++) {
+          const route = availableRoutes[i];
+          if (!route || typeof route !== 'object') {
+              return res.status(400).json({ 
+                  error: `Route at index ${i} must be an object` 
+              });
+          }
+          
+          if (!route.departure || !route.destination) {
+              return res.status(400).json({ 
+                  error: `Route at index ${i} must have both departure and destination fields`,
+                  invalidRoute: route
+              });
+          }
       }
 
       // Validate tripOption enum
@@ -506,7 +534,37 @@ router.put('/:id', verifyToken, async (req, res) => {
           validOptions: ['ROUND_TRIP', 'ONE_WAY', 'BOTH'],
         });
       }
-  
+
+      // Validate availableRoutes structure
+      if (!Array.isArray(availableRoutes)) {
+        return res.status(400).json({ 
+          error: 'availableRoutes must be an array' 
+        });
+      }
+
+      if (availableRoutes.length === 0) {
+        return res.status(400).json({ 
+          error: 'At least one available route is required' 
+        });
+      }
+
+      // Validate each route object
+      for (let i = 0; i < availableRoutes.length; i++) {
+        const route = availableRoutes[i];
+        if (!route || typeof route !== 'object') {
+          return res.status(400).json({ 
+            error: `Route at index ${i} must be an object` 
+          });
+        }
+        
+        if (!route.departure || !route.destination) {
+          return res.status(400).json({ 
+            error: `Route at index ${i} must have both departure and destination fields`,
+            invalidRoute: route
+          });
+        }
+      }
+
       // Validate additionalFees structure
       if (additionalFees && !Array.isArray(additionalFees)) {
         return res.status(400).json({ error: 'additionalFees must be an array' });
@@ -629,7 +687,7 @@ router.put('/:id', verifyToken, async (req, res) => {
       console.error('Error updating jet:', error);
   
       // Handle Prisma specific errors
-      if (error instanceof PrismaClient.PrismaClientKnownRequestError) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
           return res.status(400).json({
             error: 'Validation error',

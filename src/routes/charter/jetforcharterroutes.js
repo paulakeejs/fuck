@@ -61,7 +61,6 @@ router.get('/:id', async(req,res) => {
         })
     }
 })
-
 router.get('/user/:id', async (req, res) => {
     try {
         if (!checkUUID(req.params.id)) {
@@ -118,7 +117,6 @@ router.get('/user/:id', async (req, res) => {
         });
     }
 });
-
 router.post('/messages/new', async (req, res) => {
     try {
       // Extract data from request body
@@ -218,6 +216,33 @@ router.post('/messages/new', async (req, res) => {
       }
     }
   });
+router.put('/views/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+
+      // Find the jet and increment its views count
+      const updatedJet = await prisma.jetForCharter.update({
+          where: { id },
+          data: {
+              views: {
+                  increment: 1
+              }
+          }
+      });
+
+      res.status(200).send({
+          success: true,
+          message: "View count updated successfully",
+          data: updatedJet
+      });
+  } catch (error) {
+      res.status(500).send({
+          success: false,
+          message: "Internal Server Error",
+          error: error.message
+      });
+  }
+});
 
 module.exports = router
 

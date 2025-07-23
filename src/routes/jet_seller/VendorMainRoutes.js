@@ -27,6 +27,7 @@ router.get('/user', verifyToken, async (req, res) => {
                 status: true,
                 serviceType:true,
                 createdAt: true,
+                completed:true
             }
         });
 
@@ -204,7 +205,6 @@ router.post('/jets/add', verifyToken, async (req, res) => {
       registrationNumber,
       contactDetails,
       description,
-      paymentTxSignature,
       vendorId,
       // Aircraft specifications
       aircraftType,
