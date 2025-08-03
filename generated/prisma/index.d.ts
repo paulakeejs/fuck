@@ -93,6 +93,26 @@ export type Car = $Result.DefaultSelection<Prisma.$CarPayload>
  * 
  */
 export type CarBookings = $Result.DefaultSelection<Prisma.$CarBookingsPayload>
+/**
+ * Model LuxuryDestination
+ * 
+ */
+export type LuxuryDestination = $Result.DefaultSelection<Prisma.$LuxuryDestinationPayload>
+/**
+ * Model RoomType
+ * 
+ */
+export type RoomType = $Result.DefaultSelection<Prisma.$RoomTypePayload>
+/**
+ * Model RoomImage
+ * 
+ */
+export type RoomImage = $Result.DefaultSelection<Prisma.$RoomImagePayload>
+/**
+ * Model ExtraFee
+ * 
+ */
+export type ExtraFee = $Result.DefaultSelection<Prisma.$ExtraFeePayload>
 
 /**
  * Enums
@@ -488,6 +508,46 @@ export class PrismaClient<
     * ```
     */
   get carBookings(): Prisma.CarBookingsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.luxuryDestination`: Exposes CRUD operations for the **LuxuryDestination** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LuxuryDestinations
+    * const luxuryDestinations = await prisma.luxuryDestination.findMany()
+    * ```
+    */
+  get luxuryDestination(): Prisma.LuxuryDestinationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.roomType`: Exposes CRUD operations for the **RoomType** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RoomTypes
+    * const roomTypes = await prisma.roomType.findMany()
+    * ```
+    */
+  get roomType(): Prisma.RoomTypeDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.roomImage`: Exposes CRUD operations for the **RoomImage** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RoomImages
+    * const roomImages = await prisma.roomImage.findMany()
+    * ```
+    */
+  get roomImage(): Prisma.RoomImageDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.extraFee`: Exposes CRUD operations for the **ExtraFee** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ExtraFees
+    * const extraFees = await prisma.extraFee.findMany()
+    * ```
+    */
+  get extraFee(): Prisma.ExtraFeeDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -943,7 +1003,11 @@ export namespace Prisma {
     HelicopterForCharter: 'HelicopterForCharter',
     HelicopterForCharterMessages: 'HelicopterForCharterMessages',
     Car: 'Car',
-    CarBookings: 'CarBookings'
+    CarBookings: 'CarBookings',
+    LuxuryDestination: 'LuxuryDestination',
+    RoomType: 'RoomType',
+    RoomImage: 'RoomImage',
+    ExtraFee: 'ExtraFee'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -962,7 +1026,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet" | "helicopterForSaleListing" | "cabinFeature" | "helicopterMessage" | "helicopterForCharter" | "helicopterForCharterMessages" | "car" | "carBookings"
+      modelProps: "user" | "vendor" | "admin" | "jet" | "jetForBids" | "jetForCharter" | "jetForSaleMessages" | "jetForCharterMessages" | "wallet" | "helicopterForSaleListing" | "cabinFeature" | "helicopterMessage" | "helicopterForCharter" | "helicopterForCharterMessages" | "car" | "carBookings" | "luxuryDestination" | "roomType" | "roomImage" | "extraFee"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2150,6 +2214,302 @@ export namespace Prisma {
           }
         }
       }
+      LuxuryDestination: {
+        payload: Prisma.$LuxuryDestinationPayload<ExtArgs>
+        fields: Prisma.LuxuryDestinationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LuxuryDestinationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LuxuryDestinationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          findFirst: {
+            args: Prisma.LuxuryDestinationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LuxuryDestinationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          findMany: {
+            args: Prisma.LuxuryDestinationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>[]
+          }
+          create: {
+            args: Prisma.LuxuryDestinationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          createMany: {
+            args: Prisma.LuxuryDestinationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LuxuryDestinationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>[]
+          }
+          delete: {
+            args: Prisma.LuxuryDestinationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          update: {
+            args: Prisma.LuxuryDestinationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          deleteMany: {
+            args: Prisma.LuxuryDestinationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LuxuryDestinationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LuxuryDestinationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>[]
+          }
+          upsert: {
+            args: Prisma.LuxuryDestinationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LuxuryDestinationPayload>
+          }
+          aggregate: {
+            args: Prisma.LuxuryDestinationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLuxuryDestination>
+          }
+          groupBy: {
+            args: Prisma.LuxuryDestinationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LuxuryDestinationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LuxuryDestinationCountArgs<ExtArgs>
+            result: $Utils.Optional<LuxuryDestinationCountAggregateOutputType> | number
+          }
+        }
+      }
+      RoomType: {
+        payload: Prisma.$RoomTypePayload<ExtArgs>
+        fields: Prisma.RoomTypeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RoomTypeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RoomTypeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          findFirst: {
+            args: Prisma.RoomTypeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RoomTypeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          findMany: {
+            args: Prisma.RoomTypeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>[]
+          }
+          create: {
+            args: Prisma.RoomTypeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          createMany: {
+            args: Prisma.RoomTypeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RoomTypeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>[]
+          }
+          delete: {
+            args: Prisma.RoomTypeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          update: {
+            args: Prisma.RoomTypeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          deleteMany: {
+            args: Prisma.RoomTypeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RoomTypeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RoomTypeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>[]
+          }
+          upsert: {
+            args: Prisma.RoomTypeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomTypePayload>
+          }
+          aggregate: {
+            args: Prisma.RoomTypeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRoomType>
+          }
+          groupBy: {
+            args: Prisma.RoomTypeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RoomTypeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RoomTypeCountArgs<ExtArgs>
+            result: $Utils.Optional<RoomTypeCountAggregateOutputType> | number
+          }
+        }
+      }
+      RoomImage: {
+        payload: Prisma.$RoomImagePayload<ExtArgs>
+        fields: Prisma.RoomImageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RoomImageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RoomImageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          findFirst: {
+            args: Prisma.RoomImageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RoomImageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          findMany: {
+            args: Prisma.RoomImageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>[]
+          }
+          create: {
+            args: Prisma.RoomImageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          createMany: {
+            args: Prisma.RoomImageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RoomImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>[]
+          }
+          delete: {
+            args: Prisma.RoomImageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          update: {
+            args: Prisma.RoomImageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          deleteMany: {
+            args: Prisma.RoomImageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RoomImageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RoomImageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>[]
+          }
+          upsert: {
+            args: Prisma.RoomImageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoomImagePayload>
+          }
+          aggregate: {
+            args: Prisma.RoomImageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRoomImage>
+          }
+          groupBy: {
+            args: Prisma.RoomImageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RoomImageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RoomImageCountArgs<ExtArgs>
+            result: $Utils.Optional<RoomImageCountAggregateOutputType> | number
+          }
+        }
+      }
+      ExtraFee: {
+        payload: Prisma.$ExtraFeePayload<ExtArgs>
+        fields: Prisma.ExtraFeeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ExtraFeeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ExtraFeeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          findFirst: {
+            args: Prisma.ExtraFeeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ExtraFeeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          findMany: {
+            args: Prisma.ExtraFeeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>[]
+          }
+          create: {
+            args: Prisma.ExtraFeeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          createMany: {
+            args: Prisma.ExtraFeeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ExtraFeeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>[]
+          }
+          delete: {
+            args: Prisma.ExtraFeeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          update: {
+            args: Prisma.ExtraFeeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          deleteMany: {
+            args: Prisma.ExtraFeeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ExtraFeeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ExtraFeeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>[]
+          }
+          upsert: {
+            args: Prisma.ExtraFeeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ExtraFeePayload>
+          }
+          aggregate: {
+            args: Prisma.ExtraFeeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateExtraFee>
+          }
+          groupBy: {
+            args: Prisma.ExtraFeeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ExtraFeeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ExtraFeeCountArgs<ExtArgs>
+            result: $Utils.Optional<ExtraFeeCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2250,6 +2610,10 @@ export namespace Prisma {
     helicopterForCharterMessages?: HelicopterForCharterMessagesOmit
     car?: CarOmit
     carBookings?: CarBookingsOmit
+    luxuryDestination?: LuxuryDestinationOmit
+    roomType?: RoomTypeOmit
+    roomImage?: RoomImageOmit
+    extraFee?: ExtraFeeOmit
   }
 
   /* Types for Logging */
@@ -2398,6 +2762,46 @@ export namespace Prisma {
    */
   export type CabinFeatureCountOutputTypeCountHelicoptersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: HelicopterForSaleListingWhereInput
+  }
+
+
+  /**
+   * Count Type RoomTypeCountOutputType
+   */
+
+  export type RoomTypeCountOutputType = {
+    images: number
+    extraFees: number
+  }
+
+  export type RoomTypeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    images?: boolean | RoomTypeCountOutputTypeCountImagesArgs
+    extraFees?: boolean | RoomTypeCountOutputTypeCountExtraFeesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * RoomTypeCountOutputType without action
+   */
+  export type RoomTypeCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomTypeCountOutputType
+     */
+    select?: RoomTypeCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * RoomTypeCountOutputType without action
+   */
+  export type RoomTypeCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RoomImageWhereInput
+  }
+
+  /**
+   * RoomTypeCountOutputType without action
+   */
+  export type RoomTypeCountOutputTypeCountExtraFeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ExtraFeeWhereInput
   }
 
 
@@ -22523,6 +22927,5200 @@ export namespace Prisma {
 
 
   /**
+   * Model LuxuryDestination
+   */
+
+  export type AggregateLuxuryDestination = {
+    _count: LuxuryDestinationCountAggregateOutputType | null
+    _avg: LuxuryDestinationAvgAggregateOutputType | null
+    _sum: LuxuryDestinationSumAggregateOutputType | null
+    _min: LuxuryDestinationMinAggregateOutputType | null
+    _max: LuxuryDestinationMaxAggregateOutputType | null
+  }
+
+  export type LuxuryDestinationAvgAggregateOutputType = {
+    totalRooms: number | null
+    yearBuilt: number | null
+    lastRenovated: number | null
+  }
+
+  export type LuxuryDestinationSumAggregateOutputType = {
+    totalRooms: number | null
+    yearBuilt: number | null
+    lastRenovated: number | null
+  }
+
+  export type LuxuryDestinationMinAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    propertyName: string | null
+    propertyType: string | null
+    starRating: string | null
+    address: string | null
+    city: string | null
+    country: string | null
+    postalCode: string | null
+    phone: string | null
+    email: string | null
+    website: string | null
+    checkInTime: string | null
+    checkOutTime: string | null
+    description: string | null
+    highlights: string | null
+    roomTypes: string | null
+    totalRooms: number | null
+    yearBuilt: number | null
+    lastRenovated: number | null
+    awards: string | null
+    wheelchairAccessible: boolean | null
+    accessibleRooms: string | null
+    accessibleBathrooms: boolean | null
+    accessibleParking: boolean | null
+    accessibleRestaurants: boolean | null
+    accessiblePools: boolean | null
+    brailleSignage: boolean | null
+    hearingImpairedServices: boolean | null
+    visualImpairedServices: boolean | null
+    serviceAnimalsAllowed: boolean | null
+    cancellationPolicy: string | null
+    petPolicy: string | null
+    smokingPolicy: string | null
+    childrenPolicy: string | null
+    groupPolicy: string | null
+    depositRequired: boolean | null
+    depositAmount: string | null
+    minimumStay: string | null
+    ageRestriction: string | null
+    quietHours: string | null
+    specialOffers: string | null
+    loyaltyProgram: boolean | null
+    mainImageUrl: string | null
+    vendorId: string | null
+  }
+
+  export type LuxuryDestinationMaxAggregateOutputType = {
+    id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    propertyName: string | null
+    propertyType: string | null
+    starRating: string | null
+    address: string | null
+    city: string | null
+    country: string | null
+    postalCode: string | null
+    phone: string | null
+    email: string | null
+    website: string | null
+    checkInTime: string | null
+    checkOutTime: string | null
+    description: string | null
+    highlights: string | null
+    roomTypes: string | null
+    totalRooms: number | null
+    yearBuilt: number | null
+    lastRenovated: number | null
+    awards: string | null
+    wheelchairAccessible: boolean | null
+    accessibleRooms: string | null
+    accessibleBathrooms: boolean | null
+    accessibleParking: boolean | null
+    accessibleRestaurants: boolean | null
+    accessiblePools: boolean | null
+    brailleSignage: boolean | null
+    hearingImpairedServices: boolean | null
+    visualImpairedServices: boolean | null
+    serviceAnimalsAllowed: boolean | null
+    cancellationPolicy: string | null
+    petPolicy: string | null
+    smokingPolicy: string | null
+    childrenPolicy: string | null
+    groupPolicy: string | null
+    depositRequired: boolean | null
+    depositAmount: string | null
+    minimumStay: string | null
+    ageRestriction: string | null
+    quietHours: string | null
+    specialOffers: string | null
+    loyaltyProgram: boolean | null
+    mainImageUrl: string | null
+    vendorId: string | null
+  }
+
+  export type LuxuryDestinationCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    propertyName: number
+    propertyType: number
+    starRating: number
+    address: number
+    city: number
+    country: number
+    postalCode: number
+    phone: number
+    email: number
+    website: number
+    checkInTime: number
+    checkOutTime: number
+    languagesSpoken: number
+    description: number
+    highlights: number
+    amenities: number
+    roomTypes: number
+    totalRooms: number
+    yearBuilt: number
+    lastRenovated: number
+    awards: number
+    sustainabilityPractices: number
+    wheelchairAccessible: number
+    accessibleRooms: number
+    accessibleBathrooms: number
+    accessibleParking: number
+    accessibleRestaurants: number
+    accessiblePools: number
+    brailleSignage: number
+    hearingImpairedServices: number
+    visualImpairedServices: number
+    serviceAnimalsAllowed: number
+    cancellationPolicy: number
+    petPolicy: number
+    smokingPolicy: number
+    childrenPolicy: number
+    groupPolicy: number
+    paymentMethods: number
+    depositRequired: number
+    depositAmount: number
+    minimumStay: number
+    ageRestriction: number
+    quietHours: number
+    specialOffers: number
+    loyaltyProgram: number
+    mainImageUrl: number
+    otherImageUrls: number
+    imageSections: number
+    sectionImages: number
+    imageDescriptions: number
+    vendorId: number
+    _all: number
+  }
+
+
+  export type LuxuryDestinationAvgAggregateInputType = {
+    totalRooms?: true
+    yearBuilt?: true
+    lastRenovated?: true
+  }
+
+  export type LuxuryDestinationSumAggregateInputType = {
+    totalRooms?: true
+    yearBuilt?: true
+    lastRenovated?: true
+  }
+
+  export type LuxuryDestinationMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    propertyName?: true
+    propertyType?: true
+    starRating?: true
+    address?: true
+    city?: true
+    country?: true
+    postalCode?: true
+    phone?: true
+    email?: true
+    website?: true
+    checkInTime?: true
+    checkOutTime?: true
+    description?: true
+    highlights?: true
+    roomTypes?: true
+    totalRooms?: true
+    yearBuilt?: true
+    lastRenovated?: true
+    awards?: true
+    wheelchairAccessible?: true
+    accessibleRooms?: true
+    accessibleBathrooms?: true
+    accessibleParking?: true
+    accessibleRestaurants?: true
+    accessiblePools?: true
+    brailleSignage?: true
+    hearingImpairedServices?: true
+    visualImpairedServices?: true
+    serviceAnimalsAllowed?: true
+    cancellationPolicy?: true
+    petPolicy?: true
+    smokingPolicy?: true
+    childrenPolicy?: true
+    groupPolicy?: true
+    depositRequired?: true
+    depositAmount?: true
+    minimumStay?: true
+    ageRestriction?: true
+    quietHours?: true
+    specialOffers?: true
+    loyaltyProgram?: true
+    mainImageUrl?: true
+    vendorId?: true
+  }
+
+  export type LuxuryDestinationMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    propertyName?: true
+    propertyType?: true
+    starRating?: true
+    address?: true
+    city?: true
+    country?: true
+    postalCode?: true
+    phone?: true
+    email?: true
+    website?: true
+    checkInTime?: true
+    checkOutTime?: true
+    description?: true
+    highlights?: true
+    roomTypes?: true
+    totalRooms?: true
+    yearBuilt?: true
+    lastRenovated?: true
+    awards?: true
+    wheelchairAccessible?: true
+    accessibleRooms?: true
+    accessibleBathrooms?: true
+    accessibleParking?: true
+    accessibleRestaurants?: true
+    accessiblePools?: true
+    brailleSignage?: true
+    hearingImpairedServices?: true
+    visualImpairedServices?: true
+    serviceAnimalsAllowed?: true
+    cancellationPolicy?: true
+    petPolicy?: true
+    smokingPolicy?: true
+    childrenPolicy?: true
+    groupPolicy?: true
+    depositRequired?: true
+    depositAmount?: true
+    minimumStay?: true
+    ageRestriction?: true
+    quietHours?: true
+    specialOffers?: true
+    loyaltyProgram?: true
+    mainImageUrl?: true
+    vendorId?: true
+  }
+
+  export type LuxuryDestinationCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    propertyName?: true
+    propertyType?: true
+    starRating?: true
+    address?: true
+    city?: true
+    country?: true
+    postalCode?: true
+    phone?: true
+    email?: true
+    website?: true
+    checkInTime?: true
+    checkOutTime?: true
+    languagesSpoken?: true
+    description?: true
+    highlights?: true
+    amenities?: true
+    roomTypes?: true
+    totalRooms?: true
+    yearBuilt?: true
+    lastRenovated?: true
+    awards?: true
+    sustainabilityPractices?: true
+    wheelchairAccessible?: true
+    accessibleRooms?: true
+    accessibleBathrooms?: true
+    accessibleParking?: true
+    accessibleRestaurants?: true
+    accessiblePools?: true
+    brailleSignage?: true
+    hearingImpairedServices?: true
+    visualImpairedServices?: true
+    serviceAnimalsAllowed?: true
+    cancellationPolicy?: true
+    petPolicy?: true
+    smokingPolicy?: true
+    childrenPolicy?: true
+    groupPolicy?: true
+    paymentMethods?: true
+    depositRequired?: true
+    depositAmount?: true
+    minimumStay?: true
+    ageRestriction?: true
+    quietHours?: true
+    specialOffers?: true
+    loyaltyProgram?: true
+    mainImageUrl?: true
+    otherImageUrls?: true
+    imageSections?: true
+    sectionImages?: true
+    imageDescriptions?: true
+    vendorId?: true
+    _all?: true
+  }
+
+  export type LuxuryDestinationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LuxuryDestination to aggregate.
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LuxuryDestinations to fetch.
+     */
+    orderBy?: LuxuryDestinationOrderByWithRelationInput | LuxuryDestinationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LuxuryDestinationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LuxuryDestinations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LuxuryDestinations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LuxuryDestinations
+    **/
+    _count?: true | LuxuryDestinationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LuxuryDestinationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LuxuryDestinationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LuxuryDestinationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LuxuryDestinationMaxAggregateInputType
+  }
+
+  export type GetLuxuryDestinationAggregateType<T extends LuxuryDestinationAggregateArgs> = {
+        [P in keyof T & keyof AggregateLuxuryDestination]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLuxuryDestination[P]>
+      : GetScalarType<T[P], AggregateLuxuryDestination[P]>
+  }
+
+
+
+
+  export type LuxuryDestinationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LuxuryDestinationWhereInput
+    orderBy?: LuxuryDestinationOrderByWithAggregationInput | LuxuryDestinationOrderByWithAggregationInput[]
+    by: LuxuryDestinationScalarFieldEnum[] | LuxuryDestinationScalarFieldEnum
+    having?: LuxuryDestinationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LuxuryDestinationCountAggregateInputType | true
+    _avg?: LuxuryDestinationAvgAggregateInputType
+    _sum?: LuxuryDestinationSumAggregateInputType
+    _min?: LuxuryDestinationMinAggregateInputType
+    _max?: LuxuryDestinationMaxAggregateInputType
+  }
+
+  export type LuxuryDestinationGroupByOutputType = {
+    id: string
+    createdAt: Date
+    updatedAt: Date
+    propertyName: string
+    propertyType: string
+    starRating: string | null
+    address: string
+    city: string
+    country: string
+    postalCode: string | null
+    phone: string
+    email: string
+    website: string | null
+    checkInTime: string
+    checkOutTime: string
+    languagesSpoken: string[]
+    description: string
+    highlights: string | null
+    amenities: string[]
+    roomTypes: string | null
+    totalRooms: number | null
+    yearBuilt: number | null
+    lastRenovated: number | null
+    awards: string | null
+    sustainabilityPractices: string[]
+    wheelchairAccessible: boolean
+    accessibleRooms: string | null
+    accessibleBathrooms: boolean
+    accessibleParking: boolean
+    accessibleRestaurants: boolean
+    accessiblePools: boolean
+    brailleSignage: boolean
+    hearingImpairedServices: boolean
+    visualImpairedServices: boolean
+    serviceAnimalsAllowed: boolean
+    cancellationPolicy: string
+    petPolicy: string | null
+    smokingPolicy: string | null
+    childrenPolicy: string | null
+    groupPolicy: string | null
+    paymentMethods: string[]
+    depositRequired: boolean
+    depositAmount: string | null
+    minimumStay: string | null
+    ageRestriction: string | null
+    quietHours: string
+    specialOffers: string | null
+    loyaltyProgram: boolean
+    mainImageUrl: string | null
+    otherImageUrls: string[]
+    imageSections: string[]
+    sectionImages: JsonValue | null
+    imageDescriptions: JsonValue | null
+    vendorId: string
+    _count: LuxuryDestinationCountAggregateOutputType | null
+    _avg: LuxuryDestinationAvgAggregateOutputType | null
+    _sum: LuxuryDestinationSumAggregateOutputType | null
+    _min: LuxuryDestinationMinAggregateOutputType | null
+    _max: LuxuryDestinationMaxAggregateOutputType | null
+  }
+
+  type GetLuxuryDestinationGroupByPayload<T extends LuxuryDestinationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LuxuryDestinationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LuxuryDestinationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LuxuryDestinationGroupByOutputType[P]>
+            : GetScalarType<T[P], LuxuryDestinationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LuxuryDestinationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    propertyName?: boolean
+    propertyType?: boolean
+    starRating?: boolean
+    address?: boolean
+    city?: boolean
+    country?: boolean
+    postalCode?: boolean
+    phone?: boolean
+    email?: boolean
+    website?: boolean
+    checkInTime?: boolean
+    checkOutTime?: boolean
+    languagesSpoken?: boolean
+    description?: boolean
+    highlights?: boolean
+    amenities?: boolean
+    roomTypes?: boolean
+    totalRooms?: boolean
+    yearBuilt?: boolean
+    lastRenovated?: boolean
+    awards?: boolean
+    sustainabilityPractices?: boolean
+    wheelchairAccessible?: boolean
+    accessibleRooms?: boolean
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy?: boolean
+    petPolicy?: boolean
+    smokingPolicy?: boolean
+    childrenPolicy?: boolean
+    groupPolicy?: boolean
+    paymentMethods?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    minimumStay?: boolean
+    ageRestriction?: boolean
+    quietHours?: boolean
+    specialOffers?: boolean
+    loyaltyProgram?: boolean
+    mainImageUrl?: boolean
+    otherImageUrls?: boolean
+    imageSections?: boolean
+    sectionImages?: boolean
+    imageDescriptions?: boolean
+    vendorId?: boolean
+  }, ExtArgs["result"]["luxuryDestination"]>
+
+  export type LuxuryDestinationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    propertyName?: boolean
+    propertyType?: boolean
+    starRating?: boolean
+    address?: boolean
+    city?: boolean
+    country?: boolean
+    postalCode?: boolean
+    phone?: boolean
+    email?: boolean
+    website?: boolean
+    checkInTime?: boolean
+    checkOutTime?: boolean
+    languagesSpoken?: boolean
+    description?: boolean
+    highlights?: boolean
+    amenities?: boolean
+    roomTypes?: boolean
+    totalRooms?: boolean
+    yearBuilt?: boolean
+    lastRenovated?: boolean
+    awards?: boolean
+    sustainabilityPractices?: boolean
+    wheelchairAccessible?: boolean
+    accessibleRooms?: boolean
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy?: boolean
+    petPolicy?: boolean
+    smokingPolicy?: boolean
+    childrenPolicy?: boolean
+    groupPolicy?: boolean
+    paymentMethods?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    minimumStay?: boolean
+    ageRestriction?: boolean
+    quietHours?: boolean
+    specialOffers?: boolean
+    loyaltyProgram?: boolean
+    mainImageUrl?: boolean
+    otherImageUrls?: boolean
+    imageSections?: boolean
+    sectionImages?: boolean
+    imageDescriptions?: boolean
+    vendorId?: boolean
+  }, ExtArgs["result"]["luxuryDestination"]>
+
+  export type LuxuryDestinationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    propertyName?: boolean
+    propertyType?: boolean
+    starRating?: boolean
+    address?: boolean
+    city?: boolean
+    country?: boolean
+    postalCode?: boolean
+    phone?: boolean
+    email?: boolean
+    website?: boolean
+    checkInTime?: boolean
+    checkOutTime?: boolean
+    languagesSpoken?: boolean
+    description?: boolean
+    highlights?: boolean
+    amenities?: boolean
+    roomTypes?: boolean
+    totalRooms?: boolean
+    yearBuilt?: boolean
+    lastRenovated?: boolean
+    awards?: boolean
+    sustainabilityPractices?: boolean
+    wheelchairAccessible?: boolean
+    accessibleRooms?: boolean
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy?: boolean
+    petPolicy?: boolean
+    smokingPolicy?: boolean
+    childrenPolicy?: boolean
+    groupPolicy?: boolean
+    paymentMethods?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    minimumStay?: boolean
+    ageRestriction?: boolean
+    quietHours?: boolean
+    specialOffers?: boolean
+    loyaltyProgram?: boolean
+    mainImageUrl?: boolean
+    otherImageUrls?: boolean
+    imageSections?: boolean
+    sectionImages?: boolean
+    imageDescriptions?: boolean
+    vendorId?: boolean
+  }, ExtArgs["result"]["luxuryDestination"]>
+
+  export type LuxuryDestinationSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    propertyName?: boolean
+    propertyType?: boolean
+    starRating?: boolean
+    address?: boolean
+    city?: boolean
+    country?: boolean
+    postalCode?: boolean
+    phone?: boolean
+    email?: boolean
+    website?: boolean
+    checkInTime?: boolean
+    checkOutTime?: boolean
+    languagesSpoken?: boolean
+    description?: boolean
+    highlights?: boolean
+    amenities?: boolean
+    roomTypes?: boolean
+    totalRooms?: boolean
+    yearBuilt?: boolean
+    lastRenovated?: boolean
+    awards?: boolean
+    sustainabilityPractices?: boolean
+    wheelchairAccessible?: boolean
+    accessibleRooms?: boolean
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy?: boolean
+    petPolicy?: boolean
+    smokingPolicy?: boolean
+    childrenPolicy?: boolean
+    groupPolicy?: boolean
+    paymentMethods?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    minimumStay?: boolean
+    ageRestriction?: boolean
+    quietHours?: boolean
+    specialOffers?: boolean
+    loyaltyProgram?: boolean
+    mainImageUrl?: boolean
+    otherImageUrls?: boolean
+    imageSections?: boolean
+    sectionImages?: boolean
+    imageDescriptions?: boolean
+    vendorId?: boolean
+  }
+
+  export type LuxuryDestinationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "propertyName" | "propertyType" | "starRating" | "address" | "city" | "country" | "postalCode" | "phone" | "email" | "website" | "checkInTime" | "checkOutTime" | "languagesSpoken" | "description" | "highlights" | "amenities" | "roomTypes" | "totalRooms" | "yearBuilt" | "lastRenovated" | "awards" | "sustainabilityPractices" | "wheelchairAccessible" | "accessibleRooms" | "accessibleBathrooms" | "accessibleParking" | "accessibleRestaurants" | "accessiblePools" | "brailleSignage" | "hearingImpairedServices" | "visualImpairedServices" | "serviceAnimalsAllowed" | "cancellationPolicy" | "petPolicy" | "smokingPolicy" | "childrenPolicy" | "groupPolicy" | "paymentMethods" | "depositRequired" | "depositAmount" | "minimumStay" | "ageRestriction" | "quietHours" | "specialOffers" | "loyaltyProgram" | "mainImageUrl" | "otherImageUrls" | "imageSections" | "sectionImages" | "imageDescriptions" | "vendorId", ExtArgs["result"]["luxuryDestination"]>
+
+  export type $LuxuryDestinationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LuxuryDestination"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      createdAt: Date
+      updatedAt: Date
+      propertyName: string
+      propertyType: string
+      starRating: string | null
+      address: string
+      city: string
+      country: string
+      postalCode: string | null
+      phone: string
+      email: string
+      website: string | null
+      checkInTime: string
+      checkOutTime: string
+      languagesSpoken: string[]
+      description: string
+      highlights: string | null
+      amenities: string[]
+      roomTypes: string | null
+      totalRooms: number | null
+      yearBuilt: number | null
+      lastRenovated: number | null
+      awards: string | null
+      sustainabilityPractices: string[]
+      wheelchairAccessible: boolean
+      accessibleRooms: string | null
+      accessibleBathrooms: boolean
+      accessibleParking: boolean
+      accessibleRestaurants: boolean
+      accessiblePools: boolean
+      brailleSignage: boolean
+      hearingImpairedServices: boolean
+      visualImpairedServices: boolean
+      serviceAnimalsAllowed: boolean
+      cancellationPolicy: string
+      petPolicy: string | null
+      smokingPolicy: string | null
+      childrenPolicy: string | null
+      groupPolicy: string | null
+      paymentMethods: string[]
+      depositRequired: boolean
+      depositAmount: string | null
+      minimumStay: string | null
+      ageRestriction: string | null
+      quietHours: string
+      specialOffers: string | null
+      loyaltyProgram: boolean
+      mainImageUrl: string | null
+      otherImageUrls: string[]
+      imageSections: string[]
+      sectionImages: Prisma.JsonValue | null
+      imageDescriptions: Prisma.JsonValue | null
+      vendorId: string
+    }, ExtArgs["result"]["luxuryDestination"]>
+    composites: {}
+  }
+
+  type LuxuryDestinationGetPayload<S extends boolean | null | undefined | LuxuryDestinationDefaultArgs> = $Result.GetResult<Prisma.$LuxuryDestinationPayload, S>
+
+  type LuxuryDestinationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LuxuryDestinationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LuxuryDestinationCountAggregateInputType | true
+    }
+
+  export interface LuxuryDestinationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LuxuryDestination'], meta: { name: 'LuxuryDestination' } }
+    /**
+     * Find zero or one LuxuryDestination that matches the filter.
+     * @param {LuxuryDestinationFindUniqueArgs} args - Arguments to find a LuxuryDestination
+     * @example
+     * // Get one LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LuxuryDestinationFindUniqueArgs>(args: SelectSubset<T, LuxuryDestinationFindUniqueArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LuxuryDestination that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LuxuryDestinationFindUniqueOrThrowArgs} args - Arguments to find a LuxuryDestination
+     * @example
+     * // Get one LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LuxuryDestinationFindUniqueOrThrowArgs>(args: SelectSubset<T, LuxuryDestinationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LuxuryDestination that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationFindFirstArgs} args - Arguments to find a LuxuryDestination
+     * @example
+     * // Get one LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LuxuryDestinationFindFirstArgs>(args?: SelectSubset<T, LuxuryDestinationFindFirstArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LuxuryDestination that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationFindFirstOrThrowArgs} args - Arguments to find a LuxuryDestination
+     * @example
+     * // Get one LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LuxuryDestinationFindFirstOrThrowArgs>(args?: SelectSubset<T, LuxuryDestinationFindFirstOrThrowArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LuxuryDestinations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LuxuryDestinations
+     * const luxuryDestinations = await prisma.luxuryDestination.findMany()
+     * 
+     * // Get first 10 LuxuryDestinations
+     * const luxuryDestinations = await prisma.luxuryDestination.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const luxuryDestinationWithIdOnly = await prisma.luxuryDestination.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LuxuryDestinationFindManyArgs>(args?: SelectSubset<T, LuxuryDestinationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LuxuryDestination.
+     * @param {LuxuryDestinationCreateArgs} args - Arguments to create a LuxuryDestination.
+     * @example
+     * // Create one LuxuryDestination
+     * const LuxuryDestination = await prisma.luxuryDestination.create({
+     *   data: {
+     *     // ... data to create a LuxuryDestination
+     *   }
+     * })
+     * 
+     */
+    create<T extends LuxuryDestinationCreateArgs>(args: SelectSubset<T, LuxuryDestinationCreateArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LuxuryDestinations.
+     * @param {LuxuryDestinationCreateManyArgs} args - Arguments to create many LuxuryDestinations.
+     * @example
+     * // Create many LuxuryDestinations
+     * const luxuryDestination = await prisma.luxuryDestination.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LuxuryDestinationCreateManyArgs>(args?: SelectSubset<T, LuxuryDestinationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LuxuryDestinations and returns the data saved in the database.
+     * @param {LuxuryDestinationCreateManyAndReturnArgs} args - Arguments to create many LuxuryDestinations.
+     * @example
+     * // Create many LuxuryDestinations
+     * const luxuryDestination = await prisma.luxuryDestination.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LuxuryDestinations and only return the `id`
+     * const luxuryDestinationWithIdOnly = await prisma.luxuryDestination.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LuxuryDestinationCreateManyAndReturnArgs>(args?: SelectSubset<T, LuxuryDestinationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LuxuryDestination.
+     * @param {LuxuryDestinationDeleteArgs} args - Arguments to delete one LuxuryDestination.
+     * @example
+     * // Delete one LuxuryDestination
+     * const LuxuryDestination = await prisma.luxuryDestination.delete({
+     *   where: {
+     *     // ... filter to delete one LuxuryDestination
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LuxuryDestinationDeleteArgs>(args: SelectSubset<T, LuxuryDestinationDeleteArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LuxuryDestination.
+     * @param {LuxuryDestinationUpdateArgs} args - Arguments to update one LuxuryDestination.
+     * @example
+     * // Update one LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LuxuryDestinationUpdateArgs>(args: SelectSubset<T, LuxuryDestinationUpdateArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LuxuryDestinations.
+     * @param {LuxuryDestinationDeleteManyArgs} args - Arguments to filter LuxuryDestinations to delete.
+     * @example
+     * // Delete a few LuxuryDestinations
+     * const { count } = await prisma.luxuryDestination.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LuxuryDestinationDeleteManyArgs>(args?: SelectSubset<T, LuxuryDestinationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LuxuryDestinations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LuxuryDestinations
+     * const luxuryDestination = await prisma.luxuryDestination.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LuxuryDestinationUpdateManyArgs>(args: SelectSubset<T, LuxuryDestinationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LuxuryDestinations and returns the data updated in the database.
+     * @param {LuxuryDestinationUpdateManyAndReturnArgs} args - Arguments to update many LuxuryDestinations.
+     * @example
+     * // Update many LuxuryDestinations
+     * const luxuryDestination = await prisma.luxuryDestination.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LuxuryDestinations and only return the `id`
+     * const luxuryDestinationWithIdOnly = await prisma.luxuryDestination.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LuxuryDestinationUpdateManyAndReturnArgs>(args: SelectSubset<T, LuxuryDestinationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LuxuryDestination.
+     * @param {LuxuryDestinationUpsertArgs} args - Arguments to update or create a LuxuryDestination.
+     * @example
+     * // Update or create a LuxuryDestination
+     * const luxuryDestination = await prisma.luxuryDestination.upsert({
+     *   create: {
+     *     // ... data to create a LuxuryDestination
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LuxuryDestination we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LuxuryDestinationUpsertArgs>(args: SelectSubset<T, LuxuryDestinationUpsertArgs<ExtArgs>>): Prisma__LuxuryDestinationClient<$Result.GetResult<Prisma.$LuxuryDestinationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LuxuryDestinations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationCountArgs} args - Arguments to filter LuxuryDestinations to count.
+     * @example
+     * // Count the number of LuxuryDestinations
+     * const count = await prisma.luxuryDestination.count({
+     *   where: {
+     *     // ... the filter for the LuxuryDestinations we want to count
+     *   }
+     * })
+    **/
+    count<T extends LuxuryDestinationCountArgs>(
+      args?: Subset<T, LuxuryDestinationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LuxuryDestinationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LuxuryDestination.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LuxuryDestinationAggregateArgs>(args: Subset<T, LuxuryDestinationAggregateArgs>): Prisma.PrismaPromise<GetLuxuryDestinationAggregateType<T>>
+
+    /**
+     * Group by LuxuryDestination.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LuxuryDestinationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LuxuryDestinationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LuxuryDestinationGroupByArgs['orderBy'] }
+        : { orderBy?: LuxuryDestinationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LuxuryDestinationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLuxuryDestinationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LuxuryDestination model
+   */
+  readonly fields: LuxuryDestinationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LuxuryDestination.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LuxuryDestinationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LuxuryDestination model
+   */
+  interface LuxuryDestinationFieldRefs {
+    readonly id: FieldRef<"LuxuryDestination", 'String'>
+    readonly createdAt: FieldRef<"LuxuryDestination", 'DateTime'>
+    readonly updatedAt: FieldRef<"LuxuryDestination", 'DateTime'>
+    readonly propertyName: FieldRef<"LuxuryDestination", 'String'>
+    readonly propertyType: FieldRef<"LuxuryDestination", 'String'>
+    readonly starRating: FieldRef<"LuxuryDestination", 'String'>
+    readonly address: FieldRef<"LuxuryDestination", 'String'>
+    readonly city: FieldRef<"LuxuryDestination", 'String'>
+    readonly country: FieldRef<"LuxuryDestination", 'String'>
+    readonly postalCode: FieldRef<"LuxuryDestination", 'String'>
+    readonly phone: FieldRef<"LuxuryDestination", 'String'>
+    readonly email: FieldRef<"LuxuryDestination", 'String'>
+    readonly website: FieldRef<"LuxuryDestination", 'String'>
+    readonly checkInTime: FieldRef<"LuxuryDestination", 'String'>
+    readonly checkOutTime: FieldRef<"LuxuryDestination", 'String'>
+    readonly languagesSpoken: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly description: FieldRef<"LuxuryDestination", 'String'>
+    readonly highlights: FieldRef<"LuxuryDestination", 'String'>
+    readonly amenities: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly roomTypes: FieldRef<"LuxuryDestination", 'String'>
+    readonly totalRooms: FieldRef<"LuxuryDestination", 'Int'>
+    readonly yearBuilt: FieldRef<"LuxuryDestination", 'Int'>
+    readonly lastRenovated: FieldRef<"LuxuryDestination", 'Int'>
+    readonly awards: FieldRef<"LuxuryDestination", 'String'>
+    readonly sustainabilityPractices: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly wheelchairAccessible: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly accessibleRooms: FieldRef<"LuxuryDestination", 'String'>
+    readonly accessibleBathrooms: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly accessibleParking: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly accessibleRestaurants: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly accessiblePools: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly brailleSignage: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly hearingImpairedServices: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly visualImpairedServices: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly serviceAnimalsAllowed: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly cancellationPolicy: FieldRef<"LuxuryDestination", 'String'>
+    readonly petPolicy: FieldRef<"LuxuryDestination", 'String'>
+    readonly smokingPolicy: FieldRef<"LuxuryDestination", 'String'>
+    readonly childrenPolicy: FieldRef<"LuxuryDestination", 'String'>
+    readonly groupPolicy: FieldRef<"LuxuryDestination", 'String'>
+    readonly paymentMethods: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly depositRequired: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly depositAmount: FieldRef<"LuxuryDestination", 'String'>
+    readonly minimumStay: FieldRef<"LuxuryDestination", 'String'>
+    readonly ageRestriction: FieldRef<"LuxuryDestination", 'String'>
+    readonly quietHours: FieldRef<"LuxuryDestination", 'String'>
+    readonly specialOffers: FieldRef<"LuxuryDestination", 'String'>
+    readonly loyaltyProgram: FieldRef<"LuxuryDestination", 'Boolean'>
+    readonly mainImageUrl: FieldRef<"LuxuryDestination", 'String'>
+    readonly otherImageUrls: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly imageSections: FieldRef<"LuxuryDestination", 'String[]'>
+    readonly sectionImages: FieldRef<"LuxuryDestination", 'Json'>
+    readonly imageDescriptions: FieldRef<"LuxuryDestination", 'Json'>
+    readonly vendorId: FieldRef<"LuxuryDestination", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LuxuryDestination findUnique
+   */
+  export type LuxuryDestinationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter, which LuxuryDestination to fetch.
+     */
+    where: LuxuryDestinationWhereUniqueInput
+  }
+
+  /**
+   * LuxuryDestination findUniqueOrThrow
+   */
+  export type LuxuryDestinationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter, which LuxuryDestination to fetch.
+     */
+    where: LuxuryDestinationWhereUniqueInput
+  }
+
+  /**
+   * LuxuryDestination findFirst
+   */
+  export type LuxuryDestinationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter, which LuxuryDestination to fetch.
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LuxuryDestinations to fetch.
+     */
+    orderBy?: LuxuryDestinationOrderByWithRelationInput | LuxuryDestinationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LuxuryDestinations.
+     */
+    cursor?: LuxuryDestinationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LuxuryDestinations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LuxuryDestinations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LuxuryDestinations.
+     */
+    distinct?: LuxuryDestinationScalarFieldEnum | LuxuryDestinationScalarFieldEnum[]
+  }
+
+  /**
+   * LuxuryDestination findFirstOrThrow
+   */
+  export type LuxuryDestinationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter, which LuxuryDestination to fetch.
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LuxuryDestinations to fetch.
+     */
+    orderBy?: LuxuryDestinationOrderByWithRelationInput | LuxuryDestinationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LuxuryDestinations.
+     */
+    cursor?: LuxuryDestinationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LuxuryDestinations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LuxuryDestinations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LuxuryDestinations.
+     */
+    distinct?: LuxuryDestinationScalarFieldEnum | LuxuryDestinationScalarFieldEnum[]
+  }
+
+  /**
+   * LuxuryDestination findMany
+   */
+  export type LuxuryDestinationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter, which LuxuryDestinations to fetch.
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LuxuryDestinations to fetch.
+     */
+    orderBy?: LuxuryDestinationOrderByWithRelationInput | LuxuryDestinationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LuxuryDestinations.
+     */
+    cursor?: LuxuryDestinationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LuxuryDestinations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LuxuryDestinations.
+     */
+    skip?: number
+    distinct?: LuxuryDestinationScalarFieldEnum | LuxuryDestinationScalarFieldEnum[]
+  }
+
+  /**
+   * LuxuryDestination create
+   */
+  export type LuxuryDestinationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * The data needed to create a LuxuryDestination.
+     */
+    data: XOR<LuxuryDestinationCreateInput, LuxuryDestinationUncheckedCreateInput>
+  }
+
+  /**
+   * LuxuryDestination createMany
+   */
+  export type LuxuryDestinationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LuxuryDestinations.
+     */
+    data: LuxuryDestinationCreateManyInput | LuxuryDestinationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LuxuryDestination createManyAndReturn
+   */
+  export type LuxuryDestinationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * The data used to create many LuxuryDestinations.
+     */
+    data: LuxuryDestinationCreateManyInput | LuxuryDestinationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LuxuryDestination update
+   */
+  export type LuxuryDestinationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * The data needed to update a LuxuryDestination.
+     */
+    data: XOR<LuxuryDestinationUpdateInput, LuxuryDestinationUncheckedUpdateInput>
+    /**
+     * Choose, which LuxuryDestination to update.
+     */
+    where: LuxuryDestinationWhereUniqueInput
+  }
+
+  /**
+   * LuxuryDestination updateMany
+   */
+  export type LuxuryDestinationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LuxuryDestinations.
+     */
+    data: XOR<LuxuryDestinationUpdateManyMutationInput, LuxuryDestinationUncheckedUpdateManyInput>
+    /**
+     * Filter which LuxuryDestinations to update
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * Limit how many LuxuryDestinations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LuxuryDestination updateManyAndReturn
+   */
+  export type LuxuryDestinationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * The data used to update LuxuryDestinations.
+     */
+    data: XOR<LuxuryDestinationUpdateManyMutationInput, LuxuryDestinationUncheckedUpdateManyInput>
+    /**
+     * Filter which LuxuryDestinations to update
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * Limit how many LuxuryDestinations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LuxuryDestination upsert
+   */
+  export type LuxuryDestinationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * The filter to search for the LuxuryDestination to update in case it exists.
+     */
+    where: LuxuryDestinationWhereUniqueInput
+    /**
+     * In case the LuxuryDestination found by the `where` argument doesn't exist, create a new LuxuryDestination with this data.
+     */
+    create: XOR<LuxuryDestinationCreateInput, LuxuryDestinationUncheckedCreateInput>
+    /**
+     * In case the LuxuryDestination was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LuxuryDestinationUpdateInput, LuxuryDestinationUncheckedUpdateInput>
+  }
+
+  /**
+   * LuxuryDestination delete
+   */
+  export type LuxuryDestinationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+    /**
+     * Filter which LuxuryDestination to delete.
+     */
+    where: LuxuryDestinationWhereUniqueInput
+  }
+
+  /**
+   * LuxuryDestination deleteMany
+   */
+  export type LuxuryDestinationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LuxuryDestinations to delete
+     */
+    where?: LuxuryDestinationWhereInput
+    /**
+     * Limit how many LuxuryDestinations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LuxuryDestination without action
+   */
+  export type LuxuryDestinationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LuxuryDestination
+     */
+    select?: LuxuryDestinationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LuxuryDestination
+     */
+    omit?: LuxuryDestinationOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RoomType
+   */
+
+  export type AggregateRoomType = {
+    _count: RoomTypeCountAggregateOutputType | null
+    _avg: RoomTypeAvgAggregateOutputType | null
+    _sum: RoomTypeSumAggregateOutputType | null
+    _min: RoomTypeMinAggregateOutputType | null
+    _max: RoomTypeMaxAggregateOutputType | null
+  }
+
+  export type RoomTypeAvgAggregateOutputType = {
+    size: number | null
+    occupancy: number | null
+    basePrice: number | null
+    totalRooms: number | null
+    views: number | null
+    rating: number | null
+    minimumStay: number | null
+    depositAmount: number | null
+  }
+
+  export type RoomTypeSumAggregateOutputType = {
+    size: number | null
+    occupancy: number | null
+    basePrice: number | null
+    totalRooms: number | null
+    views: number | null
+    rating: number | null
+    minimumStay: number | null
+    depositAmount: number | null
+  }
+
+  export type RoomTypeMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    size: number | null
+    occupancy: number | null
+    bedConfiguration: string | null
+    basePrice: number | null
+    totalRooms: number | null
+    views: number | null
+    rating: number | null
+    minimumStay: number | null
+    depositRequired: boolean | null
+    depositAmount: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    vendorId: string | null
+  }
+
+  export type RoomTypeMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    size: number | null
+    occupancy: number | null
+    bedConfiguration: string | null
+    basePrice: number | null
+    totalRooms: number | null
+    views: number | null
+    rating: number | null
+    minimumStay: number | null
+    depositRequired: boolean | null
+    depositAmount: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    vendorId: string | null
+  }
+
+  export type RoomTypeCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    size: number
+    occupancy: number
+    bedConfiguration: number
+    basePrice: number
+    totalRooms: number
+    views: number
+    rating: number
+    minimumStay: number
+    depositRequired: number
+    depositAmount: number
+    amenities: number
+    accessibilityFeatures: number
+    bathroomFeatures: number
+    bedroomFeatures: number
+    entertainment: number
+    familyFriendly: number
+    foodAndDrink: number
+    moreFeatures: number
+    outdoorSpace: number
+    safetyFeatures: number
+    freebies: number
+    createdAt: number
+    updatedAt: number
+    vendorId: number
+    _all: number
+  }
+
+
+  export type RoomTypeAvgAggregateInputType = {
+    size?: true
+    occupancy?: true
+    basePrice?: true
+    totalRooms?: true
+    views?: true
+    rating?: true
+    minimumStay?: true
+    depositAmount?: true
+  }
+
+  export type RoomTypeSumAggregateInputType = {
+    size?: true
+    occupancy?: true
+    basePrice?: true
+    totalRooms?: true
+    views?: true
+    rating?: true
+    minimumStay?: true
+    depositAmount?: true
+  }
+
+  export type RoomTypeMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    size?: true
+    occupancy?: true
+    bedConfiguration?: true
+    basePrice?: true
+    totalRooms?: true
+    views?: true
+    rating?: true
+    minimumStay?: true
+    depositRequired?: true
+    depositAmount?: true
+    createdAt?: true
+    updatedAt?: true
+    vendorId?: true
+  }
+
+  export type RoomTypeMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    size?: true
+    occupancy?: true
+    bedConfiguration?: true
+    basePrice?: true
+    totalRooms?: true
+    views?: true
+    rating?: true
+    minimumStay?: true
+    depositRequired?: true
+    depositAmount?: true
+    createdAt?: true
+    updatedAt?: true
+    vendorId?: true
+  }
+
+  export type RoomTypeCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    size?: true
+    occupancy?: true
+    bedConfiguration?: true
+    basePrice?: true
+    totalRooms?: true
+    views?: true
+    rating?: true
+    minimumStay?: true
+    depositRequired?: true
+    depositAmount?: true
+    amenities?: true
+    accessibilityFeatures?: true
+    bathroomFeatures?: true
+    bedroomFeatures?: true
+    entertainment?: true
+    familyFriendly?: true
+    foodAndDrink?: true
+    moreFeatures?: true
+    outdoorSpace?: true
+    safetyFeatures?: true
+    freebies?: true
+    createdAt?: true
+    updatedAt?: true
+    vendorId?: true
+    _all?: true
+  }
+
+  export type RoomTypeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RoomType to aggregate.
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomTypes to fetch.
+     */
+    orderBy?: RoomTypeOrderByWithRelationInput | RoomTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RoomTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RoomTypes
+    **/
+    _count?: true | RoomTypeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RoomTypeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RoomTypeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RoomTypeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RoomTypeMaxAggregateInputType
+  }
+
+  export type GetRoomTypeAggregateType<T extends RoomTypeAggregateArgs> = {
+        [P in keyof T & keyof AggregateRoomType]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRoomType[P]>
+      : GetScalarType<T[P], AggregateRoomType[P]>
+  }
+
+
+
+
+  export type RoomTypeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RoomTypeWhereInput
+    orderBy?: RoomTypeOrderByWithAggregationInput | RoomTypeOrderByWithAggregationInput[]
+    by: RoomTypeScalarFieldEnum[] | RoomTypeScalarFieldEnum
+    having?: RoomTypeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RoomTypeCountAggregateInputType | true
+    _avg?: RoomTypeAvgAggregateInputType
+    _sum?: RoomTypeSumAggregateInputType
+    _min?: RoomTypeMinAggregateInputType
+    _max?: RoomTypeMaxAggregateInputType
+  }
+
+  export type RoomTypeGroupByOutputType = {
+    id: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms: number
+    views: number
+    rating: number
+    minimumStay: number | null
+    depositRequired: boolean
+    depositAmount: number | null
+    amenities: JsonValue | null
+    accessibilityFeatures: JsonValue | null
+    bathroomFeatures: JsonValue | null
+    bedroomFeatures: JsonValue | null
+    entertainment: JsonValue | null
+    familyFriendly: JsonValue | null
+    foodAndDrink: JsonValue | null
+    moreFeatures: JsonValue | null
+    outdoorSpace: JsonValue | null
+    safetyFeatures: JsonValue | null
+    freebies: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    vendorId: string
+    _count: RoomTypeCountAggregateOutputType | null
+    _avg: RoomTypeAvgAggregateOutputType | null
+    _sum: RoomTypeSumAggregateOutputType | null
+    _min: RoomTypeMinAggregateOutputType | null
+    _max: RoomTypeMaxAggregateOutputType | null
+  }
+
+  type GetRoomTypeGroupByPayload<T extends RoomTypeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RoomTypeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RoomTypeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RoomTypeGroupByOutputType[P]>
+            : GetScalarType<T[P], RoomTypeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RoomTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    size?: boolean
+    occupancy?: boolean
+    bedConfiguration?: boolean
+    basePrice?: boolean
+    totalRooms?: boolean
+    views?: boolean
+    rating?: boolean
+    minimumStay?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    amenities?: boolean
+    accessibilityFeatures?: boolean
+    bathroomFeatures?: boolean
+    bedroomFeatures?: boolean
+    entertainment?: boolean
+    familyFriendly?: boolean
+    foodAndDrink?: boolean
+    moreFeatures?: boolean
+    outdoorSpace?: boolean
+    safetyFeatures?: boolean
+    freebies?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    vendorId?: boolean
+    images?: boolean | RoomType$imagesArgs<ExtArgs>
+    extraFees?: boolean | RoomType$extraFeesArgs<ExtArgs>
+    _count?: boolean | RoomTypeCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["roomType"]>
+
+  export type RoomTypeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    size?: boolean
+    occupancy?: boolean
+    bedConfiguration?: boolean
+    basePrice?: boolean
+    totalRooms?: boolean
+    views?: boolean
+    rating?: boolean
+    minimumStay?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    amenities?: boolean
+    accessibilityFeatures?: boolean
+    bathroomFeatures?: boolean
+    bedroomFeatures?: boolean
+    entertainment?: boolean
+    familyFriendly?: boolean
+    foodAndDrink?: boolean
+    moreFeatures?: boolean
+    outdoorSpace?: boolean
+    safetyFeatures?: boolean
+    freebies?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    vendorId?: boolean
+  }, ExtArgs["result"]["roomType"]>
+
+  export type RoomTypeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    size?: boolean
+    occupancy?: boolean
+    bedConfiguration?: boolean
+    basePrice?: boolean
+    totalRooms?: boolean
+    views?: boolean
+    rating?: boolean
+    minimumStay?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    amenities?: boolean
+    accessibilityFeatures?: boolean
+    bathroomFeatures?: boolean
+    bedroomFeatures?: boolean
+    entertainment?: boolean
+    familyFriendly?: boolean
+    foodAndDrink?: boolean
+    moreFeatures?: boolean
+    outdoorSpace?: boolean
+    safetyFeatures?: boolean
+    freebies?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    vendorId?: boolean
+  }, ExtArgs["result"]["roomType"]>
+
+  export type RoomTypeSelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    size?: boolean
+    occupancy?: boolean
+    bedConfiguration?: boolean
+    basePrice?: boolean
+    totalRooms?: boolean
+    views?: boolean
+    rating?: boolean
+    minimumStay?: boolean
+    depositRequired?: boolean
+    depositAmount?: boolean
+    amenities?: boolean
+    accessibilityFeatures?: boolean
+    bathroomFeatures?: boolean
+    bedroomFeatures?: boolean
+    entertainment?: boolean
+    familyFriendly?: boolean
+    foodAndDrink?: boolean
+    moreFeatures?: boolean
+    outdoorSpace?: boolean
+    safetyFeatures?: boolean
+    freebies?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    vendorId?: boolean
+  }
+
+  export type RoomTypeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "size" | "occupancy" | "bedConfiguration" | "basePrice" | "totalRooms" | "views" | "rating" | "minimumStay" | "depositRequired" | "depositAmount" | "amenities" | "accessibilityFeatures" | "bathroomFeatures" | "bedroomFeatures" | "entertainment" | "familyFriendly" | "foodAndDrink" | "moreFeatures" | "outdoorSpace" | "safetyFeatures" | "freebies" | "createdAt" | "updatedAt" | "vendorId", ExtArgs["result"]["roomType"]>
+  export type RoomTypeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    images?: boolean | RoomType$imagesArgs<ExtArgs>
+    extraFees?: boolean | RoomType$extraFeesArgs<ExtArgs>
+    _count?: boolean | RoomTypeCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type RoomTypeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type RoomTypeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $RoomTypePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RoomType"
+    objects: {
+      images: Prisma.$RoomImagePayload<ExtArgs>[]
+      extraFees: Prisma.$ExtraFeePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      description: string
+      size: number
+      occupancy: number
+      bedConfiguration: string
+      basePrice: number
+      totalRooms: number
+      views: number
+      rating: number
+      minimumStay: number | null
+      depositRequired: boolean
+      depositAmount: number | null
+      amenities: Prisma.JsonValue | null
+      accessibilityFeatures: Prisma.JsonValue | null
+      bathroomFeatures: Prisma.JsonValue | null
+      bedroomFeatures: Prisma.JsonValue | null
+      entertainment: Prisma.JsonValue | null
+      familyFriendly: Prisma.JsonValue | null
+      foodAndDrink: Prisma.JsonValue | null
+      moreFeatures: Prisma.JsonValue | null
+      outdoorSpace: Prisma.JsonValue | null
+      safetyFeatures: Prisma.JsonValue | null
+      freebies: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+      vendorId: string
+    }, ExtArgs["result"]["roomType"]>
+    composites: {}
+  }
+
+  type RoomTypeGetPayload<S extends boolean | null | undefined | RoomTypeDefaultArgs> = $Result.GetResult<Prisma.$RoomTypePayload, S>
+
+  type RoomTypeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RoomTypeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RoomTypeCountAggregateInputType | true
+    }
+
+  export interface RoomTypeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RoomType'], meta: { name: 'RoomType' } }
+    /**
+     * Find zero or one RoomType that matches the filter.
+     * @param {RoomTypeFindUniqueArgs} args - Arguments to find a RoomType
+     * @example
+     * // Get one RoomType
+     * const roomType = await prisma.roomType.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RoomTypeFindUniqueArgs>(args: SelectSubset<T, RoomTypeFindUniqueArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RoomType that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RoomTypeFindUniqueOrThrowArgs} args - Arguments to find a RoomType
+     * @example
+     * // Get one RoomType
+     * const roomType = await prisma.roomType.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RoomTypeFindUniqueOrThrowArgs>(args: SelectSubset<T, RoomTypeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RoomType that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeFindFirstArgs} args - Arguments to find a RoomType
+     * @example
+     * // Get one RoomType
+     * const roomType = await prisma.roomType.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RoomTypeFindFirstArgs>(args?: SelectSubset<T, RoomTypeFindFirstArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RoomType that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeFindFirstOrThrowArgs} args - Arguments to find a RoomType
+     * @example
+     * // Get one RoomType
+     * const roomType = await prisma.roomType.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RoomTypeFindFirstOrThrowArgs>(args?: SelectSubset<T, RoomTypeFindFirstOrThrowArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RoomTypes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RoomTypes
+     * const roomTypes = await prisma.roomType.findMany()
+     * 
+     * // Get first 10 RoomTypes
+     * const roomTypes = await prisma.roomType.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const roomTypeWithIdOnly = await prisma.roomType.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RoomTypeFindManyArgs>(args?: SelectSubset<T, RoomTypeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RoomType.
+     * @param {RoomTypeCreateArgs} args - Arguments to create a RoomType.
+     * @example
+     * // Create one RoomType
+     * const RoomType = await prisma.roomType.create({
+     *   data: {
+     *     // ... data to create a RoomType
+     *   }
+     * })
+     * 
+     */
+    create<T extends RoomTypeCreateArgs>(args: SelectSubset<T, RoomTypeCreateArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RoomTypes.
+     * @param {RoomTypeCreateManyArgs} args - Arguments to create many RoomTypes.
+     * @example
+     * // Create many RoomTypes
+     * const roomType = await prisma.roomType.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RoomTypeCreateManyArgs>(args?: SelectSubset<T, RoomTypeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RoomTypes and returns the data saved in the database.
+     * @param {RoomTypeCreateManyAndReturnArgs} args - Arguments to create many RoomTypes.
+     * @example
+     * // Create many RoomTypes
+     * const roomType = await prisma.roomType.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RoomTypes and only return the `id`
+     * const roomTypeWithIdOnly = await prisma.roomType.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RoomTypeCreateManyAndReturnArgs>(args?: SelectSubset<T, RoomTypeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RoomType.
+     * @param {RoomTypeDeleteArgs} args - Arguments to delete one RoomType.
+     * @example
+     * // Delete one RoomType
+     * const RoomType = await prisma.roomType.delete({
+     *   where: {
+     *     // ... filter to delete one RoomType
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RoomTypeDeleteArgs>(args: SelectSubset<T, RoomTypeDeleteArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RoomType.
+     * @param {RoomTypeUpdateArgs} args - Arguments to update one RoomType.
+     * @example
+     * // Update one RoomType
+     * const roomType = await prisma.roomType.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RoomTypeUpdateArgs>(args: SelectSubset<T, RoomTypeUpdateArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RoomTypes.
+     * @param {RoomTypeDeleteManyArgs} args - Arguments to filter RoomTypes to delete.
+     * @example
+     * // Delete a few RoomTypes
+     * const { count } = await prisma.roomType.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RoomTypeDeleteManyArgs>(args?: SelectSubset<T, RoomTypeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RoomTypes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RoomTypes
+     * const roomType = await prisma.roomType.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RoomTypeUpdateManyArgs>(args: SelectSubset<T, RoomTypeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RoomTypes and returns the data updated in the database.
+     * @param {RoomTypeUpdateManyAndReturnArgs} args - Arguments to update many RoomTypes.
+     * @example
+     * // Update many RoomTypes
+     * const roomType = await prisma.roomType.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RoomTypes and only return the `id`
+     * const roomTypeWithIdOnly = await prisma.roomType.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RoomTypeUpdateManyAndReturnArgs>(args: SelectSubset<T, RoomTypeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RoomType.
+     * @param {RoomTypeUpsertArgs} args - Arguments to update or create a RoomType.
+     * @example
+     * // Update or create a RoomType
+     * const roomType = await prisma.roomType.upsert({
+     *   create: {
+     *     // ... data to create a RoomType
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RoomType we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RoomTypeUpsertArgs>(args: SelectSubset<T, RoomTypeUpsertArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RoomTypes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeCountArgs} args - Arguments to filter RoomTypes to count.
+     * @example
+     * // Count the number of RoomTypes
+     * const count = await prisma.roomType.count({
+     *   where: {
+     *     // ... the filter for the RoomTypes we want to count
+     *   }
+     * })
+    **/
+    count<T extends RoomTypeCountArgs>(
+      args?: Subset<T, RoomTypeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RoomTypeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RoomType.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RoomTypeAggregateArgs>(args: Subset<T, RoomTypeAggregateArgs>): Prisma.PrismaPromise<GetRoomTypeAggregateType<T>>
+
+    /**
+     * Group by RoomType.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomTypeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RoomTypeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RoomTypeGroupByArgs['orderBy'] }
+        : { orderBy?: RoomTypeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RoomTypeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRoomTypeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RoomType model
+   */
+  readonly fields: RoomTypeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RoomType.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RoomTypeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    images<T extends RoomType$imagesArgs<ExtArgs> = {}>(args?: Subset<T, RoomType$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    extraFees<T extends RoomType$extraFeesArgs<ExtArgs> = {}>(args?: Subset<T, RoomType$extraFeesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RoomType model
+   */
+  interface RoomTypeFieldRefs {
+    readonly id: FieldRef<"RoomType", 'String'>
+    readonly name: FieldRef<"RoomType", 'String'>
+    readonly description: FieldRef<"RoomType", 'String'>
+    readonly size: FieldRef<"RoomType", 'Float'>
+    readonly occupancy: FieldRef<"RoomType", 'Int'>
+    readonly bedConfiguration: FieldRef<"RoomType", 'String'>
+    readonly basePrice: FieldRef<"RoomType", 'Float'>
+    readonly totalRooms: FieldRef<"RoomType", 'Int'>
+    readonly views: FieldRef<"RoomType", 'Int'>
+    readonly rating: FieldRef<"RoomType", 'Float'>
+    readonly minimumStay: FieldRef<"RoomType", 'Int'>
+    readonly depositRequired: FieldRef<"RoomType", 'Boolean'>
+    readonly depositAmount: FieldRef<"RoomType", 'Float'>
+    readonly amenities: FieldRef<"RoomType", 'Json'>
+    readonly accessibilityFeatures: FieldRef<"RoomType", 'Json'>
+    readonly bathroomFeatures: FieldRef<"RoomType", 'Json'>
+    readonly bedroomFeatures: FieldRef<"RoomType", 'Json'>
+    readonly entertainment: FieldRef<"RoomType", 'Json'>
+    readonly familyFriendly: FieldRef<"RoomType", 'Json'>
+    readonly foodAndDrink: FieldRef<"RoomType", 'Json'>
+    readonly moreFeatures: FieldRef<"RoomType", 'Json'>
+    readonly outdoorSpace: FieldRef<"RoomType", 'Json'>
+    readonly safetyFeatures: FieldRef<"RoomType", 'Json'>
+    readonly freebies: FieldRef<"RoomType", 'Json'>
+    readonly createdAt: FieldRef<"RoomType", 'DateTime'>
+    readonly updatedAt: FieldRef<"RoomType", 'DateTime'>
+    readonly vendorId: FieldRef<"RoomType", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RoomType findUnique
+   */
+  export type RoomTypeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomType to fetch.
+     */
+    where: RoomTypeWhereUniqueInput
+  }
+
+  /**
+   * RoomType findUniqueOrThrow
+   */
+  export type RoomTypeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomType to fetch.
+     */
+    where: RoomTypeWhereUniqueInput
+  }
+
+  /**
+   * RoomType findFirst
+   */
+  export type RoomTypeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomType to fetch.
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomTypes to fetch.
+     */
+    orderBy?: RoomTypeOrderByWithRelationInput | RoomTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RoomTypes.
+     */
+    cursor?: RoomTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RoomTypes.
+     */
+    distinct?: RoomTypeScalarFieldEnum | RoomTypeScalarFieldEnum[]
+  }
+
+  /**
+   * RoomType findFirstOrThrow
+   */
+  export type RoomTypeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomType to fetch.
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomTypes to fetch.
+     */
+    orderBy?: RoomTypeOrderByWithRelationInput | RoomTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RoomTypes.
+     */
+    cursor?: RoomTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RoomTypes.
+     */
+    distinct?: RoomTypeScalarFieldEnum | RoomTypeScalarFieldEnum[]
+  }
+
+  /**
+   * RoomType findMany
+   */
+  export type RoomTypeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomTypes to fetch.
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomTypes to fetch.
+     */
+    orderBy?: RoomTypeOrderByWithRelationInput | RoomTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RoomTypes.
+     */
+    cursor?: RoomTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomTypes.
+     */
+    skip?: number
+    distinct?: RoomTypeScalarFieldEnum | RoomTypeScalarFieldEnum[]
+  }
+
+  /**
+   * RoomType create
+   */
+  export type RoomTypeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RoomType.
+     */
+    data: XOR<RoomTypeCreateInput, RoomTypeUncheckedCreateInput>
+  }
+
+  /**
+   * RoomType createMany
+   */
+  export type RoomTypeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RoomTypes.
+     */
+    data: RoomTypeCreateManyInput | RoomTypeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RoomType createManyAndReturn
+   */
+  export type RoomTypeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * The data used to create many RoomTypes.
+     */
+    data: RoomTypeCreateManyInput | RoomTypeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RoomType update
+   */
+  export type RoomTypeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RoomType.
+     */
+    data: XOR<RoomTypeUpdateInput, RoomTypeUncheckedUpdateInput>
+    /**
+     * Choose, which RoomType to update.
+     */
+    where: RoomTypeWhereUniqueInput
+  }
+
+  /**
+   * RoomType updateMany
+   */
+  export type RoomTypeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RoomTypes.
+     */
+    data: XOR<RoomTypeUpdateManyMutationInput, RoomTypeUncheckedUpdateManyInput>
+    /**
+     * Filter which RoomTypes to update
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * Limit how many RoomTypes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RoomType updateManyAndReturn
+   */
+  export type RoomTypeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * The data used to update RoomTypes.
+     */
+    data: XOR<RoomTypeUpdateManyMutationInput, RoomTypeUncheckedUpdateManyInput>
+    /**
+     * Filter which RoomTypes to update
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * Limit how many RoomTypes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RoomType upsert
+   */
+  export type RoomTypeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RoomType to update in case it exists.
+     */
+    where: RoomTypeWhereUniqueInput
+    /**
+     * In case the RoomType found by the `where` argument doesn't exist, create a new RoomType with this data.
+     */
+    create: XOR<RoomTypeCreateInput, RoomTypeUncheckedCreateInput>
+    /**
+     * In case the RoomType was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RoomTypeUpdateInput, RoomTypeUncheckedUpdateInput>
+  }
+
+  /**
+   * RoomType delete
+   */
+  export type RoomTypeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+    /**
+     * Filter which RoomType to delete.
+     */
+    where: RoomTypeWhereUniqueInput
+  }
+
+  /**
+   * RoomType deleteMany
+   */
+  export type RoomTypeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RoomTypes to delete
+     */
+    where?: RoomTypeWhereInput
+    /**
+     * Limit how many RoomTypes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RoomType.images
+   */
+  export type RoomType$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    where?: RoomImageWhereInput
+    orderBy?: RoomImageOrderByWithRelationInput | RoomImageOrderByWithRelationInput[]
+    cursor?: RoomImageWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RoomImageScalarFieldEnum | RoomImageScalarFieldEnum[]
+  }
+
+  /**
+   * RoomType.extraFees
+   */
+  export type RoomType$extraFeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    where?: ExtraFeeWhereInput
+    orderBy?: ExtraFeeOrderByWithRelationInput | ExtraFeeOrderByWithRelationInput[]
+    cursor?: ExtraFeeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ExtraFeeScalarFieldEnum | ExtraFeeScalarFieldEnum[]
+  }
+
+  /**
+   * RoomType without action
+   */
+  export type RoomTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomType
+     */
+    select?: RoomTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomType
+     */
+    omit?: RoomTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomTypeInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RoomImage
+   */
+
+  export type AggregateRoomImage = {
+    _count: RoomImageCountAggregateOutputType | null
+    _min: RoomImageMinAggregateOutputType | null
+    _max: RoomImageMaxAggregateOutputType | null
+  }
+
+  export type RoomImageMinAggregateOutputType = {
+    id: string | null
+    url: string | null
+    description: string | null
+    roomTypeId: string | null
+    createdAt: Date | null
+  }
+
+  export type RoomImageMaxAggregateOutputType = {
+    id: string | null
+    url: string | null
+    description: string | null
+    roomTypeId: string | null
+    createdAt: Date | null
+  }
+
+  export type RoomImageCountAggregateOutputType = {
+    id: number
+    url: number
+    description: number
+    roomTypeId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RoomImageMinAggregateInputType = {
+    id?: true
+    url?: true
+    description?: true
+    roomTypeId?: true
+    createdAt?: true
+  }
+
+  export type RoomImageMaxAggregateInputType = {
+    id?: true
+    url?: true
+    description?: true
+    roomTypeId?: true
+    createdAt?: true
+  }
+
+  export type RoomImageCountAggregateInputType = {
+    id?: true
+    url?: true
+    description?: true
+    roomTypeId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RoomImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RoomImage to aggregate.
+     */
+    where?: RoomImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomImages to fetch.
+     */
+    orderBy?: RoomImageOrderByWithRelationInput | RoomImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RoomImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RoomImages
+    **/
+    _count?: true | RoomImageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RoomImageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RoomImageMaxAggregateInputType
+  }
+
+  export type GetRoomImageAggregateType<T extends RoomImageAggregateArgs> = {
+        [P in keyof T & keyof AggregateRoomImage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRoomImage[P]>
+      : GetScalarType<T[P], AggregateRoomImage[P]>
+  }
+
+
+
+
+  export type RoomImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RoomImageWhereInput
+    orderBy?: RoomImageOrderByWithAggregationInput | RoomImageOrderByWithAggregationInput[]
+    by: RoomImageScalarFieldEnum[] | RoomImageScalarFieldEnum
+    having?: RoomImageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RoomImageCountAggregateInputType | true
+    _min?: RoomImageMinAggregateInputType
+    _max?: RoomImageMaxAggregateInputType
+  }
+
+  export type RoomImageGroupByOutputType = {
+    id: string
+    url: string
+    description: string | null
+    roomTypeId: string
+    createdAt: Date
+    _count: RoomImageCountAggregateOutputType | null
+    _min: RoomImageMinAggregateOutputType | null
+    _max: RoomImageMaxAggregateOutputType | null
+  }
+
+  type GetRoomImageGroupByPayload<T extends RoomImageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RoomImageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RoomImageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RoomImageGroupByOutputType[P]>
+            : GetScalarType<T[P], RoomImageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RoomImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    description?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["roomImage"]>
+
+  export type RoomImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    description?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["roomImage"]>
+
+  export type RoomImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    description?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["roomImage"]>
+
+  export type RoomImageSelectScalar = {
+    id?: boolean
+    url?: boolean
+    description?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+  }
+
+  export type RoomImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "description" | "roomTypeId" | "createdAt", ExtArgs["result"]["roomImage"]>
+  export type RoomImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+  export type RoomImageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+  export type RoomImageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $RoomImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RoomImage"
+    objects: {
+      roomType: Prisma.$RoomTypePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      url: string
+      description: string | null
+      roomTypeId: string
+      createdAt: Date
+    }, ExtArgs["result"]["roomImage"]>
+    composites: {}
+  }
+
+  type RoomImageGetPayload<S extends boolean | null | undefined | RoomImageDefaultArgs> = $Result.GetResult<Prisma.$RoomImagePayload, S>
+
+  type RoomImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RoomImageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RoomImageCountAggregateInputType | true
+    }
+
+  export interface RoomImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RoomImage'], meta: { name: 'RoomImage' } }
+    /**
+     * Find zero or one RoomImage that matches the filter.
+     * @param {RoomImageFindUniqueArgs} args - Arguments to find a RoomImage
+     * @example
+     * // Get one RoomImage
+     * const roomImage = await prisma.roomImage.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RoomImageFindUniqueArgs>(args: SelectSubset<T, RoomImageFindUniqueArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RoomImage that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RoomImageFindUniqueOrThrowArgs} args - Arguments to find a RoomImage
+     * @example
+     * // Get one RoomImage
+     * const roomImage = await prisma.roomImage.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RoomImageFindUniqueOrThrowArgs>(args: SelectSubset<T, RoomImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RoomImage that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageFindFirstArgs} args - Arguments to find a RoomImage
+     * @example
+     * // Get one RoomImage
+     * const roomImage = await prisma.roomImage.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RoomImageFindFirstArgs>(args?: SelectSubset<T, RoomImageFindFirstArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RoomImage that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageFindFirstOrThrowArgs} args - Arguments to find a RoomImage
+     * @example
+     * // Get one RoomImage
+     * const roomImage = await prisma.roomImage.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RoomImageFindFirstOrThrowArgs>(args?: SelectSubset<T, RoomImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RoomImages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RoomImages
+     * const roomImages = await prisma.roomImage.findMany()
+     * 
+     * // Get first 10 RoomImages
+     * const roomImages = await prisma.roomImage.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const roomImageWithIdOnly = await prisma.roomImage.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RoomImageFindManyArgs>(args?: SelectSubset<T, RoomImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RoomImage.
+     * @param {RoomImageCreateArgs} args - Arguments to create a RoomImage.
+     * @example
+     * // Create one RoomImage
+     * const RoomImage = await prisma.roomImage.create({
+     *   data: {
+     *     // ... data to create a RoomImage
+     *   }
+     * })
+     * 
+     */
+    create<T extends RoomImageCreateArgs>(args: SelectSubset<T, RoomImageCreateArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RoomImages.
+     * @param {RoomImageCreateManyArgs} args - Arguments to create many RoomImages.
+     * @example
+     * // Create many RoomImages
+     * const roomImage = await prisma.roomImage.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RoomImageCreateManyArgs>(args?: SelectSubset<T, RoomImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RoomImages and returns the data saved in the database.
+     * @param {RoomImageCreateManyAndReturnArgs} args - Arguments to create many RoomImages.
+     * @example
+     * // Create many RoomImages
+     * const roomImage = await prisma.roomImage.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RoomImages and only return the `id`
+     * const roomImageWithIdOnly = await prisma.roomImage.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RoomImageCreateManyAndReturnArgs>(args?: SelectSubset<T, RoomImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RoomImage.
+     * @param {RoomImageDeleteArgs} args - Arguments to delete one RoomImage.
+     * @example
+     * // Delete one RoomImage
+     * const RoomImage = await prisma.roomImage.delete({
+     *   where: {
+     *     // ... filter to delete one RoomImage
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RoomImageDeleteArgs>(args: SelectSubset<T, RoomImageDeleteArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RoomImage.
+     * @param {RoomImageUpdateArgs} args - Arguments to update one RoomImage.
+     * @example
+     * // Update one RoomImage
+     * const roomImage = await prisma.roomImage.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RoomImageUpdateArgs>(args: SelectSubset<T, RoomImageUpdateArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RoomImages.
+     * @param {RoomImageDeleteManyArgs} args - Arguments to filter RoomImages to delete.
+     * @example
+     * // Delete a few RoomImages
+     * const { count } = await prisma.roomImage.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RoomImageDeleteManyArgs>(args?: SelectSubset<T, RoomImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RoomImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RoomImages
+     * const roomImage = await prisma.roomImage.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RoomImageUpdateManyArgs>(args: SelectSubset<T, RoomImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RoomImages and returns the data updated in the database.
+     * @param {RoomImageUpdateManyAndReturnArgs} args - Arguments to update many RoomImages.
+     * @example
+     * // Update many RoomImages
+     * const roomImage = await prisma.roomImage.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RoomImages and only return the `id`
+     * const roomImageWithIdOnly = await prisma.roomImage.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RoomImageUpdateManyAndReturnArgs>(args: SelectSubset<T, RoomImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RoomImage.
+     * @param {RoomImageUpsertArgs} args - Arguments to update or create a RoomImage.
+     * @example
+     * // Update or create a RoomImage
+     * const roomImage = await prisma.roomImage.upsert({
+     *   create: {
+     *     // ... data to create a RoomImage
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RoomImage we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RoomImageUpsertArgs>(args: SelectSubset<T, RoomImageUpsertArgs<ExtArgs>>): Prisma__RoomImageClient<$Result.GetResult<Prisma.$RoomImagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RoomImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageCountArgs} args - Arguments to filter RoomImages to count.
+     * @example
+     * // Count the number of RoomImages
+     * const count = await prisma.roomImage.count({
+     *   where: {
+     *     // ... the filter for the RoomImages we want to count
+     *   }
+     * })
+    **/
+    count<T extends RoomImageCountArgs>(
+      args?: Subset<T, RoomImageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RoomImageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RoomImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RoomImageAggregateArgs>(args: Subset<T, RoomImageAggregateArgs>): Prisma.PrismaPromise<GetRoomImageAggregateType<T>>
+
+    /**
+     * Group by RoomImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RoomImageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RoomImageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RoomImageGroupByArgs['orderBy'] }
+        : { orderBy?: RoomImageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RoomImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRoomImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RoomImage model
+   */
+  readonly fields: RoomImageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RoomImage.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RoomImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    roomType<T extends RoomTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoomTypeDefaultArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RoomImage model
+   */
+  interface RoomImageFieldRefs {
+    readonly id: FieldRef<"RoomImage", 'String'>
+    readonly url: FieldRef<"RoomImage", 'String'>
+    readonly description: FieldRef<"RoomImage", 'String'>
+    readonly roomTypeId: FieldRef<"RoomImage", 'String'>
+    readonly createdAt: FieldRef<"RoomImage", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RoomImage findUnique
+   */
+  export type RoomImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomImage to fetch.
+     */
+    where: RoomImageWhereUniqueInput
+  }
+
+  /**
+   * RoomImage findUniqueOrThrow
+   */
+  export type RoomImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomImage to fetch.
+     */
+    where: RoomImageWhereUniqueInput
+  }
+
+  /**
+   * RoomImage findFirst
+   */
+  export type RoomImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomImage to fetch.
+     */
+    where?: RoomImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomImages to fetch.
+     */
+    orderBy?: RoomImageOrderByWithRelationInput | RoomImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RoomImages.
+     */
+    cursor?: RoomImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RoomImages.
+     */
+    distinct?: RoomImageScalarFieldEnum | RoomImageScalarFieldEnum[]
+  }
+
+  /**
+   * RoomImage findFirstOrThrow
+   */
+  export type RoomImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomImage to fetch.
+     */
+    where?: RoomImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomImages to fetch.
+     */
+    orderBy?: RoomImageOrderByWithRelationInput | RoomImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RoomImages.
+     */
+    cursor?: RoomImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RoomImages.
+     */
+    distinct?: RoomImageScalarFieldEnum | RoomImageScalarFieldEnum[]
+  }
+
+  /**
+   * RoomImage findMany
+   */
+  export type RoomImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter, which RoomImages to fetch.
+     */
+    where?: RoomImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RoomImages to fetch.
+     */
+    orderBy?: RoomImageOrderByWithRelationInput | RoomImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RoomImages.
+     */
+    cursor?: RoomImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RoomImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RoomImages.
+     */
+    skip?: number
+    distinct?: RoomImageScalarFieldEnum | RoomImageScalarFieldEnum[]
+  }
+
+  /**
+   * RoomImage create
+   */
+  export type RoomImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RoomImage.
+     */
+    data: XOR<RoomImageCreateInput, RoomImageUncheckedCreateInput>
+  }
+
+  /**
+   * RoomImage createMany
+   */
+  export type RoomImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RoomImages.
+     */
+    data: RoomImageCreateManyInput | RoomImageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RoomImage createManyAndReturn
+   */
+  export type RoomImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * The data used to create many RoomImages.
+     */
+    data: RoomImageCreateManyInput | RoomImageCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RoomImage update
+   */
+  export type RoomImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RoomImage.
+     */
+    data: XOR<RoomImageUpdateInput, RoomImageUncheckedUpdateInput>
+    /**
+     * Choose, which RoomImage to update.
+     */
+    where: RoomImageWhereUniqueInput
+  }
+
+  /**
+   * RoomImage updateMany
+   */
+  export type RoomImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RoomImages.
+     */
+    data: XOR<RoomImageUpdateManyMutationInput, RoomImageUncheckedUpdateManyInput>
+    /**
+     * Filter which RoomImages to update
+     */
+    where?: RoomImageWhereInput
+    /**
+     * Limit how many RoomImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RoomImage updateManyAndReturn
+   */
+  export type RoomImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * The data used to update RoomImages.
+     */
+    data: XOR<RoomImageUpdateManyMutationInput, RoomImageUncheckedUpdateManyInput>
+    /**
+     * Filter which RoomImages to update
+     */
+    where?: RoomImageWhereInput
+    /**
+     * Limit how many RoomImages to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RoomImage upsert
+   */
+  export type RoomImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RoomImage to update in case it exists.
+     */
+    where: RoomImageWhereUniqueInput
+    /**
+     * In case the RoomImage found by the `where` argument doesn't exist, create a new RoomImage with this data.
+     */
+    create: XOR<RoomImageCreateInput, RoomImageUncheckedCreateInput>
+    /**
+     * In case the RoomImage was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RoomImageUpdateInput, RoomImageUncheckedUpdateInput>
+  }
+
+  /**
+   * RoomImage delete
+   */
+  export type RoomImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+    /**
+     * Filter which RoomImage to delete.
+     */
+    where: RoomImageWhereUniqueInput
+  }
+
+  /**
+   * RoomImage deleteMany
+   */
+  export type RoomImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RoomImages to delete
+     */
+    where?: RoomImageWhereInput
+    /**
+     * Limit how many RoomImages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RoomImage without action
+   */
+  export type RoomImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RoomImage
+     */
+    select?: RoomImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RoomImage
+     */
+    omit?: RoomImageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RoomImageInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ExtraFee
+   */
+
+  export type AggregateExtraFee = {
+    _count: ExtraFeeCountAggregateOutputType | null
+    _avg: ExtraFeeAvgAggregateOutputType | null
+    _sum: ExtraFeeSumAggregateOutputType | null
+    _min: ExtraFeeMinAggregateOutputType | null
+    _max: ExtraFeeMaxAggregateOutputType | null
+  }
+
+  export type ExtraFeeAvgAggregateOutputType = {
+    amount: number | null
+  }
+
+  export type ExtraFeeSumAggregateOutputType = {
+    amount: number | null
+  }
+
+  export type ExtraFeeMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    amount: number | null
+    roomTypeId: string | null
+    createdAt: Date | null
+  }
+
+  export type ExtraFeeMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    amount: number | null
+    roomTypeId: string | null
+    createdAt: Date | null
+  }
+
+  export type ExtraFeeCountAggregateOutputType = {
+    id: number
+    name: number
+    amount: number
+    roomTypeId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type ExtraFeeAvgAggregateInputType = {
+    amount?: true
+  }
+
+  export type ExtraFeeSumAggregateInputType = {
+    amount?: true
+  }
+
+  export type ExtraFeeMinAggregateInputType = {
+    id?: true
+    name?: true
+    amount?: true
+    roomTypeId?: true
+    createdAt?: true
+  }
+
+  export type ExtraFeeMaxAggregateInputType = {
+    id?: true
+    name?: true
+    amount?: true
+    roomTypeId?: true
+    createdAt?: true
+  }
+
+  export type ExtraFeeCountAggregateInputType = {
+    id?: true
+    name?: true
+    amount?: true
+    roomTypeId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type ExtraFeeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ExtraFee to aggregate.
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ExtraFees to fetch.
+     */
+    orderBy?: ExtraFeeOrderByWithRelationInput | ExtraFeeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ExtraFeeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ExtraFees from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ExtraFees.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ExtraFees
+    **/
+    _count?: true | ExtraFeeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ExtraFeeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ExtraFeeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ExtraFeeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ExtraFeeMaxAggregateInputType
+  }
+
+  export type GetExtraFeeAggregateType<T extends ExtraFeeAggregateArgs> = {
+        [P in keyof T & keyof AggregateExtraFee]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateExtraFee[P]>
+      : GetScalarType<T[P], AggregateExtraFee[P]>
+  }
+
+
+
+
+  export type ExtraFeeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ExtraFeeWhereInput
+    orderBy?: ExtraFeeOrderByWithAggregationInput | ExtraFeeOrderByWithAggregationInput[]
+    by: ExtraFeeScalarFieldEnum[] | ExtraFeeScalarFieldEnum
+    having?: ExtraFeeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ExtraFeeCountAggregateInputType | true
+    _avg?: ExtraFeeAvgAggregateInputType
+    _sum?: ExtraFeeSumAggregateInputType
+    _min?: ExtraFeeMinAggregateInputType
+    _max?: ExtraFeeMaxAggregateInputType
+  }
+
+  export type ExtraFeeGroupByOutputType = {
+    id: string
+    name: string
+    amount: number
+    roomTypeId: string
+    createdAt: Date
+    _count: ExtraFeeCountAggregateOutputType | null
+    _avg: ExtraFeeAvgAggregateOutputType | null
+    _sum: ExtraFeeSumAggregateOutputType | null
+    _min: ExtraFeeMinAggregateOutputType | null
+    _max: ExtraFeeMaxAggregateOutputType | null
+  }
+
+  type GetExtraFeeGroupByPayload<T extends ExtraFeeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ExtraFeeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ExtraFeeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ExtraFeeGroupByOutputType[P]>
+            : GetScalarType<T[P], ExtraFeeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ExtraFeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    amount?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["extraFee"]>
+
+  export type ExtraFeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    amount?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["extraFee"]>
+
+  export type ExtraFeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    amount?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["extraFee"]>
+
+  export type ExtraFeeSelectScalar = {
+    id?: boolean
+    name?: boolean
+    amount?: boolean
+    roomTypeId?: boolean
+    createdAt?: boolean
+  }
+
+  export type ExtraFeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "amount" | "roomTypeId" | "createdAt", ExtArgs["result"]["extraFee"]>
+  export type ExtraFeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+  export type ExtraFeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+  export type ExtraFeeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    roomType?: boolean | RoomTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $ExtraFeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ExtraFee"
+    objects: {
+      roomType: Prisma.$RoomTypePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      amount: number
+      roomTypeId: string
+      createdAt: Date
+    }, ExtArgs["result"]["extraFee"]>
+    composites: {}
+  }
+
+  type ExtraFeeGetPayload<S extends boolean | null | undefined | ExtraFeeDefaultArgs> = $Result.GetResult<Prisma.$ExtraFeePayload, S>
+
+  type ExtraFeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ExtraFeeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ExtraFeeCountAggregateInputType | true
+    }
+
+  export interface ExtraFeeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ExtraFee'], meta: { name: 'ExtraFee' } }
+    /**
+     * Find zero or one ExtraFee that matches the filter.
+     * @param {ExtraFeeFindUniqueArgs} args - Arguments to find a ExtraFee
+     * @example
+     * // Get one ExtraFee
+     * const extraFee = await prisma.extraFee.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ExtraFeeFindUniqueArgs>(args: SelectSubset<T, ExtraFeeFindUniqueArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ExtraFee that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ExtraFeeFindUniqueOrThrowArgs} args - Arguments to find a ExtraFee
+     * @example
+     * // Get one ExtraFee
+     * const extraFee = await prisma.extraFee.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ExtraFeeFindUniqueOrThrowArgs>(args: SelectSubset<T, ExtraFeeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ExtraFee that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeFindFirstArgs} args - Arguments to find a ExtraFee
+     * @example
+     * // Get one ExtraFee
+     * const extraFee = await prisma.extraFee.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ExtraFeeFindFirstArgs>(args?: SelectSubset<T, ExtraFeeFindFirstArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ExtraFee that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeFindFirstOrThrowArgs} args - Arguments to find a ExtraFee
+     * @example
+     * // Get one ExtraFee
+     * const extraFee = await prisma.extraFee.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ExtraFeeFindFirstOrThrowArgs>(args?: SelectSubset<T, ExtraFeeFindFirstOrThrowArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ExtraFees that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ExtraFees
+     * const extraFees = await prisma.extraFee.findMany()
+     * 
+     * // Get first 10 ExtraFees
+     * const extraFees = await prisma.extraFee.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const extraFeeWithIdOnly = await prisma.extraFee.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ExtraFeeFindManyArgs>(args?: SelectSubset<T, ExtraFeeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ExtraFee.
+     * @param {ExtraFeeCreateArgs} args - Arguments to create a ExtraFee.
+     * @example
+     * // Create one ExtraFee
+     * const ExtraFee = await prisma.extraFee.create({
+     *   data: {
+     *     // ... data to create a ExtraFee
+     *   }
+     * })
+     * 
+     */
+    create<T extends ExtraFeeCreateArgs>(args: SelectSubset<T, ExtraFeeCreateArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ExtraFees.
+     * @param {ExtraFeeCreateManyArgs} args - Arguments to create many ExtraFees.
+     * @example
+     * // Create many ExtraFees
+     * const extraFee = await prisma.extraFee.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ExtraFeeCreateManyArgs>(args?: SelectSubset<T, ExtraFeeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ExtraFees and returns the data saved in the database.
+     * @param {ExtraFeeCreateManyAndReturnArgs} args - Arguments to create many ExtraFees.
+     * @example
+     * // Create many ExtraFees
+     * const extraFee = await prisma.extraFee.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ExtraFees and only return the `id`
+     * const extraFeeWithIdOnly = await prisma.extraFee.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ExtraFeeCreateManyAndReturnArgs>(args?: SelectSubset<T, ExtraFeeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ExtraFee.
+     * @param {ExtraFeeDeleteArgs} args - Arguments to delete one ExtraFee.
+     * @example
+     * // Delete one ExtraFee
+     * const ExtraFee = await prisma.extraFee.delete({
+     *   where: {
+     *     // ... filter to delete one ExtraFee
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ExtraFeeDeleteArgs>(args: SelectSubset<T, ExtraFeeDeleteArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ExtraFee.
+     * @param {ExtraFeeUpdateArgs} args - Arguments to update one ExtraFee.
+     * @example
+     * // Update one ExtraFee
+     * const extraFee = await prisma.extraFee.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ExtraFeeUpdateArgs>(args: SelectSubset<T, ExtraFeeUpdateArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ExtraFees.
+     * @param {ExtraFeeDeleteManyArgs} args - Arguments to filter ExtraFees to delete.
+     * @example
+     * // Delete a few ExtraFees
+     * const { count } = await prisma.extraFee.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ExtraFeeDeleteManyArgs>(args?: SelectSubset<T, ExtraFeeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ExtraFees.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ExtraFees
+     * const extraFee = await prisma.extraFee.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ExtraFeeUpdateManyArgs>(args: SelectSubset<T, ExtraFeeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ExtraFees and returns the data updated in the database.
+     * @param {ExtraFeeUpdateManyAndReturnArgs} args - Arguments to update many ExtraFees.
+     * @example
+     * // Update many ExtraFees
+     * const extraFee = await prisma.extraFee.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ExtraFees and only return the `id`
+     * const extraFeeWithIdOnly = await prisma.extraFee.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ExtraFeeUpdateManyAndReturnArgs>(args: SelectSubset<T, ExtraFeeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ExtraFee.
+     * @param {ExtraFeeUpsertArgs} args - Arguments to update or create a ExtraFee.
+     * @example
+     * // Update or create a ExtraFee
+     * const extraFee = await prisma.extraFee.upsert({
+     *   create: {
+     *     // ... data to create a ExtraFee
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ExtraFee we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ExtraFeeUpsertArgs>(args: SelectSubset<T, ExtraFeeUpsertArgs<ExtArgs>>): Prisma__ExtraFeeClient<$Result.GetResult<Prisma.$ExtraFeePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ExtraFees.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeCountArgs} args - Arguments to filter ExtraFees to count.
+     * @example
+     * // Count the number of ExtraFees
+     * const count = await prisma.extraFee.count({
+     *   where: {
+     *     // ... the filter for the ExtraFees we want to count
+     *   }
+     * })
+    **/
+    count<T extends ExtraFeeCountArgs>(
+      args?: Subset<T, ExtraFeeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ExtraFeeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ExtraFee.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ExtraFeeAggregateArgs>(args: Subset<T, ExtraFeeAggregateArgs>): Prisma.PrismaPromise<GetExtraFeeAggregateType<T>>
+
+    /**
+     * Group by ExtraFee.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ExtraFeeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ExtraFeeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ExtraFeeGroupByArgs['orderBy'] }
+        : { orderBy?: ExtraFeeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ExtraFeeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExtraFeeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ExtraFee model
+   */
+  readonly fields: ExtraFeeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ExtraFee.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ExtraFeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    roomType<T extends RoomTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoomTypeDefaultArgs<ExtArgs>>): Prisma__RoomTypeClient<$Result.GetResult<Prisma.$RoomTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ExtraFee model
+   */
+  interface ExtraFeeFieldRefs {
+    readonly id: FieldRef<"ExtraFee", 'String'>
+    readonly name: FieldRef<"ExtraFee", 'String'>
+    readonly amount: FieldRef<"ExtraFee", 'Float'>
+    readonly roomTypeId: FieldRef<"ExtraFee", 'String'>
+    readonly createdAt: FieldRef<"ExtraFee", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ExtraFee findUnique
+   */
+  export type ExtraFeeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter, which ExtraFee to fetch.
+     */
+    where: ExtraFeeWhereUniqueInput
+  }
+
+  /**
+   * ExtraFee findUniqueOrThrow
+   */
+  export type ExtraFeeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter, which ExtraFee to fetch.
+     */
+    where: ExtraFeeWhereUniqueInput
+  }
+
+  /**
+   * ExtraFee findFirst
+   */
+  export type ExtraFeeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter, which ExtraFee to fetch.
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ExtraFees to fetch.
+     */
+    orderBy?: ExtraFeeOrderByWithRelationInput | ExtraFeeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ExtraFees.
+     */
+    cursor?: ExtraFeeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ExtraFees from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ExtraFees.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ExtraFees.
+     */
+    distinct?: ExtraFeeScalarFieldEnum | ExtraFeeScalarFieldEnum[]
+  }
+
+  /**
+   * ExtraFee findFirstOrThrow
+   */
+  export type ExtraFeeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter, which ExtraFee to fetch.
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ExtraFees to fetch.
+     */
+    orderBy?: ExtraFeeOrderByWithRelationInput | ExtraFeeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ExtraFees.
+     */
+    cursor?: ExtraFeeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ExtraFees from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ExtraFees.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ExtraFees.
+     */
+    distinct?: ExtraFeeScalarFieldEnum | ExtraFeeScalarFieldEnum[]
+  }
+
+  /**
+   * ExtraFee findMany
+   */
+  export type ExtraFeeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter, which ExtraFees to fetch.
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ExtraFees to fetch.
+     */
+    orderBy?: ExtraFeeOrderByWithRelationInput | ExtraFeeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ExtraFees.
+     */
+    cursor?: ExtraFeeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ExtraFees from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ExtraFees.
+     */
+    skip?: number
+    distinct?: ExtraFeeScalarFieldEnum | ExtraFeeScalarFieldEnum[]
+  }
+
+  /**
+   * ExtraFee create
+   */
+  export type ExtraFeeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ExtraFee.
+     */
+    data: XOR<ExtraFeeCreateInput, ExtraFeeUncheckedCreateInput>
+  }
+
+  /**
+   * ExtraFee createMany
+   */
+  export type ExtraFeeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ExtraFees.
+     */
+    data: ExtraFeeCreateManyInput | ExtraFeeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ExtraFee createManyAndReturn
+   */
+  export type ExtraFeeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * The data used to create many ExtraFees.
+     */
+    data: ExtraFeeCreateManyInput | ExtraFeeCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ExtraFee update
+   */
+  export type ExtraFeeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ExtraFee.
+     */
+    data: XOR<ExtraFeeUpdateInput, ExtraFeeUncheckedUpdateInput>
+    /**
+     * Choose, which ExtraFee to update.
+     */
+    where: ExtraFeeWhereUniqueInput
+  }
+
+  /**
+   * ExtraFee updateMany
+   */
+  export type ExtraFeeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ExtraFees.
+     */
+    data: XOR<ExtraFeeUpdateManyMutationInput, ExtraFeeUncheckedUpdateManyInput>
+    /**
+     * Filter which ExtraFees to update
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * Limit how many ExtraFees to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ExtraFee updateManyAndReturn
+   */
+  export type ExtraFeeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * The data used to update ExtraFees.
+     */
+    data: XOR<ExtraFeeUpdateManyMutationInput, ExtraFeeUncheckedUpdateManyInput>
+    /**
+     * Filter which ExtraFees to update
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * Limit how many ExtraFees to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ExtraFee upsert
+   */
+  export type ExtraFeeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ExtraFee to update in case it exists.
+     */
+    where: ExtraFeeWhereUniqueInput
+    /**
+     * In case the ExtraFee found by the `where` argument doesn't exist, create a new ExtraFee with this data.
+     */
+    create: XOR<ExtraFeeCreateInput, ExtraFeeUncheckedCreateInput>
+    /**
+     * In case the ExtraFee was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ExtraFeeUpdateInput, ExtraFeeUncheckedUpdateInput>
+  }
+
+  /**
+   * ExtraFee delete
+   */
+  export type ExtraFeeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+    /**
+     * Filter which ExtraFee to delete.
+     */
+    where: ExtraFeeWhereUniqueInput
+  }
+
+  /**
+   * ExtraFee deleteMany
+   */
+  export type ExtraFeeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ExtraFees to delete
+     */
+    where?: ExtraFeeWhereInput
+    /**
+     * Limit how many ExtraFees to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ExtraFee without action
+   */
+  export type ExtraFeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ExtraFee
+     */
+    select?: ExtraFeeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ExtraFee
+     */
+    omit?: ExtraFeeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ExtraFeeInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -22987,6 +28585,121 @@ export namespace Prisma {
   export type CarBookingsScalarFieldEnum = (typeof CarBookingsScalarFieldEnum)[keyof typeof CarBookingsScalarFieldEnum]
 
 
+  export const LuxuryDestinationScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    propertyName: 'propertyName',
+    propertyType: 'propertyType',
+    starRating: 'starRating',
+    address: 'address',
+    city: 'city',
+    country: 'country',
+    postalCode: 'postalCode',
+    phone: 'phone',
+    email: 'email',
+    website: 'website',
+    checkInTime: 'checkInTime',
+    checkOutTime: 'checkOutTime',
+    languagesSpoken: 'languagesSpoken',
+    description: 'description',
+    highlights: 'highlights',
+    amenities: 'amenities',
+    roomTypes: 'roomTypes',
+    totalRooms: 'totalRooms',
+    yearBuilt: 'yearBuilt',
+    lastRenovated: 'lastRenovated',
+    awards: 'awards',
+    sustainabilityPractices: 'sustainabilityPractices',
+    wheelchairAccessible: 'wheelchairAccessible',
+    accessibleRooms: 'accessibleRooms',
+    accessibleBathrooms: 'accessibleBathrooms',
+    accessibleParking: 'accessibleParking',
+    accessibleRestaurants: 'accessibleRestaurants',
+    accessiblePools: 'accessiblePools',
+    brailleSignage: 'brailleSignage',
+    hearingImpairedServices: 'hearingImpairedServices',
+    visualImpairedServices: 'visualImpairedServices',
+    serviceAnimalsAllowed: 'serviceAnimalsAllowed',
+    cancellationPolicy: 'cancellationPolicy',
+    petPolicy: 'petPolicy',
+    smokingPolicy: 'smokingPolicy',
+    childrenPolicy: 'childrenPolicy',
+    groupPolicy: 'groupPolicy',
+    paymentMethods: 'paymentMethods',
+    depositRequired: 'depositRequired',
+    depositAmount: 'depositAmount',
+    minimumStay: 'minimumStay',
+    ageRestriction: 'ageRestriction',
+    quietHours: 'quietHours',
+    specialOffers: 'specialOffers',
+    loyaltyProgram: 'loyaltyProgram',
+    mainImageUrl: 'mainImageUrl',
+    otherImageUrls: 'otherImageUrls',
+    imageSections: 'imageSections',
+    sectionImages: 'sectionImages',
+    imageDescriptions: 'imageDescriptions',
+    vendorId: 'vendorId'
+  };
+
+  export type LuxuryDestinationScalarFieldEnum = (typeof LuxuryDestinationScalarFieldEnum)[keyof typeof LuxuryDestinationScalarFieldEnum]
+
+
+  export const RoomTypeScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    size: 'size',
+    occupancy: 'occupancy',
+    bedConfiguration: 'bedConfiguration',
+    basePrice: 'basePrice',
+    totalRooms: 'totalRooms',
+    views: 'views',
+    rating: 'rating',
+    minimumStay: 'minimumStay',
+    depositRequired: 'depositRequired',
+    depositAmount: 'depositAmount',
+    amenities: 'amenities',
+    accessibilityFeatures: 'accessibilityFeatures',
+    bathroomFeatures: 'bathroomFeatures',
+    bedroomFeatures: 'bedroomFeatures',
+    entertainment: 'entertainment',
+    familyFriendly: 'familyFriendly',
+    foodAndDrink: 'foodAndDrink',
+    moreFeatures: 'moreFeatures',
+    outdoorSpace: 'outdoorSpace',
+    safetyFeatures: 'safetyFeatures',
+    freebies: 'freebies',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    vendorId: 'vendorId'
+  };
+
+  export type RoomTypeScalarFieldEnum = (typeof RoomTypeScalarFieldEnum)[keyof typeof RoomTypeScalarFieldEnum]
+
+
+  export const RoomImageScalarFieldEnum: {
+    id: 'id',
+    url: 'url',
+    description: 'description',
+    roomTypeId: 'roomTypeId',
+    createdAt: 'createdAt'
+  };
+
+  export type RoomImageScalarFieldEnum = (typeof RoomImageScalarFieldEnum)[keyof typeof RoomImageScalarFieldEnum]
+
+
+  export const ExtraFeeScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    amount: 'amount',
+    roomTypeId: 'roomTypeId',
+    createdAt: 'createdAt'
+  };
+
+  export type ExtraFeeScalarFieldEnum = (typeof ExtraFeeScalarFieldEnum)[keyof typeof ExtraFeeScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -23000,6 +28713,14 @@ export namespace Prisma {
   };
 
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
+  export const NullableJsonNullValueInput: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull
+  };
+
+  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
   export const QueryMode: {
@@ -25437,6 +31158,587 @@ export namespace Prisma {
     listingId?: StringWithAggregatesFilter<"CarBookings"> | string
     vendorId?: StringWithAggregatesFilter<"CarBookings"> | string
     read?: BoolWithAggregatesFilter<"CarBookings"> | boolean
+  }
+
+  export type LuxuryDestinationWhereInput = {
+    AND?: LuxuryDestinationWhereInput | LuxuryDestinationWhereInput[]
+    OR?: LuxuryDestinationWhereInput[]
+    NOT?: LuxuryDestinationWhereInput | LuxuryDestinationWhereInput[]
+    id?: StringFilter<"LuxuryDestination"> | string
+    createdAt?: DateTimeFilter<"LuxuryDestination"> | Date | string
+    updatedAt?: DateTimeFilter<"LuxuryDestination"> | Date | string
+    propertyName?: StringFilter<"LuxuryDestination"> | string
+    propertyType?: StringFilter<"LuxuryDestination"> | string
+    starRating?: StringNullableFilter<"LuxuryDestination"> | string | null
+    address?: StringFilter<"LuxuryDestination"> | string
+    city?: StringFilter<"LuxuryDestination"> | string
+    country?: StringFilter<"LuxuryDestination"> | string
+    postalCode?: StringNullableFilter<"LuxuryDestination"> | string | null
+    phone?: StringFilter<"LuxuryDestination"> | string
+    email?: StringFilter<"LuxuryDestination"> | string
+    website?: StringNullableFilter<"LuxuryDestination"> | string | null
+    checkInTime?: StringFilter<"LuxuryDestination"> | string
+    checkOutTime?: StringFilter<"LuxuryDestination"> | string
+    languagesSpoken?: StringNullableListFilter<"LuxuryDestination">
+    description?: StringFilter<"LuxuryDestination"> | string
+    highlights?: StringNullableFilter<"LuxuryDestination"> | string | null
+    amenities?: StringNullableListFilter<"LuxuryDestination">
+    roomTypes?: StringNullableFilter<"LuxuryDestination"> | string | null
+    totalRooms?: IntNullableFilter<"LuxuryDestination"> | number | null
+    yearBuilt?: IntNullableFilter<"LuxuryDestination"> | number | null
+    lastRenovated?: IntNullableFilter<"LuxuryDestination"> | number | null
+    awards?: StringNullableFilter<"LuxuryDestination"> | string | null
+    sustainabilityPractices?: StringNullableListFilter<"LuxuryDestination">
+    wheelchairAccessible?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleRooms?: StringNullableFilter<"LuxuryDestination"> | string | null
+    accessibleBathrooms?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleParking?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleRestaurants?: BoolFilter<"LuxuryDestination"> | boolean
+    accessiblePools?: BoolFilter<"LuxuryDestination"> | boolean
+    brailleSignage?: BoolFilter<"LuxuryDestination"> | boolean
+    hearingImpairedServices?: BoolFilter<"LuxuryDestination"> | boolean
+    visualImpairedServices?: BoolFilter<"LuxuryDestination"> | boolean
+    serviceAnimalsAllowed?: BoolFilter<"LuxuryDestination"> | boolean
+    cancellationPolicy?: StringFilter<"LuxuryDestination"> | string
+    petPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    smokingPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    childrenPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    groupPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    paymentMethods?: StringNullableListFilter<"LuxuryDestination">
+    depositRequired?: BoolFilter<"LuxuryDestination"> | boolean
+    depositAmount?: StringNullableFilter<"LuxuryDestination"> | string | null
+    minimumStay?: StringNullableFilter<"LuxuryDestination"> | string | null
+    ageRestriction?: StringNullableFilter<"LuxuryDestination"> | string | null
+    quietHours?: StringFilter<"LuxuryDestination"> | string
+    specialOffers?: StringNullableFilter<"LuxuryDestination"> | string | null
+    loyaltyProgram?: BoolFilter<"LuxuryDestination"> | boolean
+    mainImageUrl?: StringNullableFilter<"LuxuryDestination"> | string | null
+    otherImageUrls?: StringNullableListFilter<"LuxuryDestination">
+    imageSections?: StringNullableListFilter<"LuxuryDestination">
+    sectionImages?: JsonNullableFilter<"LuxuryDestination">
+    imageDescriptions?: JsonNullableFilter<"LuxuryDestination">
+    vendorId?: StringFilter<"LuxuryDestination"> | string
+  }
+
+  export type LuxuryDestinationOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    propertyName?: SortOrder
+    propertyType?: SortOrder
+    starRating?: SortOrderInput | SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    country?: SortOrder
+    postalCode?: SortOrderInput | SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrderInput | SortOrder
+    checkInTime?: SortOrder
+    checkOutTime?: SortOrder
+    languagesSpoken?: SortOrder
+    description?: SortOrder
+    highlights?: SortOrderInput | SortOrder
+    amenities?: SortOrder
+    roomTypes?: SortOrderInput | SortOrder
+    totalRooms?: SortOrderInput | SortOrder
+    yearBuilt?: SortOrderInput | SortOrder
+    lastRenovated?: SortOrderInput | SortOrder
+    awards?: SortOrderInput | SortOrder
+    sustainabilityPractices?: SortOrder
+    wheelchairAccessible?: SortOrder
+    accessibleRooms?: SortOrderInput | SortOrder
+    accessibleBathrooms?: SortOrder
+    accessibleParking?: SortOrder
+    accessibleRestaurants?: SortOrder
+    accessiblePools?: SortOrder
+    brailleSignage?: SortOrder
+    hearingImpairedServices?: SortOrder
+    visualImpairedServices?: SortOrder
+    serviceAnimalsAllowed?: SortOrder
+    cancellationPolicy?: SortOrder
+    petPolicy?: SortOrderInput | SortOrder
+    smokingPolicy?: SortOrderInput | SortOrder
+    childrenPolicy?: SortOrderInput | SortOrder
+    groupPolicy?: SortOrderInput | SortOrder
+    paymentMethods?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrderInput | SortOrder
+    minimumStay?: SortOrderInput | SortOrder
+    ageRestriction?: SortOrderInput | SortOrder
+    quietHours?: SortOrder
+    specialOffers?: SortOrderInput | SortOrder
+    loyaltyProgram?: SortOrder
+    mainImageUrl?: SortOrderInput | SortOrder
+    otherImageUrls?: SortOrder
+    imageSections?: SortOrder
+    sectionImages?: SortOrderInput | SortOrder
+    imageDescriptions?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type LuxuryDestinationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: LuxuryDestinationWhereInput | LuxuryDestinationWhereInput[]
+    OR?: LuxuryDestinationWhereInput[]
+    NOT?: LuxuryDestinationWhereInput | LuxuryDestinationWhereInput[]
+    createdAt?: DateTimeFilter<"LuxuryDestination"> | Date | string
+    updatedAt?: DateTimeFilter<"LuxuryDestination"> | Date | string
+    propertyName?: StringFilter<"LuxuryDestination"> | string
+    propertyType?: StringFilter<"LuxuryDestination"> | string
+    starRating?: StringNullableFilter<"LuxuryDestination"> | string | null
+    address?: StringFilter<"LuxuryDestination"> | string
+    city?: StringFilter<"LuxuryDestination"> | string
+    country?: StringFilter<"LuxuryDestination"> | string
+    postalCode?: StringNullableFilter<"LuxuryDestination"> | string | null
+    phone?: StringFilter<"LuxuryDestination"> | string
+    email?: StringFilter<"LuxuryDestination"> | string
+    website?: StringNullableFilter<"LuxuryDestination"> | string | null
+    checkInTime?: StringFilter<"LuxuryDestination"> | string
+    checkOutTime?: StringFilter<"LuxuryDestination"> | string
+    languagesSpoken?: StringNullableListFilter<"LuxuryDestination">
+    description?: StringFilter<"LuxuryDestination"> | string
+    highlights?: StringNullableFilter<"LuxuryDestination"> | string | null
+    amenities?: StringNullableListFilter<"LuxuryDestination">
+    roomTypes?: StringNullableFilter<"LuxuryDestination"> | string | null
+    totalRooms?: IntNullableFilter<"LuxuryDestination"> | number | null
+    yearBuilt?: IntNullableFilter<"LuxuryDestination"> | number | null
+    lastRenovated?: IntNullableFilter<"LuxuryDestination"> | number | null
+    awards?: StringNullableFilter<"LuxuryDestination"> | string | null
+    sustainabilityPractices?: StringNullableListFilter<"LuxuryDestination">
+    wheelchairAccessible?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleRooms?: StringNullableFilter<"LuxuryDestination"> | string | null
+    accessibleBathrooms?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleParking?: BoolFilter<"LuxuryDestination"> | boolean
+    accessibleRestaurants?: BoolFilter<"LuxuryDestination"> | boolean
+    accessiblePools?: BoolFilter<"LuxuryDestination"> | boolean
+    brailleSignage?: BoolFilter<"LuxuryDestination"> | boolean
+    hearingImpairedServices?: BoolFilter<"LuxuryDestination"> | boolean
+    visualImpairedServices?: BoolFilter<"LuxuryDestination"> | boolean
+    serviceAnimalsAllowed?: BoolFilter<"LuxuryDestination"> | boolean
+    cancellationPolicy?: StringFilter<"LuxuryDestination"> | string
+    petPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    smokingPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    childrenPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    groupPolicy?: StringNullableFilter<"LuxuryDestination"> | string | null
+    paymentMethods?: StringNullableListFilter<"LuxuryDestination">
+    depositRequired?: BoolFilter<"LuxuryDestination"> | boolean
+    depositAmount?: StringNullableFilter<"LuxuryDestination"> | string | null
+    minimumStay?: StringNullableFilter<"LuxuryDestination"> | string | null
+    ageRestriction?: StringNullableFilter<"LuxuryDestination"> | string | null
+    quietHours?: StringFilter<"LuxuryDestination"> | string
+    specialOffers?: StringNullableFilter<"LuxuryDestination"> | string | null
+    loyaltyProgram?: BoolFilter<"LuxuryDestination"> | boolean
+    mainImageUrl?: StringNullableFilter<"LuxuryDestination"> | string | null
+    otherImageUrls?: StringNullableListFilter<"LuxuryDestination">
+    imageSections?: StringNullableListFilter<"LuxuryDestination">
+    sectionImages?: JsonNullableFilter<"LuxuryDestination">
+    imageDescriptions?: JsonNullableFilter<"LuxuryDestination">
+    vendorId?: StringFilter<"LuxuryDestination"> | string
+  }, "id">
+
+  export type LuxuryDestinationOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    propertyName?: SortOrder
+    propertyType?: SortOrder
+    starRating?: SortOrderInput | SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    country?: SortOrder
+    postalCode?: SortOrderInput | SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrderInput | SortOrder
+    checkInTime?: SortOrder
+    checkOutTime?: SortOrder
+    languagesSpoken?: SortOrder
+    description?: SortOrder
+    highlights?: SortOrderInput | SortOrder
+    amenities?: SortOrder
+    roomTypes?: SortOrderInput | SortOrder
+    totalRooms?: SortOrderInput | SortOrder
+    yearBuilt?: SortOrderInput | SortOrder
+    lastRenovated?: SortOrderInput | SortOrder
+    awards?: SortOrderInput | SortOrder
+    sustainabilityPractices?: SortOrder
+    wheelchairAccessible?: SortOrder
+    accessibleRooms?: SortOrderInput | SortOrder
+    accessibleBathrooms?: SortOrder
+    accessibleParking?: SortOrder
+    accessibleRestaurants?: SortOrder
+    accessiblePools?: SortOrder
+    brailleSignage?: SortOrder
+    hearingImpairedServices?: SortOrder
+    visualImpairedServices?: SortOrder
+    serviceAnimalsAllowed?: SortOrder
+    cancellationPolicy?: SortOrder
+    petPolicy?: SortOrderInput | SortOrder
+    smokingPolicy?: SortOrderInput | SortOrder
+    childrenPolicy?: SortOrderInput | SortOrder
+    groupPolicy?: SortOrderInput | SortOrder
+    paymentMethods?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrderInput | SortOrder
+    minimumStay?: SortOrderInput | SortOrder
+    ageRestriction?: SortOrderInput | SortOrder
+    quietHours?: SortOrder
+    specialOffers?: SortOrderInput | SortOrder
+    loyaltyProgram?: SortOrder
+    mainImageUrl?: SortOrderInput | SortOrder
+    otherImageUrls?: SortOrder
+    imageSections?: SortOrder
+    sectionImages?: SortOrderInput | SortOrder
+    imageDescriptions?: SortOrderInput | SortOrder
+    vendorId?: SortOrder
+    _count?: LuxuryDestinationCountOrderByAggregateInput
+    _avg?: LuxuryDestinationAvgOrderByAggregateInput
+    _max?: LuxuryDestinationMaxOrderByAggregateInput
+    _min?: LuxuryDestinationMinOrderByAggregateInput
+    _sum?: LuxuryDestinationSumOrderByAggregateInput
+  }
+
+  export type LuxuryDestinationScalarWhereWithAggregatesInput = {
+    AND?: LuxuryDestinationScalarWhereWithAggregatesInput | LuxuryDestinationScalarWhereWithAggregatesInput[]
+    OR?: LuxuryDestinationScalarWhereWithAggregatesInput[]
+    NOT?: LuxuryDestinationScalarWhereWithAggregatesInput | LuxuryDestinationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"LuxuryDestination"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"LuxuryDestination"> | Date | string
+    propertyName?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    propertyType?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    starRating?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    address?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    city?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    country?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    postalCode?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    phone?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    email?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    website?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    checkInTime?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    checkOutTime?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    languagesSpoken?: StringNullableListFilter<"LuxuryDestination">
+    description?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    highlights?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    amenities?: StringNullableListFilter<"LuxuryDestination">
+    roomTypes?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    totalRooms?: IntNullableWithAggregatesFilter<"LuxuryDestination"> | number | null
+    yearBuilt?: IntNullableWithAggregatesFilter<"LuxuryDestination"> | number | null
+    lastRenovated?: IntNullableWithAggregatesFilter<"LuxuryDestination"> | number | null
+    awards?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    sustainabilityPractices?: StringNullableListFilter<"LuxuryDestination">
+    wheelchairAccessible?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    accessibleRooms?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    accessibleBathrooms?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    accessibleParking?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    accessibleRestaurants?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    accessiblePools?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    brailleSignage?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    hearingImpairedServices?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    visualImpairedServices?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    serviceAnimalsAllowed?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    cancellationPolicy?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    petPolicy?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    smokingPolicy?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    childrenPolicy?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    groupPolicy?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    paymentMethods?: StringNullableListFilter<"LuxuryDestination">
+    depositRequired?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    depositAmount?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    minimumStay?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    ageRestriction?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    quietHours?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+    specialOffers?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    loyaltyProgram?: BoolWithAggregatesFilter<"LuxuryDestination"> | boolean
+    mainImageUrl?: StringNullableWithAggregatesFilter<"LuxuryDestination"> | string | null
+    otherImageUrls?: StringNullableListFilter<"LuxuryDestination">
+    imageSections?: StringNullableListFilter<"LuxuryDestination">
+    sectionImages?: JsonNullableWithAggregatesFilter<"LuxuryDestination">
+    imageDescriptions?: JsonNullableWithAggregatesFilter<"LuxuryDestination">
+    vendorId?: StringWithAggregatesFilter<"LuxuryDestination"> | string
+  }
+
+  export type RoomTypeWhereInput = {
+    AND?: RoomTypeWhereInput | RoomTypeWhereInput[]
+    OR?: RoomTypeWhereInput[]
+    NOT?: RoomTypeWhereInput | RoomTypeWhereInput[]
+    id?: StringFilter<"RoomType"> | string
+    name?: StringFilter<"RoomType"> | string
+    description?: StringFilter<"RoomType"> | string
+    size?: FloatFilter<"RoomType"> | number
+    occupancy?: IntFilter<"RoomType"> | number
+    bedConfiguration?: StringFilter<"RoomType"> | string
+    basePrice?: FloatFilter<"RoomType"> | number
+    totalRooms?: IntFilter<"RoomType"> | number
+    views?: IntFilter<"RoomType"> | number
+    rating?: FloatFilter<"RoomType"> | number
+    minimumStay?: IntNullableFilter<"RoomType"> | number | null
+    depositRequired?: BoolFilter<"RoomType"> | boolean
+    depositAmount?: FloatNullableFilter<"RoomType"> | number | null
+    amenities?: JsonNullableFilter<"RoomType">
+    accessibilityFeatures?: JsonNullableFilter<"RoomType">
+    bathroomFeatures?: JsonNullableFilter<"RoomType">
+    bedroomFeatures?: JsonNullableFilter<"RoomType">
+    entertainment?: JsonNullableFilter<"RoomType">
+    familyFriendly?: JsonNullableFilter<"RoomType">
+    foodAndDrink?: JsonNullableFilter<"RoomType">
+    moreFeatures?: JsonNullableFilter<"RoomType">
+    outdoorSpace?: JsonNullableFilter<"RoomType">
+    safetyFeatures?: JsonNullableFilter<"RoomType">
+    freebies?: JsonNullableFilter<"RoomType">
+    createdAt?: DateTimeFilter<"RoomType"> | Date | string
+    updatedAt?: DateTimeFilter<"RoomType"> | Date | string
+    vendorId?: StringFilter<"RoomType"> | string
+    images?: RoomImageListRelationFilter
+    extraFees?: ExtraFeeListRelationFilter
+  }
+
+  export type RoomTypeOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    size?: SortOrder
+    occupancy?: SortOrder
+    bedConfiguration?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrderInput | SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrderInput | SortOrder
+    amenities?: SortOrderInput | SortOrder
+    accessibilityFeatures?: SortOrderInput | SortOrder
+    bathroomFeatures?: SortOrderInput | SortOrder
+    bedroomFeatures?: SortOrderInput | SortOrder
+    entertainment?: SortOrderInput | SortOrder
+    familyFriendly?: SortOrderInput | SortOrder
+    foodAndDrink?: SortOrderInput | SortOrder
+    moreFeatures?: SortOrderInput | SortOrder
+    outdoorSpace?: SortOrderInput | SortOrder
+    safetyFeatures?: SortOrderInput | SortOrder
+    freebies?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    vendorId?: SortOrder
+    images?: RoomImageOrderByRelationAggregateInput
+    extraFees?: ExtraFeeOrderByRelationAggregateInput
+  }
+
+  export type RoomTypeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    name?: string
+    AND?: RoomTypeWhereInput | RoomTypeWhereInput[]
+    OR?: RoomTypeWhereInput[]
+    NOT?: RoomTypeWhereInput | RoomTypeWhereInput[]
+    description?: StringFilter<"RoomType"> | string
+    size?: FloatFilter<"RoomType"> | number
+    occupancy?: IntFilter<"RoomType"> | number
+    bedConfiguration?: StringFilter<"RoomType"> | string
+    basePrice?: FloatFilter<"RoomType"> | number
+    totalRooms?: IntFilter<"RoomType"> | number
+    views?: IntFilter<"RoomType"> | number
+    rating?: FloatFilter<"RoomType"> | number
+    minimumStay?: IntNullableFilter<"RoomType"> | number | null
+    depositRequired?: BoolFilter<"RoomType"> | boolean
+    depositAmount?: FloatNullableFilter<"RoomType"> | number | null
+    amenities?: JsonNullableFilter<"RoomType">
+    accessibilityFeatures?: JsonNullableFilter<"RoomType">
+    bathroomFeatures?: JsonNullableFilter<"RoomType">
+    bedroomFeatures?: JsonNullableFilter<"RoomType">
+    entertainment?: JsonNullableFilter<"RoomType">
+    familyFriendly?: JsonNullableFilter<"RoomType">
+    foodAndDrink?: JsonNullableFilter<"RoomType">
+    moreFeatures?: JsonNullableFilter<"RoomType">
+    outdoorSpace?: JsonNullableFilter<"RoomType">
+    safetyFeatures?: JsonNullableFilter<"RoomType">
+    freebies?: JsonNullableFilter<"RoomType">
+    createdAt?: DateTimeFilter<"RoomType"> | Date | string
+    updatedAt?: DateTimeFilter<"RoomType"> | Date | string
+    vendorId?: StringFilter<"RoomType"> | string
+    images?: RoomImageListRelationFilter
+    extraFees?: ExtraFeeListRelationFilter
+  }, "id" | "name">
+
+  export type RoomTypeOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    size?: SortOrder
+    occupancy?: SortOrder
+    bedConfiguration?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrderInput | SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrderInput | SortOrder
+    amenities?: SortOrderInput | SortOrder
+    accessibilityFeatures?: SortOrderInput | SortOrder
+    bathroomFeatures?: SortOrderInput | SortOrder
+    bedroomFeatures?: SortOrderInput | SortOrder
+    entertainment?: SortOrderInput | SortOrder
+    familyFriendly?: SortOrderInput | SortOrder
+    foodAndDrink?: SortOrderInput | SortOrder
+    moreFeatures?: SortOrderInput | SortOrder
+    outdoorSpace?: SortOrderInput | SortOrder
+    safetyFeatures?: SortOrderInput | SortOrder
+    freebies?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    vendorId?: SortOrder
+    _count?: RoomTypeCountOrderByAggregateInput
+    _avg?: RoomTypeAvgOrderByAggregateInput
+    _max?: RoomTypeMaxOrderByAggregateInput
+    _min?: RoomTypeMinOrderByAggregateInput
+    _sum?: RoomTypeSumOrderByAggregateInput
+  }
+
+  export type RoomTypeScalarWhereWithAggregatesInput = {
+    AND?: RoomTypeScalarWhereWithAggregatesInput | RoomTypeScalarWhereWithAggregatesInput[]
+    OR?: RoomTypeScalarWhereWithAggregatesInput[]
+    NOT?: RoomTypeScalarWhereWithAggregatesInput | RoomTypeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RoomType"> | string
+    name?: StringWithAggregatesFilter<"RoomType"> | string
+    description?: StringWithAggregatesFilter<"RoomType"> | string
+    size?: FloatWithAggregatesFilter<"RoomType"> | number
+    occupancy?: IntWithAggregatesFilter<"RoomType"> | number
+    bedConfiguration?: StringWithAggregatesFilter<"RoomType"> | string
+    basePrice?: FloatWithAggregatesFilter<"RoomType"> | number
+    totalRooms?: IntWithAggregatesFilter<"RoomType"> | number
+    views?: IntWithAggregatesFilter<"RoomType"> | number
+    rating?: FloatWithAggregatesFilter<"RoomType"> | number
+    minimumStay?: IntNullableWithAggregatesFilter<"RoomType"> | number | null
+    depositRequired?: BoolWithAggregatesFilter<"RoomType"> | boolean
+    depositAmount?: FloatNullableWithAggregatesFilter<"RoomType"> | number | null
+    amenities?: JsonNullableWithAggregatesFilter<"RoomType">
+    accessibilityFeatures?: JsonNullableWithAggregatesFilter<"RoomType">
+    bathroomFeatures?: JsonNullableWithAggregatesFilter<"RoomType">
+    bedroomFeatures?: JsonNullableWithAggregatesFilter<"RoomType">
+    entertainment?: JsonNullableWithAggregatesFilter<"RoomType">
+    familyFriendly?: JsonNullableWithAggregatesFilter<"RoomType">
+    foodAndDrink?: JsonNullableWithAggregatesFilter<"RoomType">
+    moreFeatures?: JsonNullableWithAggregatesFilter<"RoomType">
+    outdoorSpace?: JsonNullableWithAggregatesFilter<"RoomType">
+    safetyFeatures?: JsonNullableWithAggregatesFilter<"RoomType">
+    freebies?: JsonNullableWithAggregatesFilter<"RoomType">
+    createdAt?: DateTimeWithAggregatesFilter<"RoomType"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RoomType"> | Date | string
+    vendorId?: StringWithAggregatesFilter<"RoomType"> | string
+  }
+
+  export type RoomImageWhereInput = {
+    AND?: RoomImageWhereInput | RoomImageWhereInput[]
+    OR?: RoomImageWhereInput[]
+    NOT?: RoomImageWhereInput | RoomImageWhereInput[]
+    id?: StringFilter<"RoomImage"> | string
+    url?: StringFilter<"RoomImage"> | string
+    description?: StringNullableFilter<"RoomImage"> | string | null
+    roomTypeId?: StringFilter<"RoomImage"> | string
+    createdAt?: DateTimeFilter<"RoomImage"> | Date | string
+    roomType?: XOR<RoomTypeScalarRelationFilter, RoomTypeWhereInput>
+  }
+
+  export type RoomImageOrderByWithRelationInput = {
+    id?: SortOrder
+    url?: SortOrder
+    description?: SortOrderInput | SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+    roomType?: RoomTypeOrderByWithRelationInput
+  }
+
+  export type RoomImageWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: RoomImageWhereInput | RoomImageWhereInput[]
+    OR?: RoomImageWhereInput[]
+    NOT?: RoomImageWhereInput | RoomImageWhereInput[]
+    url?: StringFilter<"RoomImage"> | string
+    description?: StringNullableFilter<"RoomImage"> | string | null
+    roomTypeId?: StringFilter<"RoomImage"> | string
+    createdAt?: DateTimeFilter<"RoomImage"> | Date | string
+    roomType?: XOR<RoomTypeScalarRelationFilter, RoomTypeWhereInput>
+  }, "id">
+
+  export type RoomImageOrderByWithAggregationInput = {
+    id?: SortOrder
+    url?: SortOrder
+    description?: SortOrderInput | SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+    _count?: RoomImageCountOrderByAggregateInput
+    _max?: RoomImageMaxOrderByAggregateInput
+    _min?: RoomImageMinOrderByAggregateInput
+  }
+
+  export type RoomImageScalarWhereWithAggregatesInput = {
+    AND?: RoomImageScalarWhereWithAggregatesInput | RoomImageScalarWhereWithAggregatesInput[]
+    OR?: RoomImageScalarWhereWithAggregatesInput[]
+    NOT?: RoomImageScalarWhereWithAggregatesInput | RoomImageScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RoomImage"> | string
+    url?: StringWithAggregatesFilter<"RoomImage"> | string
+    description?: StringNullableWithAggregatesFilter<"RoomImage"> | string | null
+    roomTypeId?: StringWithAggregatesFilter<"RoomImage"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"RoomImage"> | Date | string
+  }
+
+  export type ExtraFeeWhereInput = {
+    AND?: ExtraFeeWhereInput | ExtraFeeWhereInput[]
+    OR?: ExtraFeeWhereInput[]
+    NOT?: ExtraFeeWhereInput | ExtraFeeWhereInput[]
+    id?: StringFilter<"ExtraFee"> | string
+    name?: StringFilter<"ExtraFee"> | string
+    amount?: FloatFilter<"ExtraFee"> | number
+    roomTypeId?: StringFilter<"ExtraFee"> | string
+    createdAt?: DateTimeFilter<"ExtraFee"> | Date | string
+    roomType?: XOR<RoomTypeScalarRelationFilter, RoomTypeWhereInput>
+  }
+
+  export type ExtraFeeOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    amount?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+    roomType?: RoomTypeOrderByWithRelationInput
+  }
+
+  export type ExtraFeeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ExtraFeeWhereInput | ExtraFeeWhereInput[]
+    OR?: ExtraFeeWhereInput[]
+    NOT?: ExtraFeeWhereInput | ExtraFeeWhereInput[]
+    name?: StringFilter<"ExtraFee"> | string
+    amount?: FloatFilter<"ExtraFee"> | number
+    roomTypeId?: StringFilter<"ExtraFee"> | string
+    createdAt?: DateTimeFilter<"ExtraFee"> | Date | string
+    roomType?: XOR<RoomTypeScalarRelationFilter, RoomTypeWhereInput>
+  }, "id">
+
+  export type ExtraFeeOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    amount?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+    _count?: ExtraFeeCountOrderByAggregateInput
+    _avg?: ExtraFeeAvgOrderByAggregateInput
+    _max?: ExtraFeeMaxOrderByAggregateInput
+    _min?: ExtraFeeMinOrderByAggregateInput
+    _sum?: ExtraFeeSumOrderByAggregateInput
+  }
+
+  export type ExtraFeeScalarWhereWithAggregatesInput = {
+    AND?: ExtraFeeScalarWhereWithAggregatesInput | ExtraFeeScalarWhereWithAggregatesInput[]
+    OR?: ExtraFeeScalarWhereWithAggregatesInput[]
+    NOT?: ExtraFeeScalarWhereWithAggregatesInput | ExtraFeeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ExtraFee"> | string
+    name?: StringWithAggregatesFilter<"ExtraFee"> | string
+    amount?: FloatWithAggregatesFilter<"ExtraFee"> | number
+    roomTypeId?: StringWithAggregatesFilter<"ExtraFee"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"ExtraFee"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -28268,6 +34570,733 @@ export namespace Prisma {
     read?: BoolFieldUpdateOperationsInput | boolean
   }
 
+  export type LuxuryDestinationCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    propertyName: string
+    propertyType: string
+    starRating?: string | null
+    address: string
+    city: string
+    country: string
+    postalCode?: string | null
+    phone: string
+    email: string
+    website?: string | null
+    checkInTime?: string
+    checkOutTime?: string
+    languagesSpoken?: LuxuryDestinationCreatelanguagesSpokenInput | string[]
+    description: string
+    highlights?: string | null
+    amenities?: LuxuryDestinationCreateamenitiesInput | string[]
+    roomTypes?: string | null
+    totalRooms?: number | null
+    yearBuilt?: number | null
+    lastRenovated?: number | null
+    awards?: string | null
+    sustainabilityPractices?: LuxuryDestinationCreatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: boolean
+    accessibleRooms?: string | null
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy: string
+    petPolicy?: string | null
+    smokingPolicy?: string | null
+    childrenPolicy?: string | null
+    groupPolicy?: string | null
+    paymentMethods?: LuxuryDestinationCreatepaymentMethodsInput | string[]
+    depositRequired?: boolean
+    depositAmount?: string | null
+    minimumStay?: string | null
+    ageRestriction?: string | null
+    quietHours?: string
+    specialOffers?: string | null
+    loyaltyProgram?: boolean
+    mainImageUrl?: string | null
+    otherImageUrls?: LuxuryDestinationCreateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationCreateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId: string
+  }
+
+  export type LuxuryDestinationUncheckedCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    propertyName: string
+    propertyType: string
+    starRating?: string | null
+    address: string
+    city: string
+    country: string
+    postalCode?: string | null
+    phone: string
+    email: string
+    website?: string | null
+    checkInTime?: string
+    checkOutTime?: string
+    languagesSpoken?: LuxuryDestinationCreatelanguagesSpokenInput | string[]
+    description: string
+    highlights?: string | null
+    amenities?: LuxuryDestinationCreateamenitiesInput | string[]
+    roomTypes?: string | null
+    totalRooms?: number | null
+    yearBuilt?: number | null
+    lastRenovated?: number | null
+    awards?: string | null
+    sustainabilityPractices?: LuxuryDestinationCreatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: boolean
+    accessibleRooms?: string | null
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy: string
+    petPolicy?: string | null
+    smokingPolicy?: string | null
+    childrenPolicy?: string | null
+    groupPolicy?: string | null
+    paymentMethods?: LuxuryDestinationCreatepaymentMethodsInput | string[]
+    depositRequired?: boolean
+    depositAmount?: string | null
+    minimumStay?: string | null
+    ageRestriction?: string | null
+    quietHours?: string
+    specialOffers?: string | null
+    loyaltyProgram?: boolean
+    mainImageUrl?: string | null
+    otherImageUrls?: LuxuryDestinationCreateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationCreateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId: string
+  }
+
+  export type LuxuryDestinationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    propertyName?: StringFieldUpdateOperationsInput | string
+    propertyType?: StringFieldUpdateOperationsInput | string
+    starRating?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    postalCode?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    checkInTime?: StringFieldUpdateOperationsInput | string
+    checkOutTime?: StringFieldUpdateOperationsInput | string
+    languagesSpoken?: LuxuryDestinationUpdatelanguagesSpokenInput | string[]
+    description?: StringFieldUpdateOperationsInput | string
+    highlights?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: LuxuryDestinationUpdateamenitiesInput | string[]
+    roomTypes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalRooms?: NullableIntFieldUpdateOperationsInput | number | null
+    yearBuilt?: NullableIntFieldUpdateOperationsInput | number | null
+    lastRenovated?: NullableIntFieldUpdateOperationsInput | number | null
+    awards?: NullableStringFieldUpdateOperationsInput | string | null
+    sustainabilityPractices?: LuxuryDestinationUpdatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRooms?: NullableStringFieldUpdateOperationsInput | string | null
+    accessibleBathrooms?: BoolFieldUpdateOperationsInput | boolean
+    accessibleParking?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRestaurants?: BoolFieldUpdateOperationsInput | boolean
+    accessiblePools?: BoolFieldUpdateOperationsInput | boolean
+    brailleSignage?: BoolFieldUpdateOperationsInput | boolean
+    hearingImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    visualImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    serviceAnimalsAllowed?: BoolFieldUpdateOperationsInput | boolean
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    petPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    smokingPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    childrenPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    groupPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    paymentMethods?: LuxuryDestinationUpdatepaymentMethodsInput | string[]
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableStringFieldUpdateOperationsInput | string | null
+    minimumStay?: NullableStringFieldUpdateOperationsInput | string | null
+    ageRestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    quietHours?: StringFieldUpdateOperationsInput | string
+    specialOffers?: NullableStringFieldUpdateOperationsInput | string | null
+    loyaltyProgram?: BoolFieldUpdateOperationsInput | boolean
+    mainImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    otherImageUrls?: LuxuryDestinationUpdateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationUpdateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LuxuryDestinationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    propertyName?: StringFieldUpdateOperationsInput | string
+    propertyType?: StringFieldUpdateOperationsInput | string
+    starRating?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    postalCode?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    checkInTime?: StringFieldUpdateOperationsInput | string
+    checkOutTime?: StringFieldUpdateOperationsInput | string
+    languagesSpoken?: LuxuryDestinationUpdatelanguagesSpokenInput | string[]
+    description?: StringFieldUpdateOperationsInput | string
+    highlights?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: LuxuryDestinationUpdateamenitiesInput | string[]
+    roomTypes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalRooms?: NullableIntFieldUpdateOperationsInput | number | null
+    yearBuilt?: NullableIntFieldUpdateOperationsInput | number | null
+    lastRenovated?: NullableIntFieldUpdateOperationsInput | number | null
+    awards?: NullableStringFieldUpdateOperationsInput | string | null
+    sustainabilityPractices?: LuxuryDestinationUpdatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRooms?: NullableStringFieldUpdateOperationsInput | string | null
+    accessibleBathrooms?: BoolFieldUpdateOperationsInput | boolean
+    accessibleParking?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRestaurants?: BoolFieldUpdateOperationsInput | boolean
+    accessiblePools?: BoolFieldUpdateOperationsInput | boolean
+    brailleSignage?: BoolFieldUpdateOperationsInput | boolean
+    hearingImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    visualImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    serviceAnimalsAllowed?: BoolFieldUpdateOperationsInput | boolean
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    petPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    smokingPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    childrenPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    groupPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    paymentMethods?: LuxuryDestinationUpdatepaymentMethodsInput | string[]
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableStringFieldUpdateOperationsInput | string | null
+    minimumStay?: NullableStringFieldUpdateOperationsInput | string | null
+    ageRestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    quietHours?: StringFieldUpdateOperationsInput | string
+    specialOffers?: NullableStringFieldUpdateOperationsInput | string | null
+    loyaltyProgram?: BoolFieldUpdateOperationsInput | boolean
+    mainImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    otherImageUrls?: LuxuryDestinationUpdateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationUpdateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LuxuryDestinationCreateManyInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    propertyName: string
+    propertyType: string
+    starRating?: string | null
+    address: string
+    city: string
+    country: string
+    postalCode?: string | null
+    phone: string
+    email: string
+    website?: string | null
+    checkInTime?: string
+    checkOutTime?: string
+    languagesSpoken?: LuxuryDestinationCreatelanguagesSpokenInput | string[]
+    description: string
+    highlights?: string | null
+    amenities?: LuxuryDestinationCreateamenitiesInput | string[]
+    roomTypes?: string | null
+    totalRooms?: number | null
+    yearBuilt?: number | null
+    lastRenovated?: number | null
+    awards?: string | null
+    sustainabilityPractices?: LuxuryDestinationCreatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: boolean
+    accessibleRooms?: string | null
+    accessibleBathrooms?: boolean
+    accessibleParking?: boolean
+    accessibleRestaurants?: boolean
+    accessiblePools?: boolean
+    brailleSignage?: boolean
+    hearingImpairedServices?: boolean
+    visualImpairedServices?: boolean
+    serviceAnimalsAllowed?: boolean
+    cancellationPolicy: string
+    petPolicy?: string | null
+    smokingPolicy?: string | null
+    childrenPolicy?: string | null
+    groupPolicy?: string | null
+    paymentMethods?: LuxuryDestinationCreatepaymentMethodsInput | string[]
+    depositRequired?: boolean
+    depositAmount?: string | null
+    minimumStay?: string | null
+    ageRestriction?: string | null
+    quietHours?: string
+    specialOffers?: string | null
+    loyaltyProgram?: boolean
+    mainImageUrl?: string | null
+    otherImageUrls?: LuxuryDestinationCreateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationCreateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId: string
+  }
+
+  export type LuxuryDestinationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    propertyName?: StringFieldUpdateOperationsInput | string
+    propertyType?: StringFieldUpdateOperationsInput | string
+    starRating?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    postalCode?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    checkInTime?: StringFieldUpdateOperationsInput | string
+    checkOutTime?: StringFieldUpdateOperationsInput | string
+    languagesSpoken?: LuxuryDestinationUpdatelanguagesSpokenInput | string[]
+    description?: StringFieldUpdateOperationsInput | string
+    highlights?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: LuxuryDestinationUpdateamenitiesInput | string[]
+    roomTypes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalRooms?: NullableIntFieldUpdateOperationsInput | number | null
+    yearBuilt?: NullableIntFieldUpdateOperationsInput | number | null
+    lastRenovated?: NullableIntFieldUpdateOperationsInput | number | null
+    awards?: NullableStringFieldUpdateOperationsInput | string | null
+    sustainabilityPractices?: LuxuryDestinationUpdatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRooms?: NullableStringFieldUpdateOperationsInput | string | null
+    accessibleBathrooms?: BoolFieldUpdateOperationsInput | boolean
+    accessibleParking?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRestaurants?: BoolFieldUpdateOperationsInput | boolean
+    accessiblePools?: BoolFieldUpdateOperationsInput | boolean
+    brailleSignage?: BoolFieldUpdateOperationsInput | boolean
+    hearingImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    visualImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    serviceAnimalsAllowed?: BoolFieldUpdateOperationsInput | boolean
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    petPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    smokingPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    childrenPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    groupPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    paymentMethods?: LuxuryDestinationUpdatepaymentMethodsInput | string[]
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableStringFieldUpdateOperationsInput | string | null
+    minimumStay?: NullableStringFieldUpdateOperationsInput | string | null
+    ageRestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    quietHours?: StringFieldUpdateOperationsInput | string
+    specialOffers?: NullableStringFieldUpdateOperationsInput | string | null
+    loyaltyProgram?: BoolFieldUpdateOperationsInput | boolean
+    mainImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    otherImageUrls?: LuxuryDestinationUpdateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationUpdateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LuxuryDestinationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    propertyName?: StringFieldUpdateOperationsInput | string
+    propertyType?: StringFieldUpdateOperationsInput | string
+    starRating?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    postalCode?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    checkInTime?: StringFieldUpdateOperationsInput | string
+    checkOutTime?: StringFieldUpdateOperationsInput | string
+    languagesSpoken?: LuxuryDestinationUpdatelanguagesSpokenInput | string[]
+    description?: StringFieldUpdateOperationsInput | string
+    highlights?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: LuxuryDestinationUpdateamenitiesInput | string[]
+    roomTypes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalRooms?: NullableIntFieldUpdateOperationsInput | number | null
+    yearBuilt?: NullableIntFieldUpdateOperationsInput | number | null
+    lastRenovated?: NullableIntFieldUpdateOperationsInput | number | null
+    awards?: NullableStringFieldUpdateOperationsInput | string | null
+    sustainabilityPractices?: LuxuryDestinationUpdatesustainabilityPracticesInput | string[]
+    wheelchairAccessible?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRooms?: NullableStringFieldUpdateOperationsInput | string | null
+    accessibleBathrooms?: BoolFieldUpdateOperationsInput | boolean
+    accessibleParking?: BoolFieldUpdateOperationsInput | boolean
+    accessibleRestaurants?: BoolFieldUpdateOperationsInput | boolean
+    accessiblePools?: BoolFieldUpdateOperationsInput | boolean
+    brailleSignage?: BoolFieldUpdateOperationsInput | boolean
+    hearingImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    visualImpairedServices?: BoolFieldUpdateOperationsInput | boolean
+    serviceAnimalsAllowed?: BoolFieldUpdateOperationsInput | boolean
+    cancellationPolicy?: StringFieldUpdateOperationsInput | string
+    petPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    smokingPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    childrenPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    groupPolicy?: NullableStringFieldUpdateOperationsInput | string | null
+    paymentMethods?: LuxuryDestinationUpdatepaymentMethodsInput | string[]
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableStringFieldUpdateOperationsInput | string | null
+    minimumStay?: NullableStringFieldUpdateOperationsInput | string | null
+    ageRestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    quietHours?: StringFieldUpdateOperationsInput | string
+    specialOffers?: NullableStringFieldUpdateOperationsInput | string | null
+    loyaltyProgram?: BoolFieldUpdateOperationsInput | boolean
+    mainImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    otherImageUrls?: LuxuryDestinationUpdateotherImageUrlsInput | string[]
+    imageSections?: LuxuryDestinationUpdateimageSectionsInput | string[]
+    sectionImages?: NullableJsonNullValueInput | InputJsonValue
+    imageDescriptions?: NullableJsonNullValueInput | InputJsonValue
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type RoomTypeCreateInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    images?: RoomImageCreateNestedManyWithoutRoomTypeInput
+    extraFees?: ExtraFeeCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeUncheckedCreateInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    images?: RoomImageUncheckedCreateNestedManyWithoutRoomTypeInput
+    extraFees?: ExtraFeeUncheckedCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    images?: RoomImageUpdateManyWithoutRoomTypeNestedInput
+    extraFees?: ExtraFeeUpdateManyWithoutRoomTypeNestedInput
+  }
+
+  export type RoomTypeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    images?: RoomImageUncheckedUpdateManyWithoutRoomTypeNestedInput
+    extraFees?: ExtraFeeUncheckedUpdateManyWithoutRoomTypeNestedInput
+  }
+
+  export type RoomTypeCreateManyInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+  }
+
+  export type RoomTypeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type RoomTypeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type RoomImageCreateInput = {
+    id?: string
+    url: string
+    description?: string | null
+    createdAt?: Date | string
+    roomType: RoomTypeCreateNestedOneWithoutImagesInput
+  }
+
+  export type RoomImageUncheckedCreateInput = {
+    id?: string
+    url: string
+    description?: string | null
+    roomTypeId: string
+    createdAt?: Date | string
+  }
+
+  export type RoomImageUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    roomType?: RoomTypeUpdateOneRequiredWithoutImagesNestedInput
+  }
+
+  export type RoomImageUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    roomTypeId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RoomImageCreateManyInput = {
+    id?: string
+    url: string
+    description?: string | null
+    roomTypeId: string
+    createdAt?: Date | string
+  }
+
+  export type RoomImageUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RoomImageUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    roomTypeId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeCreateInput = {
+    id?: string
+    name: string
+    amount: number
+    createdAt?: Date | string
+    roomType: RoomTypeCreateNestedOneWithoutExtraFeesInput
+  }
+
+  export type ExtraFeeUncheckedCreateInput = {
+    id?: string
+    name: string
+    amount: number
+    roomTypeId: string
+    createdAt?: Date | string
+  }
+
+  export type ExtraFeeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    roomType?: RoomTypeUpdateOneRequiredWithoutExtraFeesNestedInput
+  }
+
+  export type ExtraFeeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    roomTypeId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeCreateManyInput = {
+    id?: string
+    name: string
+    amount: number
+    roomTypeId: string
+    createdAt?: Date | string
+  }
+
+  export type ExtraFeeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    roomTypeId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -30105,6 +37134,393 @@ export namespace Prisma {
     vendorId?: SortOrder
     read?: SortOrder
   }
+  export type JsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type LuxuryDestinationCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    propertyName?: SortOrder
+    propertyType?: SortOrder
+    starRating?: SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    country?: SortOrder
+    postalCode?: SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrder
+    checkInTime?: SortOrder
+    checkOutTime?: SortOrder
+    languagesSpoken?: SortOrder
+    description?: SortOrder
+    highlights?: SortOrder
+    amenities?: SortOrder
+    roomTypes?: SortOrder
+    totalRooms?: SortOrder
+    yearBuilt?: SortOrder
+    lastRenovated?: SortOrder
+    awards?: SortOrder
+    sustainabilityPractices?: SortOrder
+    wheelchairAccessible?: SortOrder
+    accessibleRooms?: SortOrder
+    accessibleBathrooms?: SortOrder
+    accessibleParking?: SortOrder
+    accessibleRestaurants?: SortOrder
+    accessiblePools?: SortOrder
+    brailleSignage?: SortOrder
+    hearingImpairedServices?: SortOrder
+    visualImpairedServices?: SortOrder
+    serviceAnimalsAllowed?: SortOrder
+    cancellationPolicy?: SortOrder
+    petPolicy?: SortOrder
+    smokingPolicy?: SortOrder
+    childrenPolicy?: SortOrder
+    groupPolicy?: SortOrder
+    paymentMethods?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    minimumStay?: SortOrder
+    ageRestriction?: SortOrder
+    quietHours?: SortOrder
+    specialOffers?: SortOrder
+    loyaltyProgram?: SortOrder
+    mainImageUrl?: SortOrder
+    otherImageUrls?: SortOrder
+    imageSections?: SortOrder
+    sectionImages?: SortOrder
+    imageDescriptions?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type LuxuryDestinationAvgOrderByAggregateInput = {
+    totalRooms?: SortOrder
+    yearBuilt?: SortOrder
+    lastRenovated?: SortOrder
+  }
+
+  export type LuxuryDestinationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    propertyName?: SortOrder
+    propertyType?: SortOrder
+    starRating?: SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    country?: SortOrder
+    postalCode?: SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrder
+    checkInTime?: SortOrder
+    checkOutTime?: SortOrder
+    description?: SortOrder
+    highlights?: SortOrder
+    roomTypes?: SortOrder
+    totalRooms?: SortOrder
+    yearBuilt?: SortOrder
+    lastRenovated?: SortOrder
+    awards?: SortOrder
+    wheelchairAccessible?: SortOrder
+    accessibleRooms?: SortOrder
+    accessibleBathrooms?: SortOrder
+    accessibleParking?: SortOrder
+    accessibleRestaurants?: SortOrder
+    accessiblePools?: SortOrder
+    brailleSignage?: SortOrder
+    hearingImpairedServices?: SortOrder
+    visualImpairedServices?: SortOrder
+    serviceAnimalsAllowed?: SortOrder
+    cancellationPolicy?: SortOrder
+    petPolicy?: SortOrder
+    smokingPolicy?: SortOrder
+    childrenPolicy?: SortOrder
+    groupPolicy?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    minimumStay?: SortOrder
+    ageRestriction?: SortOrder
+    quietHours?: SortOrder
+    specialOffers?: SortOrder
+    loyaltyProgram?: SortOrder
+    mainImageUrl?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type LuxuryDestinationMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    propertyName?: SortOrder
+    propertyType?: SortOrder
+    starRating?: SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    country?: SortOrder
+    postalCode?: SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrder
+    checkInTime?: SortOrder
+    checkOutTime?: SortOrder
+    description?: SortOrder
+    highlights?: SortOrder
+    roomTypes?: SortOrder
+    totalRooms?: SortOrder
+    yearBuilt?: SortOrder
+    lastRenovated?: SortOrder
+    awards?: SortOrder
+    wheelchairAccessible?: SortOrder
+    accessibleRooms?: SortOrder
+    accessibleBathrooms?: SortOrder
+    accessibleParking?: SortOrder
+    accessibleRestaurants?: SortOrder
+    accessiblePools?: SortOrder
+    brailleSignage?: SortOrder
+    hearingImpairedServices?: SortOrder
+    visualImpairedServices?: SortOrder
+    serviceAnimalsAllowed?: SortOrder
+    cancellationPolicy?: SortOrder
+    petPolicy?: SortOrder
+    smokingPolicy?: SortOrder
+    childrenPolicy?: SortOrder
+    groupPolicy?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    minimumStay?: SortOrder
+    ageRestriction?: SortOrder
+    quietHours?: SortOrder
+    specialOffers?: SortOrder
+    loyaltyProgram?: SortOrder
+    mainImageUrl?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type LuxuryDestinationSumOrderByAggregateInput = {
+    totalRooms?: SortOrder
+    yearBuilt?: SortOrder
+    lastRenovated?: SortOrder
+  }
+  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedJsonNullableFilter<$PrismaModel>
+    _max?: NestedJsonNullableFilter<$PrismaModel>
+  }
+
+  export type RoomImageListRelationFilter = {
+    every?: RoomImageWhereInput
+    some?: RoomImageWhereInput
+    none?: RoomImageWhereInput
+  }
+
+  export type ExtraFeeListRelationFilter = {
+    every?: ExtraFeeWhereInput
+    some?: ExtraFeeWhereInput
+    none?: ExtraFeeWhereInput
+  }
+
+  export type RoomImageOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ExtraFeeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RoomTypeCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    size?: SortOrder
+    occupancy?: SortOrder
+    bedConfiguration?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    amenities?: SortOrder
+    accessibilityFeatures?: SortOrder
+    bathroomFeatures?: SortOrder
+    bedroomFeatures?: SortOrder
+    entertainment?: SortOrder
+    familyFriendly?: SortOrder
+    foodAndDrink?: SortOrder
+    moreFeatures?: SortOrder
+    outdoorSpace?: SortOrder
+    safetyFeatures?: SortOrder
+    freebies?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type RoomTypeAvgOrderByAggregateInput = {
+    size?: SortOrder
+    occupancy?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrder
+    depositAmount?: SortOrder
+  }
+
+  export type RoomTypeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    size?: SortOrder
+    occupancy?: SortOrder
+    bedConfiguration?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type RoomTypeMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    size?: SortOrder
+    occupancy?: SortOrder
+    bedConfiguration?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrder
+    depositRequired?: SortOrder
+    depositAmount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    vendorId?: SortOrder
+  }
+
+  export type RoomTypeSumOrderByAggregateInput = {
+    size?: SortOrder
+    occupancy?: SortOrder
+    basePrice?: SortOrder
+    totalRooms?: SortOrder
+    views?: SortOrder
+    rating?: SortOrder
+    minimumStay?: SortOrder
+    depositAmount?: SortOrder
+  }
+
+  export type RoomTypeScalarRelationFilter = {
+    is?: RoomTypeWhereInput
+    isNot?: RoomTypeWhereInput
+  }
+
+  export type RoomImageCountOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    description?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RoomImageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    description?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RoomImageMinOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    description?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ExtraFeeCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    amount?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ExtraFeeAvgOrderByAggregateInput = {
+    amount?: SortOrder
+  }
+
+  export type ExtraFeeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    amount?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ExtraFeeMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    amount?: SortOrder
+    roomTypeId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ExtraFeeSumOrderByAggregateInput = {
+    amount?: SortOrder
+  }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
@@ -30377,6 +37793,172 @@ export namespace Prisma {
   export type CarUpdateimagesInput = {
     set?: string[]
     push?: string | string[]
+  }
+
+  export type LuxuryDestinationCreatelanguagesSpokenInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationCreateamenitiesInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationCreatesustainabilityPracticesInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationCreatepaymentMethodsInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationCreateotherImageUrlsInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationCreateimageSectionsInput = {
+    set: string[]
+  }
+
+  export type LuxuryDestinationUpdatelanguagesSpokenInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type LuxuryDestinationUpdateamenitiesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type LuxuryDestinationUpdatesustainabilityPracticesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type LuxuryDestinationUpdatepaymentMethodsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type LuxuryDestinationUpdateotherImageUrlsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type LuxuryDestinationUpdateimageSectionsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type RoomImageCreateNestedManyWithoutRoomTypeInput = {
+    create?: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput> | RoomImageCreateWithoutRoomTypeInput[] | RoomImageUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: RoomImageCreateOrConnectWithoutRoomTypeInput | RoomImageCreateOrConnectWithoutRoomTypeInput[]
+    createMany?: RoomImageCreateManyRoomTypeInputEnvelope
+    connect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+  }
+
+  export type ExtraFeeCreateNestedManyWithoutRoomTypeInput = {
+    create?: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput> | ExtraFeeCreateWithoutRoomTypeInput[] | ExtraFeeUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: ExtraFeeCreateOrConnectWithoutRoomTypeInput | ExtraFeeCreateOrConnectWithoutRoomTypeInput[]
+    createMany?: ExtraFeeCreateManyRoomTypeInputEnvelope
+    connect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+  }
+
+  export type RoomImageUncheckedCreateNestedManyWithoutRoomTypeInput = {
+    create?: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput> | RoomImageCreateWithoutRoomTypeInput[] | RoomImageUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: RoomImageCreateOrConnectWithoutRoomTypeInput | RoomImageCreateOrConnectWithoutRoomTypeInput[]
+    createMany?: RoomImageCreateManyRoomTypeInputEnvelope
+    connect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+  }
+
+  export type ExtraFeeUncheckedCreateNestedManyWithoutRoomTypeInput = {
+    create?: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput> | ExtraFeeCreateWithoutRoomTypeInput[] | ExtraFeeUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: ExtraFeeCreateOrConnectWithoutRoomTypeInput | ExtraFeeCreateOrConnectWithoutRoomTypeInput[]
+    createMany?: ExtraFeeCreateManyRoomTypeInputEnvelope
+    connect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+  }
+
+  export type RoomImageUpdateManyWithoutRoomTypeNestedInput = {
+    create?: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput> | RoomImageCreateWithoutRoomTypeInput[] | RoomImageUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: RoomImageCreateOrConnectWithoutRoomTypeInput | RoomImageCreateOrConnectWithoutRoomTypeInput[]
+    upsert?: RoomImageUpsertWithWhereUniqueWithoutRoomTypeInput | RoomImageUpsertWithWhereUniqueWithoutRoomTypeInput[]
+    createMany?: RoomImageCreateManyRoomTypeInputEnvelope
+    set?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    disconnect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    delete?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    connect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    update?: RoomImageUpdateWithWhereUniqueWithoutRoomTypeInput | RoomImageUpdateWithWhereUniqueWithoutRoomTypeInput[]
+    updateMany?: RoomImageUpdateManyWithWhereWithoutRoomTypeInput | RoomImageUpdateManyWithWhereWithoutRoomTypeInput[]
+    deleteMany?: RoomImageScalarWhereInput | RoomImageScalarWhereInput[]
+  }
+
+  export type ExtraFeeUpdateManyWithoutRoomTypeNestedInput = {
+    create?: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput> | ExtraFeeCreateWithoutRoomTypeInput[] | ExtraFeeUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: ExtraFeeCreateOrConnectWithoutRoomTypeInput | ExtraFeeCreateOrConnectWithoutRoomTypeInput[]
+    upsert?: ExtraFeeUpsertWithWhereUniqueWithoutRoomTypeInput | ExtraFeeUpsertWithWhereUniqueWithoutRoomTypeInput[]
+    createMany?: ExtraFeeCreateManyRoomTypeInputEnvelope
+    set?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    disconnect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    delete?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    connect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    update?: ExtraFeeUpdateWithWhereUniqueWithoutRoomTypeInput | ExtraFeeUpdateWithWhereUniqueWithoutRoomTypeInput[]
+    updateMany?: ExtraFeeUpdateManyWithWhereWithoutRoomTypeInput | ExtraFeeUpdateManyWithWhereWithoutRoomTypeInput[]
+    deleteMany?: ExtraFeeScalarWhereInput | ExtraFeeScalarWhereInput[]
+  }
+
+  export type RoomImageUncheckedUpdateManyWithoutRoomTypeNestedInput = {
+    create?: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput> | RoomImageCreateWithoutRoomTypeInput[] | RoomImageUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: RoomImageCreateOrConnectWithoutRoomTypeInput | RoomImageCreateOrConnectWithoutRoomTypeInput[]
+    upsert?: RoomImageUpsertWithWhereUniqueWithoutRoomTypeInput | RoomImageUpsertWithWhereUniqueWithoutRoomTypeInput[]
+    createMany?: RoomImageCreateManyRoomTypeInputEnvelope
+    set?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    disconnect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    delete?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    connect?: RoomImageWhereUniqueInput | RoomImageWhereUniqueInput[]
+    update?: RoomImageUpdateWithWhereUniqueWithoutRoomTypeInput | RoomImageUpdateWithWhereUniqueWithoutRoomTypeInput[]
+    updateMany?: RoomImageUpdateManyWithWhereWithoutRoomTypeInput | RoomImageUpdateManyWithWhereWithoutRoomTypeInput[]
+    deleteMany?: RoomImageScalarWhereInput | RoomImageScalarWhereInput[]
+  }
+
+  export type ExtraFeeUncheckedUpdateManyWithoutRoomTypeNestedInput = {
+    create?: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput> | ExtraFeeCreateWithoutRoomTypeInput[] | ExtraFeeUncheckedCreateWithoutRoomTypeInput[]
+    connectOrCreate?: ExtraFeeCreateOrConnectWithoutRoomTypeInput | ExtraFeeCreateOrConnectWithoutRoomTypeInput[]
+    upsert?: ExtraFeeUpsertWithWhereUniqueWithoutRoomTypeInput | ExtraFeeUpsertWithWhereUniqueWithoutRoomTypeInput[]
+    createMany?: ExtraFeeCreateManyRoomTypeInputEnvelope
+    set?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    disconnect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    delete?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    connect?: ExtraFeeWhereUniqueInput | ExtraFeeWhereUniqueInput[]
+    update?: ExtraFeeUpdateWithWhereUniqueWithoutRoomTypeInput | ExtraFeeUpdateWithWhereUniqueWithoutRoomTypeInput[]
+    updateMany?: ExtraFeeUpdateManyWithWhereWithoutRoomTypeInput | ExtraFeeUpdateManyWithWhereWithoutRoomTypeInput[]
+    deleteMany?: ExtraFeeScalarWhereInput | ExtraFeeScalarWhereInput[]
+  }
+
+  export type RoomTypeCreateNestedOneWithoutImagesInput = {
+    create?: XOR<RoomTypeCreateWithoutImagesInput, RoomTypeUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: RoomTypeCreateOrConnectWithoutImagesInput
+    connect?: RoomTypeWhereUniqueInput
+  }
+
+  export type RoomTypeUpdateOneRequiredWithoutImagesNestedInput = {
+    create?: XOR<RoomTypeCreateWithoutImagesInput, RoomTypeUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: RoomTypeCreateOrConnectWithoutImagesInput
+    upsert?: RoomTypeUpsertWithoutImagesInput
+    connect?: RoomTypeWhereUniqueInput
+    update?: XOR<XOR<RoomTypeUpdateToOneWithWhereWithoutImagesInput, RoomTypeUpdateWithoutImagesInput>, RoomTypeUncheckedUpdateWithoutImagesInput>
+  }
+
+  export type RoomTypeCreateNestedOneWithoutExtraFeesInput = {
+    create?: XOR<RoomTypeCreateWithoutExtraFeesInput, RoomTypeUncheckedCreateWithoutExtraFeesInput>
+    connectOrCreate?: RoomTypeCreateOrConnectWithoutExtraFeesInput
+    connect?: RoomTypeWhereUniqueInput
+  }
+
+  export type RoomTypeUpdateOneRequiredWithoutExtraFeesNestedInput = {
+    create?: XOR<RoomTypeCreateWithoutExtraFeesInput, RoomTypeUncheckedCreateWithoutExtraFeesInput>
+    connectOrCreate?: RoomTypeCreateOrConnectWithoutExtraFeesInput
+    upsert?: RoomTypeUpsertWithoutExtraFeesInput
+    connect?: RoomTypeWhereUniqueInput
+    update?: XOR<XOR<RoomTypeUpdateToOneWithWhereWithoutExtraFeesInput, RoomTypeUpdateWithoutExtraFeesInput>, RoomTypeUncheckedUpdateWithoutExtraFeesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -30778,6 +38360,29 @@ export namespace Prisma {
     _min?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
     _max?: NestedEnumDeliveryOptionNullableFilter<$PrismaModel>
   }
+  export type NestedJsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
 
   export type CabinFeatureCreateWithoutHelicoptersInput = {
     id?: string
@@ -30959,6 +38564,388 @@ export namespace Prisma {
     endDate?: DateTimeFilter<"HelicopterForSaleListing"> | Date | string
   }
 
+  export type RoomImageCreateWithoutRoomTypeInput = {
+    id?: string
+    url: string
+    description?: string | null
+    createdAt?: Date | string
+  }
+
+  export type RoomImageUncheckedCreateWithoutRoomTypeInput = {
+    id?: string
+    url: string
+    description?: string | null
+    createdAt?: Date | string
+  }
+
+  export type RoomImageCreateOrConnectWithoutRoomTypeInput = {
+    where: RoomImageWhereUniqueInput
+    create: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput>
+  }
+
+  export type RoomImageCreateManyRoomTypeInputEnvelope = {
+    data: RoomImageCreateManyRoomTypeInput | RoomImageCreateManyRoomTypeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ExtraFeeCreateWithoutRoomTypeInput = {
+    id?: string
+    name: string
+    amount: number
+    createdAt?: Date | string
+  }
+
+  export type ExtraFeeUncheckedCreateWithoutRoomTypeInput = {
+    id?: string
+    name: string
+    amount: number
+    createdAt?: Date | string
+  }
+
+  export type ExtraFeeCreateOrConnectWithoutRoomTypeInput = {
+    where: ExtraFeeWhereUniqueInput
+    create: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput>
+  }
+
+  export type ExtraFeeCreateManyRoomTypeInputEnvelope = {
+    data: ExtraFeeCreateManyRoomTypeInput | ExtraFeeCreateManyRoomTypeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RoomImageUpsertWithWhereUniqueWithoutRoomTypeInput = {
+    where: RoomImageWhereUniqueInput
+    update: XOR<RoomImageUpdateWithoutRoomTypeInput, RoomImageUncheckedUpdateWithoutRoomTypeInput>
+    create: XOR<RoomImageCreateWithoutRoomTypeInput, RoomImageUncheckedCreateWithoutRoomTypeInput>
+  }
+
+  export type RoomImageUpdateWithWhereUniqueWithoutRoomTypeInput = {
+    where: RoomImageWhereUniqueInput
+    data: XOR<RoomImageUpdateWithoutRoomTypeInput, RoomImageUncheckedUpdateWithoutRoomTypeInput>
+  }
+
+  export type RoomImageUpdateManyWithWhereWithoutRoomTypeInput = {
+    where: RoomImageScalarWhereInput
+    data: XOR<RoomImageUpdateManyMutationInput, RoomImageUncheckedUpdateManyWithoutRoomTypeInput>
+  }
+
+  export type RoomImageScalarWhereInput = {
+    AND?: RoomImageScalarWhereInput | RoomImageScalarWhereInput[]
+    OR?: RoomImageScalarWhereInput[]
+    NOT?: RoomImageScalarWhereInput | RoomImageScalarWhereInput[]
+    id?: StringFilter<"RoomImage"> | string
+    url?: StringFilter<"RoomImage"> | string
+    description?: StringNullableFilter<"RoomImage"> | string | null
+    roomTypeId?: StringFilter<"RoomImage"> | string
+    createdAt?: DateTimeFilter<"RoomImage"> | Date | string
+  }
+
+  export type ExtraFeeUpsertWithWhereUniqueWithoutRoomTypeInput = {
+    where: ExtraFeeWhereUniqueInput
+    update: XOR<ExtraFeeUpdateWithoutRoomTypeInput, ExtraFeeUncheckedUpdateWithoutRoomTypeInput>
+    create: XOR<ExtraFeeCreateWithoutRoomTypeInput, ExtraFeeUncheckedCreateWithoutRoomTypeInput>
+  }
+
+  export type ExtraFeeUpdateWithWhereUniqueWithoutRoomTypeInput = {
+    where: ExtraFeeWhereUniqueInput
+    data: XOR<ExtraFeeUpdateWithoutRoomTypeInput, ExtraFeeUncheckedUpdateWithoutRoomTypeInput>
+  }
+
+  export type ExtraFeeUpdateManyWithWhereWithoutRoomTypeInput = {
+    where: ExtraFeeScalarWhereInput
+    data: XOR<ExtraFeeUpdateManyMutationInput, ExtraFeeUncheckedUpdateManyWithoutRoomTypeInput>
+  }
+
+  export type ExtraFeeScalarWhereInput = {
+    AND?: ExtraFeeScalarWhereInput | ExtraFeeScalarWhereInput[]
+    OR?: ExtraFeeScalarWhereInput[]
+    NOT?: ExtraFeeScalarWhereInput | ExtraFeeScalarWhereInput[]
+    id?: StringFilter<"ExtraFee"> | string
+    name?: StringFilter<"ExtraFee"> | string
+    amount?: FloatFilter<"ExtraFee"> | number
+    roomTypeId?: StringFilter<"ExtraFee"> | string
+    createdAt?: DateTimeFilter<"ExtraFee"> | Date | string
+  }
+
+  export type RoomTypeCreateWithoutImagesInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    extraFees?: ExtraFeeCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeUncheckedCreateWithoutImagesInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    extraFees?: ExtraFeeUncheckedCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeCreateOrConnectWithoutImagesInput = {
+    where: RoomTypeWhereUniqueInput
+    create: XOR<RoomTypeCreateWithoutImagesInput, RoomTypeUncheckedCreateWithoutImagesInput>
+  }
+
+  export type RoomTypeUpsertWithoutImagesInput = {
+    update: XOR<RoomTypeUpdateWithoutImagesInput, RoomTypeUncheckedUpdateWithoutImagesInput>
+    create: XOR<RoomTypeCreateWithoutImagesInput, RoomTypeUncheckedCreateWithoutImagesInput>
+    where?: RoomTypeWhereInput
+  }
+
+  export type RoomTypeUpdateToOneWithWhereWithoutImagesInput = {
+    where?: RoomTypeWhereInput
+    data: XOR<RoomTypeUpdateWithoutImagesInput, RoomTypeUncheckedUpdateWithoutImagesInput>
+  }
+
+  export type RoomTypeUpdateWithoutImagesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    extraFees?: ExtraFeeUpdateManyWithoutRoomTypeNestedInput
+  }
+
+  export type RoomTypeUncheckedUpdateWithoutImagesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    extraFees?: ExtraFeeUncheckedUpdateManyWithoutRoomTypeNestedInput
+  }
+
+  export type RoomTypeCreateWithoutExtraFeesInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    images?: RoomImageCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeUncheckedCreateWithoutExtraFeesInput = {
+    id?: string
+    name: string
+    description: string
+    size: number
+    occupancy: number
+    bedConfiguration: string
+    basePrice: number
+    totalRooms?: number
+    views?: number
+    rating?: number
+    minimumStay?: number | null
+    depositRequired?: boolean
+    depositAmount?: number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    vendorId?: string
+    images?: RoomImageUncheckedCreateNestedManyWithoutRoomTypeInput
+  }
+
+  export type RoomTypeCreateOrConnectWithoutExtraFeesInput = {
+    where: RoomTypeWhereUniqueInput
+    create: XOR<RoomTypeCreateWithoutExtraFeesInput, RoomTypeUncheckedCreateWithoutExtraFeesInput>
+  }
+
+  export type RoomTypeUpsertWithoutExtraFeesInput = {
+    update: XOR<RoomTypeUpdateWithoutExtraFeesInput, RoomTypeUncheckedUpdateWithoutExtraFeesInput>
+    create: XOR<RoomTypeCreateWithoutExtraFeesInput, RoomTypeUncheckedCreateWithoutExtraFeesInput>
+    where?: RoomTypeWhereInput
+  }
+
+  export type RoomTypeUpdateToOneWithWhereWithoutExtraFeesInput = {
+    where?: RoomTypeWhereInput
+    data: XOR<RoomTypeUpdateWithoutExtraFeesInput, RoomTypeUncheckedUpdateWithoutExtraFeesInput>
+  }
+
+  export type RoomTypeUpdateWithoutExtraFeesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    images?: RoomImageUpdateManyWithoutRoomTypeNestedInput
+  }
+
+  export type RoomTypeUncheckedUpdateWithoutExtraFeesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    size?: FloatFieldUpdateOperationsInput | number
+    occupancy?: IntFieldUpdateOperationsInput | number
+    bedConfiguration?: StringFieldUpdateOperationsInput | string
+    basePrice?: FloatFieldUpdateOperationsInput | number
+    totalRooms?: IntFieldUpdateOperationsInput | number
+    views?: IntFieldUpdateOperationsInput | number
+    rating?: FloatFieldUpdateOperationsInput | number
+    minimumStay?: NullableIntFieldUpdateOperationsInput | number | null
+    depositRequired?: BoolFieldUpdateOperationsInput | boolean
+    depositAmount?: NullableFloatFieldUpdateOperationsInput | number | null
+    amenities?: NullableJsonNullValueInput | InputJsonValue
+    accessibilityFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bathroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    bedroomFeatures?: NullableJsonNullValueInput | InputJsonValue
+    entertainment?: NullableJsonNullValueInput | InputJsonValue
+    familyFriendly?: NullableJsonNullValueInput | InputJsonValue
+    foodAndDrink?: NullableJsonNullValueInput | InputJsonValue
+    moreFeatures?: NullableJsonNullValueInput | InputJsonValue
+    outdoorSpace?: NullableJsonNullValueInput | InputJsonValue
+    safetyFeatures?: NullableJsonNullValueInput | InputJsonValue
+    freebies?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    vendorId?: StringFieldUpdateOperationsInput | string
+    images?: RoomImageUncheckedUpdateManyWithoutRoomTypeNestedInput
+  }
+
   export type CabinFeatureUpdateWithoutHelicoptersInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31089,6 +39076,62 @@ export namespace Prisma {
     sponsored?: BoolFieldUpdateOperationsInput | boolean
     sponsoredType?: StringFieldUpdateOperationsInput | string
     endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RoomImageCreateManyRoomTypeInput = {
+    id?: string
+    url: string
+    description?: string | null
+    createdAt?: Date | string
+  }
+
+  export type ExtraFeeCreateManyRoomTypeInput = {
+    id?: string
+    name: string
+    amount: number
+    createdAt?: Date | string
+  }
+
+  export type RoomImageUpdateWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RoomImageUncheckedUpdateWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RoomImageUncheckedUpdateManyWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeUpdateWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeUncheckedUpdateWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ExtraFeeUncheckedUpdateManyWithoutRoomTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    amount?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

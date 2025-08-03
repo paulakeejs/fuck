@@ -1,0 +1,88 @@
+import { useEffect, useState } from "react";
+import { Outlet, Navigate, useNavigate, useLocation } from "react-router-dom";
+import vendorApi from "../functions/vendorApi";
+import { toast } from "sonner";
+import { useDispatch } from "react-redux";
+import { setVendor } from "../store/reduxSlice";
+import Sidebar from "../application/sidebar";
+
+const DestinationsLayout = () => {
+  const [authStatus, setAuthStatus] = useState("loading");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    const verifyAuth = async () => {
+      try {
+        const response = await vendorApi.get("/user");
+        if (response.data.success) {
+          dispatch(setVendor(response.data.vendor));
+          const vendor = response.data.vendor;
+
+          // Check service type
+          if (vendor.serviceType !== "luxury_hotels") {
+            setAuthStatus("unauthorized");
+            toast.error("Access restricted: Invalid service type.");
+            navigate("/");
+            return;
+          }
+
+          // Check if registration is completed
+          if (
+            !vendor.completed &&
+            !location.pathname.startsWith("/l-h/registration")
+          ) {
+            setAuthStatus("authenticated"); // Still authenticated, just needs completion
+            window.location.href = "/l-h/registration";
+            return;
+          }
+
+          setAuthStatus("authenticated");
+        } else {
+          setAuthStatus("unauthenticated");
+          toast("Session expired. Please log in again.");
+          navigate("/");
+        }
+      } catch (err: any) {
+        setAuthStatus("unauthenticated");
+        if (err.response?.status === 401) {
+          toast.error("Your session has expired");
+        } else {
+          toast("Authentication check failed");
+        }
+        navigate("/");
+      }
+    };
+
+    verifyAuth();
+  }, [dispatch, navigate, location.pathname]);
+
+  if (authStatus === "loading") {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (authStatus === "unauthenticated") {
+    return <Navigate to="/" replace />;
+  }
+
+  // Don't show sidebar on registration pages
+  if (location.pathname.startsWith("/l-h/registration")) {
+    return <Outlet />;
+  }
+
+  return (
+    <div className="">
+      <div className="flex ml-72">
+        <Sidebar />
+        <Outlet />
+      </div>
+    </div>
+  );
+};
+
+export default DestinationsLayout;

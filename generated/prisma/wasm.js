@@ -523,12 +523,120 @@ exports.Prisma.CarBookingsScalarFieldEnum = {
   read: 'read'
 };
 
+exports.Prisma.LuxuryDestinationScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  propertyName: 'propertyName',
+  propertyType: 'propertyType',
+  starRating: 'starRating',
+  address: 'address',
+  city: 'city',
+  country: 'country',
+  postalCode: 'postalCode',
+  phone: 'phone',
+  email: 'email',
+  website: 'website',
+  checkInTime: 'checkInTime',
+  checkOutTime: 'checkOutTime',
+  languagesSpoken: 'languagesSpoken',
+  description: 'description',
+  highlights: 'highlights',
+  amenities: 'amenities',
+  roomTypes: 'roomTypes',
+  totalRooms: 'totalRooms',
+  yearBuilt: 'yearBuilt',
+  lastRenovated: 'lastRenovated',
+  awards: 'awards',
+  sustainabilityPractices: 'sustainabilityPractices',
+  wheelchairAccessible: 'wheelchairAccessible',
+  accessibleRooms: 'accessibleRooms',
+  accessibleBathrooms: 'accessibleBathrooms',
+  accessibleParking: 'accessibleParking',
+  accessibleRestaurants: 'accessibleRestaurants',
+  accessiblePools: 'accessiblePools',
+  brailleSignage: 'brailleSignage',
+  hearingImpairedServices: 'hearingImpairedServices',
+  visualImpairedServices: 'visualImpairedServices',
+  serviceAnimalsAllowed: 'serviceAnimalsAllowed',
+  cancellationPolicy: 'cancellationPolicy',
+  petPolicy: 'petPolicy',
+  smokingPolicy: 'smokingPolicy',
+  childrenPolicy: 'childrenPolicy',
+  groupPolicy: 'groupPolicy',
+  paymentMethods: 'paymentMethods',
+  depositRequired: 'depositRequired',
+  depositAmount: 'depositAmount',
+  minimumStay: 'minimumStay',
+  ageRestriction: 'ageRestriction',
+  quietHours: 'quietHours',
+  specialOffers: 'specialOffers',
+  loyaltyProgram: 'loyaltyProgram',
+  mainImageUrl: 'mainImageUrl',
+  otherImageUrls: 'otherImageUrls',
+  imageSections: 'imageSections',
+  sectionImages: 'sectionImages',
+  imageDescriptions: 'imageDescriptions',
+  vendorId: 'vendorId'
+};
+
+exports.Prisma.RoomTypeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  size: 'size',
+  occupancy: 'occupancy',
+  bedConfiguration: 'bedConfiguration',
+  basePrice: 'basePrice',
+  totalRooms: 'totalRooms',
+  views: 'views',
+  rating: 'rating',
+  minimumStay: 'minimumStay',
+  depositRequired: 'depositRequired',
+  depositAmount: 'depositAmount',
+  amenities: 'amenities',
+  accessibilityFeatures: 'accessibilityFeatures',
+  bathroomFeatures: 'bathroomFeatures',
+  bedroomFeatures: 'bedroomFeatures',
+  entertainment: 'entertainment',
+  familyFriendly: 'familyFriendly',
+  foodAndDrink: 'foodAndDrink',
+  moreFeatures: 'moreFeatures',
+  outdoorSpace: 'outdoorSpace',
+  safetyFeatures: 'safetyFeatures',
+  freebies: 'freebies',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  vendorId: 'vendorId'
+};
+
+exports.Prisma.RoomImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  description: 'description',
+  roomTypeId: 'roomTypeId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ExtraFeeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  amount: 'amount',
+  roomTypeId: 'roomTypeId',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
 };
 
 exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
+};
+
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
   JsonNull: Prisma.JsonNull
 };
 
@@ -619,7 +727,11 @@ exports.Prisma.ModelName = {
   HelicopterForCharter: 'HelicopterForCharter',
   HelicopterForCharterMessages: 'HelicopterForCharterMessages',
   Car: 'Car',
-  CarBookings: 'CarBookings'
+  CarBookings: 'CarBookings',
+  LuxuryDestination: 'LuxuryDestination',
+  RoomType: 'RoomType',
+  RoomImage: 'RoomImage',
+  ExtraFee: 'ExtraFee'
 };
 
 /**

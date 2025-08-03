@@ -15,6 +15,8 @@ const helicopterRoutes = require('./routes/helicopter/main')
 const hclientRoutes = require('./routes/helicopter/h-client')
 const carRoutes = require('./routes/cars/main')
 const carCliRoutes = require('./routes/cars/client')
+const destinationRoutes = require('./routes/destinations/main')
+const destinationClientRoutes = require('./routes/destinations/client')
 
 const corsOptions = {
     origin: 'http://localhost:5173',
@@ -78,6 +80,8 @@ app.use('/api/v1/h-vendor/main', authLimiter, helicopterRoutes);
 app.use('/api/v1/h-client/main', authLimiter, hclientRoutes);
 app.use('/api/v1/lux/main',authLimiter,carRoutes)
 app.use('/api/v1/cars/client',authLimiter,carCliRoutes)
+app.use('/api/v1/destinations/main',authLimiter,destinationRoutes)
+app.use('/api/v1/destinations/client',authLimiter,destinationClientRoutes)
 
 // Health check endpoint
 app.get('/health', (req, res) => {

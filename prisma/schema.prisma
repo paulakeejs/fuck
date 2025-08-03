@@ -585,3 +585,122 @@ model CarBookings {
   vendorId  String
   read      Boolean @default(false)
 }
+
+model LuxuryDestination {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Overview
+  propertyName    String
+  propertyType    String
+  starRating      String?
+  address         String
+  city            String
+  country         String
+  postalCode      String?
+  phone           String
+  email           String
+  website         String?
+  checkInTime     String   @default("15:00")
+  checkOutTime    String   @default("11:00")
+  languagesSpoken String[] // array of languages
+
+  // About
+  description             String
+  highlights              String?
+  amenities               String[] // array of amenities
+  roomTypes               String?
+  totalRooms              Int?
+  yearBuilt               Int?
+  lastRenovated           Int?
+  awards                  String?
+  sustainabilityPractices String[] // array of practices
+
+  // Accessibility
+  wheelchairAccessible    Boolean @default(false)
+  accessibleRooms         String?
+  accessibleBathrooms     Boolean @default(false)
+  accessibleParking       Boolean @default(false)
+  accessibleRestaurants   Boolean @default(false)
+  accessiblePools         Boolean @default(false)
+  brailleSignage          Boolean @default(false)
+  hearingImpairedServices Boolean @default(false)
+  visualImpairedServices  Boolean @default(false)
+  serviceAnimalsAllowed   Boolean @default(false)
+
+  // Policies
+  cancellationPolicy String
+  petPolicy          String?
+  smokingPolicy      String?
+  childrenPolicy     String?
+  groupPolicy        String?
+  paymentMethods     String[] // array of payment methods
+  depositRequired    Boolean  @default(false)
+  depositAmount      String?
+  minimumStay        String?
+  ageRestriction     String?
+  quietHours         String   @default("22:00 - 08:00")
+  specialOffers      String?
+  loyaltyProgram     Boolean  @default(false)
+
+  // Images
+  mainImageUrl      String?
+  otherImageUrls    String[]
+  imageSections     String[] @default(["Rooms", "Bathroom", "Living area", "Exterior", "Common areas", "Pool", "Dining", "Amenities", "Views", "What's nearby", "Family", "Accessibility"])
+  sectionImages     Json? // Stores structured section images data
+  imageDescriptions Json? // Stores image descriptions
+
+  // Relationships
+  vendorId String
+}
+
+model RoomType {
+  id                    String      @id @default(uuid())
+  name                  String      @unique
+  description           String
+  size                  Float
+  occupancy             Int
+  bedConfiguration      String
+  basePrice             Float
+  totalRooms            Int         @default(1)
+  views                 Int         @default(0)
+  rating                Float       @default(0)
+  minimumStay           Int?
+  depositRequired       Boolean     @default(false)
+  depositAmount         Float?
+  images                RoomImage[]
+  amenities             Json? // Stores array of strings
+  accessibilityFeatures Json? // Stores array of strings
+  bathroomFeatures      Json? // Stores array of strings
+  bedroomFeatures       Json? // Stores array of strings
+  entertainment         Json? // Stores array of strings
+  familyFriendly        Json? // Stores array of strings
+  foodAndDrink          Json? // Stores array of strings
+  moreFeatures          Json? // Stores array of strings
+  outdoorSpace          Json? // Stores array of strings
+  safetyFeatures        Json? // Stores array of strings
+  freebies              Json? // Stores array of strings
+  extraFees             ExtraFee[]
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+  vendorId              String      @default("")
+}
+
+model RoomImage {
+  id          String   @id @default(uuid())
+  url         String
+  description String?
+  roomType    RoomType @relation(fields: [roomTypeId], references: [id], onDelete: Cascade)
+  roomTypeId  String
+  createdAt   DateTime @default(now())
+}
+
+model ExtraFee {
+  id         String   @id @default(uuid())
+  name       String
+  amount     Float
+  roomType   RoomType @relation(fields: [roomTypeId], references: [id], onDelete: Cascade)
+  roomTypeId String
+  createdAt  DateTime @default(now())
+}
